@@ -1,0 +1,3 @@
+REDEFINE.initMermaid = () => {
+    mermaid.init();
+}
