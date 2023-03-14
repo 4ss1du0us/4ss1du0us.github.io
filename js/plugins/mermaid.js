@@ -1,3 +1,0 @@
-REDEFINE.initMermaid = () => {
-    mermaid.init();
-}
