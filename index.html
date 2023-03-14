@@ -1,7 +1,259 @@
-extends includes/layout.pug
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0"><title>Welcome to 4ss1du0us's Blog</title><meta name="author" content="4ss1du0us"><meta name="copyright" content="4ss1du0us"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta property="og:type" content="website">
+<meta property="og:title" content="Welcome to 4ss1du0us&#39;s Blog">
+<meta property="og:url" content="http://example.com/index.html">
+<meta property="og:site_name" content="Welcome to 4ss1du0us&#39;s Blog">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://i.loli.net/2021/02/24/5O1day2nriDzjSu.png">
+<meta property="article:author" content="4ss1du0us">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://i.loli.net/2021/02/24/5O1day2nriDzjSu.png"><link rel="shortcut icon" href="/img/favicon.png"><link rel="canonical" href="http://example.com/index.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox/fancybox.min.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: undefined,
+  noticeOutdate: undefined,
+  highlight: {"plugin":"prismjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  date_suffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  source: {
+    justifiedGallery: {
+      js: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery/dist/fjGallery.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery/dist/fjGallery.min.css'
+    }
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isAnchor: false,
+  percent: {
+    toc: true,
+    rightside: false,
+  }
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: 'Welcome to 4ss1du0us\'s Blog',
+  isPost: false,
+  isHome: true,
+  isHighlightShrink: false,
+  isToc: false,
+  postUpdate: '2023-03-14 14:54:27'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
 
-block content
-  include ./includes/mixins/post-ui.pug
-  #recent-posts.recent-posts
-    +postUI
-    include includes/pagination.pug
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+    win.saveToLocal = {
+      set: function setWithExpiry(key, value, ttl) {
+        if (ttl === 0) return
+        const now = new Date()
+        const expiryDay = ttl * 86400000
+        const item = {
+          value: value,
+          expiry: now.getTime() + expiryDay,
+        }
+        localStorage.setItem(key, JSON.stringify(item))
+      },
+
+      get: function getWithExpiry(key) {
+        const itemStr = localStorage.getItem(key)
+
+        if (!itemStr) {
+          return undefined
+        }
+        const item = JSON.parse(itemStr)
+        const now = new Date()
+
+        if (now.getTime() > item.expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return item.value
+      }
+    }
+  
+    win.getScript = url => new Promise((resolve, reject) => {
+      const script = document.createElement('script')
+      script.src = url
+      script.async = true
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    })
+  
+    win.getCSS = (url,id = false) => new Promise((resolve, reject) => {
+      const link = document.createElement('link')
+      link.rel = 'stylesheet'
+      link.href = url
+      if (id) link.id = id
+      link.onerror = reject
+      link.onload = link.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        link.onload = link.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(link)
+    })
+  
+      win.activateDarkMode = function () {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = function () {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          if (t === 'dark') activateDarkMode()
+          else if (t === 'light') activateLightMode()
+        
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+    const detectApple = () => {
+      if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+    })(window)</script><meta name="generator" content="Hexo 6.3.0"></head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="https://i.loli.net/2021/02/24/5O1day2nriDzjSu.png" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">5</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">2</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">0</div></a></div><hr/></div></div><div class="page" id="body-wrap"><header class="full_page" id="page-header"><nav id="nav"><span id="blog-info"><a href="/" title="Welcome to 4ss1du0us's Blog"><span class="site-name">Welcome to 4ss1du0us's Blog</span></a></span><div id="menus"><div id="toggle-menu"><a class="site-page" href="javascript:void(0);"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="site-info"><h1 id="site-title">Welcome to 4ss1du0us's Blog</h1></div><div id="scroll-down"><i class="fas fa-angle-down scroll-down-effects"></i></div></header><main class="layout" id="content-inner"><div class="recent-posts" id="recent-posts"><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/2023/03/13/Pwntools/" title="Pwntools">Pwntools</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2023-03-13T11:36:07.000Z" title="发表于 2023-03-13 19:36:07">2023-03-13</time></span></div><div class="content">相关术语
+exploit（简称exp）：用于攻击的脚本与方案
+payload：攻击载荷，是对目标进程劫持控制流的数据
+shellcode：调用攻击目标的 shell 的代码
+
+
+32位 和 64位 的差异
+在写 exp、payload 的时候
+
+
+
+
+位数
+写法差异
+
+
+
+32位
+p32(system) + p32(bin_sh)
+
+
+64位
+p64(rdi) + p64(bin_sh) + p64(system)
+
+
+
+出现栈劫持的时候 p(bin_sh) 在前面
+
+
+Pwn程序输入脚本样例（exp.py）from pwn import *
+
+context(os='linux', arch='amd64', log_level='debug')  # 打印调试信息
+content = 0  # 本地Pwn通之后，将content改成0，Pwn远程端口
+
+
+def main():
+    if content == 1:
+        io = process("./when")  # 程序在kali的路径
+    else:
+        io = remote("220.24 ...</div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/2023/03/13/%E6%94%BB%E9%98%B2%E4%B8%96%E7%95%8C-gametime/" title="攻防世界-gametime">攻防世界-gametime</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2023-03-13T11:11:19.000Z" title="发表于 2023-03-13 19:11:19">2023-03-13</time></span></div><div class="content">收获
+结合程序运行、IDA 和 OllyDBG 分析程序的逻辑
+
+&#x3D;&#x3D;使用 OllyDBG 修改程序跳转逻辑&#x3D;&#x3D;
+
+
+
+攻防世界-gametime
+
+思路
+将文件拖入 exeinfo 查看，为 32 位程序   ![[攻防世界-gametime1.png]]
+
+运行程序可知是一个游戏，根据提示的内容：“当看到 s 的时候，按下空格键”![[攻防世界-gametime2.png]]按照游戏要求输入，发现游戏规为：当看到 s 的时候，按下 ‘ ‘；当看到 x 的时候，按下 ‘x’；当看到 m 的时候，按下 ‘m’但进行到 TRAINING COMPLETE! 后，速度开始越来越快
+
+IDA 查看主函数：![[攻防世界-gametime3.png]]最开始是一段屏幕输出，后面有两组三条 if 判断语句，根据游戏的规则，猜测这两组 if 语句应该是用来检测用户的输入是否对应为：’ ‘、’x’、’m’除此之外，发现第一组三条 if 语句在输出 TRAINING COMPLETE! 之前，而第二组三条 if 语句在输出 TRAINING COMPLETE!  ...</div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/2023/03/13/%E6%94%BB%E9%98%B2%E4%B8%96%E7%95%8C-repeater/" title="攻防世界-repeater">攻防世界-repeater</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2023-03-13T10:43:26.000Z" title="发表于 2023-03-13 18:43:26">2023-03-13</time></span></div><div class="content">收获
+&#x3D;&#x3D;IDA 中看到的地址是偏移地址&#x3D;&#x3D;，当开启了 PIE 地址随机化时，真实地址 &#x3D; 程序的基地址 + 偏移地址
+
+&#x3D;&#x3D;可以直接向 .bss 段上写入 shellcode，再通过栈溢出去执行段上的 shellcode&#x3D;&#x3D;
+
+&#x3D;&#x3D;开启 PIE 地址随机化后，程序执行过程中打印的地址就是真实的地址&#x3D;&#x3D;
+
+
+
+攻防世界-repeater
+
+思路
+查看文件信息：![[攻防世界-repeater1.png]]64位 小端序，开启了 PIE 地址随机化
+
+尝试运行：![[攻防世界-repeater2.png]]存在溢出
+
+在 IDA 下分析：![[攻防世界-repeater3.png]]首先通过 memset() 函数将 byte_202040 的地址初始化，然后通过 sub_982() 函数将用户输入写到 byte_202040 地址处
+
+查看 byte_202040 地址的位置：![[攻防世界-repeater4.png]]发现 byte_202040 是存储 ...</div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/2023/03/13/%E6%94%BB%E9%98%B2%E4%B8%96%E7%95%8C-int-overflow/" title="攻防世界-int_overflow">攻防世界-int_overflow</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2023-03-13T08:41:57.000Z" title="发表于 2023-03-13 16:41:57">2023-03-13</time></span></div><div class="content">收获
+&#x3D;&#x3D;原输入的栈无法溢出，通过 strcpy 复制操作进行溢出&#x3D;&#x3D;
+
+&#x3D;&#x3D;注意参数的类型&#x3D;&#x3D;，例如 unsigned __int8 v3，v3 = strlen(s)，v3 是一个 8位 int型 数据，即使 s 的长度为 0x104，v3 也只能为 0x04（1字节 只能存放 2位 十六进制数）
+
+&#x3D;&#x3D;通过 payload.ljust(0x104, b&#39;a&#39;) 可以直接往 payload 后面添加 b’a’ 一直填充至指定长度 0x104&#x3D;&#x3D; 【ljust() 的 l 是让 payload 左对齐，往右侧添加字符，一直将原字符串填充到指定长度，而不是填充多少个字符】
+
+
+
+攻防世界-int_overflow
+
+思路
+查看文件信息：![[攻防世界-int_overflow1.png]]32 位 小端序，只开启了栈不可执行
+
+尝试执行：![[攻防世界-int_overflow2.png]]
+
+在 IDA 中分析：![[攻防世界-int_overflo ...</div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/2023/03/13/hello-world/" title="Hello World">Hello World</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2023-03-13T07:35:06.321Z" title="发表于 2023-03-13 15:35:06">2023-03-13</time></span></div><div class="content">Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub.
+Quick StartCreate a new post$ hexo new "My New Post"
+
+More info: Writing
+Run server$ hexo server
+
+More info: Server
+Generate static files$ hexo generate
+
+More info: Generating
+Deploy to remote sites$ hexo deploy
+
+More info: Deployment
+</div></div></div><nav id="pagination"><div class="pagination"><span class="page-number current">1</span></div></nav></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="https://i.loli.net/2021/02/24/5O1day2nriDzjSu.png" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">4ss1du0us</div><div class="author-info__description"></div></div><div class="card-info-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">5</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">2</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">0</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/xxxxxx"><i class="fab fa-github"></i><span>Follow Me</span></a></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content">This is my Blog</div></div><div class="sticky_layout"><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2023/03/13/Pwntools/" title="Pwntools">Pwntools</a><time datetime="2023-03-13T11:36:07.000Z" title="发表于 2023-03-13 19:36:07">2023-03-13</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2023/03/13/%E6%94%BB%E9%98%B2%E4%B8%96%E7%95%8C-gametime/" title="攻防世界-gametime">攻防世界-gametime</a><time datetime="2023-03-13T11:11:19.000Z" title="发表于 2023-03-13 19:11:19">2023-03-13</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2023/03/13/%E6%94%BB%E9%98%B2%E4%B8%96%E7%95%8C-repeater/" title="攻防世界-repeater">攻防世界-repeater</a><time datetime="2023-03-13T10:43:26.000Z" title="发表于 2023-03-13 18:43:26">2023-03-13</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2023/03/13/%E6%94%BB%E9%98%B2%E4%B8%96%E7%95%8C-int-overflow/" title="攻防世界-int_overflow">攻防世界-int_overflow</a><time datetime="2023-03-13T08:41:57.000Z" title="发表于 2023-03-13 16:41:57">2023-03-13</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2023/03/13/hello-world/" title="Hello World">Hello World</a><time datetime="2023-03-13T07:35:06.321Z" title="发表于 2023-03-13 15:35:06">2023-03-13</time></div></div></div></div><div class="card-widget card-tags"><div class="item-headline"><i class="fas fa-tags"></i><span>标签</span></div><div class="card-tag-cloud"><a href="/tags/PWN/" style="font-size: 1.5em; color: #99a9bf">PWN</a> <a href="/tags/REVERSE/" style="font-size: 1.1em; color: #999">REVERSE</a></div></div><div class="card-widget card-archives"><div class="item-headline"><i class="fas fa-archive"></i><span>归档</span></div><ul class="card-archive-list"><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2023/03/"><span class="card-archive-list-date">三月 2023</span><span class="card-archive-list-count">5</span></a></li></ul></div><div class="card-widget card-webinfo"><div class="item-headline"><i class="fas fa-chart-line"></i><span>网站资讯</span></div><div class="webinfo"><div class="webinfo-item"><div class="item-name">文章数目 :</div><div class="item-count">5</div></div><div class="webinfo-item"><div class="item-name">本站访客数 :</div><div class="item-count" id="busuanzi_value_site_uv"><i class="fa-solid fa-spinner fa-spin"></i></div></div><div class="webinfo-item"><div class="item-name">本站总访问量 :</div><div class="item-count" id="busuanzi_value_site_pv"><i class="fa-solid fa-spinner fa-spin"></i></div></div><div class="webinfo-item"><div class="item-name">最后更新时间 :</div><div class="item-count" id="last-push-date" data-lastPushDate="2023-03-14T06:54:27.308Z"><i class="fa-solid fa-spinner fa-spin"></i></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2020 - 2023 By 4ss1du0us</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button id="go-up" type="button" title="回到顶部"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox/fancybox.umd.min.js"></script><div class="js-pjax"></div><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div></body></html>
