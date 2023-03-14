@@ -243,30 +243,7 @@ const btf = {
         Fancybox.bind('[data-fancybox]', {
           Hash: false,
           Thumbs: {
-            showOnStart: false
-          },
-          Images: {
-            Panzoom: {
-              maxScale: 4
-            }
-          },
-          Carousel: {
-            transition: 'slide'
-          },
-          Toolbar: {
-            display: {
-              left: ['infobar'],
-              middle: [
-                'zoomIn',
-                'zoomOut',
-                'toggle1to1',
-                'rotateCCW',
-                'rotateCW',
-                'flipX',
-                'flipY'
-              ],
-              right: ['slideshow', 'thumbs', 'close']
-            }
+            autoStart: false
           }
         })
         window.fancyboxRun = true
