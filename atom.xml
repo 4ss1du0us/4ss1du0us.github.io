@@ -6,7 +6,7 @@
   <link href="https://4ss1du0us.github.io/atom.xml" rel="self"/>
   
   <link href="https://4ss1du0us.github.io/"/>
-  <updated>2023-03-08T13:25:27.000Z</updated>
+  <updated>2023-03-17T14:26:58.263Z</updated>
   <id>https://4ss1du0us.github.io/</id>
   
   <author>
@@ -15,6 +15,42 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>test</title>
+    <link href="https://4ss1du0us.github.io/2023/03/17/test/"/>
+    <id>https://4ss1du0us.github.io/2023/03/17/test/</id>
+    <published>2023-03-17T14:26:58.000Z</published>
+    <updated>2023-03-17T14:26:58.263Z</updated>
+    
+    
+    
+    
+    
+  </entry>
+  
+  <entry>
+    <title>test</title>
+    <link href="https://4ss1du0us.github.io/2023/03/17/CTF%20-%20Misc/GIF%E5%9B%BE%E7%89%87%E6%8B%86%E5%88%86&amp;%E6%8B%BC%E5%9B%BE/"/>
+    <id>https://4ss1du0us.github.io/2023/03/17/CTF%20-%20Misc/GIF%E5%9B%BE%E7%89%87%E6%8B%86%E5%88%86&amp;%E6%8B%BC%E5%9B%BE/</id>
+    <published>2023-03-17T14:26:58.000Z</published>
+    <updated>2023-03-17T14:27:49.245Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="Windows"><a href="#Windows" class="headerlink" title="Windows"></a>Windows</h2><hr><h3 id="拆分并直接展示"><a href="#拆分并直接展示" class="headerlink" title="拆分并直接展示"></a>拆分并直接展示</h3><ul><li>在线网站：<a href="https://tu.sioe.cn/gj/fenjie/">GIF动态图片分解，多帧动态图分解成多张静态图片</a></li></ul><h3 id="拆分"><a href="#拆分" class="headerlink" title="拆分"></a>拆分</h3><ul><li>在线网站：<a href="https://uutool.cn/gif2img/">在线GIF图片帧拆分工具 - UU在线工具</a></li></ul><h3 id="ImageMagick"><a href="#ImageMagick" class="headerlink" title="ImageMagick"></a>ImageMagick</h3><ul><li>下载：<a href="https://imagemagick.org/script/download.php#windows">图像魔术 – 下载</a></li><li>使用：<ol><li>到需要拼接的图片目录下，调用 <code>cmd</code></li><li>使用命令：<code>magick montage *.png -tile &lt;10x10&gt; -geometry +0+0 flag.png</code> 【10x10表示拼成横竖10张的图】</li></ol></li></ul><hr><h2 id="Linux"><a href="#Linux" class="headerlink" title="Linux"></a>Linux</h2><hr><h3 id="convert"><a href="#convert" class="headerlink" title="convert"></a>convert</h3><ul><li>使用：<code>convert &lt;.gif文件名&gt; &lt;输出路径/flag.png&gt;</code></li></ul><h3 id="montage"><a href="#montage" class="headerlink" title="montage"></a>montage</h3><ul><li>下载安装：<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">sudo</span> <span class="token function">apt-get</span> <span class="token function">install</span> graphicsmagick-imagemagick-compat<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre></li><li>使用：<code>montage *.png -tile &lt;10x10&gt; -geometry +0+0 flag.png</code> 【10x10表示拼成横竖10张的图】</li></ul><h3 id="gaps"><a href="#gaps" class="headerlink" title="gaps"></a>gaps</h3><ul><li>下载安装：<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">git</span> clone https://github.com/nemanja-m/gaps.git<span class="token builtin class-name">cd</span> gaps  pip <span class="token function">install</span> <span class="token parameter variable">-r</span> requirements.txt  <span class="token function">sudo</span> <span class="token function">apt-get</span> <span class="token function">install</span> python-tk  pip <span class="token function">install</span> <span class="token parameter variable">-e</span> <span class="token builtin class-name">.</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre></li></ul><hr>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;h2 id=&quot;Windows&quot;&gt;&lt;a href=&quot;#Windows&quot; class=&quot;headerlink&quot; title=&quot;Windows&quot;&gt;&lt;/a&gt;Windows&lt;/h2&gt;&lt;hr&gt;
+&lt;h3 id=&quot;拆分并直接展示&quot;&gt;&lt;a href=&quot;#拆分并直接展示&quot; class=&quot;heade</summary>
+      
+    
+    
+    
+    
+    <category term="MISC" scheme="https://4ss1du0us.github.io/tags/MISC/"/>
+    
+  </entry>
   
   <entry>
     <title></title>
@@ -371,56 +407,6 @@
     <published>2023-03-17T14:24:29.389Z</published>
     <updated>2022-11-24T12:31:19.483Z</updated>
     
-    
-    
-    
-    
-  </entry>
-  
-  <entry>
-    <title></title>
-    <link href="https://4ss1du0us.github.io/2023/03/17/CTF%20-%20Reverse/OllyDBG%20%E5%92%8C%20GDB/GDB%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C/"/>
-    <id>https://4ss1du0us.github.io/2023/03/17/CTF%20-%20Reverse/OllyDBG%20%E5%92%8C%20GDB/GDB%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C/</id>
-    <published>2023-03-17T14:24:29.387Z</published>
-    <updated>2023-03-08T13:24:19.000Z</updated>
-    
-    <content type="html"><![CDATA[<table><thead><tr><th>操作</th><th>指令</th></tr></thead><tbody><tr><td><strong>调试程序</strong></td><td><code>gdb &lt;文件名&gt;</code></td></tr><tr><td><strong>下断点</strong></td><td><code>b &lt;函数名&gt;</code></td></tr><tr><td><strong>删除断点</strong></td><td><code>d</code></td></tr><tr><td><strong>执行程序</strong></td><td><code>r</code></td></tr><tr><td><strong>单步执行</strong></td><td><code>n</code></td></tr><tr><td><strong>直接执行到程序结束</strong></td><td><code>c</code></td></tr><tr><td><strong>查看寄存器的值</strong></td><td><code>i r &lt;寄存器名&gt;</code></td></tr><tr><td><strong>修改寄存器的值</strong></td><td><code>set $&lt;寄存器名&gt; = &lt;修改的值&gt;</code></td></tr><tr><td><strong>退出调试</strong></td><td><code>q</code></td></tr><tr><td><strong>单步执行，遇到函数会进入</strong></td><td><code>s</code></td></tr><tr><td><strong>将当前程序执行流跳转到指定行或地址</strong></td><td><code>j</code></td></tr><tr><td><strong>打印变量或寄存器值</strong></td><td><code>p</code></td></tr><tr><td><strong>运行到指定行停下来</strong></td><td><code>u</code></td></tr></tbody></table>]]></content>
-    
-    
-      
-      
-    <summary type="html">&lt;table&gt;
-&lt;thead&gt;
-&lt;tr&gt;
-&lt;th&gt;操作&lt;/th&gt;
-&lt;th&gt;指令&lt;/th&gt;
-&lt;/tr&gt;
-&lt;/thead&gt;
-&lt;tbody&gt;&lt;tr&gt;
-&lt;td&gt;&lt;strong&gt;调试程序&lt;/strong&gt;&lt;/td&gt;
-&lt;td&gt;&lt;code&gt;gdb &amp;lt;文件名&amp;gt;&lt;/code&gt;&lt;/td&gt;</summary>
-      
-    
-    
-    
-    
-  </entry>
-  
-  <entry>
-    <title></title>
-    <link href="https://4ss1du0us.github.io/2023/03/17/CTF%20-%20Reverse/IDA/%E6%B1%87%E7%BC%96%E7%9F%A5%E8%AF%86/"/>
-    <id>https://4ss1du0us.github.io/2023/03/17/CTF%20-%20Reverse/IDA/%E6%B1%87%E7%BC%96%E7%9F%A5%E8%AF%86/</id>
-    <published>2023-03-17T14:24:29.385Z</published>
-    <updated>2023-03-08T13:25:22.000Z</updated>
-    
-    <content type="html"><![CDATA[<h2 id="在字符串最后，用“0”表示结束"><a href="#在字符串最后，用“0”表示结束" class="headerlink" title="在字符串最后，用“0”表示结束"></a>在字符串最后，用“0”表示结束</h2><ul><li><strong>Format 的内容：”Welcome The System\nPlease Input Key:”</strong><pre class="line-numbers language-c" data-language="c"><code class="language-c"><span class="token punctuation">.</span>rdata<span class="token operator">:</span><span class="token number">00402100</span> <span class="token number">57</span> <span class="token number">65</span> <span class="token number">6</span>C <span class="token number">63</span> <span class="token number">6F</span> <span class="token number">6</span>D <span class="token number">65</span> <span class="token number">20</span> <span class="token number">54</span> <span class="token number">68</span><span class="token operator">+</span> Format db <span class="token char">'Welcome The System'</span> <span class="token punctuation">,</span> <span class="token number">0</span>Ah <span class="token punctuation">;</span>     DATA XREF<span class="token operator">:</span> _main<span class="token operator">+</span><span class="token number">28</span>↑o<span class="token punctuation">.</span>rdata<span class="token operator">:</span><span class="token number">00402100</span> <span class="token number">65</span> <span class="token number">20</span> <span class="token number">53</span> <span class="token number">79</span> <span class="token number">73</span> <span class="token number">74</span> <span class="token number">65</span> <span class="token number">6</span>D <span class="token number">0</span>A <span class="token number">50</span><span class="token operator">+</span> db <span class="token char">'Please Input Key:'</span> <span class="token punctuation">,</span> <span class="token number">0</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre></li><li><strong>byte_402150 的内容：<code>2a49f69c38395cde96d6de96d6f4e025484954d6195448def6e2dad67786e21d5adae6</code><br>byte_402151 的内容：<code>a49f69c38395cde96d6de96d6f4e025484954d6195448def6e2dad67786e21d5adae6</code></strong><pre class="line-numbers language-c" data-language="c"><code class="language-c"><span class="token punctuation">.</span>rdata<span class="token operator">:</span><span class="token number">00402150</span> <span class="token punctuation">;</span> <span class="token keyword">char</span> byte_402150<span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">.</span>rdata<span class="token operator">:</span><span class="token number">00402150</span> <span class="token number">32</span> byte_402150 db <span class="token char">'2'</span> <span class="token punctuation">;</span>      DATA XREF<span class="token operator">:</span> sub_401090<span class="token operator">:</span>loc_4010CC↑r<span class="token punctuation">.</span>rdata<span class="token operator">:</span><span class="token number">00402151</span> <span class="token punctuation">;</span> <span class="token keyword">char</span> byte_402151<span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">.</span>rdata<span class="token operator">:</span><span class="token number">00402151</span> <span class="token number">61</span> byte_402151 db <span class="token char">'a'</span> <span class="token punctuation">;</span>      DATA XREF<span class="token operator">:</span> sub_401090<span class="token operator">:</span>loc_4010E9↑r<span class="token punctuation">.</span>rdata<span class="token operator">:</span><span class="token number">00402152</span> <span class="token number">34</span> <span class="token number">39</span> <span class="token number">66</span> <span class="token number">36</span> <span class="token number">39</span> <span class="token number">63</span> <span class="token number">33</span> <span class="token number">38</span> <span class="token number">33</span> <span class="token number">39</span><span class="token operator">+</span>a49f69c38395cde db '<span class="token number">49f</span><span class="token number">69</span>c38395cde96d6de96d6f4e025484954d6195448def6e2dad67786e21d5adae6' <span class="token punctuation">,</span> <span class="token number">0</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre></li></ul><h2 id="定义字符串时，用-dup-开辟未初始化的空间"><a href="#定义字符串时，用-dup-开辟未初始化的空间" class="headerlink" title="定义字符串时，用 dup(?) 开辟未初始化的空间"></a>定义字符串时，用 <code>dup(?)</code> 开辟未初始化的空间</h2><p>![[CTF - Reverse_IDA——汇编知识1.png]]</p><ul><li><strong><code>str2 db 68h dup(?)</code> 是指开辟一个 68h 长度的空间，且不进行初始化</strong></li></ul>]]></content>
-    
-    
-      
-      
-    <summary type="html">&lt;h2 id=&quot;在字符串最后，用“0”表示结束&quot;&gt;&lt;a href=&quot;#在字符串最后，用“0”表示结束&quot; class=&quot;headerlink&quot; title=&quot;在字符串最后，用“0”表示结束&quot;&gt;&lt;/a&gt;在字符串最后，用“0”表示结束&lt;/h2&gt;&lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;Form</summary>
-      
     
     
     

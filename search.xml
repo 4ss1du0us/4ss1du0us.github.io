@@ -4,6 +4,38 @@
   
     
     <entry>
+      <title>test</title>
+      <link href="/2023/03/17/test/"/>
+      <url>/2023/03/17/test/</url>
+      
+        <content type="html"><![CDATA[]]></content>
+      
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>test</title>
+      <link href="/2023/03/17/CTF%20-%20Misc/GIF%E5%9B%BE%E7%89%87%E6%8B%86%E5%88%86&amp;%E6%8B%BC%E5%9B%BE/"/>
+      <url>/2023/03/17/CTF%20-%20Misc/GIF%E5%9B%BE%E7%89%87%E6%8B%86%E5%88%86&amp;%E6%8B%BC%E5%9B%BE/</url>
+      
+        <content type="html"><![CDATA[<h2 id="Windows"><a href="#Windows" class="headerlink" title="Windows"></a>Windows</h2><hr><h3 id="拆分并直接展示"><a href="#拆分并直接展示" class="headerlink" title="拆分并直接展示"></a>拆分并直接展示</h3><ul><li>在线网站：<a href="https://tu.sioe.cn/gj/fenjie/">GIF动态图片分解，多帧动态图分解成多张静态图片</a></li></ul><h3 id="拆分"><a href="#拆分" class="headerlink" title="拆分"></a>拆分</h3><ul><li>在线网站：<a href="https://uutool.cn/gif2img/">在线GIF图片帧拆分工具 - UU在线工具</a></li></ul><h3 id="ImageMagick"><a href="#ImageMagick" class="headerlink" title="ImageMagick"></a>ImageMagick</h3><ul><li>下载：<a href="https://imagemagick.org/script/download.php#windows">图像魔术 – 下载</a></li><li>使用：<ol><li>到需要拼接的图片目录下，调用 <code>cmd</code></li><li>使用命令：<code>magick montage *.png -tile &lt;10x10&gt; -geometry +0+0 flag.png</code> 【10x10表示拼成横竖10张的图】</li></ol></li></ul><hr><h2 id="Linux"><a href="#Linux" class="headerlink" title="Linux"></a>Linux</h2><hr><h3 id="convert"><a href="#convert" class="headerlink" title="convert"></a>convert</h3><ul><li>使用：<code>convert &lt;.gif文件名&gt; &lt;输出路径/flag.png&gt;</code></li></ul><h3 id="montage"><a href="#montage" class="headerlink" title="montage"></a>montage</h3><ul><li>下载安装：<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">sudo</span> <span class="token function">apt-get</span> <span class="token function">install</span> graphicsmagick-imagemagick-compat<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre></li><li>使用：<code>montage *.png -tile &lt;10x10&gt; -geometry +0+0 flag.png</code> 【10x10表示拼成横竖10张的图】</li></ul><h3 id="gaps"><a href="#gaps" class="headerlink" title="gaps"></a>gaps</h3><ul><li>下载安装：<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">git</span> clone https://github.com/nemanja-m/gaps.git<span class="token builtin class-name">cd</span> gaps  pip <span class="token function">install</span> <span class="token parameter variable">-r</span> requirements.txt  <span class="token function">sudo</span> <span class="token function">apt-get</span> <span class="token function">install</span> python-tk  pip <span class="token function">install</span> <span class="token parameter variable">-e</span> <span class="token builtin class-name">.</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre></li></ul><hr>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> MISC </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title></title>
       <link href="/2023/03/17/%E4%BE%BF%E6%8D%B7%E7%AE%97%E6%B3%95/%E8%B5%B0%E8%BF%B7%E5%AE%AB/"/>
       <url>/2023/03/17/%E4%BE%BF%E6%8D%B7%E7%AE%97%E6%B3%95/%E8%B5%B0%E8%BF%B7%E5%AE%AB/</url>
@@ -308,19 +340,6 @@
       <url>/2023/03/17/CTF%20-%20Misc/%E9%9F%B3%E9%A2%91%E9%9A%90%E5%86%99/</url>
       
         <content type="html"><![CDATA[<h2 id="wav-隐写"><a href="#wav-隐写" class="headerlink" title="wav 隐写"></a>wav 隐写</h2><blockquote><p>音频分析软件 Audacity 下载地址：<a href="https://www.audacityteam.org/">Audacity ® | Free</a></p><p>音频隐写软件 DeepSound 下载地址：<a href="http://www.jpinsoft.net/deepsound/download.aspx">DeepSound -&gt; Download</a></p></blockquote>]]></content>
-      
-      
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title></title>
-      <link href="/2023/03/17/CTF%20-%20Misc/GIF%E5%9B%BE%E7%89%87%E6%8B%86%E5%88%86&amp;%E6%8B%BC%E5%9B%BE/"/>
-      <url>/2023/03/17/CTF%20-%20Misc/GIF%E5%9B%BE%E7%89%87%E6%8B%86%E5%88%86&amp;%E6%8B%BC%E5%9B%BE/</url>
-      
-        <content type="html"><![CDATA[<h2 id="Windows"><a href="#Windows" class="headerlink" title="Windows"></a>Windows</h2><hr><h3 id="拆分并直接展示"><a href="#拆分并直接展示" class="headerlink" title="拆分并直接展示"></a>拆分并直接展示</h3><ul><li>在线网站：<a href="https://tu.sioe.cn/gj/fenjie/">GIF动态图片分解，多帧动态图分解成多张静态图片</a></li></ul><h3 id="拆分"><a href="#拆分" class="headerlink" title="拆分"></a>拆分</h3><ul><li>在线网站：<a href="https://uutool.cn/gif2img/">在线GIF图片帧拆分工具 - UU在线工具</a></li></ul><h3 id="ImageMagick"><a href="#ImageMagick" class="headerlink" title="ImageMagick"></a>ImageMagick</h3><ul><li>下载：<a href="https://imagemagick.org/script/download.php#windows">图像魔术 – 下载</a></li><li>使用：<ol><li>到需要拼接的图片目录下，调用 <code>cmd</code></li><li>使用命令：<code>magick montage *.png -tile &lt;10x10&gt; -geometry +0+0 flag.png</code> 【10x10表示拼成横竖10张的图】</li></ol></li></ul><hr><h2 id="Linux"><a href="#Linux" class="headerlink" title="Linux"></a>Linux</h2><hr><h3 id="convert"><a href="#convert" class="headerlink" title="convert"></a>convert</h3><ul><li>使用：<code>convert &lt;.gif文件名&gt; &lt;输出路径/flag.png&gt;</code></li></ul><h3 id="montage"><a href="#montage" class="headerlink" title="montage"></a>montage</h3><ul><li>下载安装：<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">sudo</span> <span class="token function">apt-get</span> <span class="token function">install</span> graphicsmagick-imagemagick-compat<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre></li><li>使用：<code>montage *.png -tile &lt;10x10&gt; -geometry +0+0 flag.png</code> 【10x10表示拼成横竖10张的图】</li></ul><h3 id="gaps"><a href="#gaps" class="headerlink" title="gaps"></a>gaps</h3><ul><li>下载安装：<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">git</span> clone https://github.com/nemanja-m/gaps.git<span class="token builtin class-name">cd</span> gaps  pip <span class="token function">install</span> <span class="token parameter variable">-r</span> requirements.txt  <span class="token function">sudo</span> <span class="token function">apt-get</span> <span class="token function">install</span> python-tk  pip <span class="token function">install</span> <span class="token parameter variable">-e</span> <span class="token builtin class-name">.</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre></li></ul><hr>]]></content>
       
       
       
