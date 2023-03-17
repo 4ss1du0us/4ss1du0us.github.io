@@ -6,7 +6,7 @@
   <link href="https://4ss1du0us.github.io/atom.xml" rel="self"/>
   
   <link href="https://4ss1du0us.github.io/"/>
-  <updated>2023-03-13T11:36:40.787Z</updated>
+  <updated>2023-03-17T14:12:33.301Z</updated>
   <id>https://4ss1du0us.github.io/</id>
   
   <author>
@@ -15,6 +15,31 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>攻防世界-glance-50</title>
+    <link href="https://4ss1du0us.github.io/2023/03/17/%E6%94%BB%E9%98%B2%E4%B8%96%E7%95%8C-glance-50/"/>
+    <id>https://4ss1du0us.github.io/2023/03/17/%E6%94%BB%E9%98%B2%E4%B8%96%E7%95%8C-glance-50/</id>
+    <published>2023-03-17T14:09:15.000Z</published>
+    <updated>2023-03-17T14:12:33.301Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="收获"><a href="#收获" class="headerlink" title="收获"></a>收获</h2><ul><li><p>熟悉 &#x3D;&#x3D;gif 图片的拆分和拼接&#x3D;&#x3D;</p></li><li><p>&#x3D;&#x3D;拆分网站：<a href="https://tu.sioe.cn/gj/fenjie/">GIF动态图片分解，多帧动态图分解成多张静态图片</a> 可以直接将帧拼接起来，方便直接看到每一帧拼接起来的原图&#x3D;&#x3D;</p></li></ul><hr><p><a href="https://adworld.xctf.org.cn/media/file/task/9266eadf353d4ada94ededaeb96d0c50.gif">攻防世界-glance-50</a></p><hr><h2 id="思路一"><a href="#思路一" class="headerlink" title="思路一"></a>思路一</h2><ol><li><p>得到一张 gif 动态图片：<br><img src="https://s2.loli.net/2023/03/17/4mTQAfp2ZqFOUwK.png" alt="攻防世界-glance-50 1"></p></li><li><p>由于图画很窄，尝试修改宽度无果，在 Ubuntu 中分析也没有发现</p></li><li><p>根据以往经验，gif 大概率是需要拆分的，于是将 gif 文件拆分成帧图片：<br><a href="https://tu.sioe.cn/gj/fenjie/">GIF动态图片分解，多帧动态图分解成多张静态图片</a><br>![[攻防世界-glance-50 2.png]]<br>使用这个网站可以直接将拆分后的图片集中展示出来，可以直接得到 flag</p></li><li><p>这个题其实就是将藏有 flag 的图片拆分为一段一段的，然后将每一个片段作为一帧合成 gif 动态图。所以直接将 gif 拆分为帧后，再拼接起来即可</p></li></ol><hr><h2 id="思路二"><a href="#思路二" class="headerlink" title="思路二"></a>思路二</h2><ol><li><p>使用网站分离得到帧图片：<br>![[攻防世界-glance-50 3.png]]</p></li><li><p>在 Win 下安装 <code>ImageMagick</code> ：<a href="https://imagemagick.org/script/download.php#windows">图像魔术 – 下载</a><br>在帧图片文件夹下打开 cmd，执行 <code>magick montage *.png -tile 201x1 -geometry +0+0 flag.png</code><br>得到一张拼接的图片 flag.png：<br>![[攻防世界-glance-50 4.png]]<br>根据图片内容获得 flag</p></li></ol><hr><h2 id="结果：TWCTF-Bliss-by-Charles-O’Rear"><a href="#结果：TWCTF-Bliss-by-Charles-O’Rear" class="headerlink" title="结果：TWCTF{Bliss by Charles O’Rear}"></a>结果：TWCTF{Bliss by Charles O’Rear}</h2>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;h2 id=&quot;收获&quot;&gt;&lt;a href=&quot;#收获&quot; class=&quot;headerlink&quot; title=&quot;收获&quot;&gt;&lt;/a&gt;收获&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;熟悉 &amp;#x3D;&amp;#x3D;gif 图片的拆分和拼接&amp;#x3D;&amp;#x3D;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&amp;#x3</summary>
+      
+    
+    
+    
+    
+    <category term="MISC" scheme="https://4ss1du0us.github.io/tags/MISC/"/>
+    
+  </entry>
   
   <entry>
     <title>Pwntools</title>

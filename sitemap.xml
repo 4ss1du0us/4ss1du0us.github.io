@@ -2,6 +2,15 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://4ss1du0us.github.io/2023/03/17/%E6%94%BB%E9%98%B2%E4%B8%96%E7%95%8C-glance-50/</loc>
+    
+    <lastmod>2023-03-17</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://4ss1du0us.github.io/2023/03/13/%E6%94%BB%E9%98%B2%E4%B8%96%E7%95%8C-gametime/</loc>
     
     <lastmod>2023-03-17</lastmod>
@@ -109,6 +118,13 @@
   
   <url>
     <loc>https://4ss1du0us.github.io/tags/REVERSE/</loc>
+    <lastmod>2023-03-17</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://4ss1du0us.github.io/tags/MISC/</loc>
     <lastmod>2023-03-17</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
