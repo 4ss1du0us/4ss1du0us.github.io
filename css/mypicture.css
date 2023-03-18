@@ -1,0 +1,13 @@
+/* 效果一：彩带 */
+/*
+.card-info-avatar:hover {
+    background: url(https://cdn.jsdelivr.net/gh/rigodlee/BLOGCDN/img/H3342af90d24b4d62b9bbfec9688ccc25M.gif);
+  }
+*/
+
+  /* 效果二：花 */
+  
+  .card-info-avatar:hover {
+    background: url(https://cdn.jsdelivr.net/gh/rigodlee/BLOGCDN/img/20200530181856.gif);
+  }
+  
