@@ -20,5 +20,5 @@ setInterval(function () {
     var str = tow(hour) + '<span class="time">小时</span>'
         + tow(minute) + '<span class="time">分钟</span>'
         + tow(second) + '<span class="time">秒</span>';
-    oSpan.innerHTML = "您已浏览博客" + str;
+    oSpan.innerHTML = '<font style=color:#DC143C>' + "您已浏览博客" + str ;
 }, 1000)
