@@ -3045,6 +3045,14 @@ h1.page-title + .tag-cloud-list {
   -webkit-order: 1;
   order: 1;
 }
+.page .card-webinfo {
+  -webkit-box-ordinal-group: 3;
+  -moz-box-ordinal-group: 3;
+  -o-box-ordinal-group: 3;
+  -ms-flex-order: 3;
+  -webkit-order: 3;
+  order: 3;
+}
 @-moz-keyframes more-btn-move {
   0%, 100% {
     -webkit-transform: translateX(0);
