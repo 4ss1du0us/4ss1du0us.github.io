@@ -9,7 +9,7 @@ $(document).ready(function(e){
 
 //本站运行时间
 function show_date_time(){
-$('.framework-info').html('小破站已运行<span id="span_dt_dt" style="color: #ef4136;"></span>');
+$('.framework-info').html('小站已运行<span id="span_dt_dt" style="color: #ef4136;"></span>');
 window.setTimeout("show_date_time()", 1000);
 BirthDay=new Date("3/14/2023 0:0:0");
 today=new Date();
