@@ -1,7 +1,9 @@
-https://4ss1du0us.github.io/2023/03/17/%E5%8A%A0%E5%AF%86%E7%AE%97%E6%B3%95%E7%9A%84%E5%87%BD%E6%95%B0%E7%89%B9%E5%BE%81/
-https://4ss1du0us.github.io/2023/03/17/%E6%B1%87%E7%BC%96%E7%9F%A5%E8%AF%86/
-https://4ss1du0us.github.io/2023/03/17/IDA%E5%91%BD%E5%90%8D%E5%89%8D%E7%BC%80%E7%9A%84%E5%90%AB%E4%B9%89/
-https://4ss1du0us.github.io/2023/03/17/IDA%E5%BF%AB%E6%8D%B7%E9%94%AE/
+https://4ss1du0us.github.io/2023/03/19/CTF%20-%20Reverse/IDA/%E4%BC%AA%E4%BB%A3%E7%A0%81%E4%B8%AD%E7%9A%84%E6%95%B0%E6%8D%AE%E5%92%8C%E7%B1%BB%E5%9E%8B/
+https://4ss1du0us.github.io/2023/03/19/CTF%20-%20Reverse/IDA/%E4%BC%AA%E4%BB%A3%E7%A0%81%E4%B8%AD%E7%9A%84%E5%87%BD%E6%95%B0/
+https://4ss1du0us.github.io/2023/03/17/CTF%20-%20Reverse/IDA/%E5%8A%A0%E5%AF%86%E7%AE%97%E6%B3%95%E7%9A%84%E5%87%BD%E6%95%B0%E7%89%B9%E5%BE%81/
+https://4ss1du0us.github.io/2023/03/17/CTF%20-%20Reverse/IDA/%E6%B1%87%E7%BC%96%E7%9F%A5%E8%AF%86/
+https://4ss1du0us.github.io/2023/03/17/CTF%20-%20Reverse/IDA/IDA%E5%91%BD%E5%90%8D%E5%89%8D%E7%BC%80%E7%9A%84%E5%90%AB%E4%B9%89/
+https://4ss1du0us.github.io/2023/03/17/CTF%20-%20Reverse/IDA/IDA%E5%BF%AB%E6%8D%B7%E9%94%AE/
 https://4ss1du0us.github.io/link/index.html
 https://4ss1du0us.github.io/tags/index.html
 https://4ss1du0us.github.io/categories/index.html
