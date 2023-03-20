@@ -161,7 +161,10 @@
       }
     }
     detectApple()
-    })(window)</script><link rel="stylesheet" href="/css/custom.css"><link rel="stylesheet" href="/css/half-lucency.css"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" media="print" onload="this.media='all'"><!-- hexo injector head_end start --><link rel="stylesheet" href="https://unpkg.zhimg.com/hexo-butterfly-wowjs/lib/animate.min.css" media="print" onload="this.media='all'"><!-- hexo injector head_end end --><meta name="generator" content="Hexo 6.3.0"><link rel="alternate" href="/atom.xml" title="4ss1du0us's Blog" type="application/atom+xml">
+    })(window)</script><link rel="stylesheet" href="/css/custom.css"><link rel="stylesheet" href="/css/half-lucency.css"><link rel="stylesheet" href="/css/custom.css"><link rel="stylesheet" href="/css/universe.css"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" media="print" onload="this.media='all'"><!-- hexo injector head_end start --><link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Zfour/Butterfly-double-row-display@1.00/cardlistpost.min.css"/>
+<style>#recent-posts > .recent-post-item >.recent-post-info > .article-meta-wrap > .tags:before {content:"\A";
+  white-space: pre;}#recent-posts > .recent-post-item >.recent-post-info > .article-meta-wrap > .tags > .article-meta__separator{display:none}</style>
+<link rel="stylesheet" href="https://npm.elemecdn.com/hexo-butterfly-tag-plugins-plus@latest/lib/assets/font-awesome-animation.min.css" media="defer" onload="this.media='all'"><link rel="stylesheet" href="https://npm.elemecdn.com/hexo-butterfly-tag-plugins-plus@latest/lib/tag_plugins.css" media="defer" onload="this.media='all'"><script src="https://npm.elemecdn.com/hexo-butterfly-tag-plugins-plus@latest/lib/assets/carousel-touch.js"></script><link rel="stylesheet" href="https://unpkg.zhimg.com/hexo-butterfly-wowjs/lib/animate.min.css" media="print" onload="this.media='all'"><!-- hexo injector head_end end --><meta name="generator" content="Hexo 6.3.0"><link rel="alternate" href="/atom.xml" title="4ss1du0us's Blog" type="application/atom+xml">
 </head><body><div id="loading-box"><div class="loading-left-bg"></div><div class="loading-right-bg"></div><div class="spinner-box"><div class="configure-border-1"><div class="configure-core"></div></div><div class="configure-border-2"><div class="configure-core"></div></div><div class="loading-word">加载中...</div></div></div><script>const preloader = {
   endLoading: () => {
     document.body.style.overflow = 'auto';
@@ -219,7 +222,7 @@ if (false) {
 <ul>
 <li><h3 id="RELRO（Relocation-Read-Only，堆栈地址随机化）：用于加强对-binary-数据段的保护的技术"><a href="#RELRO（Relocation-Read-Only，堆栈地址随机化）：用于加强对-binary-数据段的保护的技术" class="headerlink" title="RELRO（Relocation Read-Only，堆栈地址随机化）：用于加强对 binary 数据段的保护的技术"></a>RELRO（Relocation Read-Only，堆栈地址随机化）：用于加强对 binary 数据段的保护的技术</h3><ol>
 <li>主要针对 GOT 改写的攻击方式：<ul>
-<li><strong>Partial RELRO（部分开启，GOT 可写）</strong>，易受到攻击，例如攻击者可以 atoi.got 为 system.plt，进而输入&#x2F;bin&#x2F;sh\x00获得shell</li>
+<li><strong>Partial RELRO（部分开启，GOT 可写）</strong>，易受到攻击，例如攻击者可以 atoi.got 为 system.plt，进而输入/bin/sh\x00获得shell</li>
 <li><strong>Full RELRO（全部开启，GOT 不可写）</strong>，使整个 GOT 只读，从而无法被覆盖，意味着我们无法修改 GOT表。但这样会大大增加程序的启动时间，因为程序在启动之前需要解析所有的符号</li>
 </ul>
 </li>
@@ -230,7 +233,7 @@ if (false) {
 <ul>
 <li><h3 id="Stack（canary-金丝雀，一种用来防护栈溢出的保护机制）：栈溢出检查"><a href="#Stack（canary-金丝雀，一种用来防护栈溢出的保护机制）：栈溢出检查" class="headerlink" title="Stack（canary 金丝雀，一种用来防护栈溢出的保护机制）：栈溢出检查"></a>Stack（canary 金丝雀，一种用来防护栈溢出的保护机制）：栈溢出检查</h3><ol>
 <li>Canary found 表示开启了 Canary 保护。不能直接用溢出的方法覆盖栈中返回地址</li>
-<li>函数每一次执行时，在栈上随机产生一个Canary值【在函数的入口处，先从 fs&#x2F;gs 寄存器中取出一个4字节（eax）或者8字节（rax）的值存到栈上】，当函数结束时，会检查这个栈上的值是否和存进去的值一致</li>
+<li>函数每一次执行时，在栈上随机产生一个Canary值【在函数的入口处，先从 fs/gs 寄存器中取出一个4字节（eax）或者8字节（rax）的值存到栈上】，当函数结束时，会检查这个栈上的值是否和存进去的值一致</li>
 <li>如果不合法，就会停止程序运行，作用相当于校验信息的 cookie</li>
 <li>攻击者在覆盖返回地址的时候往往也会将 Canary 信息给覆盖掉，导致栈保护检查失败而阻止shellcode的执行。通过改写指针与局部变量、leak canary、overwrite canary的方法来绕过</li>
 </ol>
@@ -256,9 +259,9 @@ if (false) {
 <ul>
 <li><h3 id="RWX"><a href="#RWX" class="headerlink" title="RWX"></a>RWX</h3><ol>
 <li>Linux 的权限不是很细致，只有RWX三种：<ul>
-<li>**r (Read，读取)**：对文件而言，具有读取文件内容的权限；对目录来说，具有浏览目录的权限</li>
-<li>**w (Write，写入)**：对文件而言，具有新增、修改、删除文件内容的权限；对目录来说，具有新建、删除、修改、移动目录内文件的权限</li>
-<li>**x (eXecute，执行)**：对文件而言，具有执行文件的权限；对目录而言该用户具有进入目录的权限</li>
+<li><strong>r (Read，读取)</strong>：对文件而言，具有读取文件内容的权限；对目录来说，具有浏览目录的权限</li>
+<li><strong>w (Write，写入)</strong>：对文件而言，具有新增、修改、删除文件内容的权限；对目录来说，具有新建、删除、修改、移动目录内文件的权限</li>
+<li><strong>x (eXecute，执行)</strong>：对文件而言，具有执行文件的权限；对目录而言该用户具有进入目录的权限</li>
 </ul>
 </li>
 <li>目录的只读访问不允许使用 <code>cd</code> 进入目录，必须要有执行的权限才能进入</li>
@@ -312,7 +315,7 @@ else {
   function loadOtherComment () {
     loadLivere()
   }
-}</script></div><script src="https://cdn.bootcss.com/jquery/3.4.1/jquery.min.js"></script><script src="/js/sakura.js"></script><script src="https://cdn.bootcss.com/canvas-nest.js/1.0.0/canvas-nest.min.js"></script><script src="https://cdn.jsdelivr.net/gh/xiabo2/CDN@latest/fish.js"></script><script src="/js/timing.js"></script><script src="/js/footer_beautification.js"></script><script defer="defer" id="fluttering_ribbon" mobile="true" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/dist/canvas-fluttering-ribbon.min.js"></script><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/dist/activate-power-mode.min.js"></script><script>POWERMODE.colorful = true;
+}</script></div><script src="https://cdn.bootcss.com/jquery/3.4.1/jquery.min.js"></script><script defer src="/js/cursor.js"></script><script src="/js/sakura.js"></script><script src="https://cdn.bootcss.com/canvas-nest.js/1.0.0/canvas-nest.min.js"></script><script src="https://cdn.jsdelivr.net/gh/xiabo2/CDN@latest/fish.js"></script><script src="/js/timing.js"></script><script src="/js/footer_beautification.js"></script><canvas id="universe"></canvas><script defer src="/js/universe.js"></script><script async src="/js/title.js"></script><script defer="defer" id="fluttering_ribbon" mobile="true" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/dist/canvas-fluttering-ribbon.min.js"></script><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/dist/activate-power-mode.min.js"></script><script>POWERMODE.colorful = true;
 POWERMODE.shake = false;
 POWERMODE.mobile = true;
 document.body.addEventListener('input', POWERMODE);
@@ -332,7 +335,7 @@ for(var i = 0;i<arr.length;i++){
     arr[i].setAttribute('data-wow-delay', '');
     arr[i].setAttribute('data-wow-offset', '');
     arr[i].setAttribute('data-wow-iteration', '');
-  }</script></div><script defer="defer" src="https://cdn.jsdelivr.net/gh/graingert/wow@1.3.0/dist/wow.min.js"></script><script defer="defer" src="/js/wow_init.js"></script></div><div id="local-search"><div class="search-dialog"><nav class="search-nav"><span class="search-dialog-title">搜索</span><span id="loading-status"></span><button class="search-close-button"><i class="fas fa-times"></i></button></nav><div class="is-center" id="loading-database"><i class="fas fa-spinner fa-pulse"></i><span>  数据库加载中</span></div><div class="search-wrap"><div id="local-search-input"><div class="local-search-box"><input class="local-search-box--input" placeholder="搜索文章" type="text"/></div></div><hr/><div id="local-search-results"></div></div></div><div id="search-mask"></div><script src="/js/search/local-search.js"></script></div><!-- hexo injector body_end start --><div class="js-pjax"><script async="async">var arr = document.getElementsByClassName('recent-post-item');
+  }</script></div><script defer="defer" src="https://cdn.jsdelivr.net/gh/graingert/wow@1.3.0/dist/wow.min.js"></script><script defer="defer" src="/js/wow_init.js"></script></div><div id="local-search"><div class="search-dialog"><nav class="search-nav"><span class="search-dialog-title">搜索</span><span id="loading-status"></span><button class="search-close-button"><i class="fas fa-times"></i></button></nav><div class="is-center" id="loading-database"><i class="fas fa-spinner fa-pulse"></i><span>  数据库加载中</span></div><div class="search-wrap"><div id="local-search-input"><div class="local-search-box"><input class="local-search-box--input" placeholder="搜索文章" type="text"/></div></div><hr/><div id="local-search-results"></div></div></div><div id="search-mask"></div><script src="/js/search/local-search.js"></script></div><!-- hexo injector body_end start --><script async src="//at.alicdn.com/t/font_2032782_8d5kxvn09md.js"></script><div class="js-pjax"><script async="async">var arr = document.getElementsByClassName('recent-post-item');
 for(var i = 0;i<arr.length;i++){
     arr[i].classList.add('wow');
     arr[i].classList.add('animate__fadeInLeft');

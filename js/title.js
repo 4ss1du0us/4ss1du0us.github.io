@@ -1,17 +1,17 @@
-// 浏览器搞笑标题
-var OriginTitle = document.title;
+//动态标题
+var OriginTitile = document.title;
 var titleTime;
 document.addEventListener('visibilitychange', function () {
-    if (document.hidden) {
-        document.querySelector('[rel="icon"]').setAttribute('href', "/img/favicon.ico");
-        document.title = '(っ °Д °;)っ 访问的页面不存在了';
-        clearTimeout(titleTime);
-    }
-    else {
-        document.querySelector('[rel="icon"]').setAttribute('href', "/img/favicon.ico");
-        document.title = '(●\'◡\'●)噫又好啦 ~' + OriginTitle;
-        titleTime = setTimeout(function () {
-            document.title = OriginTitle;
-        }, 2000);
-    }
+  if (document.hidden) {
+    //离开当前页面时标签显示内容
+    document.title = '👀跑哪里去了~';
+    clearTimeout(titleTime);
+  } else {
+    //返回当前页面时标签显示内容
+    document.title = '🐖抓到你啦～';
+    //两秒后变回正常标题
+    titleTime = setTimeout(function () {
+      document.title = OriginTitile;
+    }, 2000);
+  }
 });
