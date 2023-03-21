@@ -1,4 +1,4 @@
-/* 文章页H1-H6图标样式效果 */
+/* ------------------- 文章页H1-H6图标样式效果 ------------------------ */
 h1::before, h2::before, h3::before, h4::before, h5::before, h6::before {
     -webkit-animation: ccc 1.6s linear infinite ;
     animation: ccc 1.6s linear infinite ;
@@ -23,7 +23,7 @@ h1::before, h2::before, h3::before, h4::before, h5::before, h6::before {
         transform: rotate(-1turn)
     }
 }
-/* 风车颜色 */
+/* ------------------------------ 风车颜色 -------------------------- */
 #content-inner.layout h1::before {
     color: #ef50a8 ;
     margin-left: -1.55rem;
@@ -61,7 +61,7 @@ h1::before, h2::before, h3::before, h4::before, h5::before, h6::before {
     margin-top: 0.0rem;
 }
 
-/* 鼠标碰到风车减速 */
+/* ------------------------ 鼠标碰到风车减速 ------------------------ */
 #content-inner.layout h1:hover, #content-inner.layout h2:hover, #content-inner.layout h3:hover, #content-inner.layout h4:hover, #content-inner.layout h5:hover, #content-inner.layout h6:hover {
     color: #49b1f5 ;
 }
@@ -71,7 +71,7 @@ h1::before, h2::before, h3::before, h4::before, h5::before, h6::before {
     animation: ccc 3.2s linear infinite ;
 }
 
-/* 鼠标样式 */
+/* ----------------------------- 鼠标样式 ---------------------------- */
 #cursor {
     position: fixed;
     width: 18px;
@@ -108,7 +108,7 @@ h1::before, h2::before, h3::before, h4::before, h5::before, h6::before {
     -o-transform: scale(0.5);
   }
 
-/* 头像挂件 */
+/* --------------------------- 头像挂件 ----------------------------- */
 .card-info-avatar .author-status-box {
     position: absolute;
     bottom: 0;
@@ -159,7 +159,7 @@ h1::before, h2::before, h3::before, h4::before, h5::before, h6::before {
     position: relative;
   }
 
-/* 头像呼吸灯 */
+/* --------------------------- 头像呼吸灯 ------------------------ */
 [data-theme="light"] .avatar-img {
     animation: huxi_light 4s ease-in-out infinite;
   }
@@ -189,7 +189,7 @@ h1::before, h2::before, h3::before, h4::before, h5::before, h6::before {
     }
   }
 
-/* 配合双栏显示，翻页按钮居中 */
+/* ------------------------ 配合双栏显示，翻页按钮居中 --------------------- */
 #pagination {
     width: 100%;
     margin: auto;
@@ -212,7 +212,7 @@ h1::before, h2::before, h3::before, h4::before, h5::before, h6::before {
     left: -125px;
   }
 
-/* 圆角 */
+/* --------------------------------- 圆角 ------------------------------- */
 :root {
     --trans-light: rgba(255, 255, 255, 0.88);
     --trans-dark: rgba(25, 25, 25, 0.88);
@@ -312,9 +312,104 @@ h1::before, h2::before, h3::before, h4::before, h5::before, h6::before {
   }
 }
 
-/* 信息卡片彩带 */
+/* ------------------------ 信息卡片彩带 ---------------------------- */
 .author_top:hover {
   background: url(https://tuchuang.voooe.cn/images/2023/01/02/snow.gif);
   background-size: cover;
 }
 
+/* ------------------------ 文章页波浪css -------------------------- */
+.main-hero-waves-area {
+  width: 100%;
+  position: absolute;
+  left: 0;
+  bottom: -11px;
+  z-index: 5;
+}
+.waves-area .waves-svg {
+  width: 100%;
+  height: 5rem;
+}
+/* Animation */
+
+.parallax > use {
+  animation: move-forever 25s cubic-bezier(0.55, 0.5, 0.45, 0.5) infinite;
+}
+.parallax > use:nth-child(1) {
+  animation-delay: -2s;
+  animation-duration: 7s;
+  fill: #f7f9febd;
+}
+.parallax > use:nth-child(2) {
+  animation-delay: -3s;
+  animation-duration: 10s;
+  fill: #f7f9fe82;
+}
+.parallax > use:nth-child(3) {
+  animation-delay: -4s;
+  animation-duration: 13s;
+  fill: #f7f9fe36;
+}
+.parallax > use:nth-child(4) {
+  animation-delay: -5s;
+  animation-duration: 20s;
+  fill: #f7f9fe;
+}
+/* 黑色模式背景 */
+[data-theme="dark"] .parallax > use:nth-child(1) {
+  animation-delay: -2s;
+  animation-duration: 7s;
+  fill: #18171dc8;
+}
+[data-theme="dark"] .parallax > use:nth-child(2) {
+  animation-delay: -3s;
+  animation-duration: 10s;
+  fill: #18171d80;
+}
+[data-theme="dark"] .parallax > use:nth-child(3) {
+  animation-delay: -4s;
+  animation-duration: 13s;
+  fill: #18171d3e;
+}
+[data-theme="dark"] .parallax > use:nth-child(4) {
+  animation-delay: -5s;
+  animation-duration: 20s;
+  fill: #18171d;
+}
+
+@keyframes move-forever {
+  0% {
+    transform: translate3d(-90px, 0, 0);
+  }
+  100% {
+    transform: translate3d(85px, 0, 0);
+  }
+}
+/*Shrinking for mobile*/
+@media (max-width: 768px) {
+  .waves-area .waves-svg {
+    height: 40px;
+    min-height: 40px;
+  }
+}
+
+/* ------------------------------- 帧率检测 ----------------------------- */
+#fps {
+  position: fixed;
+  /* 指定位置 */
+  right: 10px;
+  bottom: 8px;
+  z-index: 1919810;
+}
+[data-theme="light"] #fps {
+  background-color: rgba(255, 255, 255, 0.85);
+  backdrop-filter: var(--backdrop-filter);
+  padding: 4px;
+  border-radius: 4px;
+}
+[data-theme="dark"] #fps {
+  background-color: rgba(0, 0, 0, 0.72);
+  backdrop-filter: var(--backdrop-filter);
+  padding: 4px;
+  border-radius: 4px;
+}
