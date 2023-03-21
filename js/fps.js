@@ -27,11 +27,11 @@ if (window.localStorage.getItem("fpson") == undefined || window.localStorage.get
             if (fps <= 5) {
                 var kd = `<span style="color:#bd0000">🤢</span>`
             } else if (fps <= 15) {
-                var kd = `<span style="color:red">😖</span>`
+                var kd = `<span style="color:red">😭</span>`
             } else if (fps <= 25) {
-                var kd = `<span style="color:orange">😨</span>`
+                var kd = `<span style="color:orange">😵‍💫</span>`
             } else if (fps < 35) {
-                var kd = `<span style="color:#9338e6">🙄</span>`
+                var kd = `<span style="color:#9338e6">😨</span>`
             } else if (fps <= 45) {
                 var kd = `<span style="color:#08b7e4">😁</span>`
             } else {
