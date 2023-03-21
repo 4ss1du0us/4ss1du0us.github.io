@@ -71,43 +71,6 @@ h1::before, h2::before, h3::before, h4::before, h5::before, h6::before {
     animation: ccc 3.2s linear infinite ;
 }
 
-/* ----------------------------- 鼠标样式 ---------------------------- */
-#cursor {
-    position: fixed;
-    width: 18px;
-    height: 18px;
-    /* 这里改变跟随的底色 */
-    background: rgb(80, 246, 235);
-    border-radius: 8px;
-    opacity: 0.25;
-    z-index: 10086;
-    pointer-events: none;
-    transition: 0.2s ease-in-out;
-    transition-property: background, opacity, transform;
-  }
-  
-  #cursor.hidden {
-    opacity: 0;
-  }
-  
-  #cursor.hover {
-    opacity: 0.1;
-    transform: scale(2.5);
-    -webkit-transform: scale(2.5);
-    -moz-transform: scale(2.5);
-    -ms-transform: scale(2.5);
-    -o-transform: scale(2.5);
-  }
-  
-  #cursor.active {
-    opacity: 0.5;
-    transform: scale(0.5);
-    -webkit-transform: scale(0.5);
-    -moz-transform: scale(0.5);
-    -ms-transform: scale(0.5);
-    -o-transform: scale(0.5);
-  }
-
 /* --------------------------- 头像挂件 ----------------------------- */
 .card-info-avatar .author-status-box {
     position: absolute;
