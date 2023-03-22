@@ -6,7 +6,7 @@
   <link href="https://4ss1du0us.github.io/atom.xml" rel="self"/>
   
   <link href="https://4ss1du0us.github.io/"/>
-  <updated>2023-03-19T08:15:10.011Z</updated>
+  <updated>2023-03-22T01:17:48.437Z</updated>
   <id>https://4ss1du0us.github.io/</id>
   
   <author>
@@ -21,15 +21,12 @@
     <link href="https://4ss1du0us.github.io/2023/03/19/Linux/Ubuntu%20%E5%92%8C%20Kali/%E6%9B%B4%E6%8D%A2%E6%BA%90/"/>
     <id>https://4ss1du0us.github.io/2023/03/19/Linux/Ubuntu%20%E5%92%8C%20Kali/%E6%9B%B4%E6%8D%A2%E6%BA%90/</id>
     <published>2023-03-19T08:11:01.000Z</published>
-    <updated>2023-03-19T08:15:10.011Z</updated>
+    <updated>2023-03-22T01:17:48.437Z</updated>
     
     <content type="html"><![CDATA[<h2 id="更换-镜像源（ubuntu-22-04）"><a href="#更换-镜像源（ubuntu-22-04）" class="headerlink" title="更换 镜像源（ubuntu 22.04）"></a>更换 镜像源（ubuntu 22.04）</h2><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token builtin class-name">cd</span> /etc/apt<span class="token function">vim</span> sources.list-----------------------------------------------------------------<span class="token comment"># 默认注释了源码镜像以提高 apt update 速度，如有需要可自行取消注释</span>deb https://mirrors.tuna.tsinghua.edu.cn/ubuntu/ jammy main restricted universe multiverse<span class="token comment"># deb-src https://mirrors.tuna.tsinghua.edu.cn/ubuntu/ jammy main restricted universe multiverse</span>deb https://mirrors.tuna.tsinghua.edu.cn/ubuntu/ jammy-updates main restricted universe multiverse<span class="token comment"># deb-src https://mirrors.tuna.tsinghua.edu.cn/ubuntu/ jammy-updates main restricted universe multiverse</span>deb https://mirrors.tuna.tsinghua.edu.cn/ubuntu/ jammy-backports main restricted universe multiverse<span class="token comment"># deb-src https://mirrors.tuna.tsinghua.edu.cn/ubuntu/ jammy-backports main restricted universe multiverse</span>deb https://mirrors.tuna.tsinghua.edu.cn/ubuntu/ jammy-security main restricted universe multiverse<span class="token comment"># deb-src https://mirrors.tuna.tsinghua.edu.cn/ubuntu/ jammy-security main restricted universe multiverse</span><span class="token comment"># 预发布软件源，不建议启用</span><span class="token comment"># deb https://mirrors.tuna.tsinghua.edu.cn/ubuntu/ jammy-proposed main restricted universe multiverse</span><span class="token comment"># deb-src https://mirrors.tuna.tsinghua.edu.cn/ubuntu/ jammy-proposed main restricted universe multiverse</span>-----------------------------------------------------------------<span class="token function">sudo</span> <span class="token function">apt-get</span> update<span class="token function">sudo</span> <span class="token function">apt-get</span> upgrade<span class="token function">sudo</span> <span class="token function">apt-get</span> clean<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre><hr><h2 id="更换-镜像源（kali-2022-4）"><a href="#更换-镜像源（kali-2022-4）" class="headerlink" title="更换 镜像源（kali 2022.4）"></a>更换 镜像源（kali 2022.4）</h2><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token builtin class-name">cd</span> /etc/apt<span class="token function">vim</span> sources.list-----------------------------------------------------------------deb http://mirrors.tuna.tsinghua.edu.cn/kali kali-rolling main contrib non-free deb-src https://mirrors.tuna.tsinghua.edu.cn/kali kali-rolling main contrib non-free-----------------------------------------------------------------<span class="token function">sudo</span> <span class="token function">apt-get</span> update<span class="token function">sudo</span> <span class="token function">apt-get</span> upgrade<span class="token function">sudo</span> <span class="token function">apt-get</span> clean<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre><hr><h2 id="更换-pip-源"><a href="#更换-pip-源" class="headerlink" title="更换 pip 源"></a>更换 pip 源</h2><ul><li>命令行直接更改</li></ul><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">pip config <span class="token builtin class-name">set</span> global.index-url https://pypi.tuna.tsinghua.edu.cn/simple<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre><hr>]]></content>
     
     
-      
-      
-    <summary type="html">&lt;h2 id=&quot;更换-镜像源（ubuntu-22-04）&quot;&gt;&lt;a href=&quot;#更换-镜像源（ubuntu-22-04）&quot; class=&quot;headerlink&quot; title=&quot;更换 镜像源（ubuntu 22.04）&quot;&gt;&lt;/a&gt;更换 镜像源（ubuntu 22.04）&lt;/h2&gt;&lt;</summary>
-      
+    <summary type="html">在 Ubuntu 和 kali 下更换镜像源和 pip 源</summary>
     
     
     
@@ -45,15 +42,12 @@
     <link href="https://4ss1du0us.github.io/2023/03/19/Linux/Ubuntu%20%E5%92%8C%20Kali/Python%E9%85%8D%E7%BD%AE/"/>
     <id>https://4ss1du0us.github.io/2023/03/19/Linux/Ubuntu%20%E5%92%8C%20Kali/Python%E9%85%8D%E7%BD%AE/</id>
     <published>2023-03-19T08:10:48.000Z</published>
-    <updated>2023-03-19T08:14:45.707Z</updated>
+    <updated>2023-03-22T01:19:35.963Z</updated>
     
     <content type="html"><![CDATA[<h2 id="安装-pip"><a href="#安装-pip" class="headerlink" title="安装 pip"></a>安装 pip</h2><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">wget</span> https://bootstrap.pypa.io/get-pip.py  --no-check-certificatepython get-pip.py<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre><hr><h2 id="修改默认-python-版本"><a href="#修改默认-python-版本" class="headerlink" title="修改默认 python 版本"></a>修改默认 python 版本</h2><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">sudo</span> <span class="token function">rm</span> /usr/bin/python<span class="token function">sudo</span> <span class="token function">ln</span> <span class="token parameter variable">-s</span> /usr/bin/python3.10 /usr/bin/python<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>]]></content>
     
     
-      
-      
-    <summary type="html">&lt;h2 id=&quot;安装-pip&quot;&gt;&lt;a href=&quot;#安装-pip&quot; class=&quot;headerlink&quot; title=&quot;安装 pip&quot;&gt;&lt;/a&gt;安装 pip&lt;/h2&gt;&lt;pre class=&quot;line-numbers language-bash&quot; data-language=&quot;ba</summary>
-      
+    <summary type="html">在 Linux 下安装 pip ，并在多个 python 版本下更改 python 的默认版本</summary>
     
     
     
