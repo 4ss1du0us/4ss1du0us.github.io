@@ -1,9 +1,11 @@
+https://4ss1du0us.github.io/about/index.html
+https://4ss1du0us.github.io/categories/index.html
+https://4ss1du0us.github.io/link/index.html
+https://4ss1du0us.github.io/movies/index.html
 https://4ss1du0us.github.io/music/index.html
+https://4ss1du0us.github.io/tags/index.html
 https://4ss1du0us.github.io/2023/03/19/Linux/Ubuntu%20%E5%92%8C%20Kali/Python%E9%85%8D%E7%BD%AE/
 https://4ss1du0us.github.io/2023/03/19/Linux/Ubuntu%20%E5%92%8C%20Kali/%E6%9B%B4%E6%8D%A2%E6%BA%90/
-https://4ss1du0us.github.io/movies/index.html
-https://4ss1du0us.github.io/link/index.html
-https://4ss1du0us.github.io/about/index.html
 https://4ss1du0us.github.io/2023/03/19/Linux/Ubuntu%20%E5%92%8C%20Kali/CTF%E9%85%8D%E7%BD%AE/
 https://4ss1du0us.github.io/2023/03/19/CTF%20-%20Misc/%E5%90%84%E7%A7%8D%E5%8A%A0%E5%AF%86%E6%96%B9%E6%B3%95%E7%9A%84%E7%89%B9%E7%82%B9/
 https://4ss1du0us.github.io/2023/03/19/CTF%20-%20Misc/%E9%9F%B3%E9%A2%91%E9%9A%90%E5%86%99/
@@ -33,8 +35,6 @@ https://4ss1du0us.github.io/2023/03/19/CTF%20-%20Reverse/OllyDBG%20%E5%92%8C%20G
 https://4ss1du0us.github.io/2023/03/19/CTF%20-%20Reverse/OllyDBG%20%E5%92%8C%20GDB/OllyDBG%E5%AE%89%E8%A3%85/
 https://4ss1du0us.github.io/2023/03/19/CTF%20-%20Reverse/OllyDBG%20%E5%92%8C%20GDB/GDB%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C/
 https://4ss1du0us.github.io/2023/03/19/CTF%20-%20Reverse/OllyDBG%20%E5%92%8C%20GDB/GDB%E5%AE%89%E8%A3%85/
-https://4ss1du0us.github.io/tags/index.html
-https://4ss1du0us.github.io/categories/index.html
 https://4ss1du0us.github.io/404/index.html
 https://4ss1du0us.github.io/
 https://4ss1du0us.github.io/tags/MISC/
