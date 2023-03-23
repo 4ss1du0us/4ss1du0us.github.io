@@ -1,1 +1,4 @@
-#footer{background:0 0!important}
+/* 页脚透明 */
+#footer {
+    background: transparent !important;
+}
