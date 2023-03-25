@@ -422,20 +422,6 @@
   </url>
   
   <url>
-    <loc>https://4ss1du0us.github.io/categories/Linux/</loc>
-    <lastmod>2023-03-25</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://4ss1du0us.github.io/categories/IDA/</loc>
-    <lastmod>2023-03-25</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
     <loc>https://4ss1du0us.github.io/categories/GDB/</loc>
     <lastmod>2023-03-25</lastmod>
     <changefreq>weekly</changefreq>
@@ -444,6 +430,20 @@
   
   <url>
     <loc>https://4ss1du0us.github.io/categories/OllyDBG/</loc>
+    <lastmod>2023-03-25</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://4ss1du0us.github.io/categories/Linux/</loc>
+    <lastmod>2023-03-25</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://4ss1du0us.github.io/categories/IDA/</loc>
     <lastmod>2023-03-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
