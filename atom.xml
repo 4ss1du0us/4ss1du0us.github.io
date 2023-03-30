@@ -138,9 +138,9 @@
     <link href="https://4ss1du0us.github.io/2023/03/19/CTF%20-%20Misc/ZIP%E4%BC%AA%E5%8A%A0%E5%AF%86/"/>
     <id>https://4ss1du0us.github.io/2023/03/19/CTF%20-%20Misc/ZIP%E4%BC%AA%E5%8A%A0%E5%AF%86/</id>
     <published>2023-03-19T07:56:39.000Z</published>
-    <updated>2023-03-28T12:05:49.684Z</updated>
+    <updated>2023-03-30T13:04:56.748Z</updated>
     
-    <content type="html"><![CDATA[<h2 id="ZIP-伪加密原理"><a href="#ZIP-伪加密原理" class="headerlink" title="ZIP 伪加密原理"></a>ZIP 伪加密原理</h2><blockquote><p>zip伪加密是在文件头的加密标志位做修改，进而再打开文件时识被别为加密压缩包</p></blockquote><hr><h2 id="自动化识别工具"><a href="#自动化识别工具" class="headerlink" title="自动化识别工具"></a>自动化识别工具</h2><h3 id="ZipCenOp"><a href="#ZipCenOp" class="headerlink" title="ZipCenOp"></a>ZipCenOp</h3><blockquote><p>ZipCenOp 是一个 jar 包，用于操作 zip 格式的压缩文件，还支持对 zip 文件进行密码保护，也可以用于识别 zip 文件是否是伪加密</p><p>下载安装：<a href="https://github.com/442048209as/ZipCenOp/releases/tag/1.0">Release 1.0 · 442048209as/ZipCenOp</a></p></blockquote><ul><li>使用：<br>  <code>java -jar ZipCenOp.jar r &lt;zip 文件名&gt;</code></li></ul><hr><h3 id="WinRAR"><a href="#WinRAR" class="headerlink" title="WinRAR"></a>WinRAR</h3><blockquote><p>一个解压软件，随缘吧，不一定行</p></blockquote><ul><li>进入 “工具”，修复压缩文件</li></ul><hr><h2 id="ZIP-文件的结构"><a href="#ZIP-文件的结构" class="headerlink" title="ZIP 文件的结构"></a>ZIP 文件的结构</h2><blockquote><p>一个 ZIP 文件由三个部分组成</p></blockquote><h3 id="数据区"><a href="#数据区" class="headerlink" title="数据区"></a>数据区</h3><p><mark>50 4B 03 04：这是头文件标记（0x04034b50）</mark><br>14 00：解压文件所需 pkware 版本<br><mark>09 00：全局方式位标记（有无加密）</mark><br>08 00：压缩方式<br>50 A3：最后修改文件时间<br>A5 4A：最后修改文件日期<br>21 38 76 64：CRC-32校验（1480B516）<br>19 00 00 00：压缩后尺寸（25）<br>17 00 00 00：未压缩尺寸（23）<br>08 00：文件名长度<br>00 00：扩展记录长度</p><h3 id="目录区"><a href="#目录区" class="headerlink" title="目录区"></a>目录区</h3><p><mark>50 4B 01 02：目录中文件文件头标记(0x02014b50)</mark><br>1F 00：压缩使用的 pkware 版本<br>14 00：解压文件所需 pkware 版本<br><mark>09 00：全局方式位标记（有无加密，<strong><em>更改这里进行伪加密</em></strong>，改为09 00打开就会提示有密码了）</mark><br>08 00：压缩方式<br>50 A3：最后修改文件时间<br>A5 4A：最后修改文件日期<br>21 38 76 65：CRC-32校验（1480B516）<br>19 00 00 00：压缩后尺寸（25）<br>17 00 00 00：未压缩尺寸（23）<br>08 00：文件名长度<br>24 00：扩展字段长度<br>00 00：文件注释长度<br>00 00：磁盘开始号<br>00 00：内部文件属性<br>20 00 00 00：外部文件属性<br>00 00 00 00：局部头部偏移量</p><h3 id="目录结束标志"><a href="#目录结束标志" class="headerlink" title="目录结束标志"></a>目录结束标志</h3><p><mark>50 4B 05 06：目录结束标记</mark><br>00 00：当前磁盘编号<br>00 00：目录区开始磁盘编号<br>01 00：本磁盘上纪录总数<br>01 00：目录区中纪录总数<br>5A 00 00 00：目录区尺寸大小<br>3F 00 00 00：目录区对第一张磁盘的偏移量<br>00 00 00：ZIP 文件注释长度</p><hr><h2 id="无加密"><a href="#无加密" class="headerlink" title="无加密"></a>无加密</h2><div class="table-container"><table><thead><tr><th>区域</th><th>参数</th></tr></thead><tbody><tr><td>数据区的全局加密</td><td>00 00</td></tr><tr><td>目录区的全局方式位标记</td><td>00 00</td></tr></tbody></table></div><hr><h2 id="伪加密"><a href="#伪加密" class="headerlink" title="伪加密"></a>伪加密</h2><div class="table-container"><table><thead><tr><th>区域</th><th>参数</th></tr></thead><tbody><tr><td>数据区的全局加密</td><td>00 00</td></tr><tr><td>目录区的全局方式位标记</td><td>09 00</td></tr></tbody></table></div><hr><h2 id="真加密"><a href="#真加密" class="headerlink" title="真加密"></a>真加密</h2><div class="table-container"><table><thead><tr><th>区域</th><th>参数</th></tr></thead><tbody><tr><td>数据区的全局加密</td><td>09 00</td></tr><tr><td>目录区的全局方式位标记</td><td>09 00</td></tr></tbody></table></div><hr><h2 id="加密与解密"><a href="#加密与解密" class="headerlink" title="加密与解密"></a>加密与解密</h2><div class="table-container"><table><thead><tr><th>加解密</th><th>方法</th></tr></thead><tbody><tr><td>去除密码</td><td><mark><strong>压缩源文件目录区 的 全局方式位标记 的 01 00 或 09 00 改为 00 00</strong></mark></td></tr><tr><td>添加密码提示</td><td>压缩源文件目录区 的 全局方式位标记 的 00 00 改为 01 00 或 09 00</td></tr></tbody></table></div>]]></content>
+    <content type="html"><![CDATA[<h2 id="ZIP-伪加密原理"><a href="#ZIP-伪加密原理" class="headerlink" title="ZIP 伪加密原理"></a>ZIP 伪加密原理</h2><blockquote><p>zip伪加密是在文件头的加密标志位做修改，进而再打开文件时被识别为加密压缩包</p></blockquote><hr><h2 id="自动化识别工具"><a href="#自动化识别工具" class="headerlink" title="自动化识别工具"></a>自动化识别工具</h2><h3 id="ZipCenOp"><a href="#ZipCenOp" class="headerlink" title="ZipCenOp"></a>ZipCenOp</h3><blockquote><p>ZipCenOp 是一个 jar 包，用于操作 zip 格式的压缩文件，还支持对 zip 文件进行密码保护，也可以用于识别 zip 文件是否是伪加密</p><p>下载安装：<a href="https://github.com/442048209as/ZipCenOp/releases/tag/1.0">Release 1.0 · 442048209as/ZipCenOp</a></p></blockquote><ul><li>使用：<br>  <code>java -jar ZipCenOp.jar r &lt;zip 文件名&gt;</code></li></ul><hr><h3 id="WinRAR"><a href="#WinRAR" class="headerlink" title="WinRAR"></a>WinRAR</h3><blockquote><p>一个解压软件，随缘吧，不一定行</p></blockquote><ul><li>进入 “工具”，修复压缩文件</li></ul><hr><h2 id="ZIP-文件的结构"><a href="#ZIP-文件的结构" class="headerlink" title="ZIP 文件的结构"></a>ZIP 文件的结构</h2><blockquote><p>一个 ZIP 文件由三个部分组成</p></blockquote><h3 id="数据区"><a href="#数据区" class="headerlink" title="数据区"></a>数据区</h3><p><mark>50 4B 03 04：这是头文件标记（0x04034b50）</mark><br>14 00：解压文件所需 pkware 版本<br><mark>09 00：全局方式位标记（有无加密）</mark><br>08 00：压缩方式<br>50 A3：最后修改文件时间<br>A5 4A：最后修改文件日期<br>21 38 76 64：CRC-32校验（1480B516）<br>19 00 00 00：压缩后尺寸（25）<br>17 00 00 00：未压缩尺寸（23）<br>08 00：文件名长度<br>00 00：扩展记录长度</p><h3 id="目录区"><a href="#目录区" class="headerlink" title="目录区"></a>目录区</h3><p><mark>50 4B 01 02：目录中文件文件头标记(0x02014b50)</mark><br>1F 00：压缩使用的 pkware 版本<br>14 00：解压文件所需 pkware 版本<br><mark>09 00：全局方式位标记（有无加密，<strong><em>更改这里进行伪加密</em></strong>，改为09 00打开就会提示有密码了）</mark><br>08 00：压缩方式<br>50 A3：最后修改文件时间<br>A5 4A：最后修改文件日期<br>21 38 76 65：CRC-32校验（1480B516）<br>19 00 00 00：压缩后尺寸（25）<br>17 00 00 00：未压缩尺寸（23）<br>08 00：文件名长度<br>24 00：扩展字段长度<br>00 00：文件注释长度<br>00 00：磁盘开始号<br>00 00：内部文件属性<br>20 00 00 00：外部文件属性<br>00 00 00 00：局部头部偏移量</p><h3 id="目录结束标志"><a href="#目录结束标志" class="headerlink" title="目录结束标志"></a>目录结束标志</h3><p><mark>50 4B 05 06：目录结束标记</mark><br>00 00：当前磁盘编号<br>00 00：目录区开始磁盘编号<br>01 00：本磁盘上纪录总数<br>01 00：目录区中纪录总数<br>5A 00 00 00：目录区尺寸大小<br>3F 00 00 00：目录区对第一张磁盘的偏移量<br>00 00 00：ZIP 文件注释长度</p><hr><h2 id="无加密"><a href="#无加密" class="headerlink" title="无加密"></a>无加密</h2><div class="table-container"><table><thead><tr><th>区域</th><th>参数</th></tr></thead><tbody><tr><td>数据区的全局加密</td><td>00 00</td></tr><tr><td>目录区的全局方式位标记</td><td>00 00</td></tr></tbody></table></div><hr><h2 id="伪加密"><a href="#伪加密" class="headerlink" title="伪加密"></a>伪加密</h2><div class="table-container"><table><thead><tr><th>区域</th><th>参数</th></tr></thead><tbody><tr><td>数据区的全局加密</td><td>00 00</td></tr><tr><td>目录区的全局方式位标记</td><td>09 00</td></tr></tbody></table></div><hr><h2 id="真加密"><a href="#真加密" class="headerlink" title="真加密"></a>真加密</h2><div class="table-container"><table><thead><tr><th>区域</th><th>参数</th></tr></thead><tbody><tr><td>数据区的全局加密</td><td>09 00</td></tr><tr><td>目录区的全局方式位标记</td><td>09 00</td></tr></tbody></table></div><hr><h2 id="加密与解密"><a href="#加密与解密" class="headerlink" title="加密与解密"></a>加密与解密</h2><div class="table-container"><table><thead><tr><th>加解密</th><th>方法</th></tr></thead><tbody><tr><td>去除密码</td><td><mark><strong>压缩源文件目录区 的 全局方式位标记 的 01 00 或 09 00 改为 00 00</strong></mark></td></tr><tr><td>添加密码提示</td><td>压缩源文件目录区 的 全局方式位标记 的 00 00 改为 01 00 或 09 00</td></tr></tbody></table></div>]]></content>
     
     
     <summary type="html">解压ZIP的时候弹出加密提醒，有时并不一定是真的加密了</summary>
@@ -295,29 +295,6 @@
   </entry>
   
   <entry>
-    <title>CatCTF-miao~</title>
-    <link href="https://4ss1du0us.github.io/2023/03/19/CTF%20-%20Misc_Writeup/CatCTF-miao~/"/>
-    <id>https://4ss1du0us.github.io/2023/03/19/CTF%20-%20Misc_Writeup/CatCTF-miao~/</id>
-    <published>2023-03-19T07:23:24.000Z</published>
-    <updated>2023-03-28T14:19:39.230Z</updated>
-    
-    <content type="html"><![CDATA[<h2 id="收获"><a href="#收获" class="headerlink" title="收获"></a>收获</h2><ul><li><p>熟悉<mark>图像隐写</mark>、<mark>音频隐写</mark>，学会使用 <mark>Audacity 和 DeepSound</mark></p></li><li><p>了解<mark>兽语解密</mark></p></li><li><p><mark>不要太相信 binwalk 的隐藏文件检测结果</mark>，有时候不准确，先用 foremost 尝试分离</p></li></ul><hr><p><a href="https://adworld.xctf.org.cn/media/file/task/01ba54b9-5a1c-40f3-8fb5-19f1abf9f97a.zip">CatCTF-miao~</a></p><hr><h2 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h2><ol><li><p>解压得到一张 jpg 图片<br><img src="https://s2.loli.net/2023/03/18/1q762AysHlObeEr.png" alt="CatCTF-miao~1.png"></p></li><li><p>在 Ubuntu 下查看图片隐藏信息，查看字符串未发现有用信息：<br><img src="https://s2.loli.net/2023/03/18/Do4UwW5MHX7FxO8.png" alt="CatCTF-miao~2.png"><img src="https://s2.loli.net/2023/03/18/yOcNjw3ZVfxQA5g.png" alt="CatCTF-miao~3.png"></p></li><li><p>用 <code>binwalk</code> 检测是否含有隐藏文件：<br><img src="https://s2.loli.net/2023/03/18/tjohl2OM4UJ8R7v.png" alt="CatCTF-miao~4.png"><br><em>这里踩坑了。。。不要太相信 binwalk 的分析结果，这里显示没有其他隐藏文件，但其实是有的</em></p></li><li><p>在 Winhex 下可以看到包含了 wav：<br><img src="https://s2.loli.net/2023/03/18/tJn1vUyOfFjiGQV.png" alt="CatCTF-miao~5.png"></p></li><li><p>用 <code>foremost</code> 分离，得到几个文件夹：<br><img src="https://s2.loli.net/2023/03/18/F3NKLsiya61PAXC.png" alt="CatCTF-miao~6.png"><br><img src="https://s2.loli.net/2023/03/18/PGhaDIp3OTvRrBW.png" alt="CatCTF-miao~7.png"><br>其中，jpg 文件夹内时一张原图，wav 文件夹内有一段音频：<br><img src="https://s2.loli.net/2023/03/18/nwdCN526HjYTFfa.png" alt="CatCTF-miao~8.png"><br>用 <code>Audacity</code> 打开，并查看频谱图：<br><img src="https://s2.loli.net/2023/03/18/6FkpbNXG3LtCcJH.png" alt="CatCTF-miao~9.png"><br><img src="https://s2.loli.net/2023/03/19/DyTFkPxpGQn1t7K.png" alt="CatCTF-miao~10.png"><br>发现 <code>&quot;CatCTF&quot;</code> 字样</p></li><li><p>由于只给了一段猫叫的音频，猜测可能跟音频内容有关，可能是<strong>音频的解密密码</strong><br>利用音频隐写工具 <code>DeepSound</code> 打开：<br><img src="https://s2.loli.net/2023/03/18/8UGLHAmSbFX6NDy.png" alt="CatCTF-miao~11.png"><br>但是发现需要密码，尝试了文件名，不对，最后用音频的频谱图内发现的 CatCTF 作为密码成功<br><img src="https://s2.loli.net/2023/03/18/2bZSiLOdM4Hn1F8.png" alt="CatCTF-miao~12.png"><br>得到一个 flag.txt 文件，打开发现是猫叫声：<br><img src="https://s2.loli.net/2023/03/18/UqB7lIAP8w2vzog.png" alt="CatCTF-miao~13.png"></p></li><li><p>利用<mark>兽语解密</mark>：<a href="http://hi.pcmoe.net/roar.html">兽音译者/兽语加密 - PcMoe!</a><br><img src="https://s2.loli.net/2023/03/18/Hi3nzBD4TsUlbfJ.png" alt="CatCTF-miao~14.png"><br>得到 flag</p></li></ol><hr><h2 id="结果"><a href="#结果" class="headerlink" title="结果"></a>结果</h2><blockquote><p>CatCTF{d0_y0u_Hate_c4t_ba3k1ng_?_M1ao~}</p></blockquote>]]></content>
-    
-    
-    <summary type="html">一道音频隐写题，不过我用binwalk显示没有隐藏文件啊，最后居然可以foremost，还接触到了兽语加密</summary>
-    
-    
-    
-    <category term="杂项" scheme="https://4ss1du0us.github.io/categories/%E6%9D%82%E9%A1%B9/"/>
-    
-    
-    <category term="MISC" scheme="https://4ss1du0us.github.io/tags/MISC/"/>
-    
-    <category term="CTF刷题" scheme="https://4ss1du0us.github.io/tags/CTF%E5%88%B7%E9%A2%98/"/>
-    
-  </entry>
-  
-  <entry>
     <title>CatCTF-CatchCat</title>
     <link href="https://4ss1du0us.github.io/2023/03/19/CTF%20-%20Misc_Writeup/CatCTF-CatchCat/"/>
     <id>https://4ss1du0us.github.io/2023/03/19/CTF%20-%20Misc_Writeup/CatCTF-CatchCat/</id>
@@ -351,6 +328,29 @@
     
     
     <summary type="html">对着图片一堆隐写检测，结果什么都没有，你居然告诉我这匹马身上的是条形码。。</summary>
+    
+    
+    
+    <category term="杂项" scheme="https://4ss1du0us.github.io/categories/%E6%9D%82%E9%A1%B9/"/>
+    
+    
+    <category term="MISC" scheme="https://4ss1du0us.github.io/tags/MISC/"/>
+    
+    <category term="CTF刷题" scheme="https://4ss1du0us.github.io/tags/CTF%E5%88%B7%E9%A2%98/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>CatCTF-miao~</title>
+    <link href="https://4ss1du0us.github.io/2023/03/19/CTF%20-%20Misc_Writeup/CatCTF-miao~/"/>
+    <id>https://4ss1du0us.github.io/2023/03/19/CTF%20-%20Misc_Writeup/CatCTF-miao~/</id>
+    <published>2023-03-19T07:23:24.000Z</published>
+    <updated>2023-03-28T14:19:39.230Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="收获"><a href="#收获" class="headerlink" title="收获"></a>收获</h2><ul><li><p>熟悉<mark>图像隐写</mark>、<mark>音频隐写</mark>，学会使用 <mark>Audacity 和 DeepSound</mark></p></li><li><p>了解<mark>兽语解密</mark></p></li><li><p><mark>不要太相信 binwalk 的隐藏文件检测结果</mark>，有时候不准确，先用 foremost 尝试分离</p></li></ul><hr><p><a href="https://adworld.xctf.org.cn/media/file/task/01ba54b9-5a1c-40f3-8fb5-19f1abf9f97a.zip">CatCTF-miao~</a></p><hr><h2 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h2><ol><li><p>解压得到一张 jpg 图片<br><img src="https://s2.loli.net/2023/03/18/1q762AysHlObeEr.png" alt="CatCTF-miao~1.png"></p></li><li><p>在 Ubuntu 下查看图片隐藏信息，查看字符串未发现有用信息：<br><img src="https://s2.loli.net/2023/03/18/Do4UwW5MHX7FxO8.png" alt="CatCTF-miao~2.png"><img src="https://s2.loli.net/2023/03/18/yOcNjw3ZVfxQA5g.png" alt="CatCTF-miao~3.png"></p></li><li><p>用 <code>binwalk</code> 检测是否含有隐藏文件：<br><img src="https://s2.loli.net/2023/03/18/tjohl2OM4UJ8R7v.png" alt="CatCTF-miao~4.png"><br><em>这里踩坑了。。。不要太相信 binwalk 的分析结果，这里显示没有其他隐藏文件，但其实是有的</em></p></li><li><p>在 Winhex 下可以看到包含了 wav：<br><img src="https://s2.loli.net/2023/03/18/tJn1vUyOfFjiGQV.png" alt="CatCTF-miao~5.png"></p></li><li><p>用 <code>foremost</code> 分离，得到几个文件夹：<br><img src="https://s2.loli.net/2023/03/18/F3NKLsiya61PAXC.png" alt="CatCTF-miao~6.png"><br><img src="https://s2.loli.net/2023/03/18/PGhaDIp3OTvRrBW.png" alt="CatCTF-miao~7.png"><br>其中，jpg 文件夹内时一张原图，wav 文件夹内有一段音频：<br><img src="https://s2.loli.net/2023/03/18/nwdCN526HjYTFfa.png" alt="CatCTF-miao~8.png"><br>用 <code>Audacity</code> 打开，并查看频谱图：<br><img src="https://s2.loli.net/2023/03/18/6FkpbNXG3LtCcJH.png" alt="CatCTF-miao~9.png"><br><img src="https://s2.loli.net/2023/03/19/DyTFkPxpGQn1t7K.png" alt="CatCTF-miao~10.png"><br>发现 <code>&quot;CatCTF&quot;</code> 字样</p></li><li><p>由于只给了一段猫叫的音频，猜测可能跟音频内容有关，可能是<strong>音频的解密密码</strong><br>利用音频隐写工具 <code>DeepSound</code> 打开：<br><img src="https://s2.loli.net/2023/03/18/8UGLHAmSbFX6NDy.png" alt="CatCTF-miao~11.png"><br>但是发现需要密码，尝试了文件名，不对，最后用音频的频谱图内发现的 CatCTF 作为密码成功<br><img src="https://s2.loli.net/2023/03/18/2bZSiLOdM4Hn1F8.png" alt="CatCTF-miao~12.png"><br>得到一个 flag.txt 文件，打开发现是猫叫声：<br><img src="https://s2.loli.net/2023/03/18/UqB7lIAP8w2vzog.png" alt="CatCTF-miao~13.png"></p></li><li><p>利用<mark>兽语解密</mark>：<a href="http://hi.pcmoe.net/roar.html">兽音译者/兽语加密 - PcMoe!</a><br><img src="https://s2.loli.net/2023/03/18/Hi3nzBD4TsUlbfJ.png" alt="CatCTF-miao~14.png"><br>得到 flag</p></li></ol><hr><h2 id="结果"><a href="#结果" class="headerlink" title="结果"></a>结果</h2><blockquote><p>CatCTF{d0_y0u_Hate_c4t_ba3k1ng_?_M1ao~}</p></blockquote>]]></content>
+    
+    
+    <summary type="html">一道音频隐写题，不过我用binwalk显示没有隐藏文件啊，最后居然可以foremost，还接触到了兽语加密</summary>
     
     
     
