@@ -6,7 +6,7 @@
   <link href="https://4ss1du0us.github.io/atom.xml" rel="self"/>
   
   <link href="https://4ss1du0us.github.io/"/>
-  <updated>2023-04-01T01:58:09.869Z</updated>
+  <updated>2023-04-01T02:29:36.041Z</updated>
   <id>https://4ss1du0us.github.io/</id>
   
   <author>
@@ -21,9 +21,9 @@
     <link href="https://4ss1du0us.github.io/2023/03/31/CTF%20-%20Reverse_Writeup/%E6%B9%96%E5%8C%97%E7%9C%81%E7%AC%AC%E4%B8%83%E5%B1%8A%E6%A5%9A%E6%85%A7%E6%9D%AF-Level_up/"/>
     <id>https://4ss1du0us.github.io/2023/03/31/CTF%20-%20Reverse_Writeup/%E6%B9%96%E5%8C%97%E7%9C%81%E7%AC%AC%E4%B8%83%E5%B1%8A%E6%A5%9A%E6%85%A7%E6%9D%AF-Level_up/</id>
     <published>2023-03-31T14:43:39.000Z</published>
-    <updated>2023-04-01T01:58:09.869Z</updated>
+    <updated>2023-04-01T02:29:36.041Z</updated>
     
-    <content type="html"><![CDATA[<h2 id="收获"><a href="#收获" class="headerlink" title="收获"></a>收获</h2><ul><li><p><mark>当给出的 apk 中缺失某个关键函数时，有可能藏在源文件里头，并没有打包到 apk 中</mark></p></li><li><p>涉及到 AES 编码时，例如 <mark>AES128 的解密用到字节编码，最好是使用 python 脚本进行解密</mark></p></li></ul><hr><p><a href="http://2023chb.manage.nsctf.cn/CTF/answering">（2023年3月30日）湖北省第七届楚慧杯-Level_up</a></p><hr><h2 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h2><ol><li><p>下载解压得到 chall 文件夹：<br><img src="https://s2.loli.net/2023/03/31/obLZrSqEaC5VXyw.png" alt="湖北省第七届楚慧杯-Level_up1.png"></p><p>注意文件夹里的内容，<code>chall.apk</code> 是打包好的安卓程序，<code>chall</code> 是 <code>chall.apk</code> 的源文件，<code>chall.apk.cache</code> 是缓存文件（具体干什么用的不太清楚）</p></li><li><p>用 jadx-gui 打开 chall.apk，定位到 <code>MainActivity</code><br><img src="https://s2.loli.net/2023/03/31/HZwzfCWhduXvjNs.png" alt="湖北省第七届楚慧杯-Level_up2.png"><br>注意到关键判断语句：<br><img src="https://s2.loli.net/2023/03/31/CGex3bQrcHVNMZg.png" alt="湖北省第七届楚慧杯-Level_up3.png"><br>将用户的输入、用户输入的长度作为参数，经过 <code>check()</code> 函数进行处理，如果校验成功就显示 right!!!</p></li><li><p>点击 <code>check()</code> 函数，发现程序里只有 <code>check()</code> 函数的声明，却没有函数的内容：<br><img src="https://s2.loli.net/2023/03/31/ItB72abQPwEjunM.png" alt="湖北省第七届楚慧杯-Level_up4.png"><br>在程序中搜索 check 关键字依然一无所获</p></li><li><p>然后比赛的时候进行到这里，我就一直卡在从程序中寻找 <code>check()</code> 函数的逻辑 【有一部分原因可能也是受了前面一道题 <code>Level_One</code> 的影响，以为校验逻辑就在程序里】</p></li></ol><blockquote><p>后来看了其他队伍【丝绒Velvet】的 Writeup 我才恍然大悟<br><a href="https://mp.weixin.qq.com/s?__biz=Mzg3NDkyOTgxMg==&amp;mid=2247483701&amp;idx=1&amp;sn=df4e34e48671c9edf3372308df7f1269&amp;chksm=cec80acef9bf83d83a938775e57b55c948428c0849a15c5ec0ca420ae5bad03dc58683c0dcc6&amp;mpshare=1&amp;scene=23&amp;srcid=0330grQBOEkM9P3KELybR5rm&amp;sharer_sharetime=1680167468020&amp;sharer_shareid=bd8cb5598a8e94f9f2d58edb9b65a190#rd">2023湖北省第七届“楚慧杯”网络空间安全实践能力竞赛-预赛 -丝绒WP</a><br>   既然程序里没有这个函数，有没有可能是出题人故意在编译程序时把这个函数的内容给删了，所以 apk 文件里没有<br>   现在想想才知道为什么题目还给出了一个源文件夹 chall</p></blockquote><ol><li><p>在 <code>chall</code> 文件夹内查看：<br><img src="https://s2.loli.net/2023/03/31/9NWDIgVPHGzwlix.png" alt="湖北省第七届楚慧杯-Level_up5.png"><br><mark>通过与 jadx-gui 反编译出来的内容进行比对，发现后面这几个文件都是在程序中存在的<br>只有这个 lib 文件夹中的内容在程序中没有包含</mark></p></li><li><p>查看 <code>lib</code> 的内容：<br><img src="https://s2.loli.net/2023/03/31/ZLM8ECVwWcNreSK.png" alt="湖北省第七届楚慧杯-Level_up6.png"><br>发现这四个文件夹里各有一个文件名为 <code>libmobile2.so</code> 的文件<br><img src="https://s2.loli.net/2023/03/31/QFDCo4rXl9BsYv8.png" alt="湖北省第七届楚慧杯-Level_up7.png"><br>但是在第一个文件 <code>arm64-v8a</code> 内，是这样的：<br><img src="https://s2.loli.net/2023/04/01/k1pwrPZCdKLNIAM.png" alt="湖北省第七届楚慧杯-Level_up8.png"><br>注意到除 <code>libmobile2.so</code> 外其他文件的后缀，<code>.id0</code>、<code>.id2</code>、<code>.id3</code> 这不就是 IDA 留下的数据库文件吗<br>在 exeinfo PE 中看看：<br><img src="https://s2.loli.net/2023/04/01/ynMVQOGhwIX1aRA.png" alt="湖北省第七届楚慧杯-Level_up9.png"><br>64 位 elf 文件，用 IDA 打开，选择直接打开现存的数据库文件：<br>在函数中搜索 <code>main</code>，定位到主函数<br><img src="https://s2.loli.net/2023/04/01/9LbTBqpQNW8MdEc.png" alt="湖北省第七届楚慧杯-Level_up10.png"><br>查看一下字符串，<code>shift + F12</code>，发现端倪：<br><img src="https://s2.loli.net/2023/04/01/qzMK6RLCUIfoaiP.png" alt="湖北省第七届楚慧杯-Level_up11.png"><br>跟进 <code>gOuWlCTi+hhzCn6rWxDm8IuuBwiOtM+V/m39bthXTeT3E6WYrLU0CDqG76Kvpkmc</code> 所在地址：<br><img src="https://s2.loli.net/2023/04/01/9hKndwE1F8u2k3P.png" alt="湖北省第七届楚慧杯-Level_up12.png"><br>发现他们定义在 <code>start()</code> 函数中<br>根据形式，函数 <code>std::string::basic_string&lt;decltype(nullptr)&gt;</code> 应该是字符串复制操作<br><code>key = &quot;followyourheart!&quot;</code><br><code>enc = &quot;gOuWlCTi+hhzCn6rWxDm8IuuBwiOtM+V/m39bthXTeT3E6WYrLU0CDqG76Kvpkmc&quot;</code><br>得到了 main() 函数中的密文 <code>enc</code>，还得到了一个 <code>key</code> 应该是某种加密的密钥<br>同时，还注意到字符串中有 Base64 加密的码表：<code>ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/</code><br>但是 Base64 本身是不需要密钥的，猜测可能有多种加密方法</p></li><li><p>继续审计 main() 函数：<br>很明显注意到这里有一个加密函数：<br><img src="https://s2.loli.net/2023/04/01/tvW4k3pRlGgsOfC.png" alt="湖北省第七届楚慧杯-Level_up13.png"><br>跟进，到 <code>encode()</code> 函数：<br><img src="https://s2.loli.net/2023/04/01/DGA7gqtByUVOsn9.png" alt="湖北省第七届楚慧杯-Level_up14.png"><br>加密方式已经告知了，一个 AES128，一个 Base64，结合前面观察到的字符串，大体已经可以确定了</p></li><li><p><mark>由于在 main() 函数中，发现 <code>cipher::Encrypt::encode()</code> 之后虽然有一大堆代码，但是并没有改变 <code>enc</code> 的值</mark><br>根据代码的意思，加密流程是先对明文进行 <code>AES128（ECB）</code> 加密（密钥是 <code>followyourheart!</code>），然后进行 <code>Base64</code> 加密，得到密文 <code>enc</code><br>因此先对 <code>enc</code> 进行 <code>Base64</code> 解码，然后进行 <code>AES128（ECB）</code> 解码，即可得到 flag</p></li><li><p>但是注意，<code>AES128</code> 是按照 16字节（128 bit）为一组进行加密，所以这里要对字节进行操作，使用普通的在线网站进行解密是不行的，例如：<br><img src="https://s2.loli.net/2023/04/01/gXs7iL9RIbArUBC.png" alt="湖北省第七届楚慧杯-Level_up15.png"></p></li><li><p>因此，利用 python 脚本进行解码</p></li></ol><hr><h2 id="脚本"><a href="#脚本" class="headerlink" title="脚本"></a>脚本</h2><pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">import</span> base64  <span class="token keyword">from</span> Crypto<span class="token punctuation">.</span>Cipher <span class="token keyword">import</span> AES    enc <span class="token operator">=</span> <span class="token string">b'gOuWlCTi+hhzCn6rWxDm8IuuBwiOtM+V/m39bthXTeT3E6WYrLU0CDqG76Kvpkmc'</span>  key <span class="token operator">=</span> <span class="token string">b'followyourheart!'</span>    string1 <span class="token operator">=</span> base64<span class="token punctuation">.</span>b64decode<span class="token punctuation">(</span>enc<span class="token punctuation">)</span>  <span class="token comment"># 先对enc进行Base64解密  </span>  string2 <span class="token operator">=</span> AES<span class="token punctuation">.</span>new<span class="token punctuation">(</span>key<span class="token punctuation">,</span> AES<span class="token punctuation">.</span>MODE_ECB<span class="token punctuation">)</span>  <span class="token comment"># 创建一个AES对象string2，根据题意是ECB加密模式  </span>flag <span class="token operator">=</span> string2<span class="token punctuation">.</span>decrypt<span class="token punctuation">(</span>string1<span class="token punctuation">)</span>  <span class="token comment"># AES128 ECB解密  </span>  <span class="token keyword">print</span><span class="token punctuation">(</span>flag<span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre><hr><h2 id="结果"><a href="#结果" class="headerlink" title="结果"></a>结果</h2><blockquote><p>flag{6b1df900-1284-11ed-9fa7-5405dbe5e745}</p></blockquote><p><img src="https://s2.loli.net/2023/04/01/PN6AYi8G2zBoVL7.png" alt="湖北省第七届楚慧杯-Level_up16.png"></p>]]></content>
+    <content type="html"><![CDATA[<h2 id="收获"><a href="#收获" class="headerlink" title="收获"></a>收获</h2><ul><li><p><mark>当给出的 apk 中缺失某个关键函数时，有可能藏在源文件里头，并没有打包到 apk 中</mark></p></li><li><p>涉及到 AES 编码时，例如 <mark>AES128 的解密用到字节编码，最好是使用 python 脚本进行解密</mark></p></li></ul><hr><p><a href="http://2023chb.manage.nsctf.cn/CTF/answering">（2023年3月30日）湖北省第七届楚慧杯-Level_up</a></p><hr><h2 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h2><ol><li><p>下载解压得到 chall 文件夹：<br><img src="https://s2.loli.net/2023/03/31/obLZrSqEaC5VXyw.png" alt="湖北省第七届楚慧杯-Level_up1.png"></p><p>注意文件夹里的内容，<code>chall.apk</code> 是打包好的安卓程序，<code>chall</code> 是 <code>chall.apk</code> 的源文件，<code>chall.apk.cache</code> 是缓存文件（具体干什么用的不太清楚）</p></li><li><p>用 jadx-gui 打开 chall.apk，定位到 <code>MainActivity</code><br><img src="https://s2.loli.net/2023/03/31/HZwzfCWhduXvjNs.png" alt="湖北省第七届楚慧杯-Level_up2.png"><br>注意到关键判断语句：<br><img src="https://s2.loli.net/2023/03/31/CGex3bQrcHVNMZg.png" alt="湖北省第七届楚慧杯-Level_up3.png"><br>将用户的输入、用户输入的长度作为参数，经过 <code>check()</code> 函数进行处理，如果校验成功就显示 right!!!</p></li><li><p>点击 <code>check()</code> 函数，发现程序里只有 <code>check()</code> 函数的声明，却没有函数的内容：<br><img src="https://s2.loli.net/2023/03/31/ItB72abQPwEjunM.png" alt="湖北省第七届楚慧杯-Level_up4.png"><br>在程序中搜索 check 关键字依然一无所获</p></li><li><p>然后比赛的时候进行到这里，我就一直卡在从程序中寻找 <code>check()</code> 函数的逻辑 【有一部分原因可能也是受了前面一道题 <code>Level_One</code> 的影响，以为校验逻辑就在程序里】</p></li></ol><blockquote><p>后来看了其他队伍【丝绒Velvet】的 Writeup 我才恍然大悟<br><a href="https://mp.weixin.qq.com/s?__biz=Mzg3NDkyOTgxMg==&amp;mid=2247483701&amp;idx=1&amp;sn=df4e34e48671c9edf3372308df7f1269&amp;chksm=cec80acef9bf83d83a938775e57b55c948428c0849a15c5ec0ca420ae5bad03dc58683c0dcc6&amp;mpshare=1&amp;scene=23&amp;srcid=0330grQBOEkM9P3KELybR5rm&amp;sharer_sharetime=1680167468020&amp;sharer_shareid=bd8cb5598a8e94f9f2d58edb9b65a190#rd">2023湖北省第七届“楚慧杯”网络空间安全实践能力竞赛-预赛 -丝绒WP</a><br>   既然程序里没有这个函数，有没有可能是出题人故意在编译程序时把这个函数的内容给删了，所以 apk 文件里没有<br>   现在想想才知道为什么题目还给出了一个源文件夹 chall</p></blockquote><ol><li><p>在 <code>chall</code> 文件夹内查看：<br><img src="https://s2.loli.net/2023/03/31/9NWDIgVPHGzwlix.png" alt="湖北省第七届楚慧杯-Level_up5.png"><br><mark>通过与 jadx-gui 反编译出来的内容进行比对，发现后面这几个文件都是在程序中存在的<br>只有这个 lib 文件夹中的内容在程序中没有包含</mark></p></li><li><p>查看 <code>lib</code> 的内容：<br><img src="https://s2.loli.net/2023/03/31/ZLM8ECVwWcNreSK.png" alt="湖北省第七届楚慧杯-Level_up6.png"><br>发现这四个文件夹里各有一个文件名为 <code>libmobile2.so</code> 的文件<br><img src="https://s2.loli.net/2023/03/31/QFDCo4rXl9BsYv8.png" alt="湖北省第七届楚慧杯-Level_up7.png"><br>但是在第一个文件 <code>arm64-v8a</code> 内，是这样的：<br><img src="https://s2.loli.net/2023/04/01/k1pwrPZCdKLNIAM.png" alt="湖北省第七届楚慧杯-Level_up8.png"><br>注意到除 <code>libmobile2.so</code> 外其他文件的后缀，<code>.id0</code>、<code>.id1</code>、<code>.id2</code> 这不就是 IDA 留下的数据库文件吗<br>在 exeinfo PE 中看看：<br><img src="https://s2.loli.net/2023/04/01/ynMVQOGhwIX1aRA.png" alt="湖北省第七届楚慧杯-Level_up9.png"><br>64 位 elf 文件，用 IDA 打开，选择直接打开现存的数据库文件：<br>在函数中搜索 <code>main</code>，定位到主函数<br><img src="https://s2.loli.net/2023/04/01/9LbTBqpQNW8MdEc.png" alt="湖北省第七届楚慧杯-Level_up10.png"><br>查看一下字符串，<code>shift + F12</code>，发现端倪：<br><img src="https://s2.loli.net/2023/04/01/qzMK6RLCUIfoaiP.png" alt="湖北省第七届楚慧杯-Level_up11.png"><br>跟进 <code>gOuWlCTi+hhzCn6rWxDm8IuuBwiOtM+V/m39bthXTeT3E6WYrLU0CDqG76Kvpkmc</code> 所在地址：<br><img src="https://s2.loli.net/2023/04/01/9hKndwE1F8u2k3P.png" alt="湖北省第七届楚慧杯-Level_up12.png"><br>发现他们定义在 <code>start()</code> 函数中<br>根据形式，函数 <code>std::string::basic_string&lt;decltype(nullptr)&gt;</code> 应该是字符串复制操作<br><code>key = &quot;followyourheart!&quot;</code><br><code>enc = &quot;gOuWlCTi+hhzCn6rWxDm8IuuBwiOtM+V/m39bthXTeT3E6WYrLU0CDqG76Kvpkmc&quot;</code><br>得到了 main() 函数中的密文 <code>enc</code>，还得到了一个 <code>key</code> 应该是某种加密的密钥<br>同时，还注意到字符串中有 Base64 加密的码表：<code>ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/</code><br>但是 Base64 本身是不需要密钥的，猜测可能有多种加密方法</p></li><li><p>继续审计 main() 函数：<br>很明显注意到这里有一个加密函数：<br><img src="https://s2.loli.net/2023/04/01/tvW4k3pRlGgsOfC.png" alt="湖北省第七届楚慧杯-Level_up13.png"><br>跟进，到 <code>encode()</code> 函数：<br><img src="https://s2.loli.net/2023/04/01/DGA7gqtByUVOsn9.png" alt="湖北省第七届楚慧杯-Level_up14.png"><br>加密方式已经告知了，一个 AES128，一个 Base64，结合前面观察到的字符串，大体已经可以确定了</p></li><li><p><mark>由于在 main() 函数中，发现 <code>cipher::Encrypt::encode()</code> 之后虽然有一大堆代码，但是并没有改变 <code>enc</code> 的值</mark><br>根据代码的意思，加密流程是先对明文进行 <code>AES128（ECB）</code> 加密（密钥是 <code>followyourheart!</code>），然后进行 <code>Base64</code> 加密，得到密文 <code>enc</code><br>因此先对 <code>enc</code> 进行 <code>Base64</code> 解码，然后进行 <code>AES128（ECB）</code> 解码，即可得到 flag</p></li><li><p>但是注意，<code>AES128</code> 是按照 16字节（128 bit）为一组进行加密，所以这里要对字节进行操作，使用普通的在线网站进行解密是不行的，例如：<br><img src="https://s2.loli.net/2023/04/01/gXs7iL9RIbArUBC.png" alt="湖北省第七届楚慧杯-Level_up15.png"></p></li><li><p>因此，利用 python 脚本进行解码</p></li></ol><hr><h2 id="脚本"><a href="#脚本" class="headerlink" title="脚本"></a>脚本</h2><pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">import</span> base64  <span class="token keyword">from</span> Crypto<span class="token punctuation">.</span>Cipher <span class="token keyword">import</span> AES    enc <span class="token operator">=</span> <span class="token string">b'gOuWlCTi+hhzCn6rWxDm8IuuBwiOtM+V/m39bthXTeT3E6WYrLU0CDqG76Kvpkmc'</span>  key <span class="token operator">=</span> <span class="token string">b'followyourheart!'</span>    string1 <span class="token operator">=</span> base64<span class="token punctuation">.</span>b64decode<span class="token punctuation">(</span>enc<span class="token punctuation">)</span>  <span class="token comment"># 先对enc进行Base64解密  </span>  string2 <span class="token operator">=</span> AES<span class="token punctuation">.</span>new<span class="token punctuation">(</span>key<span class="token punctuation">,</span> AES<span class="token punctuation">.</span>MODE_ECB<span class="token punctuation">)</span>  <span class="token comment"># 创建一个AES对象string2，根据题意是ECB加密模式  </span>flag <span class="token operator">=</span> string2<span class="token punctuation">.</span>decrypt<span class="token punctuation">(</span>string1<span class="token punctuation">)</span>  <span class="token comment"># AES128 ECB解密  </span>  <span class="token keyword">print</span><span class="token punctuation">(</span>flag<span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre><hr><h2 id="结果"><a href="#结果" class="headerlink" title="结果"></a>结果</h2><blockquote><p>flag{6b1df900-1284-11ed-9fa7-5405dbe5e745}</p></blockquote><p><img src="https://s2.loli.net/2023/04/01/PN6AYi8G2zBoVL7.png" alt="湖北省第七届楚慧杯-Level_up16.png"></p>]]></content>
     
     
     <summary type="html">一道200分的安卓逆向，apk里面没有加密的函数check，比赛时害得我找了好久都找不到，后来看其他队伍的WP才发现还藏了个so文件，真是不细心啊，很好的一道题</summary>
@@ -79,9 +79,9 @@
     <category term="便捷算法" scheme="https://4ss1du0us.github.io/categories/%E4%BE%BF%E6%8D%B7%E7%AE%97%E6%B3%95/"/>
     
     
-    <category term="CTF笔记" scheme="https://4ss1du0us.github.io/tags/CTF%E7%AC%94%E8%AE%B0/"/>
-    
     <category term="CTF刷题" scheme="https://4ss1du0us.github.io/tags/CTF%E5%88%B7%E9%A2%98/"/>
+    
+    <category term="CTF笔记" scheme="https://4ss1du0us.github.io/tags/CTF%E7%AC%94%E8%AE%B0/"/>
     
     <category term="REVERSE" scheme="https://4ss1du0us.github.io/tags/REVERSE/"/>
     
@@ -104,9 +104,9 @@
     <category term="杂项" scheme="https://4ss1du0us.github.io/categories/%E6%9D%82%E9%A1%B9/"/>
     
     
-    <category term="CTF笔记" scheme="https://4ss1du0us.github.io/tags/CTF%E7%AC%94%E8%AE%B0/"/>
-    
     <category term="MISC" scheme="https://4ss1du0us.github.io/tags/MISC/"/>
+    
+    <category term="CTF笔记" scheme="https://4ss1du0us.github.io/tags/CTF%E7%AC%94%E8%AE%B0/"/>
     
   </entry>
   
@@ -127,9 +127,9 @@
     <category term="杂项" scheme="https://4ss1du0us.github.io/categories/%E6%9D%82%E9%A1%B9/"/>
     
     
-    <category term="CTF笔记" scheme="https://4ss1du0us.github.io/tags/CTF%E7%AC%94%E8%AE%B0/"/>
-    
     <category term="MISC" scheme="https://4ss1du0us.github.io/tags/MISC/"/>
+    
+    <category term="CTF笔记" scheme="https://4ss1du0us.github.io/tags/CTF%E7%AC%94%E8%AE%B0/"/>
     
   </entry>
   
@@ -150,9 +150,9 @@
     <category term="杂项" scheme="https://4ss1du0us.github.io/categories/%E6%9D%82%E9%A1%B9/"/>
     
     
-    <category term="CTF笔记" scheme="https://4ss1du0us.github.io/tags/CTF%E7%AC%94%E8%AE%B0/"/>
-    
     <category term="MISC" scheme="https://4ss1du0us.github.io/tags/MISC/"/>
+    
+    <category term="CTF笔记" scheme="https://4ss1du0us.github.io/tags/CTF%E7%AC%94%E8%AE%B0/"/>
     
   </entry>
   
@@ -173,9 +173,9 @@
     <category term="杂项" scheme="https://4ss1du0us.github.io/categories/%E6%9D%82%E9%A1%B9/"/>
     
     
-    <category term="CTF笔记" scheme="https://4ss1du0us.github.io/tags/CTF%E7%AC%94%E8%AE%B0/"/>
-    
     <category term="MISC" scheme="https://4ss1du0us.github.io/tags/MISC/"/>
+    
+    <category term="CTF笔记" scheme="https://4ss1du0us.github.io/tags/CTF%E7%AC%94%E8%AE%B0/"/>
     
   </entry>
   
@@ -196,9 +196,9 @@
     <category term="杂项" scheme="https://4ss1du0us.github.io/categories/%E6%9D%82%E9%A1%B9/"/>
     
     
-    <category term="CTF笔记" scheme="https://4ss1du0us.github.io/tags/CTF%E7%AC%94%E8%AE%B0/"/>
-    
     <category term="MISC" scheme="https://4ss1du0us.github.io/tags/MISC/"/>
+    
+    <category term="CTF笔记" scheme="https://4ss1du0us.github.io/tags/CTF%E7%AC%94%E8%AE%B0/"/>
     
   </entry>
   
@@ -311,32 +311,9 @@
     <category term="杂项" scheme="https://4ss1du0us.github.io/categories/%E6%9D%82%E9%A1%B9/"/>
     
     
-    <category term="MISC" scheme="https://4ss1du0us.github.io/tags/MISC/"/>
-    
     <category term="CTF刷题" scheme="https://4ss1du0us.github.io/tags/CTF%E5%88%B7%E9%A2%98/"/>
     
-  </entry>
-  
-  <entry>
-    <title>攻防世界-Banmabanma</title>
-    <link href="https://4ss1du0us.github.io/2023/03/19/CTF%20-%20Misc_Writeup/%E6%94%BB%E9%98%B2%E4%B8%96%E7%95%8C-Banmabanma/"/>
-    <id>https://4ss1du0us.github.io/2023/03/19/CTF%20-%20Misc_Writeup/%E6%94%BB%E9%98%B2%E4%B8%96%E7%95%8C-Banmabanma/</id>
-    <published>2023-03-19T07:23:24.000Z</published>
-    <updated>2023-03-28T14:00:53.590Z</updated>
-    
-    <content type="html"><![CDATA[<h2 id="收获"><a href="#收获" class="headerlink" title="收获"></a>收获</h2><ul><li>要对<mark>条形码</mark>、<mark>二维码</mark>等敏感：<a href="https://online-barcode-reader.inliteresearch.com/">图形码在线阅读</a></li></ul><hr><p><a href="https://adworld.xctf.org.cn/media/file/task/f018351ca6c64ceb8a98c9da9f29c9cd.rar">攻防世界-Banmabanma</a></p><hr><h2 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h2><ol><li><p>解压后得到一个 .png 文件<br><img src="https://s2.loli.net/2023/03/18/tIJaUoHwGqb94vc.png" alt="攻防世界-Banmabanma1.png"></p></li><li><p>用 exeinfo PE 查看文件，确实是 png 图片，文件类型没有做修改<br>用 010editor 查看二进制内容，没有搜索到与 flag 有关的字符串<br>在 kali 中分析图片隐写内容无果，发现没有隐藏内容</p></li><li><p>发现图中斑马身上的黑色竖条纹，有点像条形码<br>利用条形码在线阅读：<a href="https://online-barcode-reader.inliteresearch.com/">图形码在线阅读</a><br><img src="https://s2.loli.net/2023/03/18/sy6HFwqhDc8Z2Uf.png" alt="攻防世界-Banmabanma2.png"><br>识别成功：<br><img src="https://s2.loli.net/2023/03/18/FI63pfeEViGDUXS.png" alt="攻防世界-Banmabanma3.png"><br>得到 flag</p></li></ol><hr><h2 id="结果"><a href="#结果" class="headerlink" title="结果"></a>结果</h2><blockquote><p>flag{TENSHINE}</p></blockquote>]]></content>
-    
-    
-    <summary type="html">对着图片一堆隐写检测，结果什么都没有，你居然告诉我这匹马身上的是条形码。。</summary>
-    
-    
-    
-    <category term="杂项" scheme="https://4ss1du0us.github.io/categories/%E6%9D%82%E9%A1%B9/"/>
-    
-    
     <category term="MISC" scheme="https://4ss1du0us.github.io/tags/MISC/"/>
-    
-    <category term="CTF刷题" scheme="https://4ss1du0us.github.io/tags/CTF%E5%88%B7%E9%A2%98/"/>
     
   </entry>
   
@@ -357,32 +334,9 @@
     <category term="杂项" scheme="https://4ss1du0us.github.io/categories/%E6%9D%82%E9%A1%B9/"/>
     
     
-    <category term="MISC" scheme="https://4ss1du0us.github.io/tags/MISC/"/>
-    
     <category term="CTF刷题" scheme="https://4ss1du0us.github.io/tags/CTF%E5%88%B7%E9%A2%98/"/>
     
-  </entry>
-  
-  <entry>
-    <title>攻防世界-glance-50</title>
-    <link href="https://4ss1du0us.github.io/2023/03/19/CTF%20-%20Misc_Writeup/%E6%94%BB%E9%98%B2%E4%B8%96%E7%95%8C-glance-50/"/>
-    <id>https://4ss1du0us.github.io/2023/03/19/CTF%20-%20Misc_Writeup/%E6%94%BB%E9%98%B2%E4%B8%96%E7%95%8C-glance-50/</id>
-    <published>2023-03-19T07:23:24.000Z</published>
-    <updated>2023-03-28T14:02:59.864Z</updated>
-    
-    <content type="html"><![CDATA[<h2 id="收获"><a href="#收获" class="headerlink" title="收获"></a>收获</h2><ul><li><p>熟悉 <mark>gif 图片的拆分和拼接</mark></p></li><li><p><mark>拆分网站：<a href="https://tu.sioe.cn/gj/fenjie/">GIF动态图片分解，多帧动态图分解成多张静态图片</a> 可以直接将帧拼接起来，方便直接看到每一帧拼接起来的原图</mark></p></li></ul><hr><p><a href="https://adworld.xctf.org.cn/media/file/task/9266eadf353d4ada94ededaeb96d0c50.gif">攻防世界-glance-50</a></p><hr><h2 id="思路一"><a href="#思路一" class="headerlink" title="思路一"></a>思路一</h2><ol><li><p>得到一张 gif 动态图片：<br><img src="https://s2.loli.net/2023/03/18/r9OXUAWfM61IxDq.png" alt="攻防世界-glance-50 1.png"></p></li><li><p>由于图画很窄，尝试修改宽度无果，在 Ubuntu 中分析也没有发现</p></li><li><p>根据以往经验，gif 大概率是需要拆分的，于是将 gif 文件拆分成帧图片：<br><a href="https://tu.sioe.cn/gj/fenjie/">GIF动态图片分解，多帧动态图分解成多张静态图片</a><br><img src="https://s2.loli.net/2023/03/18/Teni6gfAUGdj17m.png" alt="攻防世界-glance-50 2.png"><br>使用这个网站可以直接将拆分后的图片集中展示出来，可以直接得到 flag</p></li><li><p>这个题其实就是将藏有 flag 的图片拆分为一段一段的，然后将每一个片段作为一帧合成 gif 动态图。所以直接将 gif 拆分为帧后，再拼接起来即可</p></li></ol><hr><h2 id="思路二"><a href="#思路二" class="headerlink" title="思路二"></a>思路二</h2><ol><li><p>使用网站分离得到帧图片：<br><img src="https://s2.loli.net/2023/03/18/w2R4XhJYeTWGbFm.png" alt="攻防世界-glance-50 3.png"></p></li><li><p>在 Win 下安装 <code>ImageMagick</code> ：<a href="https://imagemagick.org/script/download.php#windows">图像魔术 – 下载</a><br>在帧图片文件夹下打开 cmd，执行 <code>magick montage *.png -tile 201x1 -geometry +0+0 flag.png</code><br>得到一张拼接的图片 flag.png：<br><img src="https://s2.loli.net/2023/03/18/D6zMQW2Gl9dk3Yw.png" alt="攻防世界-glance-50 4.png"><br>根据图片内容获得 flag</p></li></ol><hr><h2 id="结果"><a href="#结果" class="headerlink" title="结果"></a>结果</h2><blockquote><p>TWCTF{Bliss by Charles O’Rear}</p></blockquote>]]></content>
-    
-    
-    <summary type="html">给了GIF文件，只有很小一条线，我还想修改图片宽度呢，遇见GIF分离帧就完事了</summary>
-    
-    
-    
-    <category term="杂项" scheme="https://4ss1du0us.github.io/categories/%E6%9D%82%E9%A1%B9/"/>
-    
-    
     <category term="MISC" scheme="https://4ss1du0us.github.io/tags/MISC/"/>
-    
-    <category term="CTF刷题" scheme="https://4ss1du0us.github.io/tags/CTF%E5%88%B7%E9%A2%98/"/>
     
   </entry>
   
@@ -403,9 +357,55 @@
     <category term="杂项" scheme="https://4ss1du0us.github.io/categories/%E6%9D%82%E9%A1%B9/"/>
     
     
+    <category term="CTF刷题" scheme="https://4ss1du0us.github.io/tags/CTF%E5%88%B7%E9%A2%98/"/>
+    
     <category term="MISC" scheme="https://4ss1du0us.github.io/tags/MISC/"/>
     
+  </entry>
+  
+  <entry>
+    <title>攻防世界-Banmabanma</title>
+    <link href="https://4ss1du0us.github.io/2023/03/19/CTF%20-%20Misc_Writeup/%E6%94%BB%E9%98%B2%E4%B8%96%E7%95%8C-Banmabanma/"/>
+    <id>https://4ss1du0us.github.io/2023/03/19/CTF%20-%20Misc_Writeup/%E6%94%BB%E9%98%B2%E4%B8%96%E7%95%8C-Banmabanma/</id>
+    <published>2023-03-19T07:23:24.000Z</published>
+    <updated>2023-03-28T14:00:53.590Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="收获"><a href="#收获" class="headerlink" title="收获"></a>收获</h2><ul><li>要对<mark>条形码</mark>、<mark>二维码</mark>等敏感：<a href="https://online-barcode-reader.inliteresearch.com/">图形码在线阅读</a></li></ul><hr><p><a href="https://adworld.xctf.org.cn/media/file/task/f018351ca6c64ceb8a98c9da9f29c9cd.rar">攻防世界-Banmabanma</a></p><hr><h2 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h2><ol><li><p>解压后得到一个 .png 文件<br><img src="https://s2.loli.net/2023/03/18/tIJaUoHwGqb94vc.png" alt="攻防世界-Banmabanma1.png"></p></li><li><p>用 exeinfo PE 查看文件，确实是 png 图片，文件类型没有做修改<br>用 010editor 查看二进制内容，没有搜索到与 flag 有关的字符串<br>在 kali 中分析图片隐写内容无果，发现没有隐藏内容</p></li><li><p>发现图中斑马身上的黑色竖条纹，有点像条形码<br>利用条形码在线阅读：<a href="https://online-barcode-reader.inliteresearch.com/">图形码在线阅读</a><br><img src="https://s2.loli.net/2023/03/18/sy6HFwqhDc8Z2Uf.png" alt="攻防世界-Banmabanma2.png"><br>识别成功：<br><img src="https://s2.loli.net/2023/03/18/FI63pfeEViGDUXS.png" alt="攻防世界-Banmabanma3.png"><br>得到 flag</p></li></ol><hr><h2 id="结果"><a href="#结果" class="headerlink" title="结果"></a>结果</h2><blockquote><p>flag{TENSHINE}</p></blockquote>]]></content>
+    
+    
+    <summary type="html">对着图片一堆隐写检测，结果什么都没有，你居然告诉我这匹马身上的是条形码。。</summary>
+    
+    
+    
+    <category term="杂项" scheme="https://4ss1du0us.github.io/categories/%E6%9D%82%E9%A1%B9/"/>
+    
+    
     <category term="CTF刷题" scheme="https://4ss1du0us.github.io/tags/CTF%E5%88%B7%E9%A2%98/"/>
+    
+    <category term="MISC" scheme="https://4ss1du0us.github.io/tags/MISC/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>攻防世界-glance-50</title>
+    <link href="https://4ss1du0us.github.io/2023/03/19/CTF%20-%20Misc_Writeup/%E6%94%BB%E9%98%B2%E4%B8%96%E7%95%8C-glance-50/"/>
+    <id>https://4ss1du0us.github.io/2023/03/19/CTF%20-%20Misc_Writeup/%E6%94%BB%E9%98%B2%E4%B8%96%E7%95%8C-glance-50/</id>
+    <published>2023-03-19T07:23:24.000Z</published>
+    <updated>2023-03-28T14:02:59.864Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="收获"><a href="#收获" class="headerlink" title="收获"></a>收获</h2><ul><li><p>熟悉 <mark>gif 图片的拆分和拼接</mark></p></li><li><p><mark>拆分网站：<a href="https://tu.sioe.cn/gj/fenjie/">GIF动态图片分解，多帧动态图分解成多张静态图片</a> 可以直接将帧拼接起来，方便直接看到每一帧拼接起来的原图</mark></p></li></ul><hr><p><a href="https://adworld.xctf.org.cn/media/file/task/9266eadf353d4ada94ededaeb96d0c50.gif">攻防世界-glance-50</a></p><hr><h2 id="思路一"><a href="#思路一" class="headerlink" title="思路一"></a>思路一</h2><ol><li><p>得到一张 gif 动态图片：<br><img src="https://s2.loli.net/2023/03/18/r9OXUAWfM61IxDq.png" alt="攻防世界-glance-50 1.png"></p></li><li><p>由于图画很窄，尝试修改宽度无果，在 Ubuntu 中分析也没有发现</p></li><li><p>根据以往经验，gif 大概率是需要拆分的，于是将 gif 文件拆分成帧图片：<br><a href="https://tu.sioe.cn/gj/fenjie/">GIF动态图片分解，多帧动态图分解成多张静态图片</a><br><img src="https://s2.loli.net/2023/03/18/Teni6gfAUGdj17m.png" alt="攻防世界-glance-50 2.png"><br>使用这个网站可以直接将拆分后的图片集中展示出来，可以直接得到 flag</p></li><li><p>这个题其实就是将藏有 flag 的图片拆分为一段一段的，然后将每一个片段作为一帧合成 gif 动态图。所以直接将 gif 拆分为帧后，再拼接起来即可</p></li></ol><hr><h2 id="思路二"><a href="#思路二" class="headerlink" title="思路二"></a>思路二</h2><ol><li><p>使用网站分离得到帧图片：<br><img src="https://s2.loli.net/2023/03/18/w2R4XhJYeTWGbFm.png" alt="攻防世界-glance-50 3.png"></p></li><li><p>在 Win 下安装 <code>ImageMagick</code> ：<a href="https://imagemagick.org/script/download.php#windows">图像魔术 – 下载</a><br>在帧图片文件夹下打开 cmd，执行 <code>magick montage *.png -tile 201x1 -geometry +0+0 flag.png</code><br>得到一张拼接的图片 flag.png：<br><img src="https://s2.loli.net/2023/03/18/D6zMQW2Gl9dk3Yw.png" alt="攻防世界-glance-50 4.png"><br>根据图片内容获得 flag</p></li></ol><hr><h2 id="结果"><a href="#结果" class="headerlink" title="结果"></a>结果</h2><blockquote><p>TWCTF{Bliss by Charles O’Rear}</p></blockquote>]]></content>
+    
+    
+    <summary type="html">给了GIF文件，只有很小一条线，我还想修改图片宽度呢，遇见GIF分离帧就完事了</summary>
+    
+    
+    
+    <category term="杂项" scheme="https://4ss1du0us.github.io/categories/%E6%9D%82%E9%A1%B9/"/>
+    
+    
+    <category term="CTF刷题" scheme="https://4ss1du0us.github.io/tags/CTF%E5%88%B7%E9%A2%98/"/>
+    
+    <category term="MISC" scheme="https://4ss1du0us.github.io/tags/MISC/"/>
     
   </entry>
   
@@ -426,9 +426,9 @@
     <category term="杂项" scheme="https://4ss1du0us.github.io/categories/%E6%9D%82%E9%A1%B9/"/>
     
     
-    <category term="MISC" scheme="https://4ss1du0us.github.io/tags/MISC/"/>
-    
     <category term="CTF刷题" scheme="https://4ss1du0us.github.io/tags/CTF%E5%88%B7%E9%A2%98/"/>
+    
+    <category term="MISC" scheme="https://4ss1du0us.github.io/tags/MISC/"/>
     
   </entry>
   
@@ -449,9 +449,9 @@
     <category term="杂项" scheme="https://4ss1du0us.github.io/categories/%E6%9D%82%E9%A1%B9/"/>
     
     
-    <category term="MISC" scheme="https://4ss1du0us.github.io/tags/MISC/"/>
-    
     <category term="CTF刷题" scheme="https://4ss1du0us.github.io/tags/CTF%E5%88%B7%E9%A2%98/"/>
+    
+    <category term="MISC" scheme="https://4ss1du0us.github.io/tags/MISC/"/>
     
   </entry>
   
@@ -472,9 +472,9 @@
     <category term="杂项" scheme="https://4ss1du0us.github.io/categories/%E6%9D%82%E9%A1%B9/"/>
     
     
-    <category term="MISC" scheme="https://4ss1du0us.github.io/tags/MISC/"/>
-    
     <category term="CTF刷题" scheme="https://4ss1du0us.github.io/tags/CTF%E5%88%B7%E9%A2%98/"/>
+    
+    <category term="MISC" scheme="https://4ss1du0us.github.io/tags/MISC/"/>
     
   </entry>
   
