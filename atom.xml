@@ -408,16 +408,16 @@
   </entry>
   
   <entry>
-    <title>攻防世界-glance-50</title>
-    <link href="https://4ss1du0us.github.io/2023/03/19/CTF%20-%20Misc_Writeup/%E6%94%BB%E9%98%B2%E4%B8%96%E7%95%8C-glance-50/"/>
-    <id>https://4ss1du0us.github.io/2023/03/19/CTF%20-%20Misc_Writeup/%E6%94%BB%E9%98%B2%E4%B8%96%E7%95%8C-glance-50/</id>
+    <title>攻防世界-hit-the-core</title>
+    <link href="https://4ss1du0us.github.io/2023/03/19/CTF%20-%20Misc_Writeup/%E6%94%BB%E9%98%B2%E4%B8%96%E7%95%8C-hit-the-core/"/>
+    <id>https://4ss1du0us.github.io/2023/03/19/CTF%20-%20Misc_Writeup/%E6%94%BB%E9%98%B2%E4%B8%96%E7%95%8C-hit-the-core/</id>
     <published>2023-03-19T07:23:24.000Z</published>
-    <updated>2023-03-28T14:02:59.864Z</updated>
+    <updated>2023-03-28T14:05:31.800Z</updated>
     
-    <content type="html"><![CDATA[<h2 id="收获"><a href="#收获" class="headerlink" title="收获"></a>收获</h2><ul><li><p>熟悉 <mark>gif 图片的拆分和拼接</mark></p></li><li><p><mark>拆分网站：<a href="https://tu.sioe.cn/gj/fenjie/">GIF动态图片分解，多帧动态图分解成多张静态图片</a> 可以直接将帧拼接起来，方便直接看到每一帧拼接起来的原图</mark></p></li></ul><hr><p><a href="https://adworld.xctf.org.cn/media/file/task/9266eadf353d4ada94ededaeb96d0c50.gif">攻防世界-glance-50</a></p><hr><h2 id="思路一"><a href="#思路一" class="headerlink" title="思路一"></a>思路一</h2><ol><li><p>得到一张 gif 动态图片：<br><img src="https://s2.loli.net/2023/03/18/r9OXUAWfM61IxDq.png" alt="攻防世界-glance-50 1.png"></p></li><li><p>由于图画很窄，尝试修改宽度无果，在 Ubuntu 中分析也没有发现</p></li><li><p>根据以往经验，gif 大概率是需要拆分的，于是将 gif 文件拆分成帧图片：<br><a href="https://tu.sioe.cn/gj/fenjie/">GIF动态图片分解，多帧动态图分解成多张静态图片</a><br><img src="https://s2.loli.net/2023/03/18/Teni6gfAUGdj17m.png" alt="攻防世界-glance-50 2.png"><br>使用这个网站可以直接将拆分后的图片集中展示出来，可以直接得到 flag</p></li><li><p>这个题其实就是将藏有 flag 的图片拆分为一段一段的，然后将每一个片段作为一帧合成 gif 动态图。所以直接将 gif 拆分为帧后，再拼接起来即可</p></li></ol><hr><h2 id="思路二"><a href="#思路二" class="headerlink" title="思路二"></a>思路二</h2><ol><li><p>使用网站分离得到帧图片：<br><img src="https://s2.loli.net/2023/03/18/w2R4XhJYeTWGbFm.png" alt="攻防世界-glance-50 3.png"></p></li><li><p>在 Win 下安装 <code>ImageMagick</code> ：<a href="https://imagemagick.org/script/download.php#windows">图像魔术 – 下载</a><br>在帧图片文件夹下打开 cmd，执行 <code>magick montage *.png -tile 201x1 -geometry +0+0 flag.png</code><br>得到一张拼接的图片 flag.png：<br><img src="https://s2.loli.net/2023/03/18/D6zMQW2Gl9dk3Yw.png" alt="攻防世界-glance-50 4.png"><br>根据图片内容获得 flag</p></li></ol><hr><h2 id="结果"><a href="#结果" class="headerlink" title="结果"></a>结果</h2><blockquote><p>TWCTF{Bliss by Charles O’Rear}</p></blockquote>]]></content>
+    <content type="html"><![CDATA[<h2 id="收获"><a href="#收获" class="headerlink" title="收获"></a>收获</h2><ul><li><mark>给出形式很像 flag 的字符串时，注意观察大写、小写、数字、符号之间有没有什么规律</mark></li></ul><hr><p><a href="https://adworld.xctf.org.cn/media/file/task/8deb5f0c2cd84143807b6175f58d6f3f.core">攻防世界-hit-the-core</a></p><hr><h2 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h2><ol><li><p>下载得到一个 .core 文件，但用 exeinfo PE 查看发现是 64位 elf 可执行文件：<br><img src="https://s2.loli.net/2023/03/18/1CEFVKyqmactr5u.png" alt="攻防世界-hit-the-core1.png"></p></li><li><p>在 ubuntu 下执行失败：<br><img src="https://s2.loli.net/2023/03/18/YAVrLlPgGIZdC8q.png" alt="攻防世界-hit-the-core2.png"></p></li><li><p>在 IDA 中查看发现一串字符：<br><img src="https://s2.loli.net/2023/03/18/hGv4ODRmfVQtPUZ.png" alt="攻防世界-hit-the-core3.png"><br>格式很像 flag，但尝试后发现不对：</p><pre class="line-numbers language-txt" data-language="txt"><code class="language-txt">cvqAeqacLtqazEigwiXobxrCrtuiTzahfFreqc&#123;bnjrKwgk83kgd43j85ePgb_e_rwqr7fvbmHjklo3tews_hmkogooyf0vbnk0ii87Drfgh_n kiwutfb0ghk9ro987k5tfb_hjiouo087ptfcv&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre></li><li><p><strong><em>发现这段 flag 很有规律，如果每 5 位看成一组，在每组的第 4 位就有一个大写字母，而其他的都是小写</em></strong><br><strong><em>尝试将每 5 组的第 4 位提取出来</em></strong>：</p><pre class="line-numbers language-txt" data-language="txt"><code class="language-txt">ALEXCTF&#123;K33P_7H3_g00D_w0rk_up&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre></li><li><p>尝试后发现获得 flag</p></li></ol><hr><h2 id="结果"><a href="#结果" class="headerlink" title="结果"></a>结果</h2><blockquote><p>ALEXCTF{K33P_7H3_g00D_w0rk_up}</p></blockquote>]]></content>
     
     
-    <summary type="html">给了GIF文件，只有很小一条线，我还想修改图片宽度呢，遇见GIF分离帧就完事了</summary>
+    <summary type="html">得到了一长串字符，很像flag的格式却又不是，原来还可以找规律啊，长见识了</summary>
     
     
     
@@ -431,16 +431,16 @@
   </entry>
   
   <entry>
-    <title>攻防世界-hit-the-core</title>
-    <link href="https://4ss1du0us.github.io/2023/03/19/CTF%20-%20Misc_Writeup/%E6%94%BB%E9%98%B2%E4%B8%96%E7%95%8C-hit-the-core/"/>
-    <id>https://4ss1du0us.github.io/2023/03/19/CTF%20-%20Misc_Writeup/%E6%94%BB%E9%98%B2%E4%B8%96%E7%95%8C-hit-the-core/</id>
+    <title>攻防世界-glance-50</title>
+    <link href="https://4ss1du0us.github.io/2023/03/19/CTF%20-%20Misc_Writeup/%E6%94%BB%E9%98%B2%E4%B8%96%E7%95%8C-glance-50/"/>
+    <id>https://4ss1du0us.github.io/2023/03/19/CTF%20-%20Misc_Writeup/%E6%94%BB%E9%98%B2%E4%B8%96%E7%95%8C-glance-50/</id>
     <published>2023-03-19T07:23:24.000Z</published>
-    <updated>2023-03-28T14:05:31.800Z</updated>
+    <updated>2023-03-28T14:02:59.864Z</updated>
     
-    <content type="html"><![CDATA[<h2 id="收获"><a href="#收获" class="headerlink" title="收获"></a>收获</h2><ul><li><mark>给出形式很像 flag 的字符串时，注意观察大写、小写、数字、符号之间有没有什么规律</mark></li></ul><hr><p><a href="https://adworld.xctf.org.cn/media/file/task/8deb5f0c2cd84143807b6175f58d6f3f.core">攻防世界-hit-the-core</a></p><hr><h2 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h2><ol><li><p>下载得到一个 .core 文件，但用 exeinfo PE 查看发现是 64位 elf 可执行文件：<br><img src="https://s2.loli.net/2023/03/18/1CEFVKyqmactr5u.png" alt="攻防世界-hit-the-core1.png"></p></li><li><p>在 ubuntu 下执行失败：<br><img src="https://s2.loli.net/2023/03/18/YAVrLlPgGIZdC8q.png" alt="攻防世界-hit-the-core2.png"></p></li><li><p>在 IDA 中查看发现一串字符：<br><img src="https://s2.loli.net/2023/03/18/hGv4ODRmfVQtPUZ.png" alt="攻防世界-hit-the-core3.png"><br>格式很像 flag，但尝试后发现不对：</p><pre class="line-numbers language-txt" data-language="txt"><code class="language-txt">cvqAeqacLtqazEigwiXobxrCrtuiTzahfFreqc&#123;bnjrKwgk83kgd43j85ePgb_e_rwqr7fvbmHjklo3tews_hmkogooyf0vbnk0ii87Drfgh_n kiwutfb0ghk9ro987k5tfb_hjiouo087ptfcv&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre></li><li><p><strong><em>发现这段 flag 很有规律，如果每 5 位看成一组，在每组的第 4 位就有一个大写字母，而其他的都是小写</em></strong><br><strong><em>尝试将每 5 组的第 4 位提取出来</em></strong>：</p><pre class="line-numbers language-txt" data-language="txt"><code class="language-txt">ALEXCTF&#123;K33P_7H3_g00D_w0rk_up&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre></li><li><p>尝试后发现获得 flag</p></li></ol><hr><h2 id="结果"><a href="#结果" class="headerlink" title="结果"></a>结果</h2><blockquote><p>ALEXCTF{K33P_7H3_g00D_w0rk_up}</p></blockquote>]]></content>
+    <content type="html"><![CDATA[<h2 id="收获"><a href="#收获" class="headerlink" title="收获"></a>收获</h2><ul><li><p>熟悉 <mark>gif 图片的拆分和拼接</mark></p></li><li><p><mark>拆分网站：<a href="https://tu.sioe.cn/gj/fenjie/">GIF动态图片分解，多帧动态图分解成多张静态图片</a> 可以直接将帧拼接起来，方便直接看到每一帧拼接起来的原图</mark></p></li></ul><hr><p><a href="https://adworld.xctf.org.cn/media/file/task/9266eadf353d4ada94ededaeb96d0c50.gif">攻防世界-glance-50</a></p><hr><h2 id="思路一"><a href="#思路一" class="headerlink" title="思路一"></a>思路一</h2><ol><li><p>得到一张 gif 动态图片：<br><img src="https://s2.loli.net/2023/03/18/r9OXUAWfM61IxDq.png" alt="攻防世界-glance-50 1.png"></p></li><li><p>由于图画很窄，尝试修改宽度无果，在 Ubuntu 中分析也没有发现</p></li><li><p>根据以往经验，gif 大概率是需要拆分的，于是将 gif 文件拆分成帧图片：<br><a href="https://tu.sioe.cn/gj/fenjie/">GIF动态图片分解，多帧动态图分解成多张静态图片</a><br><img src="https://s2.loli.net/2023/03/18/Teni6gfAUGdj17m.png" alt="攻防世界-glance-50 2.png"><br>使用这个网站可以直接将拆分后的图片集中展示出来，可以直接得到 flag</p></li><li><p>这个题其实就是将藏有 flag 的图片拆分为一段一段的，然后将每一个片段作为一帧合成 gif 动态图。所以直接将 gif 拆分为帧后，再拼接起来即可</p></li></ol><hr><h2 id="思路二"><a href="#思路二" class="headerlink" title="思路二"></a>思路二</h2><ol><li><p>使用网站分离得到帧图片：<br><img src="https://s2.loli.net/2023/03/18/w2R4XhJYeTWGbFm.png" alt="攻防世界-glance-50 3.png"></p></li><li><p>在 Win 下安装 <code>ImageMagick</code> ：<a href="https://imagemagick.org/script/download.php#windows">图像魔术 – 下载</a><br>在帧图片文件夹下打开 cmd，执行 <code>magick montage *.png -tile 201x1 -geometry +0+0 flag.png</code><br>得到一张拼接的图片 flag.png：<br><img src="https://s2.loli.net/2023/03/18/D6zMQW2Gl9dk3Yw.png" alt="攻防世界-glance-50 4.png"><br>根据图片内容获得 flag</p></li></ol><hr><h2 id="结果"><a href="#结果" class="headerlink" title="结果"></a>结果</h2><blockquote><p>TWCTF{Bliss by Charles O’Rear}</p></blockquote>]]></content>
     
     
-    <summary type="html">得到了一长串字符，很像flag的格式却又不是，原来还可以找规律啊，长见识了</summary>
+    <summary type="html">给了GIF文件，只有很小一条线，我还想修改图片宽度呢，遇见GIF分离帧就完事了</summary>
     
     
     
