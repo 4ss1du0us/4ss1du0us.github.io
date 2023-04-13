@@ -100,9 +100,9 @@
     <category term="便捷算法" scheme="https://www.4ss1du0us.cn/categories/%E4%BE%BF%E6%8D%B7%E7%AE%97%E6%B3%95/"/>
     
     
-    <category term="CTF笔记" scheme="https://www.4ss1du0us.cn/tags/CTF%E7%AC%94%E8%AE%B0/"/>
-    
     <category term="CTF刷题" scheme="https://www.4ss1du0us.cn/tags/CTF%E5%88%B7%E9%A2%98/"/>
+    
+    <category term="CTF笔记" scheme="https://www.4ss1du0us.cn/tags/CTF%E7%AC%94%E8%AE%B0/"/>
     
     <category term="REVERSE" scheme="https://www.4ss1du0us.cn/tags/REVERSE/"/>
     
@@ -125,9 +125,9 @@
     <category term="杂项" scheme="https://www.4ss1du0us.cn/categories/%E6%9D%82%E9%A1%B9/"/>
     
     
-    <category term="CTF笔记" scheme="https://www.4ss1du0us.cn/tags/CTF%E7%AC%94%E8%AE%B0/"/>
-    
     <category term="MISC" scheme="https://www.4ss1du0us.cn/tags/MISC/"/>
+    
+    <category term="CTF笔记" scheme="https://www.4ss1du0us.cn/tags/CTF%E7%AC%94%E8%AE%B0/"/>
     
   </entry>
   
@@ -148,9 +148,9 @@
     <category term="杂项" scheme="https://www.4ss1du0us.cn/categories/%E6%9D%82%E9%A1%B9/"/>
     
     
-    <category term="CTF笔记" scheme="https://www.4ss1du0us.cn/tags/CTF%E7%AC%94%E8%AE%B0/"/>
-    
     <category term="MISC" scheme="https://www.4ss1du0us.cn/tags/MISC/"/>
+    
+    <category term="CTF笔记" scheme="https://www.4ss1du0us.cn/tags/CTF%E7%AC%94%E8%AE%B0/"/>
     
   </entry>
   
@@ -171,9 +171,9 @@
     <category term="杂项" scheme="https://www.4ss1du0us.cn/categories/%E6%9D%82%E9%A1%B9/"/>
     
     
-    <category term="CTF笔记" scheme="https://www.4ss1du0us.cn/tags/CTF%E7%AC%94%E8%AE%B0/"/>
-    
     <category term="MISC" scheme="https://www.4ss1du0us.cn/tags/MISC/"/>
+    
+    <category term="CTF笔记" scheme="https://www.4ss1du0us.cn/tags/CTF%E7%AC%94%E8%AE%B0/"/>
     
   </entry>
   
@@ -194,9 +194,9 @@
     <category term="杂项" scheme="https://www.4ss1du0us.cn/categories/%E6%9D%82%E9%A1%B9/"/>
     
     
-    <category term="CTF笔记" scheme="https://www.4ss1du0us.cn/tags/CTF%E7%AC%94%E8%AE%B0/"/>
-    
     <category term="MISC" scheme="https://www.4ss1du0us.cn/tags/MISC/"/>
+    
+    <category term="CTF笔记" scheme="https://www.4ss1du0us.cn/tags/CTF%E7%AC%94%E8%AE%B0/"/>
     
   </entry>
   
@@ -217,9 +217,9 @@
     <category term="杂项" scheme="https://www.4ss1du0us.cn/categories/%E6%9D%82%E9%A1%B9/"/>
     
     
-    <category term="CTF笔记" scheme="https://www.4ss1du0us.cn/tags/CTF%E7%AC%94%E8%AE%B0/"/>
-    
     <category term="MISC" scheme="https://www.4ss1du0us.cn/tags/MISC/"/>
+    
+    <category term="CTF笔记" scheme="https://www.4ss1du0us.cn/tags/CTF%E7%AC%94%E8%AE%B0/"/>
     
   </entry>
   
@@ -332,9 +332,9 @@
     <category term="杂项" scheme="https://www.4ss1du0us.cn/categories/%E6%9D%82%E9%A1%B9/"/>
     
     
-    <category term="MISC" scheme="https://www.4ss1du0us.cn/tags/MISC/"/>
-    
     <category term="CTF刷题" scheme="https://www.4ss1du0us.cn/tags/CTF%E5%88%B7%E9%A2%98/"/>
+    
+    <category term="MISC" scheme="https://www.4ss1du0us.cn/tags/MISC/"/>
     
   </entry>
   
@@ -355,9 +355,9 @@
     <category term="杂项" scheme="https://www.4ss1du0us.cn/categories/%E6%9D%82%E9%A1%B9/"/>
     
     
-    <category term="MISC" scheme="https://www.4ss1du0us.cn/tags/MISC/"/>
-    
     <category term="CTF刷题" scheme="https://www.4ss1du0us.cn/tags/CTF%E5%88%B7%E9%A2%98/"/>
+    
+    <category term="MISC" scheme="https://www.4ss1du0us.cn/tags/MISC/"/>
     
   </entry>
   
@@ -378,9 +378,9 @@
     <category term="杂项" scheme="https://www.4ss1du0us.cn/categories/%E6%9D%82%E9%A1%B9/"/>
     
     
-    <category term="MISC" scheme="https://www.4ss1du0us.cn/tags/MISC/"/>
-    
     <category term="CTF刷题" scheme="https://www.4ss1du0us.cn/tags/CTF%E5%88%B7%E9%A2%98/"/>
+    
+    <category term="MISC" scheme="https://www.4ss1du0us.cn/tags/MISC/"/>
     
   </entry>
   
@@ -401,9 +401,32 @@
     <category term="杂项" scheme="https://www.4ss1du0us.cn/categories/%E6%9D%82%E9%A1%B9/"/>
     
     
+    <category term="CTF刷题" scheme="https://www.4ss1du0us.cn/tags/CTF%E5%88%B7%E9%A2%98/"/>
+    
     <category term="MISC" scheme="https://www.4ss1du0us.cn/tags/MISC/"/>
     
+  </entry>
+  
+  <entry>
+    <title>攻防世界-glance-50</title>
+    <link href="https://www.4ss1du0us.cn/2023/03/19/CTF%20-%20Misc_Writeup/%E6%94%BB%E9%98%B2%E4%B8%96%E7%95%8C-glance-50/"/>
+    <id>https://www.4ss1du0us.cn/2023/03/19/CTF%20-%20Misc_Writeup/%E6%94%BB%E9%98%B2%E4%B8%96%E7%95%8C-glance-50/</id>
+    <published>2023-03-19T07:23:24.000Z</published>
+    <updated>2023-03-28T14:02:59.864Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="收获"><a href="#收获" class="headerlink" title="收获"></a>收获</h2><ul><li><p>熟悉 <mark>gif 图片的拆分和拼接</mark></p></li><li><p><mark>拆分网站：<a href="https://tu.sioe.cn/gj/fenjie/">GIF动态图片分解，多帧动态图分解成多张静态图片</a> 可以直接将帧拼接起来，方便直接看到每一帧拼接起来的原图</mark></p></li></ul><hr><p><a href="https://adworld.xctf.org.cn/media/file/task/9266eadf353d4ada94ededaeb96d0c50.gif">攻防世界-glance-50</a></p><hr><h2 id="思路一"><a href="#思路一" class="headerlink" title="思路一"></a>思路一</h2><ol><li><p>得到一张 gif 动态图片：<br><img src="https://s2.loli.net/2023/03/18/r9OXUAWfM61IxDq.png" alt="攻防世界-glance-50 1.png"></p></li><li><p>由于图画很窄，尝试修改宽度无果，在 Ubuntu 中分析也没有发现</p></li><li><p>根据以往经验，gif 大概率是需要拆分的，于是将 gif 文件拆分成帧图片：<br><a href="https://tu.sioe.cn/gj/fenjie/">GIF动态图片分解，多帧动态图分解成多张静态图片</a><br><img src="https://s2.loli.net/2023/03/18/Teni6gfAUGdj17m.png" alt="攻防世界-glance-50 2.png"><br>使用这个网站可以直接将拆分后的图片集中展示出来，可以直接得到 flag</p></li><li><p>这个题其实就是将藏有 flag 的图片拆分为一段一段的，然后将每一个片段作为一帧合成 gif 动态图。所以直接将 gif 拆分为帧后，再拼接起来即可</p></li></ol><hr><h2 id="思路二"><a href="#思路二" class="headerlink" title="思路二"></a>思路二</h2><ol><li><p>使用网站分离得到帧图片：<br><img src="https://s2.loli.net/2023/03/18/w2R4XhJYeTWGbFm.png" alt="攻防世界-glance-50 3.png"></p></li><li><p>在 Win 下安装 <code>ImageMagick</code> ：<a href="https://imagemagick.org/script/download.php#windows">图像魔术 – 下载</a><br>在帧图片文件夹下打开 cmd，执行 <code>magick montage *.png -tile 201x1 -geometry +0+0 flag.png</code><br>得到一张拼接的图片 flag.png：<br><img src="https://s2.loli.net/2023/03/18/D6zMQW2Gl9dk3Yw.png" alt="攻防世界-glance-50 4.png"><br>根据图片内容获得 flag</p></li></ol><hr><h2 id="结果"><a href="#结果" class="headerlink" title="结果"></a>结果</h2><blockquote><p>TWCTF{Bliss by Charles O’Rear}</p></blockquote>]]></content>
+    
+    
+    <summary type="html">给了GIF文件，只有很小一条线，我还想修改图片宽度呢，遇见GIF分离帧就完事了</summary>
+    
+    
+    
+    <category term="杂项" scheme="https://www.4ss1du0us.cn/categories/%E6%9D%82%E9%A1%B9/"/>
+    
+    
     <category term="CTF刷题" scheme="https://www.4ss1du0us.cn/tags/CTF%E5%88%B7%E9%A2%98/"/>
+    
+    <category term="MISC" scheme="https://www.4ss1du0us.cn/tags/MISC/"/>
     
   </entry>
   
@@ -424,32 +447,9 @@
     <category term="杂项" scheme="https://www.4ss1du0us.cn/categories/%E6%9D%82%E9%A1%B9/"/>
     
     
-    <category term="MISC" scheme="https://www.4ss1du0us.cn/tags/MISC/"/>
-    
     <category term="CTF刷题" scheme="https://www.4ss1du0us.cn/tags/CTF%E5%88%B7%E9%A2%98/"/>
     
-  </entry>
-  
-  <entry>
-    <title>攻防世界-misc_pic_again</title>
-    <link href="https://www.4ss1du0us.cn/2023/03/19/CTF%20-%20Misc_Writeup/%E6%94%BB%E9%98%B2%E4%B8%96%E7%95%8C-misc_pic_again/"/>
-    <id>https://www.4ss1du0us.cn/2023/03/19/CTF%20-%20Misc_Writeup/%E6%94%BB%E9%98%B2%E4%B8%96%E7%95%8C-misc_pic_again/</id>
-    <published>2023-03-19T07:23:24.000Z</published>
-    <updated>2023-03-28T14:12:13.517Z</updated>
-    
-    <content type="html"><![CDATA[<h2 id="收获"><a href="#收获" class="headerlink" title="收获"></a>收获</h2><ul><li><p><mark>熟悉 LSB 隐写</mark>，<mark>熟悉 zsteg 的相关分析结果的意思以及提取指令</mark></p></li><li><p><mark>熟悉 Stegsolve 的使用</mark></p></li></ul><hr><p><a href="https://adworld.xctf.org.cn/media/file/task/719af25af2ca4707972c6ae57060238e.png">攻防世界-misc_pic_again</a></p><hr><h2 id="思路一"><a href="#思路一" class="headerlink" title="思路一"></a>思路一</h2><ol><li><p>解压得到一张图片，图片没有异常：<br><img src="https://s2.loli.net/2023/03/18/2hcXLCq6la3mBIY.png" alt="攻防世界-misc_pic_again1.png"></p></li><li><p>在 kali 下用 <code>zsteg</code> 分析图片：<br><img src="https://s2.loli.net/2023/03/18/W4dLpPA5bwM3Vse.png" alt="攻防世界-misc_pic_again2.png"><br>发现分析结果中藏有 Zip 文件</p></li><li><p>提取 Zip 文件：<br><img src="https://s2.loli.net/2023/03/18/X1vF9GYIAnUWriO.png" alt="攻防世界-misc_pic_again3.png"><br>解压 1.zip 后得到一个可执行文件 1<br><img src="https://s2.loli.net/2023/03/18/34vqmy8SgXAG1tJ.png" alt="攻防世界-misc_pic_again4.png"><br>增加执行权限 <code>chmod a+x 1</code> 后，执行该文件，错误：<br><img src="https://s2.loli.net/2023/03/18/wqntTivXIoEF6OA.png" alt="攻防世界-misc_pic_again5.png"></p></li><li><p>查看文件 1 的字符串：<br><img src="https://s2.loli.net/2023/03/18/mWJuc7Nw4epb5Xt.png" alt="攻防世界-misc_pic_again6.png"><br>得到 flag</p></li></ol><hr><h2 id="思路二"><a href="#思路二" class="headerlink" title="思路二"></a>思路二</h2><ol><li><p>利用 Stegsolve 打开：<code>java -jar Stegsolve.jar</code><br><img src="https://s2.loli.net/2023/03/18/zYoseVpL3NnyHxE.png" alt="攻防世界-misc_pic_again7.png"></p></li><li><p>用 LSB 分析：<br><img src="https://s2.loli.net/2023/03/18/qOtIYPnJ8jLZNgE.png" alt="攻防世界-misc_pic_again8.png"><br>输入参数：<br><img src="https://s2.loli.net/2023/03/18/RYoa8OA21zEr9bq.png" alt="攻防世界-misc_pic_again9.png"><br>根据十六进制数据发现 <code>PK</code>，该文件是一个 <code>zip</code> 压缩包，直接将文件另存为 1.zip：<br><img src="https://s2.loli.net/2023/03/18/LGauWoRdxEYXeJ3.png" alt="攻防世界-misc_pic_again10.png"><br>解压后得到一个 elf 可执行文件：<br><img src="https://s2.loli.net/2023/03/18/gTJwGmp8sHei3rz.png" alt="攻防世界-misc_pic_again11.png"></p></li><li><p>后续同思路一，在 linux 下 <code>strings 1</code> 得到 flag</p></li></ol><hr><h2 id="结果"><a href="#结果" class="headerlink" title="结果"></a>结果</h2><blockquote><p>hctf{scxdc3tok3yb0ard4g41n~~~}</p></blockquote>]]></content>
-    
-    
-    <summary type="html">一个LSB隐写题，原来zsteg可以利用偏移量分离文件，另外利用Stegsolve改变通道也可以得到一个PK开头的压缩包</summary>
-    
-    
-    
-    <category term="杂项" scheme="https://www.4ss1du0us.cn/categories/%E6%9D%82%E9%A1%B9/"/>
-    
-    
     <category term="MISC" scheme="https://www.4ss1du0us.cn/tags/MISC/"/>
-    
-    <category term="CTF刷题" scheme="https://www.4ss1du0us.cn/tags/CTF%E5%88%B7%E9%A2%98/"/>
     
   </entry>
   
@@ -470,9 +470,9 @@
     <category term="杂项" scheme="https://www.4ss1du0us.cn/categories/%E6%9D%82%E9%A1%B9/"/>
     
     
-    <category term="MISC" scheme="https://www.4ss1du0us.cn/tags/MISC/"/>
-    
     <category term="CTF刷题" scheme="https://www.4ss1du0us.cn/tags/CTF%E5%88%B7%E9%A2%98/"/>
+    
+    <category term="MISC" scheme="https://www.4ss1du0us.cn/tags/MISC/"/>
     
   </entry>
   
