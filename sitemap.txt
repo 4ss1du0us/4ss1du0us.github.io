@@ -76,10 +76,10 @@ https://www.4ss1du0us.cn/tags/index.html
 https://www.4ss1du0us.cn/categories/index.html
 https://www.4ss1du0us.cn/404/index.html
 https://www.4ss1du0us.cn/
-https://www.4ss1du0us.cn/tags/CTF%E5%88%B7%E9%A2%98/
-https://www.4ss1du0us.cn/tags/MISC/
 https://www.4ss1du0us.cn/tags/CTF%E7%AC%94%E8%AE%B0/
+https://www.4ss1du0us.cn/tags/MISC/
 https://www.4ss1du0us.cn/tags/PWN/
+https://www.4ss1du0us.cn/tags/CTF%E5%88%B7%E9%A2%98/
 https://www.4ss1du0us.cn/tags/REVERSE/
 https://www.4ss1du0us.cn/tags/Linux/
 https://www.4ss1du0us.cn/tags/%E6%97%A5%E5%B8%B8/
