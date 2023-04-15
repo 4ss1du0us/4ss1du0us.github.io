@@ -100,9 +100,9 @@
     <category term="便捷算法" scheme="https://www.4ss1du0us.cn/categories/%E4%BE%BF%E6%8D%B7%E7%AE%97%E6%B3%95/"/>
     
     
-    <category term="CTF笔记" scheme="https://www.4ss1du0us.cn/tags/CTF%E7%AC%94%E8%AE%B0/"/>
-    
     <category term="CTF刷题" scheme="https://www.4ss1du0us.cn/tags/CTF%E5%88%B7%E9%A2%98/"/>
+    
+    <category term="CTF笔记" scheme="https://www.4ss1du0us.cn/tags/CTF%E7%AC%94%E8%AE%B0/"/>
     
     <category term="REVERSE" scheme="https://www.4ss1du0us.cn/tags/REVERSE/"/>
     
@@ -125,9 +125,9 @@
     <category term="杂项" scheme="https://www.4ss1du0us.cn/categories/%E6%9D%82%E9%A1%B9/"/>
     
     
-    <category term="CTF笔记" scheme="https://www.4ss1du0us.cn/tags/CTF%E7%AC%94%E8%AE%B0/"/>
-    
     <category term="MISC" scheme="https://www.4ss1du0us.cn/tags/MISC/"/>
+    
+    <category term="CTF笔记" scheme="https://www.4ss1du0us.cn/tags/CTF%E7%AC%94%E8%AE%B0/"/>
     
   </entry>
   
@@ -148,9 +148,9 @@
     <category term="杂项" scheme="https://www.4ss1du0us.cn/categories/%E6%9D%82%E9%A1%B9/"/>
     
     
-    <category term="CTF笔记" scheme="https://www.4ss1du0us.cn/tags/CTF%E7%AC%94%E8%AE%B0/"/>
-    
     <category term="MISC" scheme="https://www.4ss1du0us.cn/tags/MISC/"/>
+    
+    <category term="CTF笔记" scheme="https://www.4ss1du0us.cn/tags/CTF%E7%AC%94%E8%AE%B0/"/>
     
   </entry>
   
@@ -171,9 +171,9 @@
     <category term="杂项" scheme="https://www.4ss1du0us.cn/categories/%E6%9D%82%E9%A1%B9/"/>
     
     
-    <category term="CTF笔记" scheme="https://www.4ss1du0us.cn/tags/CTF%E7%AC%94%E8%AE%B0/"/>
-    
     <category term="MISC" scheme="https://www.4ss1du0us.cn/tags/MISC/"/>
+    
+    <category term="CTF笔记" scheme="https://www.4ss1du0us.cn/tags/CTF%E7%AC%94%E8%AE%B0/"/>
     
   </entry>
   
@@ -194,9 +194,9 @@
     <category term="杂项" scheme="https://www.4ss1du0us.cn/categories/%E6%9D%82%E9%A1%B9/"/>
     
     
-    <category term="CTF笔记" scheme="https://www.4ss1du0us.cn/tags/CTF%E7%AC%94%E8%AE%B0/"/>
-    
     <category term="MISC" scheme="https://www.4ss1du0us.cn/tags/MISC/"/>
+    
+    <category term="CTF笔记" scheme="https://www.4ss1du0us.cn/tags/CTF%E7%AC%94%E8%AE%B0/"/>
     
   </entry>
   
@@ -217,9 +217,9 @@
     <category term="杂项" scheme="https://www.4ss1du0us.cn/categories/%E6%9D%82%E9%A1%B9/"/>
     
     
-    <category term="CTF笔记" scheme="https://www.4ss1du0us.cn/tags/CTF%E7%AC%94%E8%AE%B0/"/>
-    
     <category term="MISC" scheme="https://www.4ss1du0us.cn/tags/MISC/"/>
+    
+    <category term="CTF笔记" scheme="https://www.4ss1du0us.cn/tags/CTF%E7%AC%94%E8%AE%B0/"/>
     
   </entry>
   
@@ -316,48 +316,25 @@
   </entry>
   
   <entry>
-    <title>CatCTF-CatCatCat</title>
-    <link href="https://www.4ss1du0us.cn/2023/03/19/CTF%20-%20Misc_Writeup/CatCTF-CatCatCat/"/>
-    <id>https://www.4ss1du0us.cn/2023/03/19/CTF%20-%20Misc_Writeup/CatCTF-CatCatCat/</id>
+    <title>CatCTF-CatchCat</title>
+    <link href="https://www.4ss1du0us.cn/2023/03/19/CTF%20-%20Misc_Writeup/CatCTF-CatchCat/"/>
+    <id>https://www.4ss1du0us.cn/2023/03/19/CTF%20-%20Misc_Writeup/CatCTF-CatchCat/</id>
     <published>2023-03-19T07:23:24.000Z</published>
-    <updated>2023-04-14T08:53:13.859Z</updated>
+    <updated>2023-04-14T08:53:21.930Z</updated>
     
-    <content type="html"><![CDATA[<h2 id="收获"><a href="#收获" class="headerlink" title="收获"></a>收获</h2><ul><li><p><mark>在 kali 中分析图像的隐藏内容</mark></p></li><li><p>熟悉 <mark>Rabbit加解密</mark>、<mark>Base91加解密</mark>、<mark>Ook!语言加解密</mark> 的特点<br>  <a href="http://www.esjson.com/rabbitEncrypt.html">Rabbit加解密(ES JSON在线工具)</a><br>  <a href="http://www.hiencode.com/base91.html">CTF在线工具-在线base91编码</a><br>  <a href="https://www.splitbrain.org/services/ook">Brainfuck&#x2F;Ook! Encoding</a></p></li></ul><hr><p><a href="https://adworld.xctf.org.cn/challenges/details?hash=e395fd1e-8d98-11ed-ab28-000c29bc20bf&task_category_id=1">CatCTF-CatCatCat</a></p><hr><h2 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h2><ol><li><p>下载文件得到一张 .jpg 图和一个 .txt 文本文件<br><img src="https://s2.loli.net/2023/03/18/ILuT6bKXlp1qcZS.png" alt="CatCTF-CatCatCat1.png"></p></li><li><p>图片最底下挡住了一块，在 kali 下查看是否有隐藏内容<br><img src="https://s2.loli.net/2023/03/18/LGODz8qQRc1oVJe.png" alt="CatCTF-CatCatCat2.png"><br><img src="https://s2.loli.net/2023/03/18/PsauivrSOloXVqw.png" alt="CatCTF-CatCatCat3.png"><br>具体查看 flag 字符串：<br><img src="https://s2.loli.net/2023/03/18/skACVwB7XxaIJ8j.png" alt="CatCTF-CatCatCat4.png"><br>在文件中发现字符串：<code>passwordis..catflag..]</code></p></li><li><p>根据文本内容，发现很多 <code>&#39;+&#39;</code>，并且开头为：<code>U2FsdGVkX1</code><br><img src="https://s2.loli.net/2023/03/18/BMSQklAGwFo1X93.png" alt="CatCTF-CatCatCat5.png"><br>这是 <em><strong>Rabbit 加密</strong></em> 的特点，并且 Rabbit 加解密会使用到密钥，猜测密钥就是 <code>catflag</code></p></li><li><p><a href="http://www.esjson.com/rabbitEncrypt.html">Rabbit加解密(ES JSON在线工具)</a><br><img src="https://s2.loli.net/2023/03/18/lAP1hEvpdqKJ96Y.png" alt="CatCTF-CatCatCat6.png"></p></li><li><p>将结果进行 Base91 解密：<a href="http://www.hiencode.com/base91.html">CTF在线工具-在线base91编码</a><br><img src="https://s2.loli.net/2023/03/18/Bnwfz2YpKZWkgmX.png" alt="CatCTF-CatCatCat7.png"></p></li><li><p>发现结果中存在很多 <code>&#39;.&#39;</code>、<code>&#39;!&#39;</code>、<code>&#39;?&#39;</code>，这是 <em><strong>Ook 语言加密</strong></em> 的特点：<a href="https://www.splitbrain.org/services/ook">Brainfuck&#x2F;Ook! Encoding</a><br><img src="https://s2.loli.net/2023/03/18/iWKpgqOxQVn4cY9.png" alt="CatCTF-CatCatCat8.png"></p></li><li><p>得到 flag：CATCTF{Th1s_V3ry_cute_catcat!!!}</p></li></ol><hr><h2 id="结果"><a href="#结果" class="headerlink" title="结果"></a>结果</h2><blockquote><p>CATCTF{Th1s_V3ry_cute_catcat!!!}</p></blockquote>]]></content>
+    <content type="html"><![CDATA[<h2 id="收获"><a href="#收获" class="headerlink" title="收获"></a>收获</h2><ul><li><mark>根据地图 GPS 数据复现轨迹</mark><ol><li>利用 NMEA 转 KML 可视化还原 GPS 轨迹（<a href="https://www.h-schmidt.net/NMEA/">NMEA 转 KML</a>）</li><li>将 KML 数据可视化为 GPS 轨迹（<a href="https://mygeodata.cloud/converter/">KML 可视化轨迹</a>）</li></ol></li><li><mark>GPS 数据格式</mark>：<a href="https://www.lehoon.cn/orther/2017/04/25/gnss-gpgga-formet.html">GPGGA格式详解 | 豌豆荚博客 (lehoon.cn)</a></li></ul><hr><p><a href="https://adworld.xctf.org.cn/challenges/details?hash=36f991a4-8d9a-11ed-b5da-000c296d9df6&task_category_id=1">CatCTF-CatchCat</a></p><hr><h2 id="思路一"><a href="#思路一" class="headerlink" title="思路一"></a>思路一</h2><ol><li><p>下载文件，是一个 .txt 文本，根据题目提示，以及文本数据的特点，给出的应该是 GPS 数据<br><img src="https://s2.loli.net/2023/03/18/RXxOASdcCkb1Pta.png" alt="CatCTF-CatchCat1.png"></p></li><li><p><a href="https://www.lehoon.cn/orther/2017/04/25/gnss-gpgga-formet.html">GPGGA格式详解 | 豌豆荚博客 (lehoon.cn)</a><br>了解得知，该文本内容是 GPS 的 NMEA 格式轨迹数据，将数据还原为轨迹即可</p></li><li><p>利用 NMEA 转 KML 可视化还原 GPS 轨迹：<a href="https://www.h-schmidt.net/NMEA/">NMEA 转 KML</a><br><img src="https://s2.loli.net/2023/03/18/1WbFYwi3KNPnLpT.png" alt="CatCTF-CatchCat2.png"></p></li><li><p>将 KML 数据可视化为 GPS 轨迹：<a href="https://mygeodata.cloud/converter/">KML 可视化轨迹</a><br><img src="https://s2.loli.net/2023/03/18/3W5ehdYQVjKl4NB.png" alt="CatCTF-CatchCat3.png"></p></li><li><p>根据轨迹可得 flag：CatCTF{GPS_M1ao}</p></li></ol><hr><h2 id="思路二"><a href="#思路二" class="headerlink" title="思路二"></a>思路二</h2><ol><li><p>通过写脚本提取数据还原 GPS 轨迹</p><pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">import</span> matplotlib<span class="token punctuation">.</span>pyplot <span class="token keyword">as</span> pltdata <span class="token operator">=</span> <span class="token builtin">open</span><span class="token punctuation">(</span><span class="token string">'CatchCat.txt'</span><span class="token punctuation">,</span> <span class="token string">'r'</span><span class="token punctuation">)</span><span class="token punctuation">.</span>readlines<span class="token punctuation">(</span><span class="token punctuation">)</span>x <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span>y <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token keyword">for</span> line <span class="token keyword">in</span> data<span class="token punctuation">:</span>  <span class="token keyword">if</span> line<span class="token punctuation">.</span>strip<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>d1<span class="token punctuation">,</span> d2 <span class="token operator">=</span> <span class="token builtin">float</span><span class="token punctuation">(</span>line<span class="token punctuation">[</span><span class="token number">17</span><span class="token punctuation">:</span><span class="token number">30</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token builtin">float</span><span class="token punctuation">(</span>line<span class="token punctuation">[</span><span class="token number">33</span><span class="token punctuation">:</span><span class="token number">47</span><span class="token punctuation">]</span><span class="token punctuation">)</span>x<span class="token punctuation">.</span>append<span class="token punctuation">(</span>d1<span class="token punctuation">)</span>y<span class="token punctuation">.</span>append<span class="token punctuation">(</span>d2<span class="token punctuation">)</span>plt<span class="token punctuation">.</span>scatter<span class="token punctuation">(</span>x<span class="token punctuation">,</span>y<span class="token punctuation">)</span>plt<span class="token punctuation">.</span>show<span class="token punctuation">(</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></li><li><p>获得轨迹：<br><img src="https://s2.loli.net/2023/03/18/y1HFtlVX5DLvEcG.png" alt="CatCTF-CatchCat4.png"></p></li></ol><hr><h2 id="结果"><a href="#结果" class="headerlink" title="结果"></a>结果</h2><blockquote><p>CatCTF{GPS_M1ao}</p></blockquote>]]></content>
     
     
-    <summary type="html">隐写比较常规，但是这几个套娃的加密方法真没看出来，学到了 Rabbit 和 Base91</summary>
+    <summary type="html">给了个 GPS 数据，真不知道，孤陋寡闻了，积累一下长点见识吧</summary>
     
     
     
     <category term="杂项" scheme="https://www.4ss1du0us.cn/categories/%E6%9D%82%E9%A1%B9/"/>
     
     
-    <category term="MISC" scheme="https://www.4ss1du0us.cn/tags/MISC/"/>
-    
     <category term="CTF刷题" scheme="https://www.4ss1du0us.cn/tags/CTF%E5%88%B7%E9%A2%98/"/>
     
-  </entry>
-  
-  <entry>
-    <title>CatCTF-miao~</title>
-    <link href="https://www.4ss1du0us.cn/2023/03/19/CTF%20-%20Misc_Writeup/CatCTF-miao~/"/>
-    <id>https://www.4ss1du0us.cn/2023/03/19/CTF%20-%20Misc_Writeup/CatCTF-miao~/</id>
-    <published>2023-03-19T07:23:24.000Z</published>
-    <updated>2023-04-14T08:53:32.862Z</updated>
-    
-    <content type="html"><![CDATA[<h2 id="收获"><a href="#收获" class="headerlink" title="收获"></a>收获</h2><ul><li><p>熟悉<mark>图像隐写</mark>、<mark>音频隐写</mark>，学会使用 <mark>Audacity 和 DeepSound</mark></p></li><li><p>了解<mark>兽语解密</mark></p></li><li><p><mark>不要太相信 binwalk 的隐藏文件检测结果</mark>，有时候不准确，先用 foremost 尝试分离</p></li></ul><hr><p><a href="https://adworld.xctf.org.cn/media/file/task/01ba54b9-5a1c-40f3-8fb5-19f1abf9f97a.zip">CatCTF-miao~</a></p><hr><h2 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h2><ol><li><p>解压得到一张 jpg 图片<br><img src="https://s2.loli.net/2023/03/18/1q762AysHlObeEr.png" alt="CatCTF-miao~1.png"></p></li><li><p>在 Ubuntu 下查看图片隐藏信息，查看字符串未发现有用信息：<br><img src="https://s2.loli.net/2023/03/18/Do4UwW5MHX7FxO8.png" alt="CatCTF-miao~2.png"><img src="https://s2.loli.net/2023/03/18/yOcNjw3ZVfxQA5g.png" alt="CatCTF-miao~3.png"></p></li><li><p>用 <code>binwalk</code> 检测是否含有隐藏文件：<br><img src="https://s2.loli.net/2023/03/18/tjohl2OM4UJ8R7v.png" alt="CatCTF-miao~4.png"><br><em>这里踩坑了。。。不要太相信 binwalk 的分析结果，这里显示没有其他隐藏文件，但其实是有的</em></p></li><li><p>在 Winhex 下可以看到包含了 wav：<br><img src="https://s2.loli.net/2023/03/18/tJn1vUyOfFjiGQV.png" alt="CatCTF-miao~5.png"></p></li><li><p>用 <code>foremost</code> 分离，得到几个文件夹：<br><img src="https://s2.loli.net/2023/03/18/F3NKLsiya61PAXC.png" alt="CatCTF-miao~6.png"><br><img src="https://s2.loli.net/2023/03/18/PGhaDIp3OTvRrBW.png" alt="CatCTF-miao~7.png"><br>其中，jpg 文件夹内时一张原图，wav 文件夹内有一段音频：<br><img src="https://s2.loli.net/2023/03/18/nwdCN526HjYTFfa.png" alt="CatCTF-miao~8.png"><br>用 <code>Audacity</code> 打开，并查看频谱图：<br><img src="https://s2.loli.net/2023/03/18/6FkpbNXG3LtCcJH.png" alt="CatCTF-miao~9.png"><br><img src="https://s2.loli.net/2023/03/19/DyTFkPxpGQn1t7K.png" alt="CatCTF-miao~10.png"><br>发现 <code>&quot;CatCTF&quot;</code> 字样</p></li><li><p>由于只给了一段猫叫的音频，猜测可能跟音频内容有关，可能是<strong>音频的解密密码</strong><br>利用音频隐写工具 <code>DeepSound</code> 打开：<br><img src="https://s2.loli.net/2023/03/18/8UGLHAmSbFX6NDy.png" alt="CatCTF-miao~11.png"><br>但是发现需要密码，尝试了文件名，不对，最后用音频的频谱图内发现的 CatCTF 作为密码成功<br><img src="https://s2.loli.net/2023/03/18/2bZSiLOdM4Hn1F8.png" alt="CatCTF-miao~12.png"><br>得到一个 flag.txt 文件，打开发现是猫叫声：<br><img src="https://s2.loli.net/2023/03/18/UqB7lIAP8w2vzog.png" alt="CatCTF-miao~13.png"></p></li><li><p>利用<mark>兽语解密</mark>：<a href="http://hi.pcmoe.net/roar.html">兽音译者&#x2F;兽语加密 - PcMoe!</a><br><img src="https://s2.loli.net/2023/03/18/Hi3nzBD4TsUlbfJ.png" alt="CatCTF-miao~14.png"><br>得到 flag</p></li></ol><hr><h2 id="结果"><a href="#结果" class="headerlink" title="结果"></a>结果</h2><blockquote><p>CatCTF{d0_y0u_Hate_c4t_ba3k1ng_?_M1ao~}</p></blockquote>]]></content>
-    
-    
-    <summary type="html">一道音频隐写题，不过我用 binwalk 显示没有隐藏文件啊，最后居然可以 foremost，还接触到了兽语加密</summary>
-    
-    
-    
-    <category term="杂项" scheme="https://www.4ss1du0us.cn/categories/%E6%9D%82%E9%A1%B9/"/>
-    
-    
     <category term="MISC" scheme="https://www.4ss1du0us.cn/tags/MISC/"/>
-    
-    <category term="CTF刷题" scheme="https://www.4ss1du0us.cn/tags/CTF%E5%88%B7%E9%A2%98/"/>
     
   </entry>
   
@@ -378,78 +355,32 @@
     <category term="杂项" scheme="https://www.4ss1du0us.cn/categories/%E6%9D%82%E9%A1%B9/"/>
     
     
-    <category term="MISC" scheme="https://www.4ss1du0us.cn/tags/MISC/"/>
-    
     <category term="CTF刷题" scheme="https://www.4ss1du0us.cn/tags/CTF%E5%88%B7%E9%A2%98/"/>
+    
+    <category term="MISC" scheme="https://www.4ss1du0us.cn/tags/MISC/"/>
     
   </entry>
   
   <entry>
-    <title>CatCTF-CatchCat</title>
-    <link href="https://www.4ss1du0us.cn/2023/03/19/CTF%20-%20Misc_Writeup/CatCTF-CatchCat/"/>
-    <id>https://www.4ss1du0us.cn/2023/03/19/CTF%20-%20Misc_Writeup/CatCTF-CatchCat/</id>
+    <title>攻防世界-glance-50</title>
+    <link href="https://www.4ss1du0us.cn/2023/03/19/CTF%20-%20Misc_Writeup/%E6%94%BB%E9%98%B2%E4%B8%96%E7%95%8C-glance-50/"/>
+    <id>https://www.4ss1du0us.cn/2023/03/19/CTF%20-%20Misc_Writeup/%E6%94%BB%E9%98%B2%E4%B8%96%E7%95%8C-glance-50/</id>
     <published>2023-03-19T07:23:24.000Z</published>
-    <updated>2023-04-14T08:53:21.930Z</updated>
+    <updated>2023-04-14T08:52:41.436Z</updated>
     
-    <content type="html"><![CDATA[<h2 id="收获"><a href="#收获" class="headerlink" title="收获"></a>收获</h2><ul><li><mark>根据地图 GPS 数据复现轨迹</mark><ol><li>利用 NMEA 转 KML 可视化还原 GPS 轨迹（<a href="https://www.h-schmidt.net/NMEA/">NMEA 转 KML</a>）</li><li>将 KML 数据可视化为 GPS 轨迹（<a href="https://mygeodata.cloud/converter/">KML 可视化轨迹</a>）</li></ol></li><li><mark>GPS 数据格式</mark>：<a href="https://www.lehoon.cn/orther/2017/04/25/gnss-gpgga-formet.html">GPGGA格式详解 | 豌豆荚博客 (lehoon.cn)</a></li></ul><hr><p><a href="https://adworld.xctf.org.cn/challenges/details?hash=36f991a4-8d9a-11ed-b5da-000c296d9df6&task_category_id=1">CatCTF-CatchCat</a></p><hr><h2 id="思路一"><a href="#思路一" class="headerlink" title="思路一"></a>思路一</h2><ol><li><p>下载文件，是一个 .txt 文本，根据题目提示，以及文本数据的特点，给出的应该是 GPS 数据<br><img src="https://s2.loli.net/2023/03/18/RXxOASdcCkb1Pta.png" alt="CatCTF-CatchCat1.png"></p></li><li><p><a href="https://www.lehoon.cn/orther/2017/04/25/gnss-gpgga-formet.html">GPGGA格式详解 | 豌豆荚博客 (lehoon.cn)</a><br>了解得知，该文本内容是 GPS 的 NMEA 格式轨迹数据，将数据还原为轨迹即可</p></li><li><p>利用 NMEA 转 KML 可视化还原 GPS 轨迹：<a href="https://www.h-schmidt.net/NMEA/">NMEA 转 KML</a><br><img src="https://s2.loli.net/2023/03/18/1WbFYwi3KNPnLpT.png" alt="CatCTF-CatchCat2.png"></p></li><li><p>将 KML 数据可视化为 GPS 轨迹：<a href="https://mygeodata.cloud/converter/">KML 可视化轨迹</a><br><img src="https://s2.loli.net/2023/03/18/3W5ehdYQVjKl4NB.png" alt="CatCTF-CatchCat3.png"></p></li><li><p>根据轨迹可得 flag：CatCTF{GPS_M1ao}</p></li></ol><hr><h2 id="思路二"><a href="#思路二" class="headerlink" title="思路二"></a>思路二</h2><ol><li><p>通过写脚本提取数据还原 GPS 轨迹</p><pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">import</span> matplotlib<span class="token punctuation">.</span>pyplot <span class="token keyword">as</span> pltdata <span class="token operator">=</span> <span class="token builtin">open</span><span class="token punctuation">(</span><span class="token string">'CatchCat.txt'</span><span class="token punctuation">,</span> <span class="token string">'r'</span><span class="token punctuation">)</span><span class="token punctuation">.</span>readlines<span class="token punctuation">(</span><span class="token punctuation">)</span>x <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span>y <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token keyword">for</span> line <span class="token keyword">in</span> data<span class="token punctuation">:</span>  <span class="token keyword">if</span> line<span class="token punctuation">.</span>strip<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>d1<span class="token punctuation">,</span> d2 <span class="token operator">=</span> <span class="token builtin">float</span><span class="token punctuation">(</span>line<span class="token punctuation">[</span><span class="token number">17</span><span class="token punctuation">:</span><span class="token number">30</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token builtin">float</span><span class="token punctuation">(</span>line<span class="token punctuation">[</span><span class="token number">33</span><span class="token punctuation">:</span><span class="token number">47</span><span class="token punctuation">]</span><span class="token punctuation">)</span>x<span class="token punctuation">.</span>append<span class="token punctuation">(</span>d1<span class="token punctuation">)</span>y<span class="token punctuation">.</span>append<span class="token punctuation">(</span>d2<span class="token punctuation">)</span>plt<span class="token punctuation">.</span>scatter<span class="token punctuation">(</span>x<span class="token punctuation">,</span>y<span class="token punctuation">)</span>plt<span class="token punctuation">.</span>show<span class="token punctuation">(</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></li><li><p>获得轨迹：<br><img src="https://s2.loli.net/2023/03/18/y1HFtlVX5DLvEcG.png" alt="CatCTF-CatchCat4.png"></p></li></ol><hr><h2 id="结果"><a href="#结果" class="headerlink" title="结果"></a>结果</h2><blockquote><p>CatCTF{GPS_M1ao}</p></blockquote>]]></content>
+    <content type="html"><![CDATA[<h2 id="收获"><a href="#收获" class="headerlink" title="收获"></a>收获</h2><ul><li><p>熟悉 <mark>gif 图片的拆分和拼接</mark></p></li><li><p><mark>拆分网站：<a href="https://tu.sioe.cn/gj/fenjie/">GIF动态图片分解，多帧动态图分解成多张静态图片</a> 可以直接将帧拼接起来，方便直接看到每一帧拼接起来的原图</mark></p></li></ul><hr><p><a href="https://adworld.xctf.org.cn/media/file/task/9266eadf353d4ada94ededaeb96d0c50.gif">攻防世界-glance-50</a></p><hr><h2 id="思路一"><a href="#思路一" class="headerlink" title="思路一"></a>思路一</h2><ol><li><p>得到一张 gif 动态图片：<br><img src="https://s2.loli.net/2023/03/18/r9OXUAWfM61IxDq.png" alt="攻防世界-glance-50 1.png"></p></li><li><p>由于图画很窄，尝试修改宽度无果，在 Ubuntu 中分析也没有发现</p></li><li><p>根据以往经验，gif 大概率是需要拆分的，于是将 gif 文件拆分成帧图片：<br><a href="https://tu.sioe.cn/gj/fenjie/">GIF动态图片分解，多帧动态图分解成多张静态图片</a><br><img src="https://s2.loli.net/2023/03/18/Teni6gfAUGdj17m.png" alt="攻防世界-glance-50 2.png"><br>使用这个网站可以直接将拆分后的图片集中展示出来，可以直接得到 flag</p></li><li><p>这个题其实就是将藏有 flag 的图片拆分为一段一段的，然后将每一个片段作为一帧合成 gif 动态图。所以直接将 gif 拆分为帧后，再拼接起来即可</p></li></ol><hr><h2 id="思路二"><a href="#思路二" class="headerlink" title="思路二"></a>思路二</h2><ol><li><p>使用网站分离得到帧图片：<br><img src="https://s2.loli.net/2023/03/18/w2R4XhJYeTWGbFm.png" alt="攻防世界-glance-50 3.png"></p></li><li><p>在 Win 下安装 <code>ImageMagick</code> ：<a href="https://imagemagick.org/script/download.php#windows">图像魔术 – 下载</a><br>在帧图片文件夹下打开 cmd，执行 <code>magick montage *.png -tile 201x1 -geometry +0+0 flag.png</code><br>得到一张拼接的图片 flag.png：<br><img src="https://s2.loli.net/2023/03/18/D6zMQW2Gl9dk3Yw.png" alt="攻防世界-glance-50 4.png"><br>根据图片内容获得 flag</p></li></ol><hr><h2 id="结果"><a href="#结果" class="headerlink" title="结果"></a>结果</h2><blockquote><p>TWCTF{Bliss by Charles O’Rear}</p></blockquote>]]></content>
     
     
-    <summary type="html">给了个 GPS 数据，真不知道，孤陋寡闻了，积累一下长点见识吧</summary>
+    <summary type="html">给了 GIF 文件，只有很小一条线，我还想修改图片宽度呢，遇见 GIF 分离帧就完事了</summary>
     
     
     
     <category term="杂项" scheme="https://www.4ss1du0us.cn/categories/%E6%9D%82%E9%A1%B9/"/>
     
     
-    <category term="MISC" scheme="https://www.4ss1du0us.cn/tags/MISC/"/>
-    
     <category term="CTF刷题" scheme="https://www.4ss1du0us.cn/tags/CTF%E5%88%B7%E9%A2%98/"/>
     
-  </entry>
-  
-  <entry>
-    <title>攻防世界-hit-the-core</title>
-    <link href="https://www.4ss1du0us.cn/2023/03/19/CTF%20-%20Misc_Writeup/%E6%94%BB%E9%98%B2%E4%B8%96%E7%95%8C-hit-the-core/"/>
-    <id>https://www.4ss1du0us.cn/2023/03/19/CTF%20-%20Misc_Writeup/%E6%94%BB%E9%98%B2%E4%B8%96%E7%95%8C-hit-the-core/</id>
-    <published>2023-03-19T07:23:24.000Z</published>
-    <updated>2023-04-14T08:52:47.061Z</updated>
-    
-    <content type="html"><![CDATA[<h2 id="收获"><a href="#收获" class="headerlink" title="收获"></a>收获</h2><ul><li><mark>给出形式很像 flag 的字符串时，注意观察大写、小写、数字、符号之间有没有什么规律</mark></li></ul><hr><p><a href="https://adworld.xctf.org.cn/media/file/task/8deb5f0c2cd84143807b6175f58d6f3f.core">攻防世界-hit-the-core</a></p><hr><h2 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h2><ol><li><p>下载得到一个 .core 文件，但用 exeinfo PE 查看发现是 64位 elf 可执行文件：<br><img src="https://s2.loli.net/2023/03/18/1CEFVKyqmactr5u.png" alt="攻防世界-hit-the-core1.png"></p></li><li><p>在 ubuntu 下执行失败：<br><img src="https://s2.loli.net/2023/03/18/YAVrLlPgGIZdC8q.png" alt="攻防世界-hit-the-core2.png"></p></li><li><p>在 IDA 中查看发现一串字符：<br><img src="https://s2.loli.net/2023/03/18/hGv4ODRmfVQtPUZ.png" alt="攻防世界-hit-the-core3.png"><br>格式很像 flag，但尝试后发现不对：</p><pre class="line-numbers language-txt" data-language="txt"><code class="language-txt">cvqAeqacLtqazEigwiXobxrCrtuiTzahfFreqc&#123;bnjrKwgk83kgd43j85ePgb_e_rwqr7fvbmHjklo3tews_hmkogooyf0vbnk0ii87Drfgh_n kiwutfb0ghk9ro987k5tfb_hjiouo087ptfcv&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre></li><li><p><em><strong>发现这段 flag 很有规律，如果每 5 位看成一组，在每组的第 4 位就有一个大写字母，而其他的都是小写</strong></em><br><em><strong>尝试将每 5 组的第 4 位提取出来</strong></em>：</p><pre class="line-numbers language-txt" data-language="txt"><code class="language-txt">ALEXCTF&#123;K33P_7H3_g00D_w0rk_up&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre></li><li><p>尝试后发现获得 flag</p></li></ol><hr><h2 id="结果"><a href="#结果" class="headerlink" title="结果"></a>结果</h2><blockquote><p>ALEXCTF{K33P_7H3_g00D_w0rk_up}</p></blockquote>]]></content>
-    
-    
-    <summary type="html">得到了一长串字符，很像 flag 的格式却又不是，原来还可以找规律啊，长见识了</summary>
-    
-    
-    
-    <category term="杂项" scheme="https://www.4ss1du0us.cn/categories/%E6%9D%82%E9%A1%B9/"/>
-    
-    
     <category term="MISC" scheme="https://www.4ss1du0us.cn/tags/MISC/"/>
-    
-    <category term="CTF刷题" scheme="https://www.4ss1du0us.cn/tags/CTF%E5%88%B7%E9%A2%98/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>攻防世界-misc_pic_again</title>
-    <link href="https://www.4ss1du0us.cn/2023/03/19/CTF%20-%20Misc_Writeup/%E6%94%BB%E9%98%B2%E4%B8%96%E7%95%8C-misc_pic_again/"/>
-    <id>https://www.4ss1du0us.cn/2023/03/19/CTF%20-%20Misc_Writeup/%E6%94%BB%E9%98%B2%E4%B8%96%E7%95%8C-misc_pic_again/</id>
-    <published>2023-03-19T07:23:24.000Z</published>
-    <updated>2023-04-14T08:53:05.840Z</updated>
-    
-    <content type="html"><![CDATA[<h2 id="收获"><a href="#收获" class="headerlink" title="收获"></a>收获</h2><ul><li><p><mark>熟悉 LSB 隐写</mark>，<mark>熟悉 zsteg 的相关分析结果的意思以及提取指令</mark></p></li><li><p><mark>熟悉 Stegsolve 的使用</mark></p></li></ul><hr><p><a href="https://adworld.xctf.org.cn/media/file/task/719af25af2ca4707972c6ae57060238e.png">攻防世界-misc_pic_again</a></p><hr><h2 id="思路一"><a href="#思路一" class="headerlink" title="思路一"></a>思路一</h2><ol><li><p>解压得到一张图片，图片没有异常：<br><img src="https://s2.loli.net/2023/03/18/2hcXLCq6la3mBIY.png" alt="攻防世界-misc_pic_again1.png"></p></li><li><p>在 kali 下用 <code>zsteg</code> 分析图片：<br><img src="https://s2.loli.net/2023/03/18/W4dLpPA5bwM3Vse.png" alt="攻防世界-misc_pic_again2.png"><br>发现分析结果中藏有 Zip 文件</p></li><li><p>提取 Zip 文件：<br><img src="https://s2.loli.net/2023/03/18/X1vF9GYIAnUWriO.png" alt="攻防世界-misc_pic_again3.png"><br>解压 1.zip 后得到一个可执行文件 1<br><img src="https://s2.loli.net/2023/03/18/34vqmy8SgXAG1tJ.png" alt="攻防世界-misc_pic_again4.png"><br>增加执行权限 <code>chmod a+x 1</code> 后，执行该文件，错误：<br><img src="https://s2.loli.net/2023/03/18/wqntTivXIoEF6OA.png" alt="攻防世界-misc_pic_again5.png"></p></li><li><p>查看文件 1 的字符串：<br><img src="https://s2.loli.net/2023/03/18/mWJuc7Nw4epb5Xt.png" alt="攻防世界-misc_pic_again6.png"><br>得到 flag</p></li></ol><hr><h2 id="思路二"><a href="#思路二" class="headerlink" title="思路二"></a>思路二</h2><ol><li><p>利用 Stegsolve 打开：<code>java -jar Stegsolve.jar</code><br><img src="https://s2.loli.net/2023/03/18/zYoseVpL3NnyHxE.png" alt="攻防世界-misc_pic_again7.png"></p></li><li><p>用 LSB 分析：<br><img src="https://s2.loli.net/2023/03/18/qOtIYPnJ8jLZNgE.png" alt="攻防世界-misc_pic_again8.png"><br>输入参数：<br><img src="https://s2.loli.net/2023/03/18/RYoa8OA21zEr9bq.png" alt="攻防世界-misc_pic_again9.png"><br>根据十六进制数据发现 <code>PK</code>，该文件是一个 <code>zip</code> 压缩包，直接将文件另存为 1.zip：<br><img src="https://s2.loli.net/2023/03/18/LGauWoRdxEYXeJ3.png" alt="攻防世界-misc_pic_again10.png"><br>解压后得到一个 elf 可执行文件：<br><img src="https://s2.loli.net/2023/03/18/gTJwGmp8sHei3rz.png" alt="攻防世界-misc_pic_again11.png"></p></li><li><p>后续同思路一，在 linux 下 <code>strings 1</code> 得到 flag</p></li></ol><hr><h2 id="结果"><a href="#结果" class="headerlink" title="结果"></a>结果</h2><blockquote><p>hctf{scxdc3tok3yb0ard4g41n~~~}</p></blockquote>]]></content>
-    
-    
-    <summary type="html">一个 LSB 隐写题，原来 zsteg 可以利用偏移量分离文件，另外利用 Stegsolve 改变通道也可以得到一个 PK 开头的压缩包</summary>
-    
-    
-    
-    <category term="杂项" scheme="https://www.4ss1du0us.cn/categories/%E6%9D%82%E9%A1%B9/"/>
-    
-    
-    <category term="MISC" scheme="https://www.4ss1du0us.cn/tags/MISC/"/>
-    
-    <category term="CTF刷题" scheme="https://www.4ss1du0us.cn/tags/CTF%E5%88%B7%E9%A2%98/"/>
     
   </entry>
   
@@ -470,9 +401,78 @@
     <category term="杂项" scheme="https://www.4ss1du0us.cn/categories/%E6%9D%82%E9%A1%B9/"/>
     
     
+    <category term="CTF刷题" scheme="https://www.4ss1du0us.cn/tags/CTF%E5%88%B7%E9%A2%98/"/>
+    
     <category term="MISC" scheme="https://www.4ss1du0us.cn/tags/MISC/"/>
     
+  </entry>
+  
+  <entry>
+    <title>CatCTF-CatCatCat</title>
+    <link href="https://www.4ss1du0us.cn/2023/03/19/CTF%20-%20Misc_Writeup/CatCTF-CatCatCat/"/>
+    <id>https://www.4ss1du0us.cn/2023/03/19/CTF%20-%20Misc_Writeup/CatCTF-CatCatCat/</id>
+    <published>2023-03-19T07:23:24.000Z</published>
+    <updated>2023-04-14T08:53:13.859Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="收获"><a href="#收获" class="headerlink" title="收获"></a>收获</h2><ul><li><p><mark>在 kali 中分析图像的隐藏内容</mark></p></li><li><p>熟悉 <mark>Rabbit加解密</mark>、<mark>Base91加解密</mark>、<mark>Ook!语言加解密</mark> 的特点<br>  <a href="http://www.esjson.com/rabbitEncrypt.html">Rabbit加解密(ES JSON在线工具)</a><br>  <a href="http://www.hiencode.com/base91.html">CTF在线工具-在线base91编码</a><br>  <a href="https://www.splitbrain.org/services/ook">Brainfuck&#x2F;Ook! Encoding</a></p></li></ul><hr><p><a href="https://adworld.xctf.org.cn/challenges/details?hash=e395fd1e-8d98-11ed-ab28-000c29bc20bf&task_category_id=1">CatCTF-CatCatCat</a></p><hr><h2 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h2><ol><li><p>下载文件得到一张 .jpg 图和一个 .txt 文本文件<br><img src="https://s2.loli.net/2023/03/18/ILuT6bKXlp1qcZS.png" alt="CatCTF-CatCatCat1.png"></p></li><li><p>图片最底下挡住了一块，在 kali 下查看是否有隐藏内容<br><img src="https://s2.loli.net/2023/03/18/LGODz8qQRc1oVJe.png" alt="CatCTF-CatCatCat2.png"><br><img src="https://s2.loli.net/2023/03/18/PsauivrSOloXVqw.png" alt="CatCTF-CatCatCat3.png"><br>具体查看 flag 字符串：<br><img src="https://s2.loli.net/2023/03/18/skACVwB7XxaIJ8j.png" alt="CatCTF-CatCatCat4.png"><br>在文件中发现字符串：<code>passwordis..catflag..]</code></p></li><li><p>根据文本内容，发现很多 <code>&#39;+&#39;</code>，并且开头为：<code>U2FsdGVkX1</code><br><img src="https://s2.loli.net/2023/03/18/BMSQklAGwFo1X93.png" alt="CatCTF-CatCatCat5.png"><br>这是 <em><strong>Rabbit 加密</strong></em> 的特点，并且 Rabbit 加解密会使用到密钥，猜测密钥就是 <code>catflag</code></p></li><li><p><a href="http://www.esjson.com/rabbitEncrypt.html">Rabbit加解密(ES JSON在线工具)</a><br><img src="https://s2.loli.net/2023/03/18/lAP1hEvpdqKJ96Y.png" alt="CatCTF-CatCatCat6.png"></p></li><li><p>将结果进行 Base91 解密：<a href="http://www.hiencode.com/base91.html">CTF在线工具-在线base91编码</a><br><img src="https://s2.loli.net/2023/03/18/Bnwfz2YpKZWkgmX.png" alt="CatCTF-CatCatCat7.png"></p></li><li><p>发现结果中存在很多 <code>&#39;.&#39;</code>、<code>&#39;!&#39;</code>、<code>&#39;?&#39;</code>，这是 <em><strong>Ook 语言加密</strong></em> 的特点：<a href="https://www.splitbrain.org/services/ook">Brainfuck&#x2F;Ook! Encoding</a><br><img src="https://s2.loli.net/2023/03/18/iWKpgqOxQVn4cY9.png" alt="CatCTF-CatCatCat8.png"></p></li><li><p>得到 flag：CATCTF{Th1s_V3ry_cute_catcat!!!}</p></li></ol><hr><h2 id="结果"><a href="#结果" class="headerlink" title="结果"></a>结果</h2><blockquote><p>CATCTF{Th1s_V3ry_cute_catcat!!!}</p></blockquote>]]></content>
+    
+    
+    <summary type="html">隐写比较常规，但是这几个套娃的加密方法真没看出来，学到了 Rabbit 和 Base91</summary>
+    
+    
+    
+    <category term="杂项" scheme="https://www.4ss1du0us.cn/categories/%E6%9D%82%E9%A1%B9/"/>
+    
+    
     <category term="CTF刷题" scheme="https://www.4ss1du0us.cn/tags/CTF%E5%88%B7%E9%A2%98/"/>
+    
+    <category term="MISC" scheme="https://www.4ss1du0us.cn/tags/MISC/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>攻防世界-misc_pic_again</title>
+    <link href="https://www.4ss1du0us.cn/2023/03/19/CTF%20-%20Misc_Writeup/%E6%94%BB%E9%98%B2%E4%B8%96%E7%95%8C-misc_pic_again/"/>
+    <id>https://www.4ss1du0us.cn/2023/03/19/CTF%20-%20Misc_Writeup/%E6%94%BB%E9%98%B2%E4%B8%96%E7%95%8C-misc_pic_again/</id>
+    <published>2023-03-19T07:23:24.000Z</published>
+    <updated>2023-04-14T08:53:05.840Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="收获"><a href="#收获" class="headerlink" title="收获"></a>收获</h2><ul><li><p><mark>熟悉 LSB 隐写</mark>，<mark>熟悉 zsteg 的相关分析结果的意思以及提取指令</mark></p></li><li><p><mark>熟悉 Stegsolve 的使用</mark></p></li></ul><hr><p><a href="https://adworld.xctf.org.cn/media/file/task/719af25af2ca4707972c6ae57060238e.png">攻防世界-misc_pic_again</a></p><hr><h2 id="思路一"><a href="#思路一" class="headerlink" title="思路一"></a>思路一</h2><ol><li><p>解压得到一张图片，图片没有异常：<br><img src="https://s2.loli.net/2023/03/18/2hcXLCq6la3mBIY.png" alt="攻防世界-misc_pic_again1.png"></p></li><li><p>在 kali 下用 <code>zsteg</code> 分析图片：<br><img src="https://s2.loli.net/2023/03/18/W4dLpPA5bwM3Vse.png" alt="攻防世界-misc_pic_again2.png"><br>发现分析结果中藏有 Zip 文件</p></li><li><p>提取 Zip 文件：<br><img src="https://s2.loli.net/2023/03/18/X1vF9GYIAnUWriO.png" alt="攻防世界-misc_pic_again3.png"><br>解压 1.zip 后得到一个可执行文件 1<br><img src="https://s2.loli.net/2023/03/18/34vqmy8SgXAG1tJ.png" alt="攻防世界-misc_pic_again4.png"><br>增加执行权限 <code>chmod a+x 1</code> 后，执行该文件，错误：<br><img src="https://s2.loli.net/2023/03/18/wqntTivXIoEF6OA.png" alt="攻防世界-misc_pic_again5.png"></p></li><li><p>查看文件 1 的字符串：<br><img src="https://s2.loli.net/2023/03/18/mWJuc7Nw4epb5Xt.png" alt="攻防世界-misc_pic_again6.png"><br>得到 flag</p></li></ol><hr><h2 id="思路二"><a href="#思路二" class="headerlink" title="思路二"></a>思路二</h2><ol><li><p>利用 Stegsolve 打开：<code>java -jar Stegsolve.jar</code><br><img src="https://s2.loli.net/2023/03/18/zYoseVpL3NnyHxE.png" alt="攻防世界-misc_pic_again7.png"></p></li><li><p>用 LSB 分析：<br><img src="https://s2.loli.net/2023/03/18/qOtIYPnJ8jLZNgE.png" alt="攻防世界-misc_pic_again8.png"><br>输入参数：<br><img src="https://s2.loli.net/2023/03/18/RYoa8OA21zEr9bq.png" alt="攻防世界-misc_pic_again9.png"><br>根据十六进制数据发现 <code>PK</code>，该文件是一个 <code>zip</code> 压缩包，直接将文件另存为 1.zip：<br><img src="https://s2.loli.net/2023/03/18/LGauWoRdxEYXeJ3.png" alt="攻防世界-misc_pic_again10.png"><br>解压后得到一个 elf 可执行文件：<br><img src="https://s2.loli.net/2023/03/18/gTJwGmp8sHei3rz.png" alt="攻防世界-misc_pic_again11.png"></p></li><li><p>后续同思路一，在 linux 下 <code>strings 1</code> 得到 flag</p></li></ol><hr><h2 id="结果"><a href="#结果" class="headerlink" title="结果"></a>结果</h2><blockquote><p>hctf{scxdc3tok3yb0ard4g41n~~~}</p></blockquote>]]></content>
+    
+    
+    <summary type="html">一个 LSB 隐写题，原来 zsteg 可以利用偏移量分离文件，另外利用 Stegsolve 改变通道也可以得到一个 PK 开头的压缩包</summary>
+    
+    
+    
+    <category term="杂项" scheme="https://www.4ss1du0us.cn/categories/%E6%9D%82%E9%A1%B9/"/>
+    
+    
+    <category term="CTF刷题" scheme="https://www.4ss1du0us.cn/tags/CTF%E5%88%B7%E9%A2%98/"/>
+    
+    <category term="MISC" scheme="https://www.4ss1du0us.cn/tags/MISC/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>CatCTF-miao~</title>
+    <link href="https://www.4ss1du0us.cn/2023/03/19/CTF%20-%20Misc_Writeup/CatCTF-miao~/"/>
+    <id>https://www.4ss1du0us.cn/2023/03/19/CTF%20-%20Misc_Writeup/CatCTF-miao~/</id>
+    <published>2023-03-19T07:23:24.000Z</published>
+    <updated>2023-04-14T08:53:32.862Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="收获"><a href="#收获" class="headerlink" title="收获"></a>收获</h2><ul><li><p>熟悉<mark>图像隐写</mark>、<mark>音频隐写</mark>，学会使用 <mark>Audacity 和 DeepSound</mark></p></li><li><p>了解<mark>兽语解密</mark></p></li><li><p><mark>不要太相信 binwalk 的隐藏文件检测结果</mark>，有时候不准确，先用 foremost 尝试分离</p></li></ul><hr><p><a href="https://adworld.xctf.org.cn/media/file/task/01ba54b9-5a1c-40f3-8fb5-19f1abf9f97a.zip">CatCTF-miao~</a></p><hr><h2 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h2><ol><li><p>解压得到一张 jpg 图片<br><img src="https://s2.loli.net/2023/03/18/1q762AysHlObeEr.png" alt="CatCTF-miao~1.png"></p></li><li><p>在 Ubuntu 下查看图片隐藏信息，查看字符串未发现有用信息：<br><img src="https://s2.loli.net/2023/03/18/Do4UwW5MHX7FxO8.png" alt="CatCTF-miao~2.png"><img src="https://s2.loli.net/2023/03/18/yOcNjw3ZVfxQA5g.png" alt="CatCTF-miao~3.png"></p></li><li><p>用 <code>binwalk</code> 检测是否含有隐藏文件：<br><img src="https://s2.loli.net/2023/03/18/tjohl2OM4UJ8R7v.png" alt="CatCTF-miao~4.png"><br><em>这里踩坑了。。。不要太相信 binwalk 的分析结果，这里显示没有其他隐藏文件，但其实是有的</em></p></li><li><p>在 Winhex 下可以看到包含了 wav：<br><img src="https://s2.loli.net/2023/03/18/tJn1vUyOfFjiGQV.png" alt="CatCTF-miao~5.png"></p></li><li><p>用 <code>foremost</code> 分离，得到几个文件夹：<br><img src="https://s2.loli.net/2023/03/18/F3NKLsiya61PAXC.png" alt="CatCTF-miao~6.png"><br><img src="https://s2.loli.net/2023/03/18/PGhaDIp3OTvRrBW.png" alt="CatCTF-miao~7.png"><br>其中，jpg 文件夹内时一张原图，wav 文件夹内有一段音频：<br><img src="https://s2.loli.net/2023/03/18/nwdCN526HjYTFfa.png" alt="CatCTF-miao~8.png"><br>用 <code>Audacity</code> 打开，并查看频谱图：<br><img src="https://s2.loli.net/2023/03/18/6FkpbNXG3LtCcJH.png" alt="CatCTF-miao~9.png"><br><img src="https://s2.loli.net/2023/03/19/DyTFkPxpGQn1t7K.png" alt="CatCTF-miao~10.png"><br>发现 <code>&quot;CatCTF&quot;</code> 字样</p></li><li><p>由于只给了一段猫叫的音频，猜测可能跟音频内容有关，可能是<strong>音频的解密密码</strong><br>利用音频隐写工具 <code>DeepSound</code> 打开：<br><img src="https://s2.loli.net/2023/03/18/8UGLHAmSbFX6NDy.png" alt="CatCTF-miao~11.png"><br>但是发现需要密码，尝试了文件名，不对，最后用音频的频谱图内发现的 CatCTF 作为密码成功<br><img src="https://s2.loli.net/2023/03/18/2bZSiLOdM4Hn1F8.png" alt="CatCTF-miao~12.png"><br>得到一个 flag.txt 文件，打开发现是猫叫声：<br><img src="https://s2.loli.net/2023/03/18/UqB7lIAP8w2vzog.png" alt="CatCTF-miao~13.png"></p></li><li><p>利用<mark>兽语解密</mark>：<a href="http://hi.pcmoe.net/roar.html">兽音译者&#x2F;兽语加密 - PcMoe!</a><br><img src="https://s2.loli.net/2023/03/18/Hi3nzBD4TsUlbfJ.png" alt="CatCTF-miao~14.png"><br>得到 flag</p></li></ol><hr><h2 id="结果"><a href="#结果" class="headerlink" title="结果"></a>结果</h2><blockquote><p>CatCTF{d0_y0u_Hate_c4t_ba3k1ng_?_M1ao~}</p></blockquote>]]></content>
+    
+    
+    <summary type="html">一道音频隐写题，不过我用 binwalk 显示没有隐藏文件啊，最后居然可以 foremost，还接触到了兽语加密</summary>
+    
+    
+    
+    <category term="杂项" scheme="https://www.4ss1du0us.cn/categories/%E6%9D%82%E9%A1%B9/"/>
+    
+    
+    <category term="CTF刷题" scheme="https://www.4ss1du0us.cn/tags/CTF%E5%88%B7%E9%A2%98/"/>
+    
+    <category term="MISC" scheme="https://www.4ss1du0us.cn/tags/MISC/"/>
     
   </entry>
   
