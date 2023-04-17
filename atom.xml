@@ -6,7 +6,7 @@
   <link href="https://www.4ss1du0us.cn/atom.xml" rel="self"/>
   
   <link href="https://www.4ss1du0us.cn/"/>
-  <updated>2023-04-15T12:28:06.243Z</updated>
+  <updated>2023-04-17T07:35:00.961Z</updated>
   <id>https://www.4ss1du0us.cn/</id>
   
   <author>
@@ -21,7 +21,7 @@
     <link href="https://www.4ss1du0us.cn/2023/042b6adb32.html"/>
     <id>https://www.4ss1du0us.cn/2023/042b6adb32.html</id>
     <published>2023-04-11T13:36:24.000Z</published>
-    <updated>2023-04-15T12:28:06.243Z</updated>
+    <updated>2023-04-17T07:35:00.961Z</updated>
     
     <content type="html"><![CDATA[<h2 id="问题"><a href="#问题" class="headerlink" title="问题"></a>问题</h2><blockquote><p>最近有时候打开 VM 虚拟机时，会弹出：<code>未能开启&quot;xxx(虚拟机路径)\xxx(虚拟机名).vmx&quot;</code> 的警告，导致虚拟机无法正常开机</p></blockquote><p><img src="https://s2.loli.net/2023/04/11/kADdNj5BGg6MRUJ.png" alt="VM虚拟机未能开启解决办法1.png"></p><hr><h2 id="原因"><a href="#原因" class="headerlink" title="原因"></a>原因</h2><blockquote><p>产生原因是 VMware 的服务出现问题，需要重新启动服务，VM 即可恢复正常</p></blockquote><hr><h2 id="解决"><a href="#解决" class="headerlink" title="解决"></a>解决</h2><h3 id="手动修改"><a href="#手动修改" class="headerlink" title="手动修改"></a>手动修改</h3><ol><li><p>打开服务，可先通过 <code>ctrl + alt + delete</code> 打开任务管理器，在左侧栏选中服务<br><img src="https://s2.loli.net/2023/04/11/CujAOlwSoQGndIM.png" alt="VM虚拟机未能开启解决办法2.png"></p></li><li><p>往下翻，找到名称为 <code>VMAuthdService</code> 的服务</p></li><li><p>右键，重新启动<br><img src="https://s2.loli.net/2023/04/11/RWkXZafwSqsObcD.png" alt="VM虚拟机未能开启解决办法3.png"></p></li><li><p>再次打开 VM 中的虚拟机，发现问题解决，不会报错了</p></li></ol><hr><h3 id="脚本修改"><a href="#脚本修改" class="headerlink" title="脚本修改"></a>脚本修改</h3><blockquote><p>每次都手动去重新启动服务未免太麻烦，这里利用脚本自动重启</p></blockquote><ol><li><p>首先新建一个 txt 文本文件，例如：VM.txt</p></li><li><p>写入如下内容：</p><pre class="line-numbers language-c" data-language="c"><code class="language-c">@echo offecho  关闭服务   net stop <span class="token string">"VMAuthdService"</span>echo  开启服务       net start <span class="token string">"VMAuthdService"</span>pause<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></li><li><p>将 VM.txt 另存为，格式选择 <code>ANSI</code>（<em>不然的话 cmd 里会出现中文乱码</em>）<br><img src="https://s2.loli.net/2023/04/11/YCAGiwafoWP2LSh.png" alt="VM虚拟机未能开启解决办法4.png"></p></li><li><p>但是这样的话，运行会出错，因为需要有管理员权限</p></li><li><p>在 VM.txt 最前面加上一段代码：（<em>这段代码用来调用管理员权限</em>）</p><pre class="line-numbers language-c" data-language="c"><code class="language-c">@echo off<span class="token operator">%</span><span class="token number">1</span> mshta vbscript<span class="token operator">:</span><span class="token function">CreateObject</span><span class="token punctuation">(</span><span class="token string">"Shell.Application"</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">ShellExecute</span><span class="token punctuation">(</span><span class="token string">"cmd.exe"</span><span class="token punctuation">,</span><span class="token string">"/c %~s0 ::"</span><span class="token punctuation">,</span><span class="token string">""</span><span class="token punctuation">,</span><span class="token string">"runas"</span><span class="token punctuation">,</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">(</span>window<span class="token punctuation">.</span>close<span class="token punctuation">)</span><span class="token operator">&amp;&amp;</span>exitcd <span class="token operator">/</span>d <span class="token string">"%~dp0"</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre></li><li><p>所以，最终代码应该是这样的：</p><pre class="line-numbers language-c" data-language="c"><code class="language-c">@echo off<span class="token operator">%</span><span class="token number">1</span> mshta vbscript<span class="token operator">:</span><span class="token function">CreateObject</span><span class="token punctuation">(</span><span class="token string">"Shell.Application"</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">ShellExecute</span><span class="token punctuation">(</span><span class="token string">"cmd.exe"</span><span class="token punctuation">,</span><span class="token string">"/c %~s0 ::"</span><span class="token punctuation">,</span><span class="token string">""</span><span class="token punctuation">,</span><span class="token string">"runas"</span><span class="token punctuation">,</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">(</span>window<span class="token punctuation">.</span>close<span class="token punctuation">)</span><span class="token operator">&amp;&amp;</span>exitcd <span class="token operator">/</span>d <span class="token string">"%~dp0"</span>@echo offecho  关闭服务   net stop <span class="token string">"VMAuthdService"</span>echo  开启服务       net start <span class="token string">"VMAuthdService"</span>pause<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></li><li><p>将 <code>VM.txt</code> 重命名为 <code>VM.bat</code>，双击即可运行：（<em>会自动跳出询问管理员权限的窗口，点击 “是” 即可</em>）<br><img src="https://s2.loli.net/2023/04/11/qTjEwzJ1VLhOk23.png" alt="VM虚拟机未能开启解决办法5.png"></p></li><li><p>以后 VM 再出现这个报错，直接双击 <code>VM.bat</code> 即可</p></li></ol>]]></content>
     
@@ -100,9 +100,9 @@
     <category term="便捷算法" scheme="https://www.4ss1du0us.cn/categories/%E4%BE%BF%E6%8D%B7%E7%AE%97%E6%B3%95/"/>
     
     
-    <category term="CTF刷题" scheme="https://www.4ss1du0us.cn/tags/CTF%E5%88%B7%E9%A2%98/"/>
-    
     <category term="CTF笔记" scheme="https://www.4ss1du0us.cn/tags/CTF%E7%AC%94%E8%AE%B0/"/>
+    
+    <category term="CTF刷题" scheme="https://www.4ss1du0us.cn/tags/CTF%E5%88%B7%E9%A2%98/"/>
     
     <category term="REVERSE" scheme="https://www.4ss1du0us.cn/tags/REVERSE/"/>
     
@@ -125,9 +125,9 @@
     <category term="杂项" scheme="https://www.4ss1du0us.cn/categories/%E6%9D%82%E9%A1%B9/"/>
     
     
-    <category term="MISC" scheme="https://www.4ss1du0us.cn/tags/MISC/"/>
-    
     <category term="CTF笔记" scheme="https://www.4ss1du0us.cn/tags/CTF%E7%AC%94%E8%AE%B0/"/>
+    
+    <category term="MISC" scheme="https://www.4ss1du0us.cn/tags/MISC/"/>
     
   </entry>
   
@@ -148,9 +148,9 @@
     <category term="杂项" scheme="https://www.4ss1du0us.cn/categories/%E6%9D%82%E9%A1%B9/"/>
     
     
-    <category term="MISC" scheme="https://www.4ss1du0us.cn/tags/MISC/"/>
-    
     <category term="CTF笔记" scheme="https://www.4ss1du0us.cn/tags/CTF%E7%AC%94%E8%AE%B0/"/>
+    
+    <category term="MISC" scheme="https://www.4ss1du0us.cn/tags/MISC/"/>
     
   </entry>
   
@@ -171,9 +171,9 @@
     <category term="杂项" scheme="https://www.4ss1du0us.cn/categories/%E6%9D%82%E9%A1%B9/"/>
     
     
-    <category term="MISC" scheme="https://www.4ss1du0us.cn/tags/MISC/"/>
-    
     <category term="CTF笔记" scheme="https://www.4ss1du0us.cn/tags/CTF%E7%AC%94%E8%AE%B0/"/>
+    
+    <category term="MISC" scheme="https://www.4ss1du0us.cn/tags/MISC/"/>
     
   </entry>
   
@@ -194,9 +194,9 @@
     <category term="杂项" scheme="https://www.4ss1du0us.cn/categories/%E6%9D%82%E9%A1%B9/"/>
     
     
-    <category term="MISC" scheme="https://www.4ss1du0us.cn/tags/MISC/"/>
-    
     <category term="CTF笔记" scheme="https://www.4ss1du0us.cn/tags/CTF%E7%AC%94%E8%AE%B0/"/>
+    
+    <category term="MISC" scheme="https://www.4ss1du0us.cn/tags/MISC/"/>
     
   </entry>
   
@@ -217,9 +217,9 @@
     <category term="杂项" scheme="https://www.4ss1du0us.cn/categories/%E6%9D%82%E9%A1%B9/"/>
     
     
-    <category term="MISC" scheme="https://www.4ss1du0us.cn/tags/MISC/"/>
-    
     <category term="CTF笔记" scheme="https://www.4ss1du0us.cn/tags/CTF%E7%AC%94%E8%AE%B0/"/>
+    
+    <category term="MISC" scheme="https://www.4ss1du0us.cn/tags/MISC/"/>
     
   </entry>
   
@@ -316,25 +316,25 @@
   </entry>
   
   <entry>
-    <title>CatCTF-CatCatCat</title>
-    <link href="https://www.4ss1du0us.cn/2023/032b87caa3.html"/>
-    <id>https://www.4ss1du0us.cn/2023/032b87caa3.html</id>
+    <title>CatCTF-CatchCat</title>
+    <link href="https://www.4ss1du0us.cn/2023/036b7870b8.html"/>
+    <id>https://www.4ss1du0us.cn/2023/036b7870b8.html</id>
     <published>2023-03-19T07:23:24.000Z</published>
-    <updated>2023-04-15T12:28:06.212Z</updated>
+    <updated>2023-04-15T12:28:06.213Z</updated>
     
-    <content type="html"><![CDATA[<h2 id="收获"><a href="#收获" class="headerlink" title="收获"></a>收获</h2><ul><li><p><mark>在 kali 中分析图像的隐藏内容</mark></p></li><li><p>熟悉 <mark>Rabbit加解密</mark>、<mark>Base91加解密</mark>、<mark>Ook!语言加解密</mark> 的特点<br>  <a href="http://www.esjson.com/rabbitEncrypt.html">Rabbit加解密(ES JSON在线工具)</a><br>  <a href="http://www.hiencode.com/base91.html">CTF在线工具-在线base91编码</a><br>  <a href="https://www.splitbrain.org/services/ook">Brainfuck&#x2F;Ook! Encoding</a></p></li></ul><hr><p><a href="https://adworld.xctf.org.cn/challenges/details?hash=e395fd1e-8d98-11ed-ab28-000c29bc20bf&task_category_id=1">CatCTF-CatCatCat</a></p><hr><h2 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h2><ol><li><p>下载文件得到一张 .jpg 图和一个 .txt 文本文件<br><img src="https://s2.loli.net/2023/03/18/ILuT6bKXlp1qcZS.png" alt="CatCTF-CatCatCat1.png"></p></li><li><p>图片最底下挡住了一块，在 kali 下查看是否有隐藏内容<br><img src="https://s2.loli.net/2023/03/18/LGODz8qQRc1oVJe.png" alt="CatCTF-CatCatCat2.png"><br><img src="https://s2.loli.net/2023/03/18/PsauivrSOloXVqw.png" alt="CatCTF-CatCatCat3.png"><br>具体查看 flag 字符串：<br><img src="https://s2.loli.net/2023/03/18/skACVwB7XxaIJ8j.png" alt="CatCTF-CatCatCat4.png"><br>在文件中发现字符串：<code>passwordis..catflag..]</code></p></li><li><p>根据文本内容，发现很多 <code>&#39;+&#39;</code>，并且开头为：<code>U2FsdGVkX1</code><br><img src="https://s2.loli.net/2023/03/18/BMSQklAGwFo1X93.png" alt="CatCTF-CatCatCat5.png"><br>这是 <em><strong>Rabbit 加密</strong></em> 的特点，并且 Rabbit 加解密会使用到密钥，猜测密钥就是 <code>catflag</code></p></li><li><p><a href="http://www.esjson.com/rabbitEncrypt.html">Rabbit加解密(ES JSON在线工具)</a><br><img src="https://s2.loli.net/2023/03/18/lAP1hEvpdqKJ96Y.png" alt="CatCTF-CatCatCat6.png"></p></li><li><p>将结果进行 Base91 解密：<a href="http://www.hiencode.com/base91.html">CTF在线工具-在线base91编码</a><br><img src="https://s2.loli.net/2023/03/18/Bnwfz2YpKZWkgmX.png" alt="CatCTF-CatCatCat7.png"></p></li><li><p>发现结果中存在很多 <code>&#39;.&#39;</code>、<code>&#39;!&#39;</code>、<code>&#39;?&#39;</code>，这是 <em><strong>Ook 语言加密</strong></em> 的特点：<a href="https://www.splitbrain.org/services/ook">Brainfuck&#x2F;Ook! Encoding</a><br><img src="https://s2.loli.net/2023/03/18/iWKpgqOxQVn4cY9.png" alt="CatCTF-CatCatCat8.png"></p></li><li><p>得到 flag：CATCTF{Th1s_V3ry_cute_catcat!!!}</p></li></ol><hr><h2 id="结果"><a href="#结果" class="headerlink" title="结果"></a>结果</h2><blockquote><p>CATCTF{Th1s_V3ry_cute_catcat!!!}</p></blockquote>]]></content>
+    <content type="html"><![CDATA[<h2 id="收获"><a href="#收获" class="headerlink" title="收获"></a>收获</h2><ul><li><mark>根据地图 GPS 数据复现轨迹</mark><ol><li>利用 NMEA 转 KML 可视化还原 GPS 轨迹（<a href="https://www.h-schmidt.net/NMEA/">NMEA 转 KML</a>）</li><li>将 KML 数据可视化为 GPS 轨迹（<a href="https://mygeodata.cloud/converter/">KML 可视化轨迹</a>）</li></ol></li><li><mark>GPS 数据格式</mark>：<a href="https://www.lehoon.cn/orther/2017/04/25/gnss-gpgga-formet.html">GPGGA格式详解 | 豌豆荚博客 (lehoon.cn)</a></li></ul><hr><p><a href="https://adworld.xctf.org.cn/challenges/details?hash=36f991a4-8d9a-11ed-b5da-000c296d9df6&task_category_id=1">CatCTF-CatchCat</a></p><hr><h2 id="思路一"><a href="#思路一" class="headerlink" title="思路一"></a>思路一</h2><ol><li><p>下载文件，是一个 .txt 文本，根据题目提示，以及文本数据的特点，给出的应该是 GPS 数据<br><img src="https://s2.loli.net/2023/03/18/RXxOASdcCkb1Pta.png" alt="CatCTF-CatchCat1.png"></p></li><li><p><a href="https://www.lehoon.cn/orther/2017/04/25/gnss-gpgga-formet.html">GPGGA格式详解 | 豌豆荚博客 (lehoon.cn)</a><br>了解得知，该文本内容是 GPS 的 NMEA 格式轨迹数据，将数据还原为轨迹即可</p></li><li><p>利用 NMEA 转 KML 可视化还原 GPS 轨迹：<a href="https://www.h-schmidt.net/NMEA/">NMEA 转 KML</a><br><img src="https://s2.loli.net/2023/03/18/1WbFYwi3KNPnLpT.png" alt="CatCTF-CatchCat2.png"></p></li><li><p>将 KML 数据可视化为 GPS 轨迹：<a href="https://mygeodata.cloud/converter/">KML 可视化轨迹</a><br><img src="https://s2.loli.net/2023/03/18/3W5ehdYQVjKl4NB.png" alt="CatCTF-CatchCat3.png"></p></li><li><p>根据轨迹可得 flag：CatCTF{GPS_M1ao}</p></li></ol><hr><h2 id="思路二"><a href="#思路二" class="headerlink" title="思路二"></a>思路二</h2><ol><li><p>通过写脚本提取数据还原 GPS 轨迹</p><pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">import</span> matplotlib<span class="token punctuation">.</span>pyplot <span class="token keyword">as</span> pltdata <span class="token operator">=</span> <span class="token builtin">open</span><span class="token punctuation">(</span><span class="token string">'CatchCat.txt'</span><span class="token punctuation">,</span> <span class="token string">'r'</span><span class="token punctuation">)</span><span class="token punctuation">.</span>readlines<span class="token punctuation">(</span><span class="token punctuation">)</span>x <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span>y <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token keyword">for</span> line <span class="token keyword">in</span> data<span class="token punctuation">:</span>  <span class="token keyword">if</span> line<span class="token punctuation">.</span>strip<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>d1<span class="token punctuation">,</span> d2 <span class="token operator">=</span> <span class="token builtin">float</span><span class="token punctuation">(</span>line<span class="token punctuation">[</span><span class="token number">17</span><span class="token punctuation">:</span><span class="token number">30</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token builtin">float</span><span class="token punctuation">(</span>line<span class="token punctuation">[</span><span class="token number">33</span><span class="token punctuation">:</span><span class="token number">47</span><span class="token punctuation">]</span><span class="token punctuation">)</span>x<span class="token punctuation">.</span>append<span class="token punctuation">(</span>d1<span class="token punctuation">)</span>y<span class="token punctuation">.</span>append<span class="token punctuation">(</span>d2<span class="token punctuation">)</span>plt<span class="token punctuation">.</span>scatter<span class="token punctuation">(</span>x<span class="token punctuation">,</span>y<span class="token punctuation">)</span>plt<span class="token punctuation">.</span>show<span class="token punctuation">(</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></li><li><p>获得轨迹：<br><img src="https://s2.loli.net/2023/03/18/y1HFtlVX5DLvEcG.png" alt="CatCTF-CatchCat4.png"></p></li></ol><hr><h2 id="结果"><a href="#结果" class="headerlink" title="结果"></a>结果</h2><blockquote><p>CatCTF{GPS_M1ao}</p></blockquote>]]></content>
     
     
-    <summary type="html">隐写比较常规，但是这几个套娃的加密方法真没看出来，学到了 Rabbit 和 Base91</summary>
+    <summary type="html">给了个 GPS 数据，真不知道，孤陋寡闻了，积累一下长点见识吧</summary>
     
     
     
     <category term="杂项" scheme="https://www.4ss1du0us.cn/categories/%E6%9D%82%E9%A1%B9/"/>
     
     
-    <category term="CTF刷题" scheme="https://www.4ss1du0us.cn/tags/CTF%E5%88%B7%E9%A2%98/"/>
-    
     <category term="MISC" scheme="https://www.4ss1du0us.cn/tags/MISC/"/>
+    
+    <category term="CTF刷题" scheme="https://www.4ss1du0us.cn/tags/CTF%E5%88%B7%E9%A2%98/"/>
     
   </entry>
   
@@ -355,32 +355,9 @@
     <category term="杂项" scheme="https://www.4ss1du0us.cn/categories/%E6%9D%82%E9%A1%B9/"/>
     
     
-    <category term="CTF刷题" scheme="https://www.4ss1du0us.cn/tags/CTF%E5%88%B7%E9%A2%98/"/>
-    
     <category term="MISC" scheme="https://www.4ss1du0us.cn/tags/MISC/"/>
     
-  </entry>
-  
-  <entry>
-    <title>CatCTF-CatchCat</title>
-    <link href="https://www.4ss1du0us.cn/2023/036b7870b8.html"/>
-    <id>https://www.4ss1du0us.cn/2023/036b7870b8.html</id>
-    <published>2023-03-19T07:23:24.000Z</published>
-    <updated>2023-04-15T12:28:06.213Z</updated>
-    
-    <content type="html"><![CDATA[<h2 id="收获"><a href="#收获" class="headerlink" title="收获"></a>收获</h2><ul><li><mark>根据地图 GPS 数据复现轨迹</mark><ol><li>利用 NMEA 转 KML 可视化还原 GPS 轨迹（<a href="https://www.h-schmidt.net/NMEA/">NMEA 转 KML</a>）</li><li>将 KML 数据可视化为 GPS 轨迹（<a href="https://mygeodata.cloud/converter/">KML 可视化轨迹</a>）</li></ol></li><li><mark>GPS 数据格式</mark>：<a href="https://www.lehoon.cn/orther/2017/04/25/gnss-gpgga-formet.html">GPGGA格式详解 | 豌豆荚博客 (lehoon.cn)</a></li></ul><hr><p><a href="https://adworld.xctf.org.cn/challenges/details?hash=36f991a4-8d9a-11ed-b5da-000c296d9df6&task_category_id=1">CatCTF-CatchCat</a></p><hr><h2 id="思路一"><a href="#思路一" class="headerlink" title="思路一"></a>思路一</h2><ol><li><p>下载文件，是一个 .txt 文本，根据题目提示，以及文本数据的特点，给出的应该是 GPS 数据<br><img src="https://s2.loli.net/2023/03/18/RXxOASdcCkb1Pta.png" alt="CatCTF-CatchCat1.png"></p></li><li><p><a href="https://www.lehoon.cn/orther/2017/04/25/gnss-gpgga-formet.html">GPGGA格式详解 | 豌豆荚博客 (lehoon.cn)</a><br>了解得知，该文本内容是 GPS 的 NMEA 格式轨迹数据，将数据还原为轨迹即可</p></li><li><p>利用 NMEA 转 KML 可视化还原 GPS 轨迹：<a href="https://www.h-schmidt.net/NMEA/">NMEA 转 KML</a><br><img src="https://s2.loli.net/2023/03/18/1WbFYwi3KNPnLpT.png" alt="CatCTF-CatchCat2.png"></p></li><li><p>将 KML 数据可视化为 GPS 轨迹：<a href="https://mygeodata.cloud/converter/">KML 可视化轨迹</a><br><img src="https://s2.loli.net/2023/03/18/3W5ehdYQVjKl4NB.png" alt="CatCTF-CatchCat3.png"></p></li><li><p>根据轨迹可得 flag：CatCTF{GPS_M1ao}</p></li></ol><hr><h2 id="思路二"><a href="#思路二" class="headerlink" title="思路二"></a>思路二</h2><ol><li><p>通过写脚本提取数据还原 GPS 轨迹</p><pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">import</span> matplotlib<span class="token punctuation">.</span>pyplot <span class="token keyword">as</span> pltdata <span class="token operator">=</span> <span class="token builtin">open</span><span class="token punctuation">(</span><span class="token string">'CatchCat.txt'</span><span class="token punctuation">,</span> <span class="token string">'r'</span><span class="token punctuation">)</span><span class="token punctuation">.</span>readlines<span class="token punctuation">(</span><span class="token punctuation">)</span>x <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span>y <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token keyword">for</span> line <span class="token keyword">in</span> data<span class="token punctuation">:</span>  <span class="token keyword">if</span> line<span class="token punctuation">.</span>strip<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>d1<span class="token punctuation">,</span> d2 <span class="token operator">=</span> <span class="token builtin">float</span><span class="token punctuation">(</span>line<span class="token punctuation">[</span><span class="token number">17</span><span class="token punctuation">:</span><span class="token number">30</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token builtin">float</span><span class="token punctuation">(</span>line<span class="token punctuation">[</span><span class="token number">33</span><span class="token punctuation">:</span><span class="token number">47</span><span class="token punctuation">]</span><span class="token punctuation">)</span>x<span class="token punctuation">.</span>append<span class="token punctuation">(</span>d1<span class="token punctuation">)</span>y<span class="token punctuation">.</span>append<span class="token punctuation">(</span>d2<span class="token punctuation">)</span>plt<span class="token punctuation">.</span>scatter<span class="token punctuation">(</span>x<span class="token punctuation">,</span>y<span class="token punctuation">)</span>plt<span class="token punctuation">.</span>show<span class="token punctuation">(</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></li><li><p>获得轨迹：<br><img src="https://s2.loli.net/2023/03/18/y1HFtlVX5DLvEcG.png" alt="CatCTF-CatchCat4.png"></p></li></ol><hr><h2 id="结果"><a href="#结果" class="headerlink" title="结果"></a>结果</h2><blockquote><p>CatCTF{GPS_M1ao}</p></blockquote>]]></content>
-    
-    
-    <summary type="html">给了个 GPS 数据，真不知道，孤陋寡闻了，积累一下长点见识吧</summary>
-    
-    
-    
-    <category term="杂项" scheme="https://www.4ss1du0us.cn/categories/%E6%9D%82%E9%A1%B9/"/>
-    
-    
     <category term="CTF刷题" scheme="https://www.4ss1du0us.cn/tags/CTF%E5%88%B7%E9%A2%98/"/>
-    
-    <category term="MISC" scheme="https://www.4ss1du0us.cn/tags/MISC/"/>
     
   </entry>
   
@@ -401,9 +378,32 @@
     <category term="杂项" scheme="https://www.4ss1du0us.cn/categories/%E6%9D%82%E9%A1%B9/"/>
     
     
+    <category term="MISC" scheme="https://www.4ss1du0us.cn/tags/MISC/"/>
+    
     <category term="CTF刷题" scheme="https://www.4ss1du0us.cn/tags/CTF%E5%88%B7%E9%A2%98/"/>
     
+  </entry>
+  
+  <entry>
+    <title>CatCTF-CatCatCat</title>
+    <link href="https://www.4ss1du0us.cn/2023/032b87caa3.html"/>
+    <id>https://www.4ss1du0us.cn/2023/032b87caa3.html</id>
+    <published>2023-03-19T07:23:24.000Z</published>
+    <updated>2023-04-15T12:28:06.212Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="收获"><a href="#收获" class="headerlink" title="收获"></a>收获</h2><ul><li><p><mark>在 kali 中分析图像的隐藏内容</mark></p></li><li><p>熟悉 <mark>Rabbit加解密</mark>、<mark>Base91加解密</mark>、<mark>Ook!语言加解密</mark> 的特点<br>  <a href="http://www.esjson.com/rabbitEncrypt.html">Rabbit加解密(ES JSON在线工具)</a><br>  <a href="http://www.hiencode.com/base91.html">CTF在线工具-在线base91编码</a><br>  <a href="https://www.splitbrain.org/services/ook">Brainfuck&#x2F;Ook! Encoding</a></p></li></ul><hr><p><a href="https://adworld.xctf.org.cn/challenges/details?hash=e395fd1e-8d98-11ed-ab28-000c29bc20bf&task_category_id=1">CatCTF-CatCatCat</a></p><hr><h2 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h2><ol><li><p>下载文件得到一张 .jpg 图和一个 .txt 文本文件<br><img src="https://s2.loli.net/2023/03/18/ILuT6bKXlp1qcZS.png" alt="CatCTF-CatCatCat1.png"></p></li><li><p>图片最底下挡住了一块，在 kali 下查看是否有隐藏内容<br><img src="https://s2.loli.net/2023/03/18/LGODz8qQRc1oVJe.png" alt="CatCTF-CatCatCat2.png"><br><img src="https://s2.loli.net/2023/03/18/PsauivrSOloXVqw.png" alt="CatCTF-CatCatCat3.png"><br>具体查看 flag 字符串：<br><img src="https://s2.loli.net/2023/03/18/skACVwB7XxaIJ8j.png" alt="CatCTF-CatCatCat4.png"><br>在文件中发现字符串：<code>passwordis..catflag..]</code></p></li><li><p>根据文本内容，发现很多 <code>&#39;+&#39;</code>，并且开头为：<code>U2FsdGVkX1</code><br><img src="https://s2.loli.net/2023/03/18/BMSQklAGwFo1X93.png" alt="CatCTF-CatCatCat5.png"><br>这是 <em><strong>Rabbit 加密</strong></em> 的特点，并且 Rabbit 加解密会使用到密钥，猜测密钥就是 <code>catflag</code></p></li><li><p><a href="http://www.esjson.com/rabbitEncrypt.html">Rabbit加解密(ES JSON在线工具)</a><br><img src="https://s2.loli.net/2023/03/18/lAP1hEvpdqKJ96Y.png" alt="CatCTF-CatCatCat6.png"></p></li><li><p>将结果进行 Base91 解密：<a href="http://www.hiencode.com/base91.html">CTF在线工具-在线base91编码</a><br><img src="https://s2.loli.net/2023/03/18/Bnwfz2YpKZWkgmX.png" alt="CatCTF-CatCatCat7.png"></p></li><li><p>发现结果中存在很多 <code>&#39;.&#39;</code>、<code>&#39;!&#39;</code>、<code>&#39;?&#39;</code>，这是 <em><strong>Ook 语言加密</strong></em> 的特点：<a href="https://www.splitbrain.org/services/ook">Brainfuck&#x2F;Ook! Encoding</a><br><img src="https://s2.loli.net/2023/03/18/iWKpgqOxQVn4cY9.png" alt="CatCTF-CatCatCat8.png"></p></li><li><p>得到 flag：CATCTF{Th1s_V3ry_cute_catcat!!!}</p></li></ol><hr><h2 id="结果"><a href="#结果" class="headerlink" title="结果"></a>结果</h2><blockquote><p>CATCTF{Th1s_V3ry_cute_catcat!!!}</p></blockquote>]]></content>
+    
+    
+    <summary type="html">隐写比较常规，但是这几个套娃的加密方法真没看出来，学到了 Rabbit 和 Base91</summary>
+    
+    
+    
+    <category term="杂项" scheme="https://www.4ss1du0us.cn/categories/%E6%9D%82%E9%A1%B9/"/>
+    
+    
     <category term="MISC" scheme="https://www.4ss1du0us.cn/tags/MISC/"/>
+    
+    <category term="CTF刷题" scheme="https://www.4ss1du0us.cn/tags/CTF%E5%88%B7%E9%A2%98/"/>
     
   </entry>
   
@@ -424,9 +424,9 @@
     <category term="杂项" scheme="https://www.4ss1du0us.cn/categories/%E6%9D%82%E9%A1%B9/"/>
     
     
-    <category term="CTF刷题" scheme="https://www.4ss1du0us.cn/tags/CTF%E5%88%B7%E9%A2%98/"/>
-    
     <category term="MISC" scheme="https://www.4ss1du0us.cn/tags/MISC/"/>
+    
+    <category term="CTF刷题" scheme="https://www.4ss1du0us.cn/tags/CTF%E5%88%B7%E9%A2%98/"/>
     
   </entry>
   
@@ -447,9 +447,9 @@
     <category term="杂项" scheme="https://www.4ss1du0us.cn/categories/%E6%9D%82%E9%A1%B9/"/>
     
     
-    <category term="CTF刷题" scheme="https://www.4ss1du0us.cn/tags/CTF%E5%88%B7%E9%A2%98/"/>
-    
     <category term="MISC" scheme="https://www.4ss1du0us.cn/tags/MISC/"/>
+    
+    <category term="CTF刷题" scheme="https://www.4ss1du0us.cn/tags/CTF%E5%88%B7%E9%A2%98/"/>
     
   </entry>
   
@@ -470,9 +470,9 @@
     <category term="杂项" scheme="https://www.4ss1du0us.cn/categories/%E6%9D%82%E9%A1%B9/"/>
     
     
-    <category term="CTF刷题" scheme="https://www.4ss1du0us.cn/tags/CTF%E5%88%B7%E9%A2%98/"/>
-    
     <category term="MISC" scheme="https://www.4ss1du0us.cn/tags/MISC/"/>
+    
+    <category term="CTF刷题" scheme="https://www.4ss1du0us.cn/tags/CTF%E5%88%B7%E9%A2%98/"/>
     
   </entry>
   
