@@ -100,9 +100,9 @@
     <category term="便捷算法" scheme="https://www.4ss1du0us.cn/categories/%E4%BE%BF%E6%8D%B7%E7%AE%97%E6%B3%95/"/>
     
     
-    <category term="CTF笔记" scheme="https://www.4ss1du0us.cn/tags/CTF%E7%AC%94%E8%AE%B0/"/>
-    
     <category term="CTF刷题" scheme="https://www.4ss1du0us.cn/tags/CTF%E5%88%B7%E9%A2%98/"/>
+    
+    <category term="CTF笔记" scheme="https://www.4ss1du0us.cn/tags/CTF%E7%AC%94%E8%AE%B0/"/>
     
     <category term="REVERSE" scheme="https://www.4ss1du0us.cn/tags/REVERSE/"/>
     
@@ -125,9 +125,9 @@
     <category term="杂项" scheme="https://www.4ss1du0us.cn/categories/%E6%9D%82%E9%A1%B9/"/>
     
     
-    <category term="CTF笔记" scheme="https://www.4ss1du0us.cn/tags/CTF%E7%AC%94%E8%AE%B0/"/>
-    
     <category term="MISC" scheme="https://www.4ss1du0us.cn/tags/MISC/"/>
+    
+    <category term="CTF笔记" scheme="https://www.4ss1du0us.cn/tags/CTF%E7%AC%94%E8%AE%B0/"/>
     
   </entry>
   
@@ -148,9 +148,9 @@
     <category term="杂项" scheme="https://www.4ss1du0us.cn/categories/%E6%9D%82%E9%A1%B9/"/>
     
     
-    <category term="CTF笔记" scheme="https://www.4ss1du0us.cn/tags/CTF%E7%AC%94%E8%AE%B0/"/>
-    
     <category term="MISC" scheme="https://www.4ss1du0us.cn/tags/MISC/"/>
+    
+    <category term="CTF笔记" scheme="https://www.4ss1du0us.cn/tags/CTF%E7%AC%94%E8%AE%B0/"/>
     
   </entry>
   
@@ -171,9 +171,9 @@
     <category term="杂项" scheme="https://www.4ss1du0us.cn/categories/%E6%9D%82%E9%A1%B9/"/>
     
     
-    <category term="CTF笔记" scheme="https://www.4ss1du0us.cn/tags/CTF%E7%AC%94%E8%AE%B0/"/>
-    
     <category term="MISC" scheme="https://www.4ss1du0us.cn/tags/MISC/"/>
+    
+    <category term="CTF笔记" scheme="https://www.4ss1du0us.cn/tags/CTF%E7%AC%94%E8%AE%B0/"/>
     
   </entry>
   
@@ -194,9 +194,9 @@
     <category term="杂项" scheme="https://www.4ss1du0us.cn/categories/%E6%9D%82%E9%A1%B9/"/>
     
     
-    <category term="CTF笔记" scheme="https://www.4ss1du0us.cn/tags/CTF%E7%AC%94%E8%AE%B0/"/>
-    
     <category term="MISC" scheme="https://www.4ss1du0us.cn/tags/MISC/"/>
+    
+    <category term="CTF笔记" scheme="https://www.4ss1du0us.cn/tags/CTF%E7%AC%94%E8%AE%B0/"/>
     
   </entry>
   
@@ -217,9 +217,9 @@
     <category term="杂项" scheme="https://www.4ss1du0us.cn/categories/%E6%9D%82%E9%A1%B9/"/>
     
     
-    <category term="CTF笔记" scheme="https://www.4ss1du0us.cn/tags/CTF%E7%AC%94%E8%AE%B0/"/>
-    
     <category term="MISC" scheme="https://www.4ss1du0us.cn/tags/MISC/"/>
+    
+    <category term="CTF笔记" scheme="https://www.4ss1du0us.cn/tags/CTF%E7%AC%94%E8%AE%B0/"/>
     
   </entry>
   
@@ -332,32 +332,9 @@
     <category term="杂项" scheme="https://www.4ss1du0us.cn/categories/%E6%9D%82%E9%A1%B9/"/>
     
     
-    <category term="MISC" scheme="https://www.4ss1du0us.cn/tags/MISC/"/>
-    
     <category term="CTF刷题" scheme="https://www.4ss1du0us.cn/tags/CTF%E5%88%B7%E9%A2%98/"/>
     
-  </entry>
-  
-  <entry>
-    <title>CatCTF-CatchCat</title>
-    <link href="https://www.4ss1du0us.cn/2023/036b7870b8.html"/>
-    <id>https://www.4ss1du0us.cn/2023/036b7870b8.html</id>
-    <published>2023-03-19T07:23:24.000Z</published>
-    <updated>2023-04-15T12:28:06.213Z</updated>
-    
-    <content type="html"><![CDATA[<h2 id="收获"><a href="#收获" class="headerlink" title="收获"></a>收获</h2><ul><li><mark>根据地图 GPS 数据复现轨迹</mark><ol><li>利用 NMEA 转 KML 可视化还原 GPS 轨迹（<a href="https://www.h-schmidt.net/NMEA/">NMEA 转 KML</a>）</li><li>将 KML 数据可视化为 GPS 轨迹（<a href="https://mygeodata.cloud/converter/">KML 可视化轨迹</a>）</li></ol></li><li><mark>GPS 数据格式</mark>：<a href="https://www.lehoon.cn/orther/2017/04/25/gnss-gpgga-formet.html">GPGGA格式详解 | 豌豆荚博客 (lehoon.cn)</a></li></ul><hr><p><a href="https://adworld.xctf.org.cn/challenges/details?hash=36f991a4-8d9a-11ed-b5da-000c296d9df6&task_category_id=1">CatCTF-CatchCat</a></p><hr><h2 id="思路一"><a href="#思路一" class="headerlink" title="思路一"></a>思路一</h2><ol><li><p>下载文件，是一个 .txt 文本，根据题目提示，以及文本数据的特点，给出的应该是 GPS 数据<br><img src="https://s2.loli.net/2023/03/18/RXxOASdcCkb1Pta.png" alt="CatCTF-CatchCat1.png"></p></li><li><p><a href="https://www.lehoon.cn/orther/2017/04/25/gnss-gpgga-formet.html">GPGGA格式详解 | 豌豆荚博客 (lehoon.cn)</a><br>了解得知，该文本内容是 GPS 的 NMEA 格式轨迹数据，将数据还原为轨迹即可</p></li><li><p>利用 NMEA 转 KML 可视化还原 GPS 轨迹：<a href="https://www.h-schmidt.net/NMEA/">NMEA 转 KML</a><br><img src="https://s2.loli.net/2023/03/18/1WbFYwi3KNPnLpT.png" alt="CatCTF-CatchCat2.png"></p></li><li><p>将 KML 数据可视化为 GPS 轨迹：<a href="https://mygeodata.cloud/converter/">KML 可视化轨迹</a><br><img src="https://s2.loli.net/2023/03/18/3W5ehdYQVjKl4NB.png" alt="CatCTF-CatchCat3.png"></p></li><li><p>根据轨迹可得 flag：CatCTF{GPS_M1ao}</p></li></ol><hr><h2 id="思路二"><a href="#思路二" class="headerlink" title="思路二"></a>思路二</h2><ol><li><p>通过写脚本提取数据还原 GPS 轨迹</p><pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">import</span> matplotlib<span class="token punctuation">.</span>pyplot <span class="token keyword">as</span> pltdata <span class="token operator">=</span> <span class="token builtin">open</span><span class="token punctuation">(</span><span class="token string">'CatchCat.txt'</span><span class="token punctuation">,</span> <span class="token string">'r'</span><span class="token punctuation">)</span><span class="token punctuation">.</span>readlines<span class="token punctuation">(</span><span class="token punctuation">)</span>x <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span>y <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token keyword">for</span> line <span class="token keyword">in</span> data<span class="token punctuation">:</span>  <span class="token keyword">if</span> line<span class="token punctuation">.</span>strip<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>d1<span class="token punctuation">,</span> d2 <span class="token operator">=</span> <span class="token builtin">float</span><span class="token punctuation">(</span>line<span class="token punctuation">[</span><span class="token number">17</span><span class="token punctuation">:</span><span class="token number">30</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token builtin">float</span><span class="token punctuation">(</span>line<span class="token punctuation">[</span><span class="token number">33</span><span class="token punctuation">:</span><span class="token number">47</span><span class="token punctuation">]</span><span class="token punctuation">)</span>x<span class="token punctuation">.</span>append<span class="token punctuation">(</span>d1<span class="token punctuation">)</span>y<span class="token punctuation">.</span>append<span class="token punctuation">(</span>d2<span class="token punctuation">)</span>plt<span class="token punctuation">.</span>scatter<span class="token punctuation">(</span>x<span class="token punctuation">,</span>y<span class="token punctuation">)</span>plt<span class="token punctuation">.</span>show<span class="token punctuation">(</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></li><li><p>获得轨迹：<br><img src="https://s2.loli.net/2023/03/18/y1HFtlVX5DLvEcG.png" alt="CatCTF-CatchCat4.png"></p></li></ol><hr><h2 id="结果"><a href="#结果" class="headerlink" title="结果"></a>结果</h2><blockquote><p>CatCTF{GPS_M1ao}</p></blockquote>]]></content>
-    
-    
-    <summary type="html">给了个 GPS 数据，真不知道，孤陋寡闻了，积累一下长点见识吧</summary>
-    
-    
-    
-    <category term="杂项" scheme="https://www.4ss1du0us.cn/categories/%E6%9D%82%E9%A1%B9/"/>
-    
-    
     <category term="MISC" scheme="https://www.4ss1du0us.cn/tags/MISC/"/>
-    
-    <category term="CTF刷题" scheme="https://www.4ss1du0us.cn/tags/CTF%E5%88%B7%E9%A2%98/"/>
     
   </entry>
   
@@ -378,9 +355,55 @@
     <category term="杂项" scheme="https://www.4ss1du0us.cn/categories/%E6%9D%82%E9%A1%B9/"/>
     
     
+    <category term="CTF刷题" scheme="https://www.4ss1du0us.cn/tags/CTF%E5%88%B7%E9%A2%98/"/>
+    
     <category term="MISC" scheme="https://www.4ss1du0us.cn/tags/MISC/"/>
     
+  </entry>
+  
+  <entry>
+    <title>CatCTF-CatchCat</title>
+    <link href="https://www.4ss1du0us.cn/2023/036b7870b8.html"/>
+    <id>https://www.4ss1du0us.cn/2023/036b7870b8.html</id>
+    <published>2023-03-19T07:23:24.000Z</published>
+    <updated>2023-04-15T12:28:06.213Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="收获"><a href="#收获" class="headerlink" title="收获"></a>收获</h2><ul><li><mark>根据地图 GPS 数据复现轨迹</mark><ol><li>利用 NMEA 转 KML 可视化还原 GPS 轨迹（<a href="https://www.h-schmidt.net/NMEA/">NMEA 转 KML</a>）</li><li>将 KML 数据可视化为 GPS 轨迹（<a href="https://mygeodata.cloud/converter/">KML 可视化轨迹</a>）</li></ol></li><li><mark>GPS 数据格式</mark>：<a href="https://www.lehoon.cn/orther/2017/04/25/gnss-gpgga-formet.html">GPGGA格式详解 | 豌豆荚博客 (lehoon.cn)</a></li></ul><hr><p><a href="https://adworld.xctf.org.cn/challenges/details?hash=36f991a4-8d9a-11ed-b5da-000c296d9df6&task_category_id=1">CatCTF-CatchCat</a></p><hr><h2 id="思路一"><a href="#思路一" class="headerlink" title="思路一"></a>思路一</h2><ol><li><p>下载文件，是一个 .txt 文本，根据题目提示，以及文本数据的特点，给出的应该是 GPS 数据<br><img src="https://s2.loli.net/2023/03/18/RXxOASdcCkb1Pta.png" alt="CatCTF-CatchCat1.png"></p></li><li><p><a href="https://www.lehoon.cn/orther/2017/04/25/gnss-gpgga-formet.html">GPGGA格式详解 | 豌豆荚博客 (lehoon.cn)</a><br>了解得知，该文本内容是 GPS 的 NMEA 格式轨迹数据，将数据还原为轨迹即可</p></li><li><p>利用 NMEA 转 KML 可视化还原 GPS 轨迹：<a href="https://www.h-schmidt.net/NMEA/">NMEA 转 KML</a><br><img src="https://s2.loli.net/2023/03/18/1WbFYwi3KNPnLpT.png" alt="CatCTF-CatchCat2.png"></p></li><li><p>将 KML 数据可视化为 GPS 轨迹：<a href="https://mygeodata.cloud/converter/">KML 可视化轨迹</a><br><img src="https://s2.loli.net/2023/03/18/3W5ehdYQVjKl4NB.png" alt="CatCTF-CatchCat3.png"></p></li><li><p>根据轨迹可得 flag：CatCTF{GPS_M1ao}</p></li></ol><hr><h2 id="思路二"><a href="#思路二" class="headerlink" title="思路二"></a>思路二</h2><ol><li><p>通过写脚本提取数据还原 GPS 轨迹</p><pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">import</span> matplotlib<span class="token punctuation">.</span>pyplot <span class="token keyword">as</span> pltdata <span class="token operator">=</span> <span class="token builtin">open</span><span class="token punctuation">(</span><span class="token string">'CatchCat.txt'</span><span class="token punctuation">,</span> <span class="token string">'r'</span><span class="token punctuation">)</span><span class="token punctuation">.</span>readlines<span class="token punctuation">(</span><span class="token punctuation">)</span>x <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span>y <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token keyword">for</span> line <span class="token keyword">in</span> data<span class="token punctuation">:</span>  <span class="token keyword">if</span> line<span class="token punctuation">.</span>strip<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>d1<span class="token punctuation">,</span> d2 <span class="token operator">=</span> <span class="token builtin">float</span><span class="token punctuation">(</span>line<span class="token punctuation">[</span><span class="token number">17</span><span class="token punctuation">:</span><span class="token number">30</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token builtin">float</span><span class="token punctuation">(</span>line<span class="token punctuation">[</span><span class="token number">33</span><span class="token punctuation">:</span><span class="token number">47</span><span class="token punctuation">]</span><span class="token punctuation">)</span>x<span class="token punctuation">.</span>append<span class="token punctuation">(</span>d1<span class="token punctuation">)</span>y<span class="token punctuation">.</span>append<span class="token punctuation">(</span>d2<span class="token punctuation">)</span>plt<span class="token punctuation">.</span>scatter<span class="token punctuation">(</span>x<span class="token punctuation">,</span>y<span class="token punctuation">)</span>plt<span class="token punctuation">.</span>show<span class="token punctuation">(</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></li><li><p>获得轨迹：<br><img src="https://s2.loli.net/2023/03/18/y1HFtlVX5DLvEcG.png" alt="CatCTF-CatchCat4.png"></p></li></ol><hr><h2 id="结果"><a href="#结果" class="headerlink" title="结果"></a>结果</h2><blockquote><p>CatCTF{GPS_M1ao}</p></blockquote>]]></content>
+    
+    
+    <summary type="html">给了个 GPS 数据，真不知道，孤陋寡闻了，积累一下长点见识吧</summary>
+    
+    
+    
+    <category term="杂项" scheme="https://www.4ss1du0us.cn/categories/%E6%9D%82%E9%A1%B9/"/>
+    
+    
     <category term="CTF刷题" scheme="https://www.4ss1du0us.cn/tags/CTF%E5%88%B7%E9%A2%98/"/>
+    
+    <category term="MISC" scheme="https://www.4ss1du0us.cn/tags/MISC/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>攻防世界-glance-50</title>
+    <link href="https://www.4ss1du0us.cn/2023/033771dc4a.html"/>
+    <id>https://www.4ss1du0us.cn/2023/033771dc4a.html</id>
+    <published>2023-03-19T07:23:24.000Z</published>
+    <updated>2023-04-15T12:28:06.214Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="收获"><a href="#收获" class="headerlink" title="收获"></a>收获</h2><ul><li><p>熟悉 <mark>gif 图片的拆分和拼接</mark></p></li><li><p><mark>拆分网站：<a href="https://tu.sioe.cn/gj/fenjie/">GIF动态图片分解，多帧动态图分解成多张静态图片</a> 可以直接将帧拼接起来，方便直接看到每一帧拼接起来的原图</mark></p></li></ul><hr><p><a href="https://adworld.xctf.org.cn/media/file/task/9266eadf353d4ada94ededaeb96d0c50.gif">攻防世界-glance-50</a></p><hr><h2 id="思路一"><a href="#思路一" class="headerlink" title="思路一"></a>思路一</h2><ol><li><p>得到一张 gif 动态图片：<br><img src="https://s2.loli.net/2023/03/18/r9OXUAWfM61IxDq.png" alt="攻防世界-glance-50 1.png"></p></li><li><p>由于图画很窄，尝试修改宽度无果，在 Ubuntu 中分析也没有发现</p></li><li><p>根据以往经验，gif 大概率是需要拆分的，于是将 gif 文件拆分成帧图片：<br><a href="https://tu.sioe.cn/gj/fenjie/">GIF动态图片分解，多帧动态图分解成多张静态图片</a><br><img src="https://s2.loli.net/2023/03/18/Teni6gfAUGdj17m.png" alt="攻防世界-glance-50 2.png"><br>使用这个网站可以直接将拆分后的图片集中展示出来，可以直接得到 flag</p></li><li><p>这个题其实就是将藏有 flag 的图片拆分为一段一段的，然后将每一个片段作为一帧合成 gif 动态图。所以直接将 gif 拆分为帧后，再拼接起来即可</p></li></ol><hr><h2 id="思路二"><a href="#思路二" class="headerlink" title="思路二"></a>思路二</h2><ol><li><p>使用网站分离得到帧图片：<br><img src="https://s2.loli.net/2023/03/18/w2R4XhJYeTWGbFm.png" alt="攻防世界-glance-50 3.png"></p></li><li><p>在 Win 下安装 <code>ImageMagick</code> ：<a href="https://imagemagick.org/script/download.php#windows">图像魔术 – 下载</a><br>在帧图片文件夹下打开 cmd，执行 <code>magick montage *.png -tile 201x1 -geometry +0+0 flag.png</code><br>得到一张拼接的图片 flag.png：<br><img src="https://s2.loli.net/2023/03/18/D6zMQW2Gl9dk3Yw.png" alt="攻防世界-glance-50 4.png"><br>根据图片内容获得 flag</p></li></ol><hr><h2 id="结果"><a href="#结果" class="headerlink" title="结果"></a>结果</h2><blockquote><p>TWCTF{Bliss by Charles O’Rear}</p></blockquote>]]></content>
+    
+    
+    <summary type="html">给了 GIF 文件，只有很小一条线，我还想修改图片宽度呢，遇见 GIF 分离帧就完事了</summary>
+    
+    
+    
+    <category term="杂项" scheme="https://www.4ss1du0us.cn/categories/%E6%9D%82%E9%A1%B9/"/>
+    
+    
+    <category term="CTF刷题" scheme="https://www.4ss1du0us.cn/tags/CTF%E5%88%B7%E9%A2%98/"/>
+    
+    <category term="MISC" scheme="https://www.4ss1du0us.cn/tags/MISC/"/>
     
   </entry>
   
@@ -401,32 +424,9 @@
     <category term="杂项" scheme="https://www.4ss1du0us.cn/categories/%E6%9D%82%E9%A1%B9/"/>
     
     
-    <category term="MISC" scheme="https://www.4ss1du0us.cn/tags/MISC/"/>
-    
     <category term="CTF刷题" scheme="https://www.4ss1du0us.cn/tags/CTF%E5%88%B7%E9%A2%98/"/>
     
-  </entry>
-  
-  <entry>
-    <title>攻防世界-hit-the-core</title>
-    <link href="https://www.4ss1du0us.cn/2023/03b348f395.html"/>
-    <id>https://www.4ss1du0us.cn/2023/03b348f395.html</id>
-    <published>2023-03-19T07:23:24.000Z</published>
-    <updated>2023-04-15T12:28:06.217Z</updated>
-    
-    <content type="html"><![CDATA[<h2 id="收获"><a href="#收获" class="headerlink" title="收获"></a>收获</h2><ul><li><mark>给出形式很像 flag 的字符串时，注意观察大写、小写、数字、符号之间有没有什么规律</mark></li></ul><hr><p><a href="https://adworld.xctf.org.cn/media/file/task/8deb5f0c2cd84143807b6175f58d6f3f.core">攻防世界-hit-the-core</a></p><hr><h2 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h2><ol><li><p>下载得到一个 .core 文件，但用 exeinfo PE 查看发现是 64位 elf 可执行文件：<br><img src="https://s2.loli.net/2023/03/18/1CEFVKyqmactr5u.png" alt="攻防世界-hit-the-core1.png"></p></li><li><p>在 ubuntu 下执行失败：<br><img src="https://s2.loli.net/2023/03/18/YAVrLlPgGIZdC8q.png" alt="攻防世界-hit-the-core2.png"></p></li><li><p>在 IDA 中查看发现一串字符：<br><img src="https://s2.loli.net/2023/03/18/hGv4ODRmfVQtPUZ.png" alt="攻防世界-hit-the-core3.png"><br>格式很像 flag，但尝试后发现不对：</p><pre class="line-numbers language-txt" data-language="txt"><code class="language-txt">cvqAeqacLtqazEigwiXobxrCrtuiTzahfFreqc&#123;bnjrKwgk83kgd43j85ePgb_e_rwqr7fvbmHjklo3tews_hmkogooyf0vbnk0ii87Drfgh_n kiwutfb0ghk9ro987k5tfb_hjiouo087ptfcv&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre></li><li><p><em><strong>发现这段 flag 很有规律，如果每 5 位看成一组，在每组的第 4 位就有一个大写字母，而其他的都是小写</strong></em><br><em><strong>尝试将每 5 组的第 4 位提取出来</strong></em>：</p><pre class="line-numbers language-txt" data-language="txt"><code class="language-txt">ALEXCTF&#123;K33P_7H3_g00D_w0rk_up&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre></li><li><p>尝试后发现获得 flag</p></li></ol><hr><h2 id="结果"><a href="#结果" class="headerlink" title="结果"></a>结果</h2><blockquote><p>ALEXCTF{K33P_7H3_g00D_w0rk_up}</p></blockquote>]]></content>
-    
-    
-    <summary type="html">得到了一长串字符，很像 flag 的格式却又不是，原来还可以找规律啊，长见识了</summary>
-    
-    
-    
-    <category term="杂项" scheme="https://www.4ss1du0us.cn/categories/%E6%9D%82%E9%A1%B9/"/>
-    
-    
     <category term="MISC" scheme="https://www.4ss1du0us.cn/tags/MISC/"/>
-    
-    <category term="CTF刷题" scheme="https://www.4ss1du0us.cn/tags/CTF%E5%88%B7%E9%A2%98/"/>
     
   </entry>
   
@@ -447,9 +447,9 @@
     <category term="杂项" scheme="https://www.4ss1du0us.cn/categories/%E6%9D%82%E9%A1%B9/"/>
     
     
-    <category term="MISC" scheme="https://www.4ss1du0us.cn/tags/MISC/"/>
-    
     <category term="CTF刷题" scheme="https://www.4ss1du0us.cn/tags/CTF%E5%88%B7%E9%A2%98/"/>
+    
+    <category term="MISC" scheme="https://www.4ss1du0us.cn/tags/MISC/"/>
     
   </entry>
   
@@ -470,9 +470,9 @@
     <category term="杂项" scheme="https://www.4ss1du0us.cn/categories/%E6%9D%82%E9%A1%B9/"/>
     
     
-    <category term="MISC" scheme="https://www.4ss1du0us.cn/tags/MISC/"/>
-    
     <category term="CTF刷题" scheme="https://www.4ss1du0us.cn/tags/CTF%E5%88%B7%E9%A2%98/"/>
+    
+    <category term="MISC" scheme="https://www.4ss1du0us.cn/tags/MISC/"/>
     
   </entry>
   
