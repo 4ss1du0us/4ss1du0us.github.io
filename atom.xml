@@ -6,7 +6,7 @@
   <link href="https://www.4ss1du0us.cn/atom.xml" rel="self"/>
   
   <link href="https://www.4ss1du0us.cn/"/>
-  <updated>2023-04-29T13:15:50.001Z</updated>
+  <updated>2023-04-30T17:07:27.907Z</updated>
   <id>https://www.4ss1du0us.cn/</id>
   
   <author>
@@ -21,9 +21,9 @@
     <link href="https://www.4ss1du0us.cn/2023/0441d1faf8.html"/>
     <id>https://www.4ss1du0us.cn/2023/0441d1faf8.html</id>
     <published>2023-04-29T12:36:24.000Z</published>
-    <updated>2023-04-29T13:15:50.001Z</updated>
+    <updated>2023-04-30T17:07:27.907Z</updated>
     
-    <content type="html"><![CDATA[<h2 id="问题"><a href="#问题" class="headerlink" title="问题"></a>问题</h2><blockquote><p>有时候虚拟机像是 bug 了一样，明明安装了 VMtools，从物理机拖放文件还是会失败：</p><ol><li><p>如果直接将文件拖进虚拟机会显示 🚫，不妨试试在物理机中将文件复制后粘贴到虚拟机哦（如果还是不行，试试重装  VMtools）</p></li><li><p>但有时候将文件拖进虚拟机没有显示 🚫，文件也拖放成功了，但文件却并没有出现在对应的文件夹中，当然这就是本文要解决的问题</p></li></ol></blockquote><ul><li>以物理机往 Ubuntu 虚拟机拖放 <code>CLion</code> 为例：</li></ul><p><img src="https://s2.loli.net/2023/04/29/jl61ciOaBJDPokC.png" alt="从物理机拖到Linux虚拟机中的文件消失了1.png"></p><ol><li>可以看到，虚拟机没有提示 🚫，拖放操作是没有问题的</li></ol><p><img src="https://s2.loli.net/2023/04/29/LDc5XKg2PEmx3eS.png" alt="从物理机拖到Linux虚拟机中的文件消失了2.png"></p><ol start="2"><li>拖放后，物理机开始复制文件到 Ubuntu 虚拟机</li></ol><p><img src="https://s2.loli.net/2023/04/29/7rcTgKphPxoLAUX.png" alt="从物理机拖到Linux虚拟机中的文件消失了3.png"></p><ol start="3"><li>但是发现复制结束后，桌面上什么都没有，左上角还有个像卡 bug 了一样的白图标</li></ol><hr><h2 id="原因"><a href="#原因" class="headerlink" title="原因"></a>原因</h2><blockquote><p>其实，如果在拖放文件到虚拟机的时候没有显示 🚫，并且会有一个 <code>正在将文件 &quot;xxx&quot; 复制到虚拟机</code> 的弹窗，那说明文件是已经成功移到虚拟机了，只是没有移到你想放的文件夹下</p><p><strong>VMware Workstation 会将用户拖放到虚拟机的文件存放在一个叫 <code>drag_and_drop</code> 的文件夹内，只需手动操作一下即可</strong></p></blockquote><hr><h2 id="解决"><a href="#解决" class="headerlink" title="解决"></a>解决</h2><ol><li>打开主目录，并在主目录里打开终端（或直接 <code>cd ~</code>）<br><code>ls -a</code> 查看主目录下所有文件</li></ol><p><img src="https://s2.loli.net/2023/04/29/t9r2JZY5xjzCBkX.png" alt="从物理机拖到Linux虚拟机中的文件消失了4.png"></p><ol start="2"><li>进到名为 <code>.cache</code> 的隐藏文件夹，一路 <code>ls -a</code> 查看，并进到 <code>~/.cache/vmware/drag_and_drop</code> 目录下</li></ol><p><img src="https://s2.loli.net/2023/04/29/kj7Y4yRGuv9fFa1.png" alt="从物理机拖到Linux虚拟机中的文件消失了5.png"></p><ol start="3"><li>这个目录下有 <code>n</code> 个文件夹，<strong>这些文件夹里存放的就是用户从物理机拖到虚拟机里的东西</strong>（<em>一般最左边的就是最近一次拖放的</em>）</li></ol><p><img src="https://s2.loli.net/2023/04/29/lTyXg2kAce9Vb8K.png" alt="从物理机拖到Linux虚拟机中的文件消失了6.png"></p><ol start="4"><li>只需将这里面对应的文件移出去即可<br>例如我将 <code>CLion</code> 移到主目录下：<code>mv ./CLion-2022.3.1.tar.gz ~</code></li></ol><p><img src="https://s2.loli.net/2023/04/29/hawdfzIxFrcSvHy.png" alt="从物理机拖到Linux虚拟机中的文件消失了7.png"></p><ol start="5"><li>现在查看主目录的文件夹，就能看到你拖到虚拟机里的文件了</li></ol><hr><h2 id="提示"><a href="#提示" class="headerlink" title="提示"></a>提示</h2><h3 id="定期清理"><a href="#定期清理" class="headerlink" title="定期清理"></a>定期清理</h3><ol><li><p>因为每次拖放文件到虚拟机都会在 <code>~/.cache/vmware/drag_and_drop</code> 目录下生成一个文件，长此以往，会特别占用虚拟机的空间</p></li><li><p>所以我们可以定期到 <code>~/.cache/vmware/drag_and_drop</code> 目录下执行 <code>rm -rf *</code>，删除 <code>drag_and_drop</code> 目录下的全部文件</p></li></ol><hr><h3 id="共享文件夹"><a href="#共享文件夹" class="headerlink" title="共享文件夹"></a>共享文件夹</h3><blockquote><p>如果往虚拟机中拖放文件、复制文件经常出 bug，也可以通过共享文件夹来向虚拟机传送文件<br>（但是这种方式将物理机和虚拟机联系到了一起，我也不知道开启共享文件夹后，虚拟机病毒会不会影响到物理机）</p></blockquote><ol><li>首先开启共享文件夹，<code>虚拟机 --&gt; 设置 --&gt; 选项 --&gt; 共享文件夹</code></li></ol><p><img src="https://s2.loli.net/2023/04/29/nXZsIdf1e4ylmWH.png" alt="从物理机拖到Linux虚拟机中的文件消失了8.png"></p><ol start="2"><li>设置<code>总是启用</code>，<code>添加</code>共享文件夹，选择物理机上的一个文件夹，作为物理机和虚拟机的共享文件夹</li></ol><p><img src="https://s2.loli.net/2023/04/29/ThLt4MIoACycplj.png" alt="从物理机拖到Linux虚拟机中的文件消失了9.png"></p><ol start="3"><li><p>后面的保持默认设置即可</p></li><li><p>打开终端，输入 <code>vmware-hgfsclient</code> 检测是否设置成功，我设置的共享文件夹名字叫 <code>&quot;ShareFolder&quot;</code></p></li></ol><p><img src="https://s2.loli.net/2023/04/29/NgerK1vmwpTikWZ.png" alt="从物理机拖到Linux虚拟机中的文件消失了10.png"></p><ol start="5"><li>一般来说，Linux 中的共享文件夹在目录 <code>/mnt/hgfs</code> 下，也可以在如下位置查看：</li></ol><p><img src="https://s2.loli.net/2023/04/29/YLyIqK6Jk8wxzgO.png" alt="从物理机拖到Linux虚拟机中的文件消失了11.png"></p><ol start="6"><li><p>你可以通过把文件放在物理机的 <code>ShareFolder</code> 文件夹下，然后 Ubuntu 虚拟机就可以访问到了</p></li><li><p>如果在目录 <code>/mnt/hgfs</code> 下，还是访问不到你放置的文件<br>或者 <code>cd /mnt/hgfs</code> 后 <code>ls -a</code> 发现什么都没有<br>在终端输入：<code>vmhgfs-fuse .host:/ /mnt/hgfs</code>（将物理机的共享文件夹挂载到目录 <code>/mnt/hgfs</code> 下）</p></li><li><p>退出目录，重新进到目录 <code>/mnt/hgfs</code> 下，即可发现正常访问</p></li></ol><p><img src="https://s2.loli.net/2023/04/29/VgXTaxEJUAfvFKd.png" alt="从物理机拖到Linux虚拟机中的文件消失了12.png"></p><p><img src="https://s2.loli.net/2023/04/29/vpMu4rTNwhV9DAW.png" alt="从物理机拖到Linux虚拟机中的文件消失了13.png"></p><blockquote><p>如果是 Windows 系列的虚拟机，查看共享文件夹就更简单了，可以直接挂载到 “网络” 中，然后进行查看<br>这里就不解释了</p></blockquote><p><img src="https://s2.loli.net/2023/04/29/eS6UdO5XzmG9i1l.png" alt="从物理机拖到Linux虚拟机中的文件消失了14.png"></p>]]></content>
+    <content type="html"><![CDATA[<h2 id="问题"><a href="#问题" class="headerlink" title="问题"></a>问题</h2><blockquote><p>有时候虚拟机像是 bug 了一样，明明安装了 VMtools，从物理机拖放文件还是会失败：</p><ol><li><p>如果直接将文件拖进虚拟机会显示 🚫，不妨试试在物理机中将文件复制后粘贴到虚拟机哦（如果还是不行，试试重装  VMtools）</p></li><li><p>但有时候将文件拖进虚拟机没有显示 🚫，文件也拖放成功了，但文件却并没有出现在对应的文件夹中，当然这就是本文要解决的问题</p></li></ol></blockquote><ul><li>以物理机往 Ubuntu 虚拟机拖放 <code>CLion</code> 为例：</li></ul><p><img src="https://s2.loli.net/2023/04/29/jl61ciOaBJDPokC.png" alt="从物理机拖到Linux虚拟机中的文件消失了1.png"></p><ol><li>可以看到，虚拟机没有提示 🚫，拖放操作是没有问题的</li></ol><p><img src="https://s2.loli.net/2023/04/29/LDc5XKg2PEmx3eS.png" alt="从物理机拖到Linux虚拟机中的文件消失了2.png"></p><ol start="2"><li>拖放后，物理机开始复制文件到 Ubuntu 虚拟机</li></ol><p><img src="https://s2.loli.net/2023/04/29/7rcTgKphPxoLAUX.png" alt="从物理机拖到Linux虚拟机中的文件消失了3.png"></p><ol start="3"><li>但是发现复制结束后，桌面上什么都没有，左上角还有个像卡 bug 了一样的白图标</li></ol><hr><h2 id="原因"><a href="#原因" class="headerlink" title="原因"></a>原因</h2><blockquote><p>其实，如果在拖放文件到虚拟机的时候没有显示 🚫，并且会有一个 <code>正在将文件 &quot;xxx&quot; 复制到虚拟机</code> 的弹窗，那说明文件是已经成功移到虚拟机了，只是没有移到你想放的文件夹下</p><p><strong>VMware Workstation 会将用户拖放到虚拟机的文件存放在一个叫 <code>drag_and_drop</code> 的文件夹内，只需手动操作一下即可</strong></p></blockquote><hr><h2 id="解决"><a href="#解决" class="headerlink" title="解决"></a>解决</h2><ol><li>打开主目录，并在主目录里打开终端（或直接 <code>cd ~</code>）<br><code>ls -a</code> 查看主目录下所有文件</li></ol><p><img src="https://s2.loli.net/2023/04/29/t9r2JZY5xjzCBkX.png" alt="从物理机拖到Linux虚拟机中的文件消失了4.png"></p><ol start="2"><li>进到名为 <code>.cache</code> 的隐藏文件夹，一路 <code>ls -a</code> 查看，并进到 <code>~/.cache/vmware/drag_and_drop</code> 目录下</li></ol><p><img src="https://s2.loli.net/2023/04/29/kj7Y4yRGuv9fFa1.png" alt="从物理机拖到Linux虚拟机中的文件消失了5.png"></p><ol start="3"><li>这个目录下有 <code>n</code> 个文件夹，<strong>这些文件夹里存放的就是用户从物理机拖到虚拟机里的东西</strong>（<em>一般最左边的就是最近一次拖放的</em>）</li></ol><p><img src="https://s2.loli.net/2023/04/29/lTyXg2kAce9Vb8K.png" alt="从物理机拖到Linux虚拟机中的文件消失了6.png"></p><ol start="4"><li>只需将这里面对应的文件移出去即可<br>例如我将 <code>CLion</code> 移到主目录下：<code>mv ./CLion-2022.3.1.tar.gz ~</code></li></ol><p><img src="https://s2.loli.net/2023/04/29/hawdfzIxFrcSvHy.png" alt="从物理机拖到Linux虚拟机中的文件消失了7.png"></p><ol start="5"><li>现在查看主目录的文件夹，就能看到你拖到虚拟机里的文件了</li></ol><hr><h2 id="提示"><a href="#提示" class="headerlink" title="提示"></a>提示</h2><h3 id="定期清理"><a href="#定期清理" class="headerlink" title="定期清理"></a>定期清理</h3><ol><li><p>因为每次拖放文件到虚拟机都会在 <code>~/.cache/vmware/drag_and_drop</code> 目录下生成一个文件，长此以往，会特别占用虚拟机的空间</p></li><li><p>所以我们可以定期到 <code>~/.cache/vmware/drag_and_drop</code> 目录下执行 <code>rm -rf *</code>，删除 <code>drag_and_drop</code> 目录下的全部文件</p></li></ol><blockquote><p>在 Windows 虚拟机中同理，<code>Win + R</code> 打开 <code>运行</code>，在 <code>运行</code> 中输入 <code>%temp%</code><br>或者打开 <code>C:\Users\用户名\AppData\Local\Temp</code> 路径<br>在 Temp 文件夹中有一个名为 <code>vmware-用户名</code> 的文件夹，里面存放的也是拖放到虚拟机中的文件</p></blockquote><hr><h3 id="共享文件夹"><a href="#共享文件夹" class="headerlink" title="共享文件夹"></a>共享文件夹</h3><blockquote><p>如果往虚拟机中拖放文件、复制文件经常出 bug，也可以通过共享文件夹来向虚拟机传送文件<br>（但是这种方式将物理机和虚拟机联系到了一起，我也不知道开启共享文件夹后，虚拟机病毒会不会影响到物理机）</p></blockquote><ol><li>首先开启共享文件夹，<code>虚拟机 --&gt; 设置 --&gt; 选项 --&gt; 共享文件夹</code></li></ol><p><img src="https://s2.loli.net/2023/04/29/nXZsIdf1e4ylmWH.png" alt="从物理机拖到Linux虚拟机中的文件消失了8.png"></p><ol start="2"><li>设置<code>总是启用</code>，<code>添加</code>共享文件夹，选择物理机上的一个文件夹，作为物理机和虚拟机的共享文件夹</li></ol><p><img src="https://s2.loli.net/2023/04/29/ThLt4MIoACycplj.png" alt="从物理机拖到Linux虚拟机中的文件消失了9.png"></p><ol start="3"><li><p>后面的保持默认设置即可</p></li><li><p>打开终端，输入 <code>vmware-hgfsclient</code> 检测是否设置成功，我设置的共享文件夹名字叫 <code>&quot;ShareFolder&quot;</code></p></li></ol><p><img src="https://s2.loli.net/2023/04/29/NgerK1vmwpTikWZ.png" alt="从物理机拖到Linux虚拟机中的文件消失了10.png"></p><ol start="5"><li>一般来说，Linux 中的共享文件夹在目录 <code>/mnt/hgfs</code> 下，也可以在如下位置查看：</li></ol><p><img src="https://s2.loli.net/2023/04/29/YLyIqK6Jk8wxzgO.png" alt="从物理机拖到Linux虚拟机中的文件消失了11.png"></p><ol start="6"><li><p>你可以通过把文件放在物理机的 <code>ShareFolder</code> 文件夹下，然后 Ubuntu 虚拟机就可以访问到了</p></li><li><p>如果在目录 <code>/mnt/hgfs</code> 下，还是访问不到你放置的文件<br>或者 <code>cd /mnt/hgfs</code> 后 <code>ls -a</code> 发现什么都没有<br>在终端输入：<code>vmhgfs-fuse .host:/ /mnt/hgfs</code>（将物理机的共享文件夹挂载到目录 <code>/mnt/hgfs</code> 下）</p></li><li><p>退出目录，重新进到目录 <code>/mnt/hgfs</code> 下，即可发现正常访问</p></li></ol><p><img src="https://s2.loli.net/2023/04/29/VgXTaxEJUAfvFKd.png" alt="从物理机拖到Linux虚拟机中的文件消失了12.png"></p><p><img src="https://s2.loli.net/2023/04/29/vpMu4rTNwhV9DAW.png" alt="从物理机拖到Linux虚拟机中的文件消失了13.png"></p><blockquote><p>如果是 Windows 系列的虚拟机，查看共享文件夹就更简单了，可以直接挂载到 <code>&quot;网络&quot;</code> 中，然后进行查看<br>这里就不解释了</p></blockquote><p><img src="https://s2.loli.net/2023/04/29/eS6UdO5XzmG9i1l.png" alt="从物理机拖到Linux虚拟机中的文件消失了14.png"></p>]]></content>
     
     
     <summary type="html">有时候明明安装了 VMtools，却发现文件有时还是无法拖进 Linux 虚拟机，或者拖进虚拟机后文件却并没有出现在对应的文件夹里，不要慌，其实虚拟机没有问题，只需要简单操作一下</summary>
@@ -54,9 +54,9 @@
     <category term="逆向" scheme="https://www.4ss1du0us.cn/categories/%E9%80%86%E5%90%91/"/>
     
     
-    <category term="CTF刷题" scheme="https://www.4ss1du0us.cn/tags/CTF%E5%88%B7%E9%A2%98/"/>
-    
     <category term="REVERSE" scheme="https://www.4ss1du0us.cn/tags/REVERSE/"/>
+    
+    <category term="CTF刷题" scheme="https://www.4ss1du0us.cn/tags/CTF%E5%88%B7%E9%A2%98/"/>
     
   </entry>
   
@@ -100,9 +100,9 @@
     <category term="逆向" scheme="https://www.4ss1du0us.cn/categories/%E9%80%86%E5%90%91/"/>
     
     
-    <category term="CTF刷题" scheme="https://www.4ss1du0us.cn/tags/CTF%E5%88%B7%E9%A2%98/"/>
-    
     <category term="REVERSE" scheme="https://www.4ss1du0us.cn/tags/REVERSE/"/>
+    
+    <category term="CTF刷题" scheme="https://www.4ss1du0us.cn/tags/CTF%E5%88%B7%E9%A2%98/"/>
     
   </entry>
   
@@ -169,9 +169,9 @@
     <category term="逆向" scheme="https://www.4ss1du0us.cn/categories/%E9%80%86%E5%90%91/"/>
     
     
-    <category term="CTF刷题" scheme="https://www.4ss1du0us.cn/tags/CTF%E5%88%B7%E9%A2%98/"/>
-    
     <category term="REVERSE" scheme="https://www.4ss1du0us.cn/tags/REVERSE/"/>
+    
+    <category term="CTF刷题" scheme="https://www.4ss1du0us.cn/tags/CTF%E5%88%B7%E9%A2%98/"/>
     
   </entry>
   
@@ -234,9 +234,9 @@
     <category term="逆向" scheme="https://www.4ss1du0us.cn/categories/%E9%80%86%E5%90%91/"/>
     
     
-    <category term="CTF刷题" scheme="https://www.4ss1du0us.cn/tags/CTF%E5%88%B7%E9%A2%98/"/>
-    
     <category term="REVERSE" scheme="https://www.4ss1du0us.cn/tags/REVERSE/"/>
+    
+    <category term="CTF刷题" scheme="https://www.4ss1du0us.cn/tags/CTF%E5%88%B7%E9%A2%98/"/>
     
   </entry>
   
@@ -257,9 +257,9 @@
     <category term="逆向" scheme="https://www.4ss1du0us.cn/categories/%E9%80%86%E5%90%91/"/>
     
     
-    <category term="CTF刷题" scheme="https://www.4ss1du0us.cn/tags/CTF%E5%88%B7%E9%A2%98/"/>
-    
     <category term="REVERSE" scheme="https://www.4ss1du0us.cn/tags/REVERSE/"/>
+    
+    <category term="CTF刷题" scheme="https://www.4ss1du0us.cn/tags/CTF%E5%88%B7%E9%A2%98/"/>
     
   </entry>
   
@@ -282,9 +282,9 @@
     
     <category term="CTF笔记" scheme="https://www.4ss1du0us.cn/tags/CTF%E7%AC%94%E8%AE%B0/"/>
     
-    <category term="CTF刷题" scheme="https://www.4ss1du0us.cn/tags/CTF%E5%88%B7%E9%A2%98/"/>
-    
     <category term="REVERSE" scheme="https://www.4ss1du0us.cn/tags/REVERSE/"/>
+    
+    <category term="CTF刷题" scheme="https://www.4ss1du0us.cn/tags/CTF%E5%88%B7%E9%A2%98/"/>
     
   </entry>
   
