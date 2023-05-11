@@ -44,8 +44,10 @@
     <link href="https://www.4ss1du0us.cn/2023/05bbb01dd.html"/>
     <id>https://www.4ss1du0us.cn/2023/05bbb01dd.html</id>
     <published>2023-05-11T08:11:01.000Z</published>
-    <updated>2023-05-11T13:10:13.571Z</updated>
+    <updated>2023-05-11T13:12:10.267Z</updated>
     
+    
+    <summary type="html">有时候网上的 WP 中给出的 IDA 脚本会报出 “NameError: name PatchByte is not defined” 等错误，因为有些 API 在新版中被更改了，导致 IDA 老版本与新版本脚本不互通</summary>
     
     
     
